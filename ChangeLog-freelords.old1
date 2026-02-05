@@ -1,0 +1,5040 @@
+2006-12-10  ulf82
+
+	* some minor changes to the ItemDialog and a hero image. Main part:
+	  movement bonus calculation did not work correctly because there
+	  were two map tile identifiers around (exponents of 2 and simple
+	  count); merged both of them (the exponent survived)
+
+2006-12-10  ulf82
+
+	* added saving/loading of signposts
+
+2006-12-10  ulf82
+
+	* added missing files from Ben Asselstine's signpost patch. Note:
+	  Unless I got something wrong, the signposts are not saved! (yet)
+
+2006-12-08  patton73
+
+	* removed some debug info
+
+2006-12-08  patton73
+
+	* Applied six patches from BeN Asselstine : 1)adding little signs
+	  to the terrain 2)minimal enemy's city info 3)remove limit on
+	  shortest mover 4)redraw bigmap when a city is conquered 5)player
+	  splash screen not shown after loading 6)Added capital city in
+	  editor
+
+2006-12-01  ulf82
+
+	* some more work on the item dialog
+
+2006-11-29  ulf82
+
+	* applied patch from Ben Asselstine: rectangular maps; purged or
+	  changed some of the information files (namely rearranged the
+	  authors)
+
+2006-11-28  ulf82
+
+	* applied patch by Ben Asselstine: Capital cities (don't do
+	  anything, though); prevented configuration file from being
+	  rebuilt if the savegame version changes;
+
+2006-11-26  patton73
+
+	* applied Ben Asselstine's show dialog after city occupation patch.
+
+2006-11-26  patton73
+
+	* Applied 2 patches from Bess Asselstine
+
+2006-11-26  ulf82
+
+	* fixed a segfault with corrupted savefiles
+
+2006-11-26  ulf82
+
+	* fix: moveAll now behaves as it should (i.e. returns to original
+	  stack after finishing)
+
+2006-11-25  ulf82
+
+	* small patches: maximum city number now 40 in configuration
+	  dialog, army symbols on the overviewmap are now slightly larger
+
+2006-11-25  ulf82
+
+	* the MoveAll button now works properly
+
+2006-11-25  ulf82
+
+	* armies are now blessed automatically.
+
+2006-11-24  patton73
+
+	* Forgot to add french localization
+
+2006-11-24  patton73
+
+	* Applyed patch from Ben Asselstine about selecting all army in the
+	  stack with the spacebar
+
+2006-11-17  ulf82
+
+	* fixed the layout script; started to rewrite the item dialog. It
+	  is unusable now, but hardly of any use anyway.
+
+2006-11-17  ulf82
+
+	* finished the layout file for the ItemDialog. Now comes the
+	  implementation...
+
+2006-11-17  patton73
+
+	* Fixed some bugs. (Thread hangs bug too).
+
+2006-11-15  patton73
+
+	* Apllied some little patches for features request.
+
+2006-11-09  ulf82
+
+	* started with an xml layout for the item dialog
+
+2006-11-09  ulf82
+
+	* fixed a fresh bug that prevented the loading of almost every
+	  game/scenario
+
+2006-11-08  ulf82
+
+	* the xml parser is now more strict when encountering errors.  The
+	  game does not fail anymore when loading corrupted save games.
+
+2006-11-06  ulf82
+
+	* autosave is now saved in a temporary file first
+
+2006-11-02  patton73
+
+	* Added icon image for the editor (window icon)
+
+2006-11-02  patton73
+
+	* Updated editor code to match the new freelords theme Editor now
+	  runs again
+
+2006-10-29  ulf82
+
+	* small fix in configure script; fixed compilation w/o sound; fixed
+	  smallmap race condition; smallmap now has a static size
+
+2006-10-25  ulf82
+
+	* fixed a bug with incorrect resizing of the smallmap; fixed a bug
+	  where clicking on the smallmap sets the upper left edge (instead
+	  of center) to mouse position; fixed a segfault when generating a
+	  map
+
+2006-10-10  patton73
+
+	* Fixed a compiler compilation problem
+
+2006-10-01  ulf82
+
+	* forgot overviewmap.* :)
+
+2006-10-01  ulf82
+
+	* moved common code from smallmap and vectormap to new class
+	  (overviewmap) and implemented non-integer relation between map
+	  size and (Small|Vector)Map size, though this part is not tested
+	  yet.
+
+2006-08-29  ulf82
+
+	* switched font to DejaVuSerif; added Polish to language dialog;
+	  added demonspawn image with portrait and the code to show the
+	  portrait.
+
+2006-08-29  patton73
+
+	* Vera.ttf was lost
+
+2006-08-26  ulf82
+
+	* expanded the theme file to a separate subdirectory. This way, it
+	  is much simpler to modify it
+
+2006-08-26  ulf82
+
+	* finished army dialog; still ugly, but displays all data
+
+2006-08-25  ulf82
+
+	* the armydialog now has space for a big unit image (TBD) and
+	  displays the stats with icons (also to be improved); fixed some
+	  bugs with army stats along the way
+
+2006-08-19  ulf82
+
+	* removed all traces of the old palette code
+
+2006-08-19  ulf82
+
+	* for improved testing, I have used Rene's win game picture. Needed
+	  some changes to Popup (don't know exactly how background worked
+	  and was too lazy to work it out).  Works.
+
+2006-08-19  ulf82
+
+	* applied new mask system to city pics as well
+
+2006-08-19  ulf82
+
+	* applied new mask system to flags; simplified the code a bit
+
+2006-08-15  ulf82
+
+	* adjusted code to use 54 pixels for army images everywhere
+
+2006-08-14  ulf82
+
+	* scaled pikeman to larger size
+
+2006-08-14  patton73
+
+	* Handled new army pictures Makefiles
+
+2006-08-14  ulf82
+
+	* First version of the new mask algorithm. Doesn't crash :). The
+	  cleanup etc. comes over the next few days.
+
+2006-08-13  ulf82
+
+	* finished splitting up unit graphics
+
+2006-08-12  ulf82
+
+	* more separate army pics
+
+2006-08-12  ulf82
+
+	* further split-up of army images
+
+2006-08-10  patton73
+
+	* Some patches to generate windows binaries with correct icon
+
+2006-08-10  ulf82
+
+	* finished implementing Franceso's item ideas
+
+2006-08-09  patton73
+
+	* Fixed cross-compilation after the autoconf.ac changes from Ben
+
+2006-08-09  ulf82
+
+	* transferred some more items
+
+2006-08-09  ulf82
+
+	* replaced some usleep calls by SDL_Delay for portability
+
+2006-08-08  ulf82
+
+	* added a lot of items
+
+2006-08-07  ulf82
+
+	* added some items + pictures
+
+2006-07-31  patton73
+
+	* Fixed 2 compilation bugs with gcc 4.1.1
+
+2006-07-31  patton73
+
+	* Applied patches to the configure system from Ben Asselstine. The
+	  windows compilation is to be tested.
+
+2006-07-30  ulf82
+
+	* applied a patch by Ben Asselstine(?); adjustable speed delay
+	  after each movement
+
+2006-07-26  ulf82
+
+	* small fixes by Ben Asselstine + Polish translation
+
+2006-07-18  ulf82
+
+	* started to put each unit in an own file together with the
+	  respective mask.
+
+2006-07-16  ulf82
+
+	* when changing the map size, the number of cities etc. is adjusted
+	  as well
+
+2006-07-13  patton73
+
+	* The new configuration file behaviour now applies also under
+	  windows
+
+2006-07-07  patton73
+
+	* Some patches to let windows generate the freelordsc file. (some
+	  more work is neeeded to make the backup copy)
+
+2006-07-05  ulf82
+
+	* upgrade button vanishes when option is not available
+
+2006-07-04  ulf82
+
+	* fixed a bug when fighting at the edge of the map
+
+2006-07-03  patton73
+
+	* Updated italian translation
+
+2006-07-03  patton73
+
+	* .freelordsrc is now autogenerated and has the same version of the
+	  Savefile.  Removed the freelordsrc.in file (that now has become
+	  useless)
+
+2006-06-30  patton73
+
+	* Forgot to bump savefile version to 0.3.7b to handle the 4 levels
+	  for cities
+
+2006-06-30  patton73
+
+	* Some more work on scenarios dialog.
+
+2006-06-30  patton73
+
+	* Updated 2 maps and some item images
+
+2006-06-24  patton73
+
+	* Games now fully supports 4 levels for cities. Editor too.
+
+2006-06-22  ulf82
+
+	* amd64 fix. Thanks to Alexis Ballier
+
+2006-06-21  patton73
+
+	* Some work on the editor (now it handles the temple icons). More
+	  work is to be done to handle 4 city levels (even ont the game)
+
+2006-06-20  patton73
+
+	* Cities now have 4 defense levels. Fixed a bug while displaying
+	  temples.  Bumbed savefile version to 0.3.7a
+
+2006-06-19  patton73
+
+	* Fixed a bug in the masks file
+
+2006-06-19  patton73
+
+	* Added all city pictures and the new temple picture
+
+2006-06-19  patton73
+
+	* Icon is found and used. New city images and masks done (need to
+	  add the fourth level).
+
+2006-06-18  ulf82
+
+	* icon is now found, just the content is missing :)
+
+2006-06-17  ulf82
+
+	* fixed a bug placing buildings on mountain tops or similar
+
+2006-06-16  patton73
+
+	* Updated 2 scenarios from David Barnsdle
+
+2006-06-15  patton73
+
+	* New about dialog. Updated AUTHORS and about lists. New about
+	  picture.
+
+2006-06-12  patton73
+
+	* Modified the code to let FL cache the temple pics. Now there will
+	  be more than one temple pics randomly choosen. Uploaded one new
+	  temple pics made by Tiziano (more will come).
+
+2006-06-11  ulf82
+
+	* yet another fix
+
+2006-06-11  ulf82
+
+	* fixed a last translation problem
+
+2006-06-10  patton73
+
+	* Added the tag d_comment to the scenario. Bumped the Savefile
+	  version to 0.3.7. More work must be done to display in the
+	  correct way the scenario description in the scenarios dialog.
+
+2006-06-09  patton73
+
+	* Various little bug fixes. Added the New Destroyed City image to
+	  the repository.
+
+2006-06-05  ulf82
+
+	* removed an automagically obsolete and buggy cursor drawing
+
+2006-06-02  ulf82
+
+	* Fix: up arrow when marking a path was not drawn properly (better:
+	  not at all)
+
+2006-06-02  ulf82
+
+	* (hopefully) fixed the last software cursor bug; the screen was
+	  resized every time a new game was started which lead to X faults,
+	  also fixed
+
+2006-06-02  ulf82
+
+	* found and fixed the annoying map generator deadlock
+
+2006-06-02  ulf82
+
+	* another cursor fix
+
+2006-06-01  ulf82
+
+	* small patch for the software cursor
+
+2006-05-28  ulf82
+
+	* another small translation bug fixed
+
+2006-05-28  ulf82
+
+	* fixed a missing translation in the scenario dialog
+
+2006-05-21  ulf82
+
+	* added some item images from wesnoth sources; adjusted item dialog
+	  to work with the (larger) images
+
+2006-05-16  ulf82
+
+	* fixing Windows translation bug #1: the translation is now done
+	  on-the-fly; savegames always get the English text
+
+2006-05-15  patton73
+
+	* Cleaned the files from paragui.h inclusion
+
+2006-05-15  patton73
+
+	* Some more work on the Scenarios Dialog
+
+2006-04-20  patton73
+
+	* some more work on Scenarios dialog (now there is the code that
+	  scan the map file to retrieve scenario information, im aplanning
+	  to add 3 new tags : one for the description, one for the
+	  difficult level, one for an image )
+
+2006-04-19  patton73
+
+	* Applyed some little patches from Vibhu
+
+2006-04-18  patton73
+
+	* Fixed some little bugs and balanced the city income to 1.8
+	  instead of 1.5 (too less income)
+
+2006-04-18  dr_maux
+
+	* - implementation of the whole pre-game process for multiplayer
+	  games - more flexible player preferences dialog
+
+2006-04-18  ulf82
+
+	* fixed a wrong semantic in Path
+
+2006-04-15  patton73
+
+	* First early version of the Load Scenario Dialog.  There is a
+	  dirty hack (commented) and it still lacks of images and scenario
+	  descriptions
+
+2006-04-15  patton73
+
+	* Added to Editor the ManageScenario dialog to permit future
+	  customizations
+
+2006-04-14  patton73
+
+	* Fixed a bug in w_edit
+
+2006-04-14  patton73
+
+	* Adjusted the bigmap in game to at least maximize it. Added 2 new
+	  scenarios from David Barnsdale and update italian translation for
+	  the 2 scenarios. Fixed 2 littel bugs in Makefiles.am.
+
+2006-04-14  ulf82
+
+	* replaced hardcoded value by tileset size (hopefully) everywhere;
+	  implemented some simple caching algorithm for the music
+
+2006-04-13  ulf82
+
+	* replaced some hardcoded tilesizes; sound stops when loading a
+	  game.
+
+2006-04-12  patton73
+
+	* editor now is completely parametric respect the tile size it uses
+	  the function Tileset::getTileSize (could do later a bit more work
+	  to maximize the bigmap)
+
+2006-04-11  ulf82
+
+	* - implemented 64-pixel tileset - started to do something for
+	  music caching
+
+2006-04-05  ulf82
+
+	* implemented fading sound with callback
+
+2006-04-05  patton73
+
+	* Fixed 2 littel bugs. One regarding musix.xml installation.
+
+2006-03-29  ulf82
+
+	* finished first version of the sound class
+
+2006-03-26  ulf82
+
+	* some more work on the sound class
+
+2006-03-24  ulf82
+
+	* added prototype for new sound class
+
+2006-03-22  ulf82
+
+	* fixed a wrong armyset in the 1060ms map
+
+2006-03-21  ulf82
+
+	* updated TODo a bit more
+
+2006-03-20  ulf82
+
+	* added soem comment from Bryan to TODO
+
+2006-03-18  ulf82
+
+	* updated TODO; included new hill tiles from Filip
+
+2006-02-27  patton73
+
+	* Updated Italian editor manual. Fixed a bug in editor that
+	  prevented localization to be set. Some minor bugs fixed.
+
+2006-02-27  ulf82
+
+	* updated editor docs
+
+2006-02-25  patton73
+
+	* Updated a bit the BUGS file
+
+2006-02-25  patton73
+
+	* Updated Editor manual and version
+
+2006-02-19  patton73
+
+	* Updated italian translation, fixed a type in 1060ms.map
+
+2006-02-19  ulf82
+
+	* updated German translation; fixed some typos along the way
+
+2006-02-18  patton73
+
+	* up dated italian maunal an Italian translation
+
+2006-02-18  ulf82
+
+	* finished updating scenarios; updated manual
+
+2006-02-17  patton73
+
+	* Fixed a bug on vectoring ( when no production was set a segfault
+	  was ra ised). Added the code for windows icons and imported 2
+	  icons (the editor's one is temporary).
+
+2006-02-14  ulf82
+
+	* more updating of scenarios
+
+2006-02-13  ulf82
+
+	* adjusted standard income of cities a bit; implemented healing
+	  depending on vitality stat;
+
+2006-02-11  ulf82
+
+	* implemented regeneration of hitpoints; fixed a fight bug (ammo
+	  was not used up)
+
+2006-02-09  ulf82
+
+	* some small adjustments to the army stats; fixed a bug that always
+	  put heroes away from the front
+
+2006-02-09  ulf82
+
+	* some more scenario and armyset updates
+
+2006-02-07  patton73
+
+	* Fixed some issues compiling FL under AMD64 and midified the move
+	  point for transports (set to 22 instead of 16).
+
+2006-02-07  ulf82
+
+	* soem tutorial updating
+
+2006-02-06  patton73
+
+	* Fixed (more or less) some smallmap visulizations bugs, fixed some
+	  text truncation
+
+2006-02-06  ulf82
+
+	* cropped and modified the monster and orcs armyset
+
+2006-02-05  ulf82
+
+	* implemented quest action; adjusted army values
+
+2006-02-03  ulf82
+
+	* removed testing games (have become obsolete); added music setting
+	  variables to Configuration; implemented audio control in options
+	  dialog
+
+2006-02-02  ulf82
+
+	* fixed a compiling bug in smallmap; first city in vector dialog is
+	  now highlighted; first improvement to options dialog
+
+2006-02-01  patton73
+
+	* spotted some cases while drawing spacka and temples in the map
+
+2006-02-01  patton73
+
+	* Finished code to beautify the smallmap : now temples and stacks
+	  are always dispayed with balanced pi's and cross
+
+2006-01-31  patton73
+
+	* Fixed a bug in w_edit (position label was not moved as the
+	  buttons), fixed a bug while setting the Fullscreen mode from the
+	  Option Dialog without touching the resolution, fixed a bug in
+	  smallmap when d_pixels==1 that drwna all cities in black and not
+	  in player colours (more work to come).
+
+2006-01-31  ulf82
+
+	* fixed clicking on (scaled) smallmap not working properly; small
+	  layout improvement concerning smallmap placement etc.;
+	  implemented city selection in vectoring dialog
+
+2006-01-29  patton73
+
+	* Beautified a bit the smallmap visualization (but it is not yet
+	  fully parametric)
+
+2006-01-29  patton73
+
+	* Little patched to Vectordialog
+
+2006-01-29  ulf82
+
+	* implemented dynamic resizing of smallmap (note: buggy yet)
+
+2006-01-28  ulf82
+
+	* fixed a bug in the hero mask (one mask missing); reimplemented
+	  shading of inactive buttons
+
+2006-01-28  patton73
+
+	* Some little changes and commente to the VectorDialog
+
+2006-01-28  ulf82
+
+	* improved dynamic resizing of vector dialog/map a bit (still work
+	  to be done); laid foundations for implementing city selections in
+	  vector dialog
+
+2006-01-27  ulf82
+
+	* some minor modifications; vector is now drawn in the dialog
+
+2006-01-27  ulf82
+
+	* small patches to the vector dialog (not yet functioning
+	  perfectly)
+
+2006-01-27  patton73
+
+	* updated italian translation
+
+2006-01-27  patton73
+
+	* Added a littel black border around vetoring map, fixed a bug in
+	  the br802 map, updated italian translation, bumped Fl to version
+	  0.3.7
+
+2006-01-25  patton73
+
+	* Fixed a buf on the unsetVectoring and optimized the autosize of
+	  the vectoring map
+
+2006-01-24  patton73
+
+	* Fixed a little bug for map 100x100
+
+2006-01-23  patton73
+
+	* Forgot to add new files
+
+2006-01-23  patton73
+
+	* In vector dialog maps now are resized automatically
+
+2006-01-23  patton73
+
+	* Implemented city vectoring. The algorithm is testet, it work
+	  well. Now to set the vectoring you must do it in every city (next
+	  step is to have a dialog to set the vectoring for evary city). It
+	  still lacks of graphics (the vector is not visualized and the map
+	  has no black border), But it is a grat step forward for the
+	  playability.
+
+2006-01-22  ulf82
+
+	* fixed some issues with the player dialog; changed some types in
+	  the editor
+
+2006-01-21  ulf82
+
+	* rewrote editor's player dialog; implemented new options; however,
+	  it is still a bit buggy
+
+2006-01-17  patton73
+
+	* Some pictures did not have the transparent background, fixed a
+	  segfault in music when the DSP is busy, updated Savefile
+
+2006-01-11  patton73
+
+	* Modified scroller behaviour, now it waits 500ms before start the
+	  scrolling
+
+2006-01-11  ulf82
+
+	* fixed a segfault in AI_Allocation
+
+2006-01-11  ulf82
+
+	* fixed a recently introduced segfault
+
+2006-01-09  ulf82
+
+	* reviewed XML_Helper and GraphicsCache (small changes);
+	  GraphicsCache is now cleared after finishing a game;
+
+2006-01-06  ulf82
+
+	* fixed a bug when loading Windows savegames; changed type of some
+	  enums to Uint32
+
+2006-01-04  ulf82
+
+	* tested maniac ai and applied some smaller changes/fixes
+
+2006-01-02  patton73
+
+	* fixed an include error
+
+2006-01-02  patton73
+
+	* Now also the select() compiles under windows
+
+2006-01-02  ulf82
+
+	* removed the getxxx functions in Army and replaced them by one
+	  getStat function
+
+2006-01-02  patton73
+
+	* Some patches to let FL cross-compile with threads and SDL_mixer.
+	  It still lacks select() support.
+
+2005-12-30  ulf82
+
+	* rewrote unit level advancement code a bit, the important parts
+	  are now encapsulated within Army, other things are hopefully more
+	  transparent
+
+2005-12-27  ulf82
+
+	* properly implemented music; it stops when you exit the splash
+	  screen
+
+2005-12-24  ulf82
+
+	* added music support; it creates an exception and doesn't work,
+	  but the basics are there. ;)
+
+2005-12-23  patton73
+
+	* Added a FL logo in w_edit
+
+2005-12-21  ulf82
+
+	* applied latest Hindi version
+
+2005-12-20  ulf82
+
+	* applied new hills to test tileset
+
+2005-12-15  patton73
+
+	* Improved scrollers. Now the scroll begin slowly then accelerate.
+	  Just to permit the one-tile scroll.
+
+2005-12-14  patton73
+
+	* W_Edit now clears the graphic cache when a game finish. Some
+	  other little fixes
+
+2005-12-14  ulf82
+
+	* beautified new clicking code in bigmap a bit; language is now
+	  saved in the config file
+
+2005-12-13  patton73
+
+	* units now move with single click on the same position, adjusted
+	  the load/save game dialogs
+
+2005-12-13  patton73
+
+	* Optimized OptionsDialog when applying changes to Configuration
+
+2005-12-12  patton73
+
+	* Completed the bigmap scroller code
+
+2005-12-12  patton73
+
+	* Adjusted GamePrefrenceDialog buttons Applied a patch to scroll
+	  automatically when the cursor passes on the scroll buttons (it
+	  has still a bug when the cursor stops the scrolling stops too but
+	  this is not the intended behaviour)
+
+2005-12-12  dr_maux
+
+	* Some more progress on the GGZ support side: - require GGZ >=
+	  0.0.12 - ability to cancel the game preferences dialog - ability
+	  to restrict number of players in game preferences dialog -
+	  detection of GGZMODE environment variable - creation of a
+	  dedicated thread for network input handling	(ATTENTION: needs
+	  pthreads, configure check might be needed) For some reasons,
+	  GGZ::ref()->seats() does always return 0 seats/players.  This
+	  will be the next item to work on (it should return 2 by default).
+
+2005-12-11  ulf82
+
+	* added hindi messagefile from Vibhu (based on the Italian file and
+	  unfinished)
+
+2005-12-08  patton73
+
+	* Updated italian translation and some little fixes to the load
+	  game
+
+2005-12-08  ulf82
+
+	* made Configuration::saveConfiguration static; moved Item::Bonus
+	  to Army::Stat, unified set functions in Army class a bit
+
+2005-12-07  ulf82
+
+	* some review of the string_tokenizer class
+
+2005-12-05  ulf82
+
+	* removed the player type "neutral", instead playerlist now saves
+	  the id of the neutral player
+
+2005-12-04  ulf82
+
+	* Path::calculate now returns MP needed for path; finished maniac
+	  AI (not tested)
+
+2005-12-04  patton73
+
+	* Option dialog permits to save configuraton
+
+2005-11-30  ulf82
+
+	* added two new scenarios
+
+2005-11-30  ulf82
+
+	* fixed X error when resolution was decreased
+
+2005-11-26  patton73
+
+	* Finished the dialog for changing resolution inside the game.
+	  There is still a strange bug : if you change to a bigger
+	  resolution it is all ok, if you try to set a smaller resolution
+	  it gets segmemtation fault. Pherepas i forgot to resize
+	  something?
+
+2005-11-21  patton73
+
+	* Fixed stringTokenizer leaks.
+
+2005-11-20  ulf82
+
+	* shuffled the save function in player classes; added configurable
+	  behaviour to ai_fast (not yet finished); added functions to get
+	  threats sorted by distance
+
+2005-11-15  ulf82
+
+	* added persistent (immortal) players
+
+2005-11-14  ulf82
+
+	* renamed GameScenario::*turn to *round for consistency;
+	  implemented simple autosaving; added warning for missing unicode
+	  support
+
+2005-11-14  ulf82
+
+	* added some more points to the todo
+
+2005-11-12  ulf82
+
+	* removed a small typo in the rendering description (thanks to
+	  Phillip for discovering)
+
+2005-11-11  ulf82
+
+	* updated the TODO a bit
+
+2005-11-09  ulf82
+
+	* minor updates to AUTHORS/NEWS
+
+2005-11-06  patton73
+
+	* Commented out the resolution dropdown in the Options dialog for
+	  the 0.3.6 release (it need more work)
+
+2005-11-06  patton73
+
+	* Added fullscreen key (-f) even to the splash screen and
+	  gamepreference dialog
+
+2005-11-05  ulf82
+
+	* fixed two bugs (heros had wrong battlesnumber, segfault when
+	  searching a ruin with two heroes and taking away another hero's
+	  quest)
+
+2005-11-05  ulf82
+
+	* updated German translation
+
+2005-11-04  patton73
+
+	* adjusted italian translation and localization
+
+2005-11-04  ulf82
+
+	* added some comment about the language selection to the manual
+
+2005-11-03  ulf82
+
+	* fixed a bug with non-ascii characters not displayed properly
+
+2005-11-02  ulf82
+
+	* updated documentation; commented out cursor due to paragui
+	  problems
+
+2005-11-02  patton73
+
+	* Added options for resolution and fullscreen to the OptionsDialog
+	  (now the dropdown is hidden because to change resolution we
+	  should recalculate the w_edit widgets position)
+
+2005-11-01  ulf82
+
+	* finished rendering description file
+
+2005-10-31  patton73
+
+	* Added a keyboard shortcut to toggle on/off the fullscreen mode
+	  (-f key)
+
+2005-10-29  patton73
+
+	* Forgot the button image
+
+2005-10-29  patton73
+
+	* Added the defendAnd Nextwithmove button
+
+2005-10-27  patton73
+
+	* Some patches to use localization under windows
+
+2005-10-24  patton73
+
+	* Fixed a bug about ruin search and a bug in Create scenario that
+	  prevented the loading of the saved file
+
+2005-10-24  patton73
+
+	* Fixed a bug regarding the MoveAll button
+
+2005-10-20  ulf82
+
+	* PG_FileDialog: removed the filter selection to circumvent a
+	  segfault (at least for now)
+
+2005-10-17  patton73
+
+	* Removed all warnings and found a strange bug in PC_FileDialog
+	  about 2 delete statements (commented out and still inspecting the
+	  code)
+
+2005-10-14  patton73
+
+	* last fix
+
+2005-10-14  patton73
+
+	* Fixed some bugs regarding windows cross-compilation
+
+2005-10-14  patton73
+
+	* Modified Sources to obtain compilation with mingw32 without
+	  problems this need the new freelords-libs package
+
+2005-10-13  patton73
+
+	* remaned the near() methot to Near() to compile with mingw32 and
+	  removed a warning in fight.cpp
+
+2005-10-12  patton73
+
+	* Added Editor.it and updated italian translation
+
+2005-10-11  ulf82
+
+	* implemented crude saving of language setting
+
+2005-10-02  ulf82
+
+	* fixed occasional segfault when searching ruins; fixed segfault
+	  when starting the language dialog without all locales installed;
+
+2005-09-20  patton73
+
+	* Fixed the generation of the freelordsrc, now it generates the
+	  home directory as savedir.
+
+2005-08-31  patton73
+
+	* - Updated a bit some documentation files and updated italian
+	  translation
+
+2005-08-27  ulf82
+
+	* updated German translation; patrched smallmap to allow different
+	  sizes
+
+2005-08-26  ulf82
+
+	* implemented language dialog
+
+2005-08-25  ulf82
+
+	* saving is now done in utf-8; added Language selection dialog (not
+	  used yet)
+
+2005-08-21  patton73
+
+	* Fixed a bug regarding army bonus that prevented amrnies to move
+	  into the map
+
+2005-08-20  ulf82
+
+	* updated TODO, ChangeLog
+
+2005-08-19  ulf82
+
+	* implemented items that change ranged/shots; some more work on the
+	  rendering description file; some updates of the actions
+
+2005-08-18  ulf82
+
+	* implemented ranged attack in some more dialogs
+
+2005-08-17  ulf82
+
+	* ranged stat of armies is now displayed in various dialogs; fixed
+	  armysets (hit- and movepoints were not loaded correctly); fixed a
+	  bug when fighting with multiple stacks
+
+2005-08-17  ulf82
+
+	* fixed a bug that would lead to incorrect bonus calculation in
+	  some cases
+
+2005-08-16  ulf82
+
+	* some tinkering with the medal stats, now using weighted numbers
+	  for hashit and hasbeenhit; if they surpass a certain value, the
+	  medal is given;
+
+	  Modified the fight action to suit the new needs.
+
+2005-08-14  ulf82
+
+	* removed dummy army constructor, now the whole army loading code
+	  is in the army class, not partly in armysetlist.cpp; some
+	  documentation update of the fight class
+
+2005-08-14  ulf82
+
+	* updated documentation and tutorial; fixed first few fight dialog
+	  bugs. :)
+
+2005-08-14  ulf82
+
+	* implemented a new fight system. For this, I:
+
+	  - complete rewrote the fight and FightDialog classes
+
+	  - got army two new stats: ranged attack and shots; implemented it
+	  in every   armyset file;
+
+2005-08-12  ulf82
+
+	* updated TODO a bit (ignore the fight stuff for now :)
+
+2005-08-11  patton73
+
+	* _ finished the Merge of the Savefile (i added a temporary file
+	  SavefileNEW) but Savefile still lacks description of
+	  <questlist></questlist> _ added 1600x1200 resolution (just to
+	  have it
+
+2005-08-07  ulf82
+
+	* included win.png to files to install (fixes a bug)
+
+2005-08-05  ulf82
+
+	* fixed a bug that players were asked about level advancement of
+	  enemy's units; fixed a bug that clicks on a button while a popup
+	  is shown would be processed; fixed a theoretical bug where killed
+	  heroes could fulfill a quest; fixed an incorrect calculation of
+	  stack size when distributing the xp
+
+2005-08-05  dr_maux
+
+	* - synchronization of m4 macros: new macro
+	  AG_GGZ_VERSION(major,minor,micro) to enforce a particular version
+
+2005-08-04  ulf82
+
+	* updated TODO, CHangeLog
+
+2005-08-04  ulf82
+
+	* changed order of saving due to dependencies
+
+	  Object etc: properly re-implemented loading of objects; added
+	  proper copy constructor (fixes a bug where cities etc. had a
+	  different id after loading)
+
+	  QuestsManager: fixed a stupid bug that prevented loading of
+	  quests
+
+2005-08-04  patton73
+
+	* Updated about dialog
+
+2005-08-02  ulf82
+
+	* removed signals.cpp from POTFILES.in
+
+2005-07-31  ulf82
+
+	* more work on rendering description file; fixed a compilation bug
+
+2005-07-28  ulf82
+
+	* * Tile: added a types enum to Tile.h; used it in some places *
+	  MapGenerator: replaced the enums in MapGenerator by their
+	  canonical siblings in Tile/Maptile * signals.h: removed the file;
+	  put the signals in the player class * Savefile: some more
+	  updating * Rendering: started work on a rendering description
+	  file
+
+2005-07-26  ulf82
+
+	* removed NextPlayerPopup in favour of a more general class; used
+	  this class to show a win game dialog; also included config.h in
+	  several files
+
+2005-07-20  patton73
+
+	* Moved the calculation of the stack movement bonus from the path
+	  class to the stack class.
+
+2005-07-20  patton73
+
+	* Some little patches
+
+2005-07-20  ulf82
+
+	* MapGenerator:   - finished revising CreateScenario: - now uses a
+	  GameScenario object to store and save the game		 -
+	  some code updating etc.  counter, FogMap:- updating path:
+	  - removed private variable d_unit, instead the stack is now
+			passed as parameter where neccessary Object etc.:
+	  - moved id code from the derived classes to Object itself.
+	  RWinGame:	  - started implementation of win game drawing
+
+2005-07-17  ulf82
+
+	* MapGenerator: - rewrote land search routine; should be much
+	  simpler now		    - simplified MapGenerator::findRoutes
+
+2005-07-15  ulf82
+
+	* modified MapGenerator a bit (comments, rewriting and such)
+
+2005-07-04  ulf82
+
+	* - applied modified tileset from Phillip
+
+2005-06-30  dr_maux
+
+	* - let's try out the new changelog format
+
+2005-06-30  dr_maux
+
+	* - message boxes for not yet implemented buttons in main menu -
+	  split check for network data from actual reading of data - use
+	  PG_Application::sigAppIdle to check for network data
+
+2005-06-28  ulf82
+
+	* - Path: hopefully fixed a bug that lead toa segfault under
+	  certain circumstances
+
+2005-06-24  patton73
+
+	* Modified the Changelog using cvs2cl command and added
+	  Changelog.OLD
+
+2005-06-24  ulf82
+
+	* various images: removed bright pink in favour of proper alpha
+	  values File: cleaning up; removed color key stuff (now obsolete)
+	  path: fixed a segfault when selecting a unit without path
+
+2005-06-21  patton73
+
+	* _ Fixed a bug in File.hpp a declaration was missing.
+
+2005-06-20  ulf82
+
+	* GraphicsCache: fixed a segfault under certain conditions when
+	  requesting an army pic File: some tidying
+
+2005-06-19  dr_maux
+
+	* - fix include line
+
+2005-06-15  ulf82
+
+	* tiny changes
+
+2005-06-14  patton73
+
+	* updated Changelog and News
+
+2005-06-14  dr_maux
+
+	* - remove ObjectList.cpp from potfiles
+
+2005-06-14  dr_maux
+
+	* - a horrible network splash screen (needs better one from
+	  artists)
+
+2005-06-14  dr_maux
+
+	* - the other missing files for client-side GGZ support
+
+2005-06-14  dr_maux
+
+	* - adding missing main.cpp file
+
+2005-06-13  dr_maux
+
+	* - first implementation of GGZ support for the client - basic GGZ
+	  handling in the server - this is more or less the patch sent to
+	  the mailinglist, plus a fix for the undefined fd() problem
+
+2005-06-10  patton73
+
+	* Commented explicit instantiation of object list
+
+2005-06-10  patton73
+
+	* Patched ObjecList to compile with gcc 4.0
+
+2005-06-08  ulf82
+
+	* some review of GraphicsCache
+
+2005-06-06  ulf82
+
+	* updated AUTHORS
+
+2005-06-06  ulf82
+
+	* - code review of quest classes - removed getOrigStrength etc from
+	  Army; using a bool instead
+
+2005-06-03  ulf82
+
+	* added new hill images for the test tileset
+
+2005-06-03  ulf82
+
+	* more code review (QuestsManager mainly)
+
+2005-05-30  ulf82
+
+	* - code review; mainly in detail:     - changes and comments to
+	  path class	 - tileset is now a vector itself - fixed the black
+	  tileset bug
+
+2005-05-27  patton73
+
+	* fixed the version and modified Makefile.am for the
+	  freelords.desktop file
+
+2005-05-26  patton73
+
+	* a little patch with output
+
+2005-05-26  patton73
+
+	* extra patch to the ggz and configure.ac
+
+2005-05-26  patton73
+
+	* Applied the second patch for ggzlib
+
+2005-05-26  ulf82
+
+	* made Ruin::load public
+
+2005-05-25  ulf82
+
+	* added a new image for the testing tileset
+
+2005-05-25  ulf82
+
+	* more small changes (const functions etc.)
+
+2005-05-24  patton73
+
+	* added support for ggz libary and fixed some warnings and an error
+	  in defs.h
+
+2005-05-23  ulf82
+
+	* updated tutorial
+
+2005-05-23  ulf82
+
+	* - added some new actions - started to review the code (reordered
+	  positions in Makefile, made functions   constant, used SDL types,
+	  especially for unsigned integers, minor changes)
+
+2005-05-20  patton73
+
+	* fixed a segfaulkt when hero dies in a ruin
+
+2005-05-13  ulf82
+
+	* - some more coding concerning the action classes - updated
+	  Savefile a bit
+
+2005-05-11  patton73
+
+	* little fixes
+
+2005-05-11  patton73
+
+	* Some more definition ordering
+
+2005-05-11  ulf82
+
+	* - updated tutorial version - fixed a bug; now loading of
+	  arbitrary maps is possible
+
+2005-05-10  ulf82
+
+	* finished rewrite of action classes and implemented them
+
+2005-05-09  patton73
+
+	* added the --disable-optimizations for debug purpose
+
+2005-05-09  ulf82
+
+	* - removed Armyset class, changed Armysetlist to take over the
+	  functions,   rewrote lots of code - army now saves the maximum
+	  movement points - removed some definitions from the defs.h file
+	  and put them elsewhere   (especially army abilities and action
+	  types) (not finished yet)
+
+2005-05-04  patton73
+
+	* forgot the "delete" in the w_edit destructor
+
+2005-05-04  patton73
+
+	* Added the lable for map position
+
+2005-04-25  ulf82
+
+	* - made the getter functions in army/hero const - fixed an endless
+	  loop when getting the image of an army - prototype armies of an
+	  armyset are now referred to with a const pointer
+
+2005-04-21  ulf82
+
+	* added a testing directory for tilesets
+
+2005-04-17  patton73
+
+	* removed comments
+
+2005-04-17  patton73
+
+	* deleted the armyset_army class and collapsed int army class the
+	  game is unstabl now. There are problems with loadarmyset()
+
+2005-04-14  ulf82
+
+	* added a win game pic
+
+2005-04-12  ulf82
+
+	* replaced the multi line edits in the editor; various fixes with
+	  text length etc.
+
+2005-04-12  patton73
+
+	* updated it.po
+
+2005-04-11  ulf82
+
+	* fixed some bugs related to text sizes etc.; disabled comments in
+	  the editor (got me a segfault in PG_MultilineEdit)
+
+2005-04-10  patton73
+
+	* fixed a mistake
+
+2005-04-10  patton73
+
+	* little updated to the docs
+
+2005-04-10  patton73
+
+	* fixed a bug that caused a segfault when upgrading the city
+
+2005-04-08  patton73
+
+	* fixed italian translation
+
+2005-04-08  ulf82
+
+	* small (mainly translation-related) patches
+
+2005-04-06  ulf82
+
+	* some documentation updates
+
+2005-04-04  patton73
+
+	* fixed xmlextractor bug and updated italian translation
+
+2005-04-04  ulf82
+
+	* - temporarily switched xml encoding to iso-8859-1 - fixed a bug
+	  with dead heroes fulfilling quests
+
+2005-03-29  ulf82
+
+	* - (hopefully) fixed tooltip timer problem; simplified code a bit
+	  - fixed some small glitches in the smallmap
+
+2005-03-21  patton73
+
+	* fixed some traduction in manual.it
+
+2005-03-21  ulf82
+
+	* fixed some small smallmap issues
+
+2005-03-16  ulf82
+
+	* fixed display bug at turn start, button updating bugs, masks and
+	  threw out some obsolete stuff from smallmap
+
+2005-03-15  ulf82
+
+	* implemented diagonal transitions and fixed tutorial a bit
+
+2005-03-13  ulf82
+
+	* removed a possible story bug from the tutorial
+
+2005-03-13  ulf82
+
+	* fixed a segfault in the tutorial
+
+2005-03-13  ulf82
+
+	* updates and fixes for (German) translation
+
+2005-03-12  patton73
+
+	* Updated manual.it
+
+2005-03-11  ulf82
+
+	* fixed "hero offer shown before player popup" bug; simplified code
+
+2005-03-11  ulf82
+
+	* implemented configure option to disable timer events
+
+2005-03-11  ulf82
+
+	* fixed a memleak + associated error
+
+2005-03-10  ulf82
+
+	* the ai now aborts on typical game ends
+
+2005-03-08  patton73
+
+	* fixed some memory leaks
+
+2005-03-05  ulf82
+
+	* fixed some uninitialised values and a *grrrrh* segfault
+
+2005-03-04  patton73
+
+	* typos
+
+2005-03-04  patton73
+
+	* updated translation it.po
+
+2005-03-03  ulf82
+
+	* updated German translation
+
+2005-03-02  ulf82
+
+	* - updated German translation - added and implemented xmlhelper
+	  ability to use untranslated strings
+
+2005-03-02  patton73
+
+	* The get quest now tells also the nearest city name
+
+2005-03-01  patton73
+
+	* modified the about dialog
+
+2005-03-01  patton73
+
+	* fixed tooltip appearing in wrong places
+
+2005-02-28  ulf82
+
+	* more work on German translation
+
+2005-02-28  patton73
+
+	* fixed bugs in the extractv
+
+2005-02-27  ulf82
+
+	* work on documentation and German translation
+
+2005-02-26  ulf82
+
+	* - fixed configure bug by adding a stripped-down version of the
+	  paragui macro - changed the events in standard random games
+
+2005-02-26  ulf82
+
+	* finished editor documentation
+
+2005-02-26  ulf82
+
+	* - work on the tutorial and the editor documentation - small fixes
+	  and changes to editor and events
+
+2005-02-25  ulf82
+
+	* some documentation update; smaller issues changed
+
+2005-02-25  patton73
+
+	* forgot to log changes
+
+2005-02-25  patton73
+
+	* Added the code to escape the " carachters.
+
+2005-02-25  patton73
+
+	* fixed a malformed text into tutorial that prevented to play
+
+2005-02-24  ulf82
+
+	* - new tutorial - more items - many small updates, fixes etc.
+
+2005-02-23  ulf82
+
+	* - editor: implemented event dialog - editor: fixed many
+	  bugs/issues (missing labels, layout, potential   segfaults etc.)
+	  - started work on tutorial
+
+2005-02-21  ulf82
+
+	* finished EventDialog
+
+2005-02-21  patton73
+
+	* fixed a missing include in src/editor/EventDialog.cpp
+
+2005-02-20  ulf82
+
+	* - editor: added EventDialog (not finished yet) - events: added
+	  setData functions to the single events
+
+2005-02-20  patton73
+
+	* forgot to patch the tutorial
+
+2005-02-19  ulf82
+
+	* finished ReactionDialog (at least it compiles...)
+
+2005-02-19  patton73
+
+	* Finished the xml traduction code
+
+2005-02-19  ulf82
+
+	* forgot to add some files
+
+2005-02-19  ulf82
+
+	* - added modification functions to reactions - editor: more work
+	  on reaction dialog
+
+2005-02-18  ulf82
+
+	* - editor: work on some new dialogs - events now have a comment
+	  string
+
+2005-02-18  patton73
+
+	* Fixed some malfunctionFixed some malfunctions
+
+2005-02-18  patton73
+
+	* Committed some work about the xml extractor for translation of
+	  xml strings.
+
+2005-02-18  patton73
+
+	* modified the POTFILES.in with all event files
+
+2005-02-18  patton73
+
+	* This file is not needed by the CVS
+
+2005-02-18  ulf82
+
+	* - events: replaced CStack by CArmy - editor: more work on
+	  condition dialog
+
+2005-02-17  ulf82
+
+	* - fixed a bug in the tutorial with text messages - editor:
+	  started work on a condition dialog
+
+2005-02-16  ulf82
+
+	* just some updating of the TODO
+
+2005-02-16  ulf82
+
+	* - some more reactions - reactions, events, conditions now save
+	  their type as number instead of string - implemented ruin names
+	  and added a templeinfo widget
+
+2005-02-14  ulf82
+
+	* - added many new reactions and events - adjusted some other
+	  classes to make these reactions/events work
+
+2005-02-10  patton73
+
+	* modified the POTFILES for the new src/ tree
+
+2005-02-10  ulf82
+
+	* - moved event-related stuff to own subdir - introduced conditions
+	  for events and reactions - removed and added some events
+
+2005-02-08  patton73
+
+	* fixed a problem with ruin and temple names
+
+2005-02-08  ulf82
+
+	* implemented a modified patch by Bryan Duff concerning fog
+
+2005-02-04  ulf82
+
+	* added and implemented ruin- and templenames
+
+2005-02-02  ulf82
+
+	* editor: added stackreport, cityreport, finddialog; fixed some
+	  bugs Stack/Citiesreport etc.: map now centers when you click on
+	  one of the items added templenames (first step for giving temples
+	  and ruins names)
+
+2005-01-31  ulf82
+
+	* - finished player dialog in editor - made player copy constructor
+	  work properly; extended player class a bit - fixed an endless
+	  loop in Graphicscache (sizes were calculated incorrectly)
+
+2005-01-26  ulf82
+
+	* added skeleton for editor's player dialog
+
+2005-01-24  ulf82
+
+	* - editor: added ruin dialog; added placing etc. of stacks;
+	  bugfixing - some balancing in the tutorial - added basic editor
+	  manual, cleaned up doc dir a bit - smaller changes (renamed
+	  Army::getOwner to Army::getPlayer, loaded sight attribute
+	  correctly etc.)
+
+2005-01-21  ulf82
+
+	* more work on the editor's stack dialog
+
+2005-01-17  ulf82
+
+	* Editor: fixed some bugs in the city dialog, started adding a
+	  stack dialog
+
+2005-01-06  ulf82
+
+	* fixed some small issue with the subdirectories
+
+2004-12-23  ulf82
+
+	* more work on city dialog in editor
+
+2004-12-20  ulf82
+
+	* implemented city dialog (unfinished yet)
+
+2004-12-20  ulf82
+
+	* more work on editor's city dialog
+
+2004-12-17  ulf82
+
+	* some more work on the city dialog of the editor
+
+2004-12-15  ulf82
+
+	* editor: added dialog for army selection, started work on city
+	  dialog
+
+2004-12-13  patton73
+
+	* Fixed the Event bug
+
+2004-12-13  ulf82
+
+	* fixed a segfault when stacks with 8 armies were to be displayed
+
+2004-12-13  ulf82
+
+	* added dialog to modify temple attributes to editor
+
+2004-12-10  patton73
+
+	* Fixed a bug in the Makefile.am about flag.png
+
+2004-12-10  ulf82
+
+	* - fixed a segfault when getting a quest in a temple - fixed a
+	  segfault in AI_Allocation, when stacks joined - moved flag code
+	  to GraphicsCache, removed most flag pics
+
+2004-12-08  patton73
+
+	* minor updated to work with different resolutions
+
+2004-12-08  ulf82
+
+	* set active stack to 0 if removed
+
+2004-12-08  ulf82
+
+	* fixed two segfaults related to events; fixed a display bug in the
+	  cityinfo dialog
+
+2004-12-06  ulf82
+
+	* added new item pictures, removed some placeholders
+
+2004-12-06  ulf82
+
+	* mainly work on editor: you can now place cities etc. and
+	  configure the map generator
+
+2004-12-06  patton73
+
+	* forgot to comment a line in W_edit
+
+2004-12-06  patton73
+
+	* bug fixing
+
+2004-12-04  patton73
+
+	* bug fixing
+
+2004-12-04  patton73
+
+	* some updates
+
+2004-12-03  patton73
+
+	* Various bugfixing and updated
+
+2004-12-03  ulf82
+
+	* added a sight radius stat to units
+
+2004-12-02  patton73
+
+	* bugfixing
+
+2004-12-02  patton73
+
+	* Some little bug fixes
+
+2004-12-01  patton73
+
+	* removed the move all button bug and some other updates
+
+2004-11-30  ulf82
+
+	* fixed a bug in Stack::getHeroes
+
+2004-11-30  ulf82
+
+	* in the item destructor, a surface wasn't freed correctly
+
+2004-11-29  ulf82
+
+	* fixed a bug in the tutorial
+
+2004-11-29  ulf82
+
+	* a lot of editor enhancements; updated graphics code along the way
+
+2004-11-26  ulf82
+
+	* stopped flickering of about dialog
+
+2004-11-26  ulf82
+
+	* removed some obsolete functions in W_Edit; started work on an
+	  editor
+
+2004-11-26  patton73
+
+	* mplemented scrolling text
+
+2004-11-25  ulf82
+
+	* some update of the stack moving code, should fix an issue with
+	  fighting
+
+2004-11-25  patton73
+
+	* Fixed some bugs related to PGtimer
+
+2004-11-23  ulf82
+
+	* increased smallmap timer by a factor of 10, thus fixing a
+	  segfault
+
+2004-11-22  patton73
+
+	* Applied Brian Duff's patch about stack deselecting
+
+2004-11-20  patton73
+
+	* Added about Dialog
+
+2004-11-20  patton73
+
+	* Found the segfault origin
+
+2004-11-19  patton73
+
+	* Other changes
+
+2004-11-19  patton73
+
+	* Porting to paragui 1.1.8 and little other changes
+
+2004-11-19  ulf82
+
+	* fixed a wrong tag name in the tutorial
+
+2004-11-19  ulf82
+
+	* unified fighting code in player lass (segfaults, though)
+
+2004-11-17  ulf82
+
+	* updated tutorial
+
+2004-11-16  ulf82
+
+	* updated cityinfo dialog; split the armysets
+
+2004-11-15  ulf82
+
+	* added new city production code (cityinfo is not yet finished)
+
+2004-11-12  ulf82
+
+	* fixed a bug where the neutral player didn't get armies
+
+2004-11-12  ulf82
+
+	* applied Bryan's fight patch; fixed tutorial
+
+2004-11-12  ulf82
+
+	* added event for temple searching
+
+2004-11-09  ulf82
+
+	* updated NEWS
+
+2004-11-09  ulf82
+
+	* removed heroes from player armysets, heroes are now taken from a
+	  special armyset
+
+2004-11-08  ulf82
+
+	* added a separate heroes armyset
+
+2004-11-02  ulf82
+
+	* [no log message]
+
+2004-11-02  patton73
+
+	* updated italian translation
+
+2004-11-01  ulf82
+
+	* updated German translation
+
+2004-10-29  ulf82
+
+	* updated German translation a bit
+
+2004-10-29  ulf82
+
+	* quests are now assigned correctly even if there is more than one
+	  hero in the stack
+
+2004-10-26  ulf82
+
+	* applied Bryan Duff's patch
+
+2004-10-26  patton73
+
+	* fixed some bugs int the move all button and added some lines into
+	  the TODO file
+
+2004-10-25  ulf82
+
+	* reduced gettext version
+
+2004-10-25  ulf82
+
+	* added a flush to debug macros; increased gold per city; small
+	  changes to smart AI; changed getting a medal; fixed clicking
+	  problem with tooltips; fixed endless loop in computer-only game
+
+2004-10-24  patton73
+
+	* Updated italian manual and translation
+
+2004-10-23  ulf82
+
+	* - fixed gettext "make install" problem (is 0.14 too recent as a
+	  requirement?) - finished putting sentences together - implemented
+	  keys in PG_FileDialog - fixes for errors during a valgrind run
+
+2004-10-22  ulf82
+
+	* modified gettext verson in configure.in (is 0.14 too recent?)
+
+2004-10-21  patton73
+
+	* update italian translation
+
+2004-10-21  ulf82
+
+	* images on the ground are now indicated by a picture; sentences
+	  are easier translatable
+
+2004-10-21  patton73
+
+	* apllied Bryan Duff's patch
+
+2004-10-18  patton73
+
+	* little add in the manual
+
+2004-10-18  ulf82
+
+	* updated manual
+
+2004-10-17  friendless
+
+	* fix AI bugs
+
+2004-10-17  friendless
+
+	* fix AI bugs
+
+2004-10-15  patton73
+
+	* update italian translation
+
+2004-10-15  ulf82
+
+	* added an updated monsters_mask.png (small fixes with the index)
+
+2004-10-15  ulf82
+
+	* included defs.h in PG_FileDialog; renamed Multiplayer game to
+	  network game
+
+2004-10-14  patton73
+
+	* added some gettext
+
+2004-10-14  ulf82
+
+	* some updating of the manual
+
+2004-10-14  ulf82
+
+	* implemented that medal dialog is only displayed for human players
+
+2004-10-14  ulf82
+
+	* had a small bug with the last check-in
+
+2004-10-14  ulf82
+
+	* small patches to AI_Allocation
+
+2004-10-13  ulf82
+
+	* small comments, fixed a bug with distance calculation in the ai
+	  code
+
+2004-10-12  ulf82
+
+	* some documenting of AI_Analysis; improved
+	  no-produce-with-no-money; added new monsters_mask.xml
+
+2004-10-11  ulf82
+
+	* some commenting and small changes in AI stuff. Enabled
+	  non-production if player drops below 0 gold (though the algorithm
+	  is a quick hack).
+
+2004-10-04  ulf82
+
+	* removed a srand() in MapGenerator
+
+2004-10-02  patton73
+
+	* fixed a bug related to the new path algorithm and the Next with
+	  move button
+
+2004-10-02  friendless
+
+	* remove debugging, I think it works now
+
+2004-10-02  friendless
+
+	* new path algorithm & code cleanup
+
+2004-10-02  friendless
+
+	* new path stuff
+
+2004-09-30  ulf82
+
+	* applied a patch by David Barnsdale concerning map creation
+
+2004-09-30  patton73
+
+	* updated NEWS
+
+2004-09-29  ulf82
+
+	* started commenting of the smart_ai code
+
+2004-09-26  ulf82
+
+	* small changes
+
+2004-09-26  patton73
+
+	* implemented the moveall button and other minor fixes
+
+2004-09-21  patton73
+
+	* Forgotten files
+
+2004-09-20  patton73
+
+	* Fixed a bug in the Kill Hero quest and improved quests with the
+	  Quest Expire Dialog.	Must work on the other quests.
+
+2004-09-20  friendless
+
+	* revert mistaken commit
+
+2004-09-20  friendless
+
+	* distinguish between the threat that something poses to us, and
+	  the value there is to us in having it
+
+2004-09-20  friendless
+
+	* AI
+
+2004-09-19  friendless
+
+	* AI improvements
+
+2004-09-19  friendless
+
+	* AI
+
+2004-09-19  friendless
+
+	* AI improvements
+
+2004-09-19  friendless
+
+	* add new class
+
+2004-09-19  friendless
+
+	* remove spaces from ends of lines - my editor did it!
+
+2004-09-17  friendless
+
+	* should clear() the stacklist, as they are the game's stacks, not
+	  the analysis's
+
+2004-09-17  ulf82
+
+	* removed some obsolete parameters in AI_Analysis
+
+2004-09-15  patton73
+
+	* Applied AMD64 patch
+
+2004-09-15  patton73
+
+	* canceled some spaces in the Makefile.am that gave problem with
+	  compilation
+
+2004-09-12  ulf82
+
+	* new monsters_mask; some modifications of the smart Ai code
+
+2004-09-12  friendless
+
+	* smart AI
+
+2004-09-12  friendless
+
+	* more information on what happened in a stack move, e.g. did the
+	  stack actually have any movement points?
+
+2004-09-12  friendless
+
+	* smart AI improvements
+
+2004-09-11  friendless
+
+	* latest AI stuff
+
+2004-09-11  friendless
+
+	* reutrn a MoveResult when a stack moves so that the smart AI can
+	  make decisions based on what just happened
+
+2004-09-11  friendless
+
+	* added constructor to copy the stacklist so that AI can make
+	  copies of lists of stacks without breaking important stuff
+
+2004-09-11  friendless
+
+	* better architecture for smart AI
+
+2004-09-11  friendless
+
+	* add new AI files
+
+2004-09-11  friendless
+
+	* fixed conflicts, added comment Ulf asked for
+
+2004-09-09  ulf82
+
+	* some work on the smart Ai code (some things are improveable)
+
+2004-09-09  patton73
+
+	* fized some bugs
+
+2004-09-08  friendless
+
+	* AI enhancements
+
+2004-09-07  friendless
+
+	* fix bug - production is numbered 0 to 3
+
+2004-09-07  friendless
+
+	* AI needs to know when any stack dies
+
+2004-09-07  friendless
+
+	* add new files for smart AI
+
+2004-09-07  friendless
+
+	* fix city distribution bug
+
+2004-09-07  friendless
+
+	* ignore burnt cities in AI
+
+2004-09-07  friendless
+
+	* improvements to smart AI
+
+2004-09-07  friendless
+
+	* new for smart AI
+
+2004-09-05  patton73
+
+	* Added the moveall button without the algorithm
+
+2004-09-05  patton73
+
+	* updated
+
+2004-09-05  patton73
+
+	* Fixed another bug in the algorithm for the next_wMove button
+
+2004-09-05  patton73
+
+	* Typo
+
+2004-09-05  patton73
+
+	* Fixed some bugs
+
+2004-08-31  patton73
+
+	* Updated News file
+
+2004-08-30  patton73
+
+	* Added missing files
+
+2004-08-30  patton73
+
+	* Worked again on medal of honour, moved some code into the
+	  real_player class fixed some compiler warning.
+
+2004-08-30  ulf82
+
+	* fixed a small bug in the GamePreferences
+
+2004-08-27  patton73
+
+	* Added missing button picture
+
+2004-08-27  patton73
+
+	* Added the "select next stack that can move" Added tooltips to
+	  buttons
+
+2004-08-26  patton73
+
+	* Added tooltips on w_edit buttons
+
+2004-08-26  ulf82
+
+	* added keyboard usage to some dialogs
+
+2004-08-25  ulf82
+
+	* ArmyDialog is now updated on (un-) equipping items
+
+2004-08-25  ulf82
+
+	* added John Farrell's smart AI patch
+
+2004-08-25  ulf82
+
+	* added more item pics and new items
+
+2004-08-25  patton73
+
+	* More work on tooltips
+
+2004-08-24  patton73
+
+	* Some work on tooltips
+
+2004-08-22  patton73
+
+	* A little problem while compiling with tooltip
+
+2004-08-22  ulf82
+
+	* fixed a typo which caused a stack corruption on game ending
+
+2004-08-22  patton73
+
+	* Started working on tooltips
+
+2004-08-21  ulf82
+
+	* fixed a small typo which prevented the medals from being
+	  displayed
+
+2004-08-21  ulf82
+
+	* added last highlighting picture
+
+2004-08-21  ulf82
+
+	* fixed a segfault with the medals code; reordered buttons on game
+	  screen; implemented scrolling in ItemDialog
+
+2004-08-21  ulf82
+
+	* new border pics, highlighting of border icons
+
+2004-08-20  patton73
+
+	* Added the previous button
+
+2004-08-20  patton73
+
+	* Added the predisposition for the previous button
+
+2004-08-17  patton73
+
+	* added EXC key worked a lot on medals of honour (almost finished)
+
+2004-08-17  ulf82
+
+	* two new border pics from Regis
+
+2004-08-16  ulf82
+
+	* finished implementing border around bigmap
+
+2004-08-16  patton73
+
+	* Typo
+
+2004-08-16  patton73
+
+	* Closed a bug : clicking on buttons with no items lead to a
+	  segfault added twho items on the hero backpack for the tutorial
+	  map.
+
+2004-08-16  patton73
+
+	* fixed a buf about borders pic files and added the new code for
+	  smallmap scrolling (took old one)
+
+2004-08-16  ulf82
+
+	* made ItemDialog functional; started a border around the bigmap
+
+2004-08-12  ulf82
+
+	* third patch: applied fixes to two patches reported by John
+	  Farrell
+
+2004-08-12  ulf82
+
+	* second patch: more city- and heronames, improved English in the
+	  tutorial
+
+2004-08-12  ulf82
+
+	* first patch: patch to create connected water areas; better weapon
+	  pics
+
+2004-08-08  ulf82
+
+	* enabled fullscreen (was buggy), (almost) finished ItemDialog
+
+2004-08-04  ulf82
+
+	* enabled scrolling in ItemDialog, added more item pics, modified
+	  tutorial to have item lying around
+
+2004-08-03  ulf82
+
+	* added item drawing in ItemDialog
+
+2004-08-01  ulf82
+
+	* forgot to add a note to the TODO
+
+2004-08-01  ulf82
+
+	* added Thomas' new keyboard patch
+
+2004-07-31  ulf82
+
+	* more work on the ItemDialog
+
+2004-07-30  ulf82
+
+	* some more work on the ItemDialog
+
+2004-07-30  patton73
+
+	* Started working on medals of honour
+
+2004-07-29  ulf82
+
+	* finished skeleton of ItemDialog
+
+2004-07-29  ulf82
+
+	* started work on ItemDialog, forgot small bugfix in hero.cpp the
+	  last time
+
+2004-07-29  ulf82
+
+	* added item abilites for all stats and different item types
+
+2004-07-27  patton73
+
+	* added medals mask
+
+2004-07-27  patton73
+
+	* added a medals mask picture
+
+2004-07-27  patton73
+
+	* Worked on level mask
+
+2004-07-26  ulf82
+
+	* added multiple boni per item
+
+2004-07-25  ulf82
+
+	* added hero backpack and items lying around on the map
+
+2004-07-24  patton73
+
+	* not important
+
+2004-07-24  ulf82
+
+	* reworked the ArmyLevelDialog
+
+2004-07-23  ulf82
+
+	* added functions to get modified values for army stats (vitality,
+	  boni etc.)
+
+2004-07-23  patton73
+
+	* Little bug in the configuration loading
+
+2004-07-22  ulf82
+
+	* added possibility to increase defense with items; renamed some
+	  functions
+
+2004-07-22  ulf82
+
+	* added some items data to the items directory
+
+2004-07-22  ulf82
+
+	* added hero using an item; added a +5 sword to the hero in the
+	  tutorial
+
+2004-07-21  ulf82
+
+	* commented itemlist, added item as private data to hero class
+
+2004-07-21  patton73
+
+	* modified the configuration loading
+
+2004-07-21  ulf82
+
+	* implemented items and an itemlist to store all item types
+
+2004-07-20  ulf82
+
+	* Armydialog shows hero names; more work on the item class
+
+2004-07-20  ulf82
+
+	* applied a patch which allows compilation with gcc-3.4
+
+2004-07-20  ulf82
+
+	* fixed ruin search segfault; added basics of class Item
+
+2004-07-19  patton73
+
+	* Investigating the New Level Bug
+
+2004-07-19  ulf82
+
+	* removed obsolete max_strength attribute of armies
+
+2004-07-19  patton73
+
+	* trivial text adjustment
+
+2004-07-19  patton73
+
+	* Modified the tutorial lines
+
+2004-07-18  ulf82
+
+	* added class RDelUnit, added RUpdate (forgotten during last
+	  checkin)
+
+2004-07-18  ulf82
+
+	* added class RUpdate which updates the main screen
+
+2004-07-17  ulf82
+
+	* finished RAddUnit, added it to the tutorial
+
+2004-07-16  ulf82
+
+	* worked on RAddUnit, made Army load without passing its armyset
+
+2004-07-16  patton73
+
+	* Forgot to commente the sleep()
+
+2004-07-16  patton73
+
+	* Useless file freelords.pot
+
+2004-07-16  patton73
+
+	* Removed some bugs to the tutorial game. Updated Italian
+	  translation. Adjusted ArmyLevelDialog output.
+
+2004-07-15  ulf82
+
+	* some tiny changes during packaging
+
+2004-07-15  ulf82
+
+	* fixed bug where raised army stats were not saved
+
+2004-07-15  ulf82
+
+	* fixed bug in fight; fixed bug with Army events; updated German
+	  translation
+
+2004-07-15  patton73
+
+	* Missing
+
+2004-07-10  patton73
+
+	* forgot tutorial.map
+
+2004-07-10  patton73
+
+	* missing splash.h
+
+2004-07-10  patton73
+
+	* Added the tutorial button and updated italian translation
+
+2004-07-07  patton73
+
+	* Worked on translation and modified some files to adjust text
+	  string
+
+2004-07-07  ulf82
+
+	* finished tutorial, added event for searching of ruins
+
+2004-07-07  ulf82
+
+	* some more work on the tutorial
+
+2004-07-03  patton73
+
+	* First italian translation
+
+2004-07-03  ulf82
+
+	* added (broken) reaction RAddUnit; modified tutorial
+
+2004-07-01  ulf82
+
+	* started work on a testing map
+
+2004-07-01  ulf82
+
+	* added class RAddGold, which adds gold to a player
+
+2004-06-29  ulf82
+
+	* added EPRound (activated at a player's nth turn) and modified
+	  NextTurn, W_Edit to make it work
+
+2004-06-29  ulf82
+
+	* added new event ERound (raised when a specific round starts);
+	  modified some other classes in the process (W_Edit, Event)
+
+2004-06-27  ulf82
+
+	* added events for player occupring a city and army being killed;
+	  modified some other classes by the way
+
+2004-06-25  ulf82
+
+	* added new event when city is conquered
+
+2004-06-17  ulf82
+
+	* implemented the use of events; the game is now ended via events
+
+2004-06-15  ulf82
+
+	* implemented events in the game (currently unused)
+
+2004-06-03  ulf82
+
+	* added new reactions RMessage and REndGame
+
+2004-05-28  ulf82
+
+	* forgot to add EKillAll event
+
+2004-05-28  ulf82
+
+	* work on the event classes; dead players are now marked as dead,
+	  not removed
+
+2004-05-24  ulf82
+
+	* some more work on Event and EPlayerDead
+
+2004-05-23  ulf82
+
+	* added Reaction, EPlayerDead(unfinished); removed -g compiler flag
+	  from Makefile.am
+
+2004-05-18  ulf82
+
+	* some fixes to italian .po file; added event base class
+
+2004-05-18  patton73
+
+	* some quick translations.
+
+2004-05-09  ulf82
+
+	* fine-tuning of label positions and German translation
+
+2004-05-09  ulf82
+
+	* reversed some changes (DAMN!)
+
+2004-05-08  ulf82
+
+	* some more translation issues
+
+2004-05-05  ulf82
+
+	* finished German manual, updated manual and German translation
+
+2004-05-04  ulf82
+
+	* updated manual, added German manual
+
+2004-05-04  ulf82
+
+	* updated manual and German translation
+
+2004-05-03  ulf82
+
+	* comments, i18n, removing; beautified manual
+
+2004-05-01  ulf82
+
+	* comments, i18n, removing
+
+2004-04-30  ulf82
+
+	* comments, i18n
+
+2004-04-24  ulf82
+
+	* comments, i18n, removing; renamed HowToPlay to Manual
+
+2004-04-22  ulf82
+
+	* some more comments
+
+2004-04-20  ulf82
+
+	* comments, removing
+
+2004-04-17  ulf82
+
+	* comments, removing
+
+2004-04-17  ulf82
+
+	* comments, i18n, removing
+
+2004-04-17  ulf82
+
+	* comments, i18n, removing
+
+2004-04-15  ulf82
+
+	* comments, i18n, removing; fixed a small bug in the fight class
+
+2004-04-11  ulf82
+
+	* comments, i18n, removing
+
+2004-04-11  ulf82
+
+	* i18n, comments, removed obsolete functions
+
+2004-04-10  ulf82
+
+	* some more comments/i18n/cleaning up
+
+2004-04-08  ulf82
+
+	* some more comments, i18n; removed obsolete functions
+
+2004-04-04  ulf82
+
+	* some more comments and i18n
+
+2004-04-04  ulf82
+
+	* added crude autosave feature
+
+2004-04-04  ulf82
+
+	* fixed path finding bug, fixed quest message, some i18n and
+	  comments
+
+2004-03-20  ulf82
+
+	* locked surfaces during drawing
+
+2004-03-19  ulf82
+
+	* patch for paragui-1.1.7 support
+
+2004-03-19  ulf82
+
+	* test concerning branching
+
+2004-03-19  ulf82
+
+	* fixed two segfaults
+
+2004-03-19  ulf82
+
+	* fixed a mistaken migration to paragui
+
+2004-03-19  ulf82
+
+	* added paragui-1.1.7 support and splitted branch
+
+2004-03-13  ulf82
+
+	* added i18n macros in ArmyDialog and ArmyLevelDialog
+
+2004-03-10  patton73
+
+	* finished italian translation for main.cpp and fixed a little bug
+	  in update.pl
+
+2004-03-10  ulf82
+
+	* applied some small patches by David Sterba
+
+2004-03-08  patton73
+
+	* apllied Daves' patch to optio dialog
+
+2004-03-07  patton73
+
+	* some changes into autoconfigure files updated also the po files
+	  but need to translate the string
+
+2004-03-07  patton73
+
+	* other little changes
+
+2004-03-06  patton73
+
+	* modified makefiles.am and applied some patches
+
+2004-03-05  patton73
+
+	* patched the acinclude with David Sterba Patch.
+
+2004-03-05  ulf82
+
+	* added an Option dialog (patch sent by David Sterba)
+
+2004-03-04  ulf82
+
+	* added de.po, added some more strings from main.cpp to be
+	  translated
+
+2004-03-03  patton73
+
+	* added a little documentation about making easily .po files and
+	  added the VERY useful update.pl script
+
+2004-03-03  patton73
+
+	* removed depcomp file (automatically generated) and modified typos
+	  in it.po
+
+2004-03-02  patton73
+
+	* some typos
+
+2004-03-02  ulf82
+
+	* re-added depcomp after a look in the changelog. :)
+
+2004-03-02  ulf82
+
+	* removed some auto-generated files from the repository
+
+2004-03-02  patton73
+
+	* Some experiment with .po
+
+2004-03-02  patton73
+
+	* Added a line int HACKER about po files
+
+2004-03-02  patton73
+
+	* removed the "mkinstalldir" that is automatically created by
+	  "autogen.sh"
+
+2004-03-02  patton73
+
+	* removed useless files (autogenerated by autopoint)
+
+2004-03-02  patton73
+
+	* cleaned and patched all directories to be used with autotools
+
+2004-03-02  patton73
+
+	* modified configure.in to avoid gettext warning under David Sterba
+	  suggestion.
+
+2004-03-02  ulf82
+
+	* - removed autoconf/automake-generated files - added autogen.sh
+	  and fixed some warnings in acinclude.m4
+
+2004-03-01  patton73
+
+	* added an option to the configure about gettext.
+
+2004-03-01  patton73
+
+	* added "depcomp"  because redhat 9 need it for automake.
+
+2004-02-29  patton73
+
+	* added the localization support and alla the configure and
+	  automake changes also imported the David Sterba's patches.
+
+2004-02-26  patton73
+
+	* Applied a patch sent by David Sterba	and patched a typo in
+	  ArmyDialog.cpp
+
+2004-02-19  ulf82
+
+	* changed version number in configure script
+
+2004-02-19  ulf82
+
+	* removed a compiler warning
+
+2004-02-19  ulf82
+
+	* updated version string
+
+2004-02-19  ulf82
+
+	* - fixed a building placement deadlock if a map consisted almost
+	  only of water - terrain sliders set to a maximum of 99 in
+	  GamePreferencesDialog
+
+2004-02-14  ulf82
+
+	* - implemented choice between producing/healing armies at
+	  beginning of turn or round - fixed some bugs
+
+2004-02-14  ulf82
+
+	* fixed numerous bugs
+
+2004-02-13  ulf82
+
+	* added the latest bug to the list
+
+2004-02-12  ulf82
+
+	* - fixed problem with hero recruitment and nextplayerpopup - set
+	  ai behaviour to accepting heroes in general - added doxygen-style
+	  comments in ArmyInfo.h
+
+2004-02-11  ulf82
+
+	* - added doxygen comments to ArmyDialog - implemented hero
+	  offering - added and modified several hero-related functions
+
+2004-02-10  ulf82
+
+	* NextTurn, Hero_offer, Hero: modified code for hero offering
+
+2004-02-09  ulf82
+
+	* Test to see if cvs list works
+
+2004-02-07  ulf82
+
+	* some work to reenable and unify hero recruitment
+
+2004-02-07  ulf82
+
+	* implemented NextTurn class
+
+2004-02-07  ulf82
+
+	* a small safety check in before I start to turn over the next_turn
+	  code
+
+2004-02-05  ulf82
+
+	* - some small work on Internals file - almost finished NextTurn
+	  class (needs to be integrated yet)
+
+2004-01-31  ulf82
+
+	* fixed a stupid bug introduced in last commit
+
+2004-01-31  ulf82
+
+	* unset EmergencyQuit from paraGUI
+
+2004-01-29  ulf82
+
+	* removed some obsolete code
+
+2004-01-29  ulf82
+
+	* implemented aching of city surfaces
+
+2004-01-28  ulf82
+
+	* some more work on city picture caching
+
+2004-01-28  ulf82
+
+	* moved level_mask.png to dat/various
+
+2004-01-27  ulf82
+
+	* some preparations to have GraphicsCache cache city pics as well
+
+2004-01-27  ulf82
+
+	* some more work on Internals file
+
+2004-01-26  patton73
+
+	* Wrong date in las log
+
+2004-01-26  patton73
+
+	* Added the code that displays level masks on army pictures
+
+2004-01-26  patton73
+
+	* [no log message]
+
+2004-01-25  ulf82
+
+	* some more work on Internals docu
+
+2004-01-21  ulf82
+
+	* extended default armyset to 16 units
+
+2004-01-18  patton73
+
+	* removed some spell errors
+
+2004-01-17  ulf82
+
+	* minor doc and armyset updates
+
+2004-01-15  patton73
+
+	* Removed a Bug in the hero class that did not save well the
+	  expvalue tag
+
+2004-01-14  patton73
+
+	* Added the -Wall flags and removed all Warnings with gcc 3.2.2
+
+2004-01-13  ulf82
+
+	* removed obsolete start button from player_preferences
+
+2004-01-12  patton73
+
+	* Savefile version to 0.3.1a
+
+2004-01-12  patton73
+
+	* Added Xp and Level code
+
+2004-01-10  ulf82
+
+	* some more work on Internals file
+
+2004-01-08  ulf82
+
+	* updated install instructions
+
+2004-01-08  ulf82
+
+	* added new pic for razed castle
+
+2004-01-07  patton73
+
+	* Finished changing names
+
+2004-01-07  patton73
+
+	* Modified the string tokenizer to match the coding rules
+
+2004-01-07  patton73
+
+	* Updated the Changelog
+
+2004-01-06  patton73
+
+	* Fixed the ".sav" Savefile BUG and added a new class the
+	  string_tokenizer
+
+2004-01-06  patton73
+
+	* Fixed savefile magickey bug and added a constant for the game
+	  version
+
+2004-01-05  ulf82
+
+	* removed another obsolete pic
+
+2004-01-05  ulf82
+
+	* completely changed city drawing system, now with masks; removed
+	  obsolete pics
+
+2004-01-03  ulf82
+
+	* updated "Internals" documentation
+
+2004-01-02  ulf82
+
+	* some further work on Internals docu
+
+2004-01-01  ulf82
+
+	* a tiny fix to the hero_offer dialog
+
+2003-12-31  ulf82
+
+	* fixed more bugs recognized when building the release
+
+2003-12-31  ulf82
+
+	* updated NEWS file
+
+2003-12-31  ulf82
+
+	* fixed some problems reported by 'make distcheck'
+
+2003-12-31  ulf82
+
+	* changed behaviour with missing savegame directory
+
+2003-12-30  ulf82
+
+	* - implemented several armyset productions in one city - some
+	  smaller bugfixes
+
+2003-12-30  ulf82
+
+	* - added new orc mask and new recruitment pic - fixed a bug in
+	  configure and set PG_LogLevel
+
+2003-12-28  ulf82
+
+	* fixed a bug which allowed the neutral player to buy heroes
+
+2003-12-26  ulf82
+
+	* added bug
+
+2003-12-26  ulf82
+
+	* - changed pic for hero offer dialog - added Mareks patch
+	  (saving/loading/reporting quests)
+
+2003-12-23  ulf82
+
+	* some more work on the Internals documentation
+
+2003-12-20  ulf82
+
+	* added skeleton for NextTurn class
+
+2003-12-20  ulf82
+
+	* added Internals file in doc section
+
+2003-12-18  ulf82
+
+	* - w_edit now deleted its GameScenario pointer upon destruction.
+	  Seems to fix a segfault
+
+2003-12-17  ulf82
+
+	* extended monster armyset to 16 unit types
+
+2003-12-17  ulf82
+
+	* added new mask for orcs armyset (almost correct)
+
+2003-12-16  ulf82
+
+	* - armies are displayed with player colors when buying a
+	  production - changes to use Armyset::getSize instead of relying
+	  on 12 armies - fixed a bug which put player's cities next to each
+	  other
+
+2003-12-15  ulf82
+
+	* - added config option for zipping of save files - missing
+	  movement points are marked red in ArmyDialog
+
+2003-12-14  ulf82
+
+	* updated documentation
+
+2003-12-14  ulf82
+
+	* updated AUTHORS
+
+2003-12-14  ulf82
+
+	* - savegames are now zipped and obfuscated (Andrea Pternesi)
+
+2003-12-11  ulf82
+
+	* updated TODO
+
+2003-12-11  ulf82
+
+	* - implemented scan for tilesets (Andrea Paternesi) - moved
+	  tilesets to directory tilesets
+
+2003-12-09  ulf82
+
+	* - updated pic for default armyset
+
+2003-12-09  ulf82
+
+	* - fixed a segfault when searching ruins - implemented (unused)
+	  data field "size" in armyset descriptions and class Armyset
+
+2003-12-08  ulf82
+
+	* fixed a bug with displaying player colors
+
+2003-12-06  ulf82
+
+	* - implemented quests - implemented new default armyset
+
+2003-11-27  ulf82
+
+	* - updated misc files - fixed the bug with the bigmap selector not
+	  being updated
+
+2003-11-24  ulf82
+
+	* added hardware option to config script
+
+2003-11-23  ulf82
+
+	* - implemented own freelords theme - fixed segfault in
+	  GamePreferencesDialog
+
+2003-11-22  ulf82
+
+	* - added option to set cache size - changed d_size and d_tileSet
+	  to s_size and s_tileSet in GameMap - added option to set hardware
+	  surfaces (not yet used)
+
+2003-11-19  ulf82
+
+	* modified TODO and BUGS
+
+2003-11-19  ulf82
+
+	* added Andrea's patch to implement several maptile sets
+
+2003-11-14  ulf82
+
+	* changed orc masks
+
+2003-11-08  ulf82
+
+	* finished basic implementation of plyer-specific colors
+
+2003-11-06  ulf82
+
+	* updated Changelog as well
+
+2003-11-06  ulf82
+
+	* updated TODO, BUGS and DEPENDENCIES
+
+2003-11-02  ulf82
+
+	* forgot to check in the real button_center; this is updated herby
+
+2003-10-31  ulf82
+
+	* finished player-specific color masks, but couldn't test due to
+	  broken mask image
+
+2003-10-29  ulf82
+
+	* - implemented use of graphics cache - added monster armyset -
+	  beautified d_buy_production
+
+2003-10-27  ulf82
+
+	* - finished Graphicscache (not used yet) - implemented center
+	  button to center on unit
+
+2003-10-25  ulf82
+
+	* started implementation of caching class
+
+2003-10-24  ulf82
+
+	* added a color palette to the player class
+
+2003-10-16  ulf82
+
+	* updated the NEWS file
+
+2003-10-11  ulf82
+
+	* modified paragui search in configure script
+
+2003-10-07  ulf82
+
+	* modified the error message when libsigc++ is not found
+
+2003-10-02  ulf82
+
+	* timers are now stopped during computer turns
+
+2003-10-02  ulf82
+
+	* added some checks in smallmap to prevent drawing over border
+
+2003-09-30  ulf82
+
+	* - fixed some bugs shown by valgrind - timers are turned off
+	  during computer turns
+
+2003-09-27  ulf82
+
+	* some small beautifying of the configure.in
+
+2003-09-27  ulf82
+
+	* fixed four bugs
+
+2003-09-23  ulf82
+
+	* fixed a bug when armies fight on open terrain and with bigmap
+	  drawing
+
+2003-09-21  ulf82
+
+	* included assert.h in stack.cpp
+
+2003-09-21  ulf82
+
+	* - finished smooth scrolling - added automatic installation of a
+	  freelordsrc file
+
+2003-09-20  ulf82
+
+	* added a bug
+
+2003-09-18  ulf82
+
+	* rewrote smooth scrolling and bigmap drawing code
+
+2003-09-14  ulf82
+
+	* fixed a segfault linked with smooth scrolling
+
+2003-09-12  ulf82
+
+	* implemented smooth scrolling in a kind of alpha stage
+
+2003-09-05  ulf82
+
+	* finished work on MapRenderer functions
+
+2003-08-13  ulf82
+
+	* - removed some includes - continued work on MapRenderer
+
+2003-08-12  ulf82
+
+	* some more work on the rendering routines (incomplete)
+
+2003-08-10  ulf82
+
+	* added some functions to MapRenderer
+
+2003-08-08  ulf82
+
+	* tried some more normalization
+
+2003-08-04  ulf82
+
+	* bugfixing
+
+2003-08-03  ulf82
+
+	* improved drawing of smallmap symbols
+
+2003-08-02  ulf82
+
+	* - buildings have minimum distance now - improved drawing of
+	  cities
+
+2003-08-01  ulf82
+
+	* fixed a small bug and updated installation instructions
+
+2003-07-30  ulf82
+
+	* each player now has his own stacklist containing his stacks
+
+2003-07-29  ulf82
+
+	* removed redundant line from TODO
+
+2003-07-29  ulf82
+
+	* - changed behaviour with missing config files - started work to
+	  remove global variable stacklist
+
+2003-07-26  ulf82
+
+	* implemented Citylist as singleton
+
+2003-07-25  ulf82
+
+	* implemented Ruinlist and Templelist as singletons
+
+2003-07-23  ulf82
+
+	* moved templelist and ruinlist to separate files
+
+2003-07-23  ulf82
+
+	* implemented playerlist as singleton
+
+2003-07-14  ulf82
+
+	* forgot to add hero class :-)
+
+2003-07-14  ulf82
+
+	* added hero class
+
+2003-07-10  ulf82
+
+	* - implemented army report - implemented razed cities
+
+2003-07-07  ulf82
+
+	* changed TODO according to proposal on list
+
+2003-06-29  ulf82
+
+	* implemented Vibhus normalization code
+
+2003-06-22  ulf82
+
+	* updated some docu
+
+2003-06-12  midramas
+
+	* updated TODO
+
+2003-06-08  ulf82
+
+	* forgot to updateTODO
+
+2003-06-08  ulf82
+
+	* added city report
+
+2003-06-07  ulf82
+
+	* implemented armysetlist as soliton
+
+2003-06-07  ulf82
+
+	* changed many files to follow the coding standard a bit more
+
+2003-06-07  ulf82
+
+	* fixed a segfault on exiting the game
+
+2003-06-07  ulf82
+
+	* fixed a bug with the color of the neutral player
+
+2003-06-06  ulf82
+
+	* changed file.* to File.*
+
+2003-06-06  ulf82
+
+	* fixed a segfault in GameMap when loading a game
+
+2003-06-03  midramas
+
+	* removed unnecessary includes
+
+2003-06-02  ulf82
+
+	* finished ArmyDialog
+
+2003-06-01  ulf82
+
+	* did some work with the army information dialog
+
+2003-05-31  ulf82
+
+	* - fixed a segfault in stacklist::setNext - interrupted timers
+	  during important events (fighting, message boxes), so they don't
+	  make problems any longer - added ArmyDialog to show army
+	  information (not finished at all)
+
+2003-05-30  ulf82
+
+	* - fixed some bugs - finished different mapsizes - implemented
+	  functions for timer starting/stopping in bigmap and smallmap
+
+2003-05-29  ulf82
+
+	* - freelords is now able to handle different mapsizes (already
+	  tested) - fixed a small bug in path (path wasn't loaded correctly
+	  from a savegame) and a graphical one in GamePreferencesDialog
+
+2003-05-27  ulf82
+
+	* - added debug output in CreateScenario - fixed a bug when moving
+	  the terrain sliders in GamePreferencesDialog - the
+	  MapCreationDialog is used again - GameMap::map is now accessed
+	  through GameMap::getTile()
+
+2003-05-23  ulf82
+
+	* fixed bug with terrain configsliders which would give you a
+	  grass-only map when changing the distribution of the terrain
+	  types
+
+2003-05-23  ulf82
+
+	* started to use terrain sliders for the map creation, but still
+	  buggy
+
+2003-05-22  ulf82
+
+	* - removed obsolete initialization functions - made tileset in
+	  GameMap static, so it is loaded only once (hack to fix a bug)
+
+2003-05-20  ulf82
+
+	* integrated CreateScenario
+
+2003-05-18  ulf82
+
+	* finished CreateScenario implementation
+
+2003-05-13  midramas
+
+	* change mapdef to GameMap (Singleton design)
+
+2003-05-07  midramas
+
+	* updated
+
+2003-05-07  midramas
+
+	* some small changes to get win32 port working
+
+2003-05-07  midramas
+
+	* update
+
+2003-05-07  midramas
+
+	* compiles now
+
+2003-05-05  ulf82
+
+	* continued work on CreateScenario
+
+2003-05-03  midramas
+
+	* some BUGS in connection with Configuration fixed
+
+2003-05-01  midramas
+
+	* removed unnecessary files
+
+2003-04-30  ulf82
+
+	* hero names are now read from a data file and not produced with a
+	  python script
+
+2003-04-28  midramas
+
+	* make install works
+
+2003-04-28  ulf82
+
+	* added a bug to the list
+
+2003-04-28  ulf82
+
+	* improved hero offering and configuration file handling
+
+2003-04-27  ulf82
+
+	* You can reject heroes now again
+
+2003-04-26  midramas
+
+	* renamed PG_FileSelector to PG_FileDialog (to be consistent)
+
+2003-04-26  midramas
+
+	* updated
+
+2003-04-26  midramas
+
+	* PG_FileSelector improvement
+
+2003-04-25  midramas
+
+	* moved to dat
+
+2003-04-25  midramas
+
+	* directory structure change
+
+2003-04-22  midramas
+
+	* missing
+
+2003-04-22  midramas
+
+	* was missing
+
+2003-04-22  midramas
+
+	* some missing configuration files
+
+2003-04-22  midramas
+
+	* small bug fixed
+
+2003-04-22  midramas
+
+	* almost everything changed
+
+2003-04-22  midramas
+
+	* almost everything changed now
+
+2003-04-22  ulf82
+
+	* - added functions for accessing the data in MapGenerator -
+	  continued work on CreateScenario
+
+2003-04-21  ulf82
+
+	* changed Changelog (Michal has used my name for his
+	  changes...again :))
+
+2003-04-21  midramas
+
+	* using variation
+
+2003-04-20  midramas
+
+	* couldn't verify that one
+
+2003-04-20  ulf82
+
+	* - some more work on CreateScenario - some small name changes etc.
+	  (nothing of importance)
+
+2003-04-20  ulf82
+
+	* - Tileset, Tile: fixed a memleak and a bug which exchanged
+	  mountains and swamps - MapGenerator, CreateScenario:
+	  added/implemented some new functions for setting the number of
+	  cities, the percentage of swamp etc.
+
+2003-04-19  ulf82
+
+	* -when cities are pillaged, production is destroyed; when
+	  occupied, production is set to 0 (first armytype) - some small
+	  changes and fixes
+
+2003-04-19  midramas
+
+	* updated
+
+2003-04-19  midramas
+
+	* more cleanup
+
+2003-04-18  midramas
+
+	* some bugfixes before 0.2.3
+
+2003-04-17  ulf82
+
+	* made mapdef and MapGenerator use macros for the maptile
+	  characters
+
+2003-04-17  midramas
+
+	* added selector animation & fix for segfault on quit
+
+2003-04-15  midramas
+
+	* code cleanup
+
+2003-04-15  midramas
+
+	* some more memory leaks fixed
+
+2003-04-15  midramas
+
+	* cleaned up Makefiles + using -O now
+
+2003-04-15  ulf82
+
+	* worked a bit on CreateScenario class
+
+2003-04-14  ulf82
+
+	* updated savegame version and doc concerning the introduction of
+	  the counter
+
+2003-04-14  midramas
+
+	* fixed Makefile
+
+2003-04-14  radical-tobi
+
+	* update / init fl pg theme
+
+2003-04-14  radical-tobi
+
+	* init fl pg theme
+
+2003-04-13  midramas
+
+	* added circle
+
+2003-04-13  midramas
+
+	* added circle
+
+2003-04-12  midramas
+
+	* use arrows instead of "x" as waypoints
+
+2003-04-12  ulf82
+
+	* added and implemente global counter, added file CreateScenario
+
+2003-04-11  ulf82
+
+	* ported all signals to libsigc++
+
+2003-04-10  midramas
+
+	* pic had a wrong name - fixed
+
+2003-04-10  midramas
+
+	* 0.2.2
+
+2003-04-08  ulf82
+
+	* moved the rest of the player class signals to libsigc++
+
+2003-04-08  ulf82
+
+	* ported player status update to libsigc++
+
+2003-04-06  midramas
+
+	* cleanup
+
+2003-04-04  midramas
+
+	* finished castle set
+
+2003-04-04  ulf82
+
+	* changed occupying of cities to using libsigc++ signals
+
+2003-04-03  midramas
+
+	* [no log message]
+
+2003-04-03  midramas
+
+	* pic update
+
+2003-04-03  ulf82
+
+	* changed some behaviour when pillaging; locking/unlocking of
+	  screen is now done with libsigc++
+
+2003-04-01  midramas
+
+	* last update today
+
+2003-04-01  midramas
+
+	* improved buttons in w_edit + bugfix
+
+2003-04-01  midramas
+
+	* latest graphics from james
+
+2003-04-01  midramas
+
+	* updated
+
+2003-04-01  midramas
+
+	* _big_ update
+
+2003-04-01  ulf82
+
+	* added pillaging action
+
+2003-03-31  midramas
+
+	* bug fixed
+
+2003-03-31  midramas
+
+	* preparing 0.2.2
+
+2003-03-29  midramas
+
+	* fixed a nasty crash
+
+2003-03-28  midramas
+
+	* cross compiling works now
+
+2003-03-23  ulf82
+
+	* fixed a bug with pillaging when city had no production
+
+2003-03-23  ulf82
+
+	* implemented pillaging
+
+2003-03-23  midramas
+
+	* removed static map
+
+2003-03-19  midramas
+
+	* updated NEWS
+
+2003-03-19  midramas
+
+	* FreeLords 0.2.1
+
+2003-03-19  midramas
+
+	* needs to be reworked for the new single pgn armyset style
+
+2003-03-14  ulf82
+
+	* updated Makefile for compiling purposes
+
+2003-03-12  ulf82
+
+	* removed mapset_tile from Makefile
+
+2003-03-12  midramas
+
+	* final tileset implementation
+
+2003-03-11  midramas
+
+	* only 3-4 tile missing now
+
+2003-03-11  midramas
+
+	* reimplemented standard mapset differently - less memory usage
+
+2003-03-11  midramas
+
+	* replaced by Tile
+
+2003-03-11  midramas
+
+	* implemented standard tileset
+
+2003-03-11  midramas
+
+	* implemented standard tileset
+
+2003-03-11  midramas
+
+	* covered with default.png now
+
+2003-03-11  midramas
+
+	* new standard tileset
+
+2003-03-10  ulf82
+
+	* fixed two small bugs
+
+2003-03-05  ulf82
+
+	* bug fixing (armies-move-over-water and
+	  player-plays-neutral-player bugs)
+
+2003-03-02  ulf82
+
+	* changed xmlhelper to better recognize data tags
+
+2003-02-16  radical-tobi
+
+	* freelords-autopack.sh: now with colors ;)
+
+2003-02-15  midramas
+
+	* some compilation issues under win32 resolved
+
+2003-02-15  midramas
+
+	* first version of new TODO list style
+
+2003-02-10  midramas
+
+	* more cosmetic changes
+
+2003-02-07  midramas
+
+	* cosmetic changes
+
+2003-02-07  midramas
+
+	* cosmetic changes --- introduced a bug!
+
+2003-02-07  radical-tobi
+
+	* freelords-autopack.sh - some bugfixes and internal script changes
+
+2003-02-06  radical-tobi
+
+	* freelords-autopack.sh update
+
+2003-02-04  midramas
+
+	* 0.2.0
+
+2003-02-04  ulf82
+
+	* finished load/save
+
+2003-02-02  ulf82
+
+	* fixed segfault in PG_FileSelector
+
+2003-01-30  midramas
+
+	* bugfixing the PG_FileSelector
+
+2003-01-30  ulf82
+
+	* added loading from menubar
+
+2003-01-26  ulf82
+
+	* finished and fixed loading
+
+2003-01-24  radical-tobi
+
+	* done msgs fixed ^^
+
+2003-01-24  ulf82
+
+	* fixed loading bugs
+
+2003-01-21  midramas
+
+	* startup screen done
+
+2003-01-20  ulf82
+
+	* almost finsihed loading
+
+2003-01-20  midramas
+
+	* first working version of game startup - some bugs left
+
+2003-01-19  ulf82
+
+	* done some more loading code
+
+2003-01-19  radical-tobi
+
+	* added bz2 and zip package generation, some fixes will follow
+
+2003-01-18  midramas
+
+	* still rewriting startup screens
+
+2003-01-17  ulf82
+
+	* continued loading
+
+2003-01-07  ulf82
+
+	* small compilation fixes
+
+2003-01-07  ulf82
+
+	* fixed small compilation bugs (namespaces etc.)
+
+2003-01-06  midramas
+
+	* started merging game configuration dialog into D_Map
+
+2003-01-04  midramas
+
+	* added signals & slots to Server/Client
+
+2003-01-03  midramas
+
+	* armysetlist uses xmlhelper + coding style cleanups
+
+2003-01-03  midramas
+
+	* moved armyset into one pic + spec xml
+
+2003-01-03  midramas
+
+	* forgot to change that one
+
+2003-01-03  midramas
+
+	* start of multiplayer support
+
+2002-12-25  midramas
+
+	* added MultiPlayerModeDialog
+
+2002-12-24  midramas
+
+	* cleaning up & ServerDialog enhancements
+
+2002-12-21  midramas
+
+	* some more updates
+
+2002-12-21  midramas
+
+	* added ServerDialog
+
+2002-12-21  midramas
+
+	* adding server and cleaning up
+
+2002-12-18  ulf82
+
+	* player files: added loading
+
+2002-12-14  ulf82
+
+	* mapdef: added loading
+
+2002-12-13  ulf82
+
+	* forgot a change in the last update
+
+2002-12-13  ulf82
+
+	* fixed tons of bugs in xmlhelper
+
+2002-12-13  ulf82
+
+	* completed loading in xmlhelper
+
+2002-12-11  midramas
+
+	* added NEWS again
+
+2002-12-11  ulf82
+
+	* a cast which else led to a warning
+
+2002-12-11  ulf82
+
+	* xmlhelper: started work on loading
+
+2002-12-10  midramas
+
+	* useless since PG_FileSelector
+
+2002-12-09  ulf82
+
+	* some tiny gcc fixes
+
+2002-12-08  midramas
+
+	* added check for libsigc++
+
+2002-12-08  midramas
+
+	* emit macro clashed with libsigc++ (and other fixes)
+
+2002-12-08  midramas
+
+	* added libsigc++ CFLAGS and LFLAGS
+
+2002-12-06  ulf82
+
+	* xmlhelper: added register functions
+
+2002-12-04  ulf82
+
+	* removed spaces from mapdef::save (size)
+
+2002-12-03  ulf82
+
+	* tiny fixes to xmlhelper and gamescenario::save
+
+2002-12-02  midramas
+
+	* fixed xmlhelper constructor
+
+2002-12-02  ulf82
+
+	* some update on save
+
+2002-12-02  ulf82
+
+	* completed save
+
+2002-12-01  midramas
+
+	* not needed - using autoconf
+
+2002-12-01  midramas
+
+	* forgot that one :)
+
+2002-12-01  midramas
+
+	* first version with autoconf support
+
+2002-12-01  ulf82
+
+	* save functions for playerlist, stacklist et al.
+
+2002-11-30  ulf82
+
+	* some more xmlhelper
+
+2002-11-29  ulf82
+
+	* added xmlhelper
+
+2002-11-27  midramas
+
+	* slight changes
+
+2002-11-23  ulf82
+
+	* added save to stacklist and playerlist
+
+2002-11-21  ulf82
+
+	* started adding save function
+
+2002-11-19  radical-tobi
+
+	* bugfix ... *narf*
+
+2002-11-19  ulf82
+
+	* fixed castle colour bug
+
+2002-11-18  radical-tobi
+
+	* update autopacker ;)
+
+2002-11-16  radical-tobi
+
+	* freelords-autopack.sh update (0.0.7)
+
+2002-11-13  ulf82
+
+	* fixed temple-in-water and game-crash-on-exit bug
+
+2002-11-09  ulf82
+
+	* fixed segfault, started saving game
+
+2002-11-07  ulf82
+
+	* ported goldreport
+
+2002-11-05  ulf82
+
+	* reconstructed player class
+
+2002-11-01  ulf82
+
+	* moved game init code around to GameScenario class
+
+2002-10-30  midramas
+
+	* added class MapConfDialog
+
+2002-10-29  ulf82
+
+	* removed warning adn put -Werror flg in Makefiles
+
+2002-10-29  ulf82
+
+	* small map generator fix
+
+2002-10-26  ulf82
+
+	* 2 small random map generator fixes
+
+2002-10-15  ulf82
+
+	* mentioned some contributors
+
+2002-09-27  midramas
+
+	* added MapGenerator.o
+
+2002-09-24  midramas
+
+	* integrated MapGenerator from Vibhu Rishi
+
+2002-09-23  midramas
+
+	* fix a buy production bug (Mark)
+
+2002-09-23  midramas
+
+	* Mark's patches applied
+
+2002-08-27  radical-tobi
+
+	* changes at release work, more to come
+
+2002-08-27  ulf82
+
+	* moved stack moving to player class
+
+2002-08-26  ulf82
+
+	* made freelords compile with gcc3.2
+
+2002-08-05  midramas
+
+	* fixes to compile under linux
+
+2002-08-05  midramas
+
+	* 0.1.6
+
+2002-08-05  midramas
+
+	* 0.1.6
+
+2002-08-05  midramas
+
+	* 0.1.6
+
+2002-08-05  midramas
+
+	* 0.1.6
+
+2002-08-05  midramas
+
+	* 0.1.6
+
+2002-08-05  midramas
+
+	* 0.1.6
+
+2002-08-05  midramas
+
+	* 0.1.6
+
+2002-08-05  midramas
+
+	* 0.1.6
+
+2002-08-05  midramas
+
+	* 0.1.6
+
+2002-08-05  midramas
+
+	* 0.1.6
+
+2002-08-05  midramas
+
+	* 0.1.6
+
+2002-08-04  radical-tobi
+
+	* small design update ;)
+
+2002-08-01  radical-tobi
+
+	* dep update; script for creating & distributing CVS-snapshots
+
+2002-08-01  radical-tobi
+
+	* script for CVS Snapshots - radical-tobi
+
+2002-07-25  ulf82
+
+	* update to avoid fixing ambiguities
+
+2002-07-24  midramas
+
+	* SetIcon fixed for ParaGUI 1.0.2
+
+2002-07-19  ulf82
+
+	* moved city actions to player class (as usual)
+
+2002-07-13  ulf82
+
+	* searching ruins and temples moved to player class
+
+2002-07-08  ulf82
+
+	* minor modifications to ruin class, fight and player action
+	  handling
+
+2002-06-21  ulf82
+
+	* added some action classes
+
+2002-06-21  ulf82
+
+	* small patch + changes
+
+2002-06-10  ulf82
+
+	* moved city fight to player class
+
+2002-06-09  ulf82
+
+	* moved stack joining to player class
+
+2002-06-02  ulf82
+
+	* moved stack splitting to player class
+
+2002-05-29  ulf82
+
+	* prefixed std:: where missing
+
+2002-05-27  ulf82
+
+	* added action.h/action.cpp
+
+2002-03-01  midramas
+
+	* small simplification
+
+2002-03-01  midramas
+
+	* [no log message]
+
+2002-03-01  midramas
+
+	* works now with ParaGUI 1.0
+
+2002-01-28  ulf82
+
+	* updated Changelog from last changes
+
+2002-01-28  ulf82
+
+	* small changes
+
+2002-01-27  ulf82
+
+	* rewrote fighting part
+
+2002-01-22  ulf82
+
+	* worked on fights in player class
+
+2002-01-17  ulf82
+
+	* hacks on player class
+
+2002-01-15  midramas
+
+	* improved city occupation handling
+
+2002-01-15  midramas
+
+	* simplification
+
+2002-01-07  ulf82
+
+	* changed next_turn procedure
+
+2002-01-06  ulf82
+
+	* removed a bug report
+
+2002-01-06  ulf82
+
+	* fixed a segfault
+
+2002-01-06  midramas
+
+	* added a menubar
+
+2001-12-29  ulf82
+
+	* some new typedefs in defs.h
+
+2001-12-29  ulf82
+
+	* fixed a bug when searching a ruin
+
+2001-12-27  midramas
+
+	* started implementing a menubar
+
+2001-12-22  midramas
+
+	* added new button pics
+
+2001-12-20  midramas
+
+	* FreeLords 0.1.4
+
+2001-12-20  midramas
+
+	* some namespace cleanups
+
+2001-12-18  midramas
+
+	* don't even dare --- paragui quirks all around
+
+2001-12-18  midramas
+
+	* don't even try --- paragui quirks all around
+
+2001-12-17  ulf82
+
+	* small fixes
+
+2001-12-15  midramas
+
+	* new pic added
+
+2001-12-12  midramas
+
+	* added class CityOccupationDialog
+
+2001-12-10  midramas
+
+	* needed until i add it to paragui
+
+2001-12-10  midramas
+
+	* FreeLords 0.1.3
+
+2001-12-09  ulf82
+
+	* added stack/army::d_id
+
+2001-12-08  midramas
+
+	* vast speed improvement
+
+2001-12-06  midramas
+
+	* only a ChangeLog entry
+
+2001-12-05  midramas
+
+	* almost 0.1.2
+
+2001-12-04  midramas
+
+	* default.xml is used
+
+2001-12-04  midramas
+
+	* new button pictures
+
+2001-12-02  midramas
+
+	* further down the roadmap
+
+2001-11-30  ulf82
+
+	* bugfix in path
+
+2001-11-29  midramas
+
+	* more bugfixes
+
+2001-11-28  midramas
+
+	* added RuinSearchDialog + bugfixing
+
+2001-11-25  ulf82
+
+	* fixed bug in check_path
+
+2001-11-23  midramas
+
+	* bugfixing session
+
+2001-11-22  ulf82
+
+	* small bugfix in path
+
+2001-11-21  midramas
+
+	* polished FighDialog
+
+2001-11-21  midramas
+
+	* updated
+
+2001-11-21  midramas
+
+	* small fixes
+
+2001-11-20  midramas
+
+	* optimisations
+
+2001-11-20  midramas
+
+	* a small roadmap
+
+2001-11-20  midramas
+
+	* new flags
+
+2001-11-17  midramas
+
+	* using PG_Colors::FindColorByName() function
+
+2001-11-16  midramas
+
+	* cleaning up
+
+2001-11-15  midramas
+
+	* new splash screen
+
+2001-11-14  ulf82
+
+	* bugfix in path
+
+2001-11-14  midramas
+
+	* many fixes and cleanups
+
+2001-11-13  ulf82
+
+	* started to work on player
+
+2001-11-13  ulf82
+
+	* tiny stuff
+
+2001-11-12  midramas
+
+	* very long hacking session
+
+2001-11-12  ulf82
+
+	* rewrite of path class
+
+2001-11-11  midramas
+
+	* not needed anymore
+
+2001-11-10  midramas
+
+	* cleanups
+
+2001-11-10  midramas
+
+	* cleanups
+
+2001-11-10  midramas
+
+	* added class LocationList
+
+2001-11-09  midramas
+
+	* as always i forgot to add those
+
+2001-11-09  midramas
+
+	* added class Location & cleanups
+
+2001-11-07  midramas
+
+	* changed to ParaGUI 1.0.0
+
+2001-11-05  ulf82
+
+	* some smaller changes in path and stack
+
+2001-11-05  ulf82
+
+	* merged pathitem.* with path.cpp
+
+2001-11-04  midramas
+
+	* beauty added ;)
+
+2001-11-04  midramas
+
+	* again simplifications
+
+2001-11-01  ulf82
+
+	* some adjustments in path
+
+2001-11-01  ulf82
+
+	* small chnges in fight.cpp
+
+2001-10-31  midramas
+
+	* some changes to the army classes this time
+
+2001-10-31  midramas
+
+	* again a big update
+
+2001-10-29  midramas
+
+	* massive fight rewrite
+
+2001-10-29  midramas
+
+	* again some updates
+
+2001-10-29  midramas
+
+	* hopefully fixed redraw problem
+
+2001-10-29  midramas
+
+	* some updates
+
+2001-10-29  midramas
+
+	* again a big slew of updates
+
+2001-10-27  midramas
+
+	* renamed to FightDialog
+
+2001-10-27  midramas
+
+	* some more fixes
+
+2001-10-27  midramas
+
+	* BIG UPDATE
+
+2001-10-26  midramas
+
+	* some bugs fixed, some bugs implemented ;)
+
+2001-10-23  midramas
+
+	* just a small addition
+
+2001-10-17  midramas
+
+	* Makefile behaviour now as expected
+
+2001-10-17  midramas
+
+	* compiles again now (Debian testing/unstable)
+
+2001-10-01  midramas
+
+	* path interface changes
+
+2001-10-01  midramas
+
+	* xml parsing works
+
+2001-09-25  midramas
+
+	* quest information in design.txt
+
+2001-09-25  midramas
+
+	* a big pile of updates
+
+2001-09-24  midramas
+
+	* new startup script
+
+2001-09-24  midramas
+
+	* first part of 0.1.0 done
+
+2001-09-22  ulf82
+
+	* some further work to uml diagram
+
+2001-09-21  midramas
+
+	* many changes
+
+2001-09-21  midramas
+
+	* seperated class Armysetlist from the armyset file
+
+2001-09-14  ulf82
+
+	* extended freelords.uml
+
+2001-09-13  ulf82
+
+	* added some UML classes
+
+2001-09-03  midramas
+
+	* just a new version numbering
+
+2001-08-31  midramas
+
+	* updated Makefile
+
+2001-08-31  midramas
+
+	* cleaned up code, improved back-end
+
+2001-08-31  midramas
+
+	* extended
+
+2001-08-31  midramas
+
+	* updated freelords.uml & seperated fight class
+
+2001-08-29  ulf82
+
+	* extended freelords.uml and added deleting to armysetlist
+
+2001-08-01  ulf82
+
+	* added file.h/file.cpp rewrite of army related classes
+
+2001-07-21  midramas
+
+	* small changes in Army section
+
+2001-07-21  midramas
+
+	* small changed according to new UML diagram
+
+2001-07-20  midramas
+
+	* new design document
+
+2001-07-16  midramas
+
+	* improved performance when redrawing smallmap
+
+2001-07-15  ulf82
+
+	* small bugfixes
+
+2001-07-13  midramas
+
+	* fixing flags + further porting
+
+2001-07-13  midramas
+
+	* further porting of fight classes
+
+2001-07-11  midramas
+
+	* started to port fight & fightitem to ParaGUI
+
+2001-07-10  midramas
+
+	* small bugfixes
+
+2001-06-24  ulf82
+
+	* some more message porting
+
+2001-06-21  midramas
+
+	* added parameter detection
+
+2001-06-20  ulf82
+
+	* started implementing new callback mechanism
+
+2001-06-18  midramas
+
+	* new flag pics from James Andrews
+
+2001-06-18  midramas
+
+	* implemented flags as pictures
+
+2001-06-18  midramas
+
+	* fixed problem with paragui 0.7.1
+
+2001-06-13  midramas
+
+	* new swamp pics
+
+2001-05-30  midramas
+
+	* adding the docs now as tar.gz because of too much space and
+	  structure changes
+
+2001-05-28  midramas
+
+	* improved rendering machine (with crashing bug)
+
+2001-05-25  midramas
+
+	* improved the port
+
+2001-05-21  ulf82
+
+	* fix from Jimmy Chin
+
+2001-05-18  midramas
+
+	* finished porting d_buy_production + cityinfo
+
+2001-05-17  midramas
+
+	* New *great* specification by Jimmy Chin
+
+2001-05-17  midramas
+
+	* ported cityinfo dialog
+
+2001-05-15  ulf82
+
+	* closed some memory leaking
+
+2001-05-07  ulf82
+
+	* added defs.h, DEPENDENCIES and updated README
+
+2001-05-07  midramas
+
+	* porting updates (crashes cause of paragui bug)
+
+2001-05-02  midramas
+
+	* fixing segfault on moving stack
+
+2001-04-30  midramas
+
+	* porting is hell
+
+2001-04-27  midramas
+
+	* when can we play?
+
+2001-04-27  midramas
+
+	* not needed anymore
+
+2001-04-26  midramas
+
+	* biggest update so far
+
+2001-04-26  midramas
+
+	* have fun
+
+2001-04-25  midramas
+
+	* have i said that porting is hard work?
+
+2001-04-25  midramas
+
+	* tell me why it crashes
+
+2001-04-25  midramas
+
+	* starting to work on w_main now
+
+2001-04-25  midramas
+
+	* much progress made in porting to paragui 0.7.0
+
+2001-04-24  midramas
+
+	* man that is a big update!!!
+
+2001-04-23  midramas
+
+	* still porting (stack, path, city, army, armyset)
+
+2001-04-23  midramas
+
+	* a slew of changes for porting
+
+2001-04-20  midramas
+
+	* sorry, didn't compile :)
+
+2001-04-20  midramas
+
+	* now begins the heavy stuff
+
+2001-04-20  midramas
+
+	* port of pics.h/cpp
+
+2001-04-20  midramas
+
+	* class splash has been ported
+
+2001-04-19  midramas
+
+	* Initial revision
+
+2001-04-19  midramas
+
+	* imported sources
+

@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itemlist version="0.2.1">
+
+
+    <itemproto>
+        <d_name>Shield of Courage</d_name>
+        <d_name xml:lang="ca">Escut de coratge</d_name>
+        <d_name xml:lang="da">Modets skjold</d_name>
+        <d_name xml:lang="de">Schild der Tapferkeit</d_name>
+        <d_name xml:lang="fr">Bouclier du Courage</d_name>
+        <d_name xml:lang="ja">勇気のシールド</d_name>
+        <d_name xml:lang="ru">Щит мужества</d_name>
+        <d_name xml:lang="sv">Modets sköld</d_name>
+        <d_name xml:lang="tr">Cesaret Kalkanı</d_name>
+        <d_bonus>ItemProto::ADD1STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Troll Helm</d_name>
+        <d_name xml:lang="ca">Elm de troll</d_name>
+        <d_name xml:lang="da">Troldehjelm</d_name>
+        <d_name xml:lang="de">Trollhelm</d_name>
+        <d_name xml:lang="fr">Casque du Troll</d_name>
+        <d_name xml:lang="ja">トロールヘルム</d_name>
+        <d_name xml:lang="ru">Шлем тролля</d_name>
+        <d_name xml:lang="sv">Trollhjälmen</d_name>
+        <d_name xml:lang="tr">Troll Miğferi</d_name>
+        <d_bonus>ItemProto::ADD1STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Icesword</d_name>
+        <d_name xml:lang="ca">Espasa de gel</d_name>
+        <d_name xml:lang="da">Issværd</d_name>
+        <d_name xml:lang="de">Eisschwert</d_name>
+        <d_name xml:lang="fr">Épée des glaces</d_name>
+        <d_name xml:lang="ja">アイスソード</d_name>
+        <d_name xml:lang="ru">Ледяной меч</d_name>
+        <d_name xml:lang="sv">Issvärdet</d_name>
+        <d_name xml:lang="tr">Buz kılıcı</d_name>
+        <d_bonus>ItemProto::ADD1STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Armour of Gods</d_name>
+        <d_name xml:lang="ca">Armadura dels deus</d_name>
+        <d_name xml:lang="da">Gudernes rustning</d_name>
+        <d_name xml:lang="de">Rüstung der Götter</d_name>
+        <d_name xml:lang="fr">Armure des Dieux</d_name>
+        <d_name xml:lang="ja">神々の鎧</d_name>
+        <d_name xml:lang="ru">Доспехи богов</d_name>
+        <d_name xml:lang="sv">Gudarnas rustning</d_name>
+        <d_name xml:lang="tr">Tanrıların Zırhı</d_name>
+        <d_bonus>ItemProto::ADD3STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Crimson Banner</d_name>
+        <d_name xml:lang="ca">Bandera rosa</d_name>
+        <d_name xml:lang="da">Det blodrøde banner</d_name>
+        <d_name xml:lang="de">Purpurbanner</d_name>
+        <d_name xml:lang="fr">Bannière Sanglante</d_name>
+        <d_name xml:lang="ja">クリムゾンバナー</d_name>
+        <d_name xml:lang="ru">Багровое знамя</d_name>
+        <d_name xml:lang="sv">Blodröda baneret</d_name>
+        <d_name xml:lang="tr">Kırmızı Afiş</d_name>
+        <d_bonus>ItemProto::ADD1STACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Crown of Loriel</d_name>
+        <d_name xml:lang="ca">Corona de Loriel</d_name>
+        <d_name xml:lang="da">Loriels krone</d_name>
+        <d_name xml:lang="de">Loriels Krone</d_name>
+        <d_name xml:lang="fr">Couronne de Loriel</d_name>
+        <d_name xml:lang="ja">ロリエルの王冠</d_name>
+        <d_name xml:lang="ru">Корона Лориэля</d_name>
+        <d_name xml:lang="sv">Loriels krona</d_name>
+        <d_name xml:lang="tr">Loriel'in Tacı</d_name>
+        <d_bonus>ItemProto::ADD1STACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Ring of Power</d_name>
+        <d_name xml:lang="ca">Anell de poder</d_name>
+        <d_name xml:lang="da">Magtens ring</d_name>
+        <d_name xml:lang="de">Ring der Stärke</d_name>
+        <d_name xml:lang="fr">Anneau de Pouvoir</d_name>
+        <d_name xml:lang="ja">力の指輪</d_name>
+        <d_name xml:lang="ru">Кольцо энергии</d_name>
+        <d_name xml:lang="sv">Kraftens ring</d_name>
+        <d_name xml:lang="tr">Güç Yüzüğü</d_name>
+        <d_bonus>ItemProto::ADD2STACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Horn of Ages</d_name>
+        <d_name xml:lang="ca">Corn de l'antigor</d_name>
+        <d_name xml:lang="da">Tidernes horn</d_name>
+        <d_name xml:lang="de">Horn der Zeiten</d_name>
+        <d_name xml:lang="fr">Cor des Ages</d_name>
+        <d_name xml:lang="ja">時代の角</d_name>
+        <d_name xml:lang="ru">Рог Веков</d_name>
+        <d_name xml:lang="sv">Eonernas horn</d_name>
+        <d_name xml:lang="tr">Yılların Boynuzu</d_name>
+        <d_bonus>ItemProto::ADD2STACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Staff of Ruling</d_name>
+        <d_name xml:lang="ca">Bastó de governador</d_name>
+        <d_name xml:lang="da">Lederskabsstaven</d_name>
+        <d_name xml:lang="de">Stab der Herrschaft</d_name>
+        <d_name xml:lang="fr">Bâton de Commandement</d_name>
+        <d_name xml:lang="ja">裁定のスタッフ</d_name>
+        <d_name xml:lang="ru">Посох Правления</d_name>
+        <d_name xml:lang="sv">Härskandets stav</d_name>
+        <d_name xml:lang="tr">Hüküm Asası</d_name>
+        <d_bonus>ItemProto::ADD3STACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Wings of Flying</d_name>
+        <d_name xml:lang="ca">Ales de volar</d_name>
+        <d_name xml:lang="da">Flyvningens vinger</d_name>
+        <d_name xml:lang="de">Flügel des Fliegens</d_name>
+        <d_name xml:lang="fr">Ailes de Vol</d_name>
+        <d_name xml:lang="ja">翼の飛行</d_name>
+        <d_name xml:lang="ru">Крылья полёта</d_name>
+        <d_name xml:lang="sv">Flygandets vingar</d_name>
+        <d_name xml:lang="tr">Uçma Kanadı</d_name>
+        <d_bonus>ItemProto::FLYSTACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Wand of Flight</d_name>
+        <d_name xml:lang="ca">Vara de vol</d_name>
+        <d_name xml:lang="da">Flyvningens tryllestav</d_name>
+        <d_name xml:lang="de">Zauberstab des Fliegens</d_name>
+        <d_name xml:lang="fr">Bâton de Vol</d_name>
+        <d_name xml:lang="ja">飛行の杖</d_name>
+        <d_name xml:lang="ru">Палочка полёта</d_name>
+        <d_name xml:lang="sv">Flygandets trollspö</d_name>
+        <d_name xml:lang="tr">Uçma Değneği</d_name>
+        <d_bonus>ItemProto::FLYSTACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Ring of Travel</d_name>
+        <d_name xml:lang="ca">Anell de viatjar</d_name>
+        <d_name xml:lang="da">Rejsens ring</d_name>
+        <d_name xml:lang="de">Ring der Reisenden</d_name>
+        <d_name xml:lang="fr">Anneau des Périples</d_name>
+        <d_name xml:lang="ja">リングトラベル</d_name>
+        <d_name xml:lang="ru">Кольцо путешествия</d_name>
+        <d_name xml:lang="sv">Resandets ring</d_name>
+        <d_name xml:lang="tr">Seyahat Yüzüğü</d_name>
+        <d_bonus>ItemProto::DOUBLEMOVESTACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Phantom Steed</d_name>
+        <d_name xml:lang="ca">Corser fantasma</d_name>
+        <d_name xml:lang="da">Fantomganger</d_name>
+        <d_name xml:lang="de">Phantomross</d_name>
+        <d_name xml:lang="fr">Étalon Fantôme</d_name>
+        <d_name xml:lang="ja">ファントムスティード</d_name>
+        <d_name xml:lang="ru">Призрачный скакун</d_name>
+        <d_name xml:lang="sv">Fantomspringaren</d_name>
+        <d_name xml:lang="tr">Hayalet At</d_name>
+        <d_bonus>ItemProto::DOUBLEMOVESTACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Staff of Movement</d_name>
+        <d_name xml:lang="ca">Bastó de moviment</d_name>
+        <d_name xml:lang="da">Bevægelsens stav</d_name>
+        <d_name xml:lang="de">Stab der Bewegung</d_name>
+        <d_name xml:lang="fr">Bâton de Mouvement</d_name>
+        <d_name xml:lang="ja">ムーブメントのスタッフ</d_name>
+        <d_name xml:lang="ru">Посох движения</d_name>
+        <d_name xml:lang="sv">Förflyttningens stav</d_name>
+        <d_name xml:lang="tr">Hareket Asası</d_name>
+        <d_bonus>ItemProto::DOUBLEMOVESTACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Darksword</d_name>
+        <d_name xml:lang="ca">Espasa fosca</d_name>
+        <d_name xml:lang="da">Sortsværd</d_name>
+        <d_name xml:lang="de">Dunkelschwert</d_name>
+        <d_name xml:lang="fr">Épée ténébreuse</d_name>
+        <d_name xml:lang="ja">ダークソード</d_name>
+        <d_name xml:lang="ru">Тёмный меч</d_name>
+        <d_name xml:lang="sv">Mörkersvärdet</d_name>
+        <d_name xml:lang="tr">Karanlık Kılıç</d_name>
+        <d_bonus>ItemProto::ADD2STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Beserker Helm</d_name>
+        <d_name xml:lang="ca">Elm de ferotgia</d_name>
+        <d_name xml:lang="da">Besærkerhjelm</d_name>
+        <d_name xml:lang="de">Berserker Helm</d_name>
+        <d_name xml:lang="fr">Heaume du Berserker</d_name>
+        <d_name xml:lang="ja">ベザーカーのヘルム</d_name>
+        <d_name xml:lang="ru">Шлем Бесеркера</d_name>
+        <d_name xml:lang="sv">Bärsärkarhjälmen</d_name>
+        <d_name xml:lang="tr">Vahşi Savaşçı Miğferi</d_name>
+        <d_bonus>ItemProto::ADD2STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Bow of Eldros</d_name>
+        <d_name xml:lang="ca">Arc d'Eldros</d_name>
+        <d_name xml:lang="da">Eldros' bue</d_name>
+        <d_name xml:lang="de">Eldros Bogen</d_name>
+        <d_name xml:lang="fr">Arc d'Eldros</d_name>
+        <d_name xml:lang="ja">エルドロスの弓</d_name>
+        <d_name xml:lang="ru">Лук Элдроса</d_name>
+        <d_name xml:lang="sv">Eldros båge</d_name>
+        <d_name xml:lang="tr">Eldros'un Yayı</d_name>
+        <d_bonus>ItemProto::ADD2STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Sceptre of Loriel</d_name>
+        <d_name xml:lang="ca">Ceptre de Loriel</d_name>
+        <d_name xml:lang="da">Loriels scepter</d_name>
+        <d_name xml:lang="de">Loriels Zepter</d_name>
+        <d_name xml:lang="fr">Sceptre de Loriel</d_name>
+        <d_name xml:lang="ja">ロリエルの笏</d_name>
+        <d_name xml:lang="ru">Скипетр Лориэля</d_name>
+        <d_name xml:lang="sv">Loriels spira</d_name>
+        <d_name xml:lang="tr">Loriel'in Asası</d_name>
+        <d_bonus>ItemProto::ADD1STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Magic Carpet</d_name>
+        <d_name xml:lang="ca">Catifa màgica</d_name>
+        <d_name xml:lang="da">Magisk tæppe</d_name>
+        <d_name xml:lang="de">Magischer Teppich</d_name>
+        <d_name xml:lang="fr">Tapis Magique</d_name>
+        <d_name xml:lang="ja">魔法のじゅうたん</d_name>
+        <d_name xml:lang="ru">Магический ковёр</d_name>
+        <d_name xml:lang="sv">Flygande mattan</d_name>
+        <d_name xml:lang="tr">Sihirli Halı</d_name>
+        <d_bonus>ItemProto::FLYSTACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Cup of Haste</d_name>
+        <d_name xml:lang="ca">Copa de presa</d_name>
+        <d_name xml:lang="da">Hastighedens kop</d_name>
+        <d_name xml:lang="de">Kappe der Eile</d_name>
+        <d_name xml:lang="fr">Coup de Hâte</d_name>
+        <d_name xml:lang="ja">速攻のカップ</d_name>
+        <d_name xml:lang="pl">Puchar Pośpiechu</d_name>
+        <d_name xml:lang="ru">Кубок ускорения</d_name>
+        <d_name xml:lang="sv">Brådskans bägare</d_name>
+        <d_name xml:lang="tr">Çabukluk Kupası</d_name>
+        <d_bonus>ItemProto::DOUBLEMOVESTACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Boots of Speed</d_name>
+        <d_name xml:lang="ca">Botes de velocitat</d_name>
+        <d_name xml:lang="da">Hastighedsstøvler</d_name>
+        <d_name xml:lang="de">Stiefel der Geschwindigkeit</d_name>
+        <d_name xml:lang="fr">Bottes de Vitesse</d_name>
+        <d_name xml:lang="ja">スピードのブーツ</d_name>
+        <d_name xml:lang="ru">Ботинки скорости</d_name>
+        <d_name xml:lang="sv">Hastighetens skor</d_name>
+        <d_name xml:lang="tr">Hız Botu</d_name>
+        <d_bonus>ItemProto::DOUBLEMOVESTACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Eldros's Pouch</d_name>
+        <d_name xml:lang="ca">Bossa d'Eldros</d_name>
+        <d_name xml:lang="da">Eldros' pung</d_name>
+        <d_name xml:lang="de">Beutel des Eldros</d_name>
+        <d_name xml:lang="fr">Sac d'Eldros</d_name>
+        <d_name xml:lang="ja">エルドロスのポーチ</d_name>
+        <d_name xml:lang="ru">Сумка Элдроса</d_name>
+        <d_name xml:lang="sv">Eldros börs</d_name>
+        <d_name xml:lang="tr">Eldros'un Kesesi</d_name>
+        <d_bonus>ItemProto::ADD2GOLDPERCITY</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Spear of Ank</d_name>
+        <d_name xml:lang="ca">Llança d'Ank</d_name>
+        <d_name xml:lang="da">Ankens spyd</d_name>
+        <d_name xml:lang="de">Speer von Ank</d_name>
+        <d_name xml:lang="fr">Lance d'Ank</d_name>
+        <d_name xml:lang="ja">アンクの槍</d_name>
+        <d_name xml:lang="ru">Копьё Энка</d_name>
+        <d_name xml:lang="sv">Anks spjut</d_name>
+        <d_name xml:lang="tr">Ank'ın Mızrağı</d_name>
+        <d_bonus>ItemProto::ADD1STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Lock of Safety</d_name>
+        <d_name xml:lang="ca">Floc de seguretat</d_name>
+        <d_name xml:lang="da">Sikkerhedens lås</d_name>
+        <d_name xml:lang="de">Schloss der Sicherheit</d_name>
+        <d_name xml:lang="fr">Serrure de Sécurité</d_name>
+        <d_name xml:lang="ja">安全のロック</d_name>
+        <d_name xml:lang="ru">Замок безопасности</d_name>
+        <d_name xml:lang="sv">Säkerhetens lås</d_name>
+        <d_name xml:lang="tr">Güvenlik Kilidi</d_name>
+        <d_bonus>ItemProto::ADD2STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Horn of Siege</d_name>
+        <d_name xml:lang="ca">Corn de setge</d_name>
+        <d_name xml:lang="da">Belejringens horn</d_name>
+        <d_name xml:lang="de">Belagerungshorn</d_name>
+        <d_name xml:lang="fr">Cor ne de Siège</d_name>
+        <d_name xml:lang="ja">包囲の角</d_name>
+        <d_name xml:lang="ru">Рог осады</d_name>
+        <d_name xml:lang="sv">Belägringens horn</d_name>
+        <d_name xml:lang="tr">Kuşatma Boynuzu</d_name>
+        <d_bonus>ItemProto::ADD3STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Staff of Might</d_name>
+        <d_name xml:lang="ca">Bastó de força</d_name>
+        <d_name xml:lang="da">Den mægtige stav</d_name>
+        <d_name xml:lang="de">Stab der Macht</d_name>
+        <d_name xml:lang="fr">Bâton de Force</d_name>
+        <d_name xml:lang="ja">マイトのスタッフ</d_name>
+        <d_name xml:lang="ru">Посох могущества</d_name>
+        <d_name xml:lang="sv">Kraftens stav</d_name>
+        <d_name xml:lang="tr">Kabiliyet Asası</d_name>
+        <d_bonus>ItemProto::ADD3STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Wings of the Eagle</d_name>
+        <d_name xml:lang="ca">Ales de l'àliga</d_name>
+        <d_name xml:lang="da">Ørnens vinger</d_name>
+        <d_name xml:lang="de">Adlerflügel</d_name>
+        <d_name xml:lang="fr">Ailes de l'Aigle</d_name>
+        <d_name xml:lang="ja">イーグルの翼</d_name>
+        <d_name xml:lang="ru">Крылья орла</d_name>
+        <d_name xml:lang="sv">Örnens vingar</d_name>
+        <d_name xml:lang="tr">Kartalın Kanatları</d_name>
+        <d_bonus>ItemProto::FLYSTACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Everful Purse</d_name>
+        <d_name xml:lang="ca">Moneder Sempreple</d_name>
+        <d_name xml:lang="da">Evig pung</d_name>
+        <d_name xml:lang="de">Immervolle Geldbörse</d_name>
+        <d_name xml:lang="fr">Sac sans Fond</d_name>
+        <d_name xml:lang="ja">永遠の財布</d_name>
+        <d_name xml:lang="ru">Вечный кошелёк</d_name>
+        <d_name xml:lang="sv">Ändlösa börsen</d_name>
+        <d_name xml:lang="tr">Everful Purse</d_name>
+        <d_bonus>ItemProto::ADD2GOLDPERCITY</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Okradon's Pouch</d_name>
+        <d_name xml:lang="ca">Bossa d'Okradon</d_name>
+        <d_name xml:lang="da">Okradons pung</d_name>
+        <d_name xml:lang="de">Okradons Geldbörse</d_name>
+        <d_name xml:lang="fr">Sac d'Okradon</d_name>
+        <d_name xml:lang="ja">オクラドンのポーチ</d_name>
+        <d_name xml:lang="ru">Мешок Оркадоны</d_name>
+        <d_name xml:lang="sv">Okradons börs</d_name>
+        <d_name xml:lang="tr">Okradon'un Kesesi</d_name>
+        <d_bonus>ItemProto::ADD4GOLDPERCITY</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Firesword</d_name>
+        <d_name xml:lang="ca">Espasa de foc</d_name>
+        <d_name xml:lang="da">Ildsværd</d_name>
+        <d_name xml:lang="de">Feuerschwert</d_name>
+        <d_name xml:lang="fr">Épée de feu</d_name>
+        <d_name xml:lang="ja">ファイアソード</d_name>
+        <d_name xml:lang="ru">Огненный меч</d_name>
+        <d_name xml:lang="sv">Eldsvärdet</d_name>
+        <d_name xml:lang="tr">Ateş Kılıcı</d_name>
+        <d_bonus>ItemProto::ADD1STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Sword of Death</d_name>
+        <d_name xml:lang="ca">Espasa de mort</d_name>
+        <d_name xml:lang="da">Dødens sværd</d_name>
+        <d_name xml:lang="de">Schwert des Todes</d_name>
+        <d_name xml:lang="fr">Épée de Mort</d_name>
+        <d_name xml:lang="ja">死の剣</d_name>
+        <d_name xml:lang="ru">Меч смерти</d_name>
+        <d_name xml:lang="sv">Dödens svärd</d_name>
+        <d_name xml:lang="tr">Ölüm Kılıcı</d_name>
+        <d_bonus>ItemProto::ADD1STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Chimes of Safety</d_name>
+        <d_name xml:lang="ca">Campanetes de seguretat</d_name>
+        <d_name xml:lang="da">Sikkerhedens klokker</d_name>
+        <d_name xml:lang="de">Glockenspiel der Sicherheit</d_name>
+        <d_name xml:lang="fr">Carillon de Sécurité</d_name>
+        <d_name xml:lang="ja">安全のチャイム</d_name>
+        <d_name xml:lang="ru">Звон спасения</d_name>
+        <d_name xml:lang="sv">Säkerhetens klockor</d_name>
+        <d_name xml:lang="tr">Güvenlik Melodisi</d_name>
+        <d_bonus>ItemProto::ADD2STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Lightsword</d_name>
+        <d_name xml:lang="ca">Espasa de llum</d_name>
+        <d_name xml:lang="da">Letsværd</d_name>
+        <d_name xml:lang="de">Lichtschwert</d_name>
+        <d_name xml:lang="fr">Épée de Lumière</d_name>
+        <d_name xml:lang="ja">ライトソード</d_name>
+        <d_name xml:lang="ru">Световой меч</d_name>
+        <d_name xml:lang="sv">Ljussvärdet</d_name>
+        <d_name xml:lang="tr">Hafif Kılıç</d_name>
+        <d_bonus>ItemProto::ADD2STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Orb of Loriel</d_name>
+        <d_name xml:lang="ca">Orbe de Loriel</d_name>
+        <d_name xml:lang="da">Loriels sfære</d_name>
+        <d_name xml:lang="de">Loriels Reichsapfel</d_name>
+        <d_name xml:lang="fr">Orbe de Loriel</d_name>
+        <d_name xml:lang="ja">ロリエルのオーブ</d_name>
+        <d_name xml:lang="ru">Сфера Лориэля</d_name>
+        <d_name xml:lang="sv">Loriels riksäpple</d_name>
+        <d_name xml:lang="tr">Loriel'in Küresi</d_name>
+        <d_bonus>ItemProto::ADD1STACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Witch's Broom</d_name>
+        <d_name xml:lang="ca">Escombra de bruixa</d_name>
+        <d_name xml:lang="da">Heksestav</d_name>
+        <d_name xml:lang="de">Hexenbesen</d_name>
+        <d_name xml:lang="fr">Balais de Sorcière</d_name>
+        <d_name xml:lang="ja">魔女のほうき</d_name>
+        <d_name xml:lang="ru">Метла ведьмы</d_name>
+        <d_name xml:lang="sv">Häxans kvast</d_name>
+        <d_name xml:lang="tr">Cadının Süpürgesi</d_name>
+        <d_bonus>ItemProto::FLYSTACK</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Silver Purse</d_name>
+        <d_name xml:lang="ca">Bossa de plata</d_name>
+        <d_name xml:lang="da">Sølvpung</d_name>
+        <d_name xml:lang="de">Silberne Geldbörse</d_name>
+        <d_name xml:lang="fr">Bourse d'Argent</d_name>
+        <d_name xml:lang="ja">銀の財布</d_name>
+        <d_name xml:lang="ru">Серебряный кошелёк</d_name>
+        <d_name xml:lang="sv">Silverbörsen</d_name>
+        <d_name xml:lang="tr">Gümüş Kese</d_name>
+        <d_bonus>ItemProto::ADD4GOLDPERCITY</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Tome of War</d_name>
+        <d_name xml:lang="ca">Tom de guerra</d_name>
+        <d_name xml:lang="da">Krigens encyklopædi</d_name>
+        <d_name xml:lang="de">Band des Krieges</d_name>
+        <d_name xml:lang="fr">Codex de la Guerre</d_name>
+        <d_name xml:lang="ja">戦争の本</d_name>
+        <d_name xml:lang="ru">Том войны</d_name>
+        <d_name xml:lang="sv">Krigsluntan</d_name>
+        <d_name xml:lang="tr">Savaş Cildi</d_name>
+        <d_bonus>ItemProto::ADD1STR</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Horn of Plenty</d_name>
+        <d_name xml:lang="ca">Corn de l'abundància</d_name>
+        <d_name xml:lang="da">Overflødighedshorn</d_name>
+        <d_name xml:lang="de">Horn des Überflusses</d_name>
+        <d_name xml:lang="fr">Corne d'Abondance</d_name>
+        <d_name xml:lang="ja">打ち出の小槌</d_name>
+        <d_name xml:lang="ru">Рог изобилия</d_name>
+        <d_name xml:lang="sv">Ymnighetshornet</d_name>
+        <d_name xml:lang="tr">Bereket Boynuzu</d_name>
+        <d_bonus>ItemProto::ADD2GOLDPERCITY ItemProto::ADD4GOLDPERCITY</d_bonus>
+    </itemproto>
+    <itemproto>
+        <d_name>Scroll of Thievery</d_name>
+        <d_name xml:lang="ca">Pergamí de robatori</d_name>
+        <d_name xml:lang="da">Tyvenes skriftrulle</d_name>
+        <d_name xml:lang="de">Rolle des Diebstahls</d_name>
+        <d_name xml:lang="fr">Parchemin des Cambrioleurs</d_name>
+        <d_name xml:lang="ja">泥棒の巻物</d_name>
+        <d_name xml:lang="ru">Свиток воровства</d_name>
+        <d_name xml:lang="sv">Tjuveriskriftrullen</d_name>
+        <d_name xml:lang="tr">Hırsızlık Parşömeni</d_name>
+        <d_bonus>ItemProto::STEAL_GOLD</d_bonus>
+        <d_uses_left>1</d_uses_left>
+        <d_steal_gold_percent>50</d_steal_gold_percent>
+    </itemproto>
+    <itemproto>
+        <d_name>Scroll of Great Tides</d_name>
+        <d_name xml:lang="ca">Pergamí de grans marees</d_name>
+        <d_name xml:lang="da">Skriftrullen for store tider</d_name>
+        <d_name xml:lang="de">Rolle der großen Gezeiten</d_name>
+        <d_name xml:lang="fr">Parchemin des Grandes Vagues</d_name>
+        <d_name xml:lang="ja">グレートタイズの巻物</d_name>
+        <d_name xml:lang="ru">Свиток великих приливов</d_name>
+        <d_name xml:lang="sv">Högvattenskriftrullen</d_name>
+        <d_name xml:lang="tr">Büyük Akıntı Parşömeni</d_name>
+        <d_bonus>ItemProto::SINK_SHIPS</d_bonus>
+        <d_uses_left>1</d_uses_left>
+    </itemproto>
+    <itemproto>
+        <d_name>Scroll of Retrieve Lost Items</d_name>
+        <d_name xml:lang="ca">Pergamí de recuperar objectes perduts</d_name>
+        <d_name xml:lang="da">Skriftrullen til opdagelse af glemt udstyr</d_name>
+        <d_name xml:lang="de">Rolle vom Aufruf verlorener Gegenstände</d_name>
+        <d_name xml:lang="fr">Parchemin de Récupération d'Objets</d_name>
+        <d_name xml:lang="ja">失われたアイテムを取得するスクロール</d_name>
+        <d_name xml:lang="ru">Свиток для возвращения потерянных элементов</d_name>
+        <d_name xml:lang="sv">Skriftrullen för finnande av försvunna ting</d_name>
+        <d_name xml:lang="tr">Kayıp Eşyaları Getirme Parşömeni</d_name>
+        <d_bonus>ItemProto::PICK_UP_BAGS</d_bonus>
+        <d_uses_left>1</d_uses_left>
+    </itemproto>
+    <itemproto>
+        <d_name>Staff of Many Steps</d_name>
+        <d_name xml:lang="ca">Bastó de moltes passes</d_name>
+        <d_name xml:lang="da">Staven med mange trin</d_name>
+        <d_name xml:lang="de">Stab der vielen Schritte</d_name>
+        <d_name xml:lang="fr">Bâton des Pas Innombrables</d_name>
+        <d_name xml:lang="ja">多くのステップのスタッフ</d_name>
+        <d_name xml:lang="ru">Посох многих шагов</d_name>
+        <d_name xml:lang="sv">De många stegens stav</d_name>
+        <d_name xml:lang="tr">Çok Adım Asası</d_name>
+        <d_bonus>ItemProto::ADD_2MP_STACK</d_bonus>
+        <d_uses_left>11</d_uses_left>
+        <d_mp_to_add>2</d_mp_to_add>
+    </itemproto>
+    <itemproto>
+        <d_name>Staff of Saint Patrick</d_name>
+        <d_name xml:lang="ca">Bastó de Sant Patrici</d_name>
+        <d_name xml:lang="da">Sankt Patricks stav</d_name>
+        <d_name xml:lang="de">Stab des St. Patrick</d_name>
+        <d_name xml:lang="fr">Bâton de Saint Patrick</d_name>
+        <d_name xml:lang="ja">聖パトリックのスタッフ</d_name>
+        <d_name xml:lang="ru">Посох Святого Патрика</d_name>
+        <d_name xml:lang="sv">Sankt Patriks stav</d_name>
+        <d_name xml:lang="tr">Aziz Patrick Asası</d_name>
+        <d_bonus>ItemProto::BANISH_WORMS</d_bonus>
+        <d_uses_left>3</d_uses_left>
+        <d_army_type_to_kill>18</d_army_type_to_kill>
+    </itemproto>
+    <itemproto>
+        <d_name>Wand of the Bridgeburners</d_name>
+        <d_name xml:lang="ca">Vareta dels Cremadors de Ponts</d_name>
+        <d_name xml:lang="da">Brobrændernes tryllestav</d_name>
+        <d_name xml:lang="fr">Bâton des Brûleurs de Ponts</d_name>
+        <d_name xml:lang="ja">ブリッジバーナーの杖</d_name>
+        <d_name xml:lang="ru">Палочка поджигателей мостов</d_name>
+        <d_name xml:lang="sv">Brobrännarnas stav</d_name>
+        <d_name xml:lang="tr">Köprü Yakanlar Değneği</d_name>
+        <d_bonus>ItemProto::BURN_BRIDGE</d_bonus>
+        <d_uses_left>3</d_uses_left>
+    </itemproto>
+    <itemproto>
+        <d_name>Staff of Charm Ruin Monster</d_name>
+        <d_name xml:lang="ca">Bastó d'encanteri ruïna i monstre</d_name>
+        <d_name xml:lang="da">Charm-ruinmonsternes stav</d_name>
+        <d_name xml:lang="fr">Bâton de Charme Monstre</d_name>
+        <d_name xml:lang="ja">チャーム廃墟モンスターのスタッフ</d_name>
+        <d_name xml:lang="ru">Посох зачарователя монстров руин</d_name>
+        <d_name xml:lang="sv">Staven för ruinmonsters förhäxande</d_name>
+        <d_name xml:lang="tr">Cazibe Mahvedici Yaratık Asası</d_name>
+        <d_bonus>ItemProto::CAPTURE_KEEPER</d_bonus>
+        <d_uses_left>3</d_uses_left>
+    </itemproto>
+    <itemproto>
+        <d_name>Whistle of Angelic Assistance</d_name>
+        <d_name xml:lang="ca">Xiulet d'Assistència Angelical</d_name>
+        <d_name xml:lang="da">Englenes hjælp</d_name>
+        <d_name xml:lang="fr">Sifflet d'Aide Angélique</d_name>
+        <d_name xml:lang="ja">天使の助けの笛</d_name>
+        <d_name xml:lang="ru">Свисток ангельской помощи</d_name>
+        <d_name xml:lang="sv">Änglaassistansens visselpipa</d_name>
+        <d_name xml:lang="tr">Melek Yardımcının Düdüğü</d_name>
+        <d_bonus>ItemProto::SUMMON_MONSTER</d_bonus>
+        <d_uses_left>3</d_uses_left>
+        <d_army_type_to_summon>25</d_army_type_to_summon>
+        <d_building_type_to_summon_on>Maptile::TEMPLE</d_building_type_to_summon_on>
+    </itemproto>
+    <itemproto>
+        <d_name>Wand of Urban Pestilence</d_name>
+        <d_name xml:lang="ca">Vareta de Pestilència Urbana</d_name>
+        <d_name xml:lang="da">Tryllestav for bysygdom</d_name>
+        <d_name xml:lang="fr">Baguette de Pestilence Urbaine</d_name>
+        <d_name xml:lang="ja">アーバンペスティレンスの杖</d_name>
+        <d_name xml:lang="ru">Жезл городской язвы</d_name>
+        <d_name xml:lang="sv">Stadsepidemins trollspö</d_name>
+        <d_name xml:lang="tr">Veba Değneği</d_name>
+        <d_bonus>ItemProto::DISEASE_CITY</d_bonus>
+        <d_uses_left>3</d_uses_left>
+        <d_percent_armies_to_kill>25</d_percent_armies_to_kill>
+    </itemproto>
+    <itemproto>
+        <d_name>Staff of Ghostly Defenders</d_name>
+        <d_name xml:lang="ca">Bastó de defensors fantasmagòrics</d_name>
+        <d_name xml:lang="da">De spøgelsesagtige forsvarers stav</d_name>
+        <d_name xml:lang="fr">Bâton des Défenseurs Fantômes</d_name>
+        <d_name xml:lang="ja">幽霊のディフェンダーのロッド</d_name>
+        <d_name xml:lang="ru">Жезл призрачных защитников</d_name>
+        <d_name xml:lang="sv">Spöklika försvararnas stav</d_name>
+        <d_name xml:lang="tr">Hayalet Savunucuların Asası</d_name>
+        <d_bonus>ItemProto::RAISE_DEFENDERS</d_bonus>
+        <d_uses_left>2</d_uses_left>
+        <d_army_type_to_raise>19</d_army_type_to_raise>
+        <d_num_armies_to_raise>3</d_num_armies_to_raise>
+    </itemproto>
+    <itemproto>
+        <d_name>Staff of Persuasion</d_name>
+        <d_name xml:lang="ca">Bastó de persuasió</d_name>
+        <d_name xml:lang="da">Overtalelsesstaven</d_name>
+        <d_name xml:lang="fr">Bâton de Persuasion</d_name>
+        <d_name xml:lang="ja">説得のスタッフ</d_name>
+        <d_name xml:lang="ru">Посох убеждения</d_name>
+        <d_name xml:lang="sv">Övertygandets stav</d_name>
+        <d_name xml:lang="tr">İkna Asası</d_name>
+        <d_bonus>ItemProto::PERSUADE_NEUTRALS</d_bonus>
+        <d_uses_left>3</d_uses_left>
+    </itemproto>
+    <itemproto>
+        <d_name>Ring of Teleportation</d_name>
+        <d_name xml:lang="ca">Anell de teleportació</d_name>
+        <d_name xml:lang="da">Teleporteringsring</d_name>
+        <d_name xml:lang="fr">Anneau de Téléportation</d_name>
+        <d_name xml:lang="ja">テレポーテーションのリング</d_name>
+        <d_name xml:lang="ru">Кольцо телепортации</d_name>
+        <d_name xml:lang="sv">Teleporteringsringen</d_name>
+        <d_name xml:lang="tr">Işınlanma Yüzüğü</d_name>
+        <d_bonus>ItemProto::TELEPORT_TO_CITY</d_bonus>
+        <d_uses_left>3</d_uses_left>
+    </itemproto>
+</itemlist>

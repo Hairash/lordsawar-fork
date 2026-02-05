@@ -1,0 +1,2 @@
+SUBDIRS = dol duel
+MANTAINERCLEANFILES= Makefile.in

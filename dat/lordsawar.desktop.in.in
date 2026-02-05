@@ -1,0 +1,12 @@
+[Desktop Entry]
+
+_Name=LordsAWar!
+_GenericName=Turn-based strategy game
+_Comment=Play a clone of Warlords II
+
+Type=Application
+Exec=lordsawar
+Icon=lordsawar
+Terminal=false
+Categories=Game;StrategyGame;
+Keywords=turn-based;multiplayer;city;army;hero;quest;warlords;

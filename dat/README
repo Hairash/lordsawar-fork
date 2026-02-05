@@ -1,0 +1,20 @@
+This file describes the Copyright for the name data files for LordsAWar.
+
+citynames:
+	Copyright (C) 2001 Michael Bartl
+	Copyright (C) 2002, 2003, 2004 Ulf Lorenz
+	Copyright (C) 2007 Ben Asselstine
+
+heronames:
+	Copyright (C) 2003, 2004, 2005 Ulf Lorenz
+
+ruinnames:
+	Copyright (C) 2005 Ulf Lorenz
+
+signposts: 
+	Copyright (C) 2006 Ben Asselstine
+
+templenames:
+	Copyright (C) 2005 Ulf Lorenz
+
+These files are licensed under the GNU General Public License version 3 or later.

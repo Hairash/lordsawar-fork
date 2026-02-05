@@ -1,0 +1,30 @@
+.TH LORDSAWAR-GAME-LIST-SERVER "6" "May 2020" "lordsawar 0.3.2" "Games"
+.SH NAME
+lordsawar-game-list-server \- Serve up information about currently running lordsawar networked games.
+.SH SYNOPSIS
+.B lordsawar-game-list-server
+[\fIOPTION\fR...]
+.SH DESCRIPTION
+The LordsAWar! game list server keeps track of which networked games are available for others to join.  This is the way lordsawar games are advertised so that others can find them.  The command-line tool
+.B lordsawar-game-list-client
+is used to send commands to this server.
+.TP
+\fB\-f\fB, \fB\-\-foreground\fR
+Do not detach from the controlling terminal.
+.TP
+\fB\-p\fR, \fB\-\-port\fR \fINUMBER\fR
+Start the list server on the given port.
+.TP
+\fB\-?\fB, \fB\-\-help\fR
+Give this help list.
+.PP
+When a --port is not specified, the server starts on port 18998.
+.SH "FILES"
+.TP 18n
+.I ~/.lordsawarrc
+The configuration file.
+.TP
+.I ~/.lordsawar/recently-advertised.xml
+The data file representing the list of games that the server is serving.
+.SH "REPORTING BUGS"
+Report bugs to <https://savannah.nongnu.org/bugs/?group=lordsawar>.

@@ -1,0 +1,65 @@
+upload to dl.sv.gnu.org.  cd /releases/lordsawar
+
+ scp lordsawar-0.3.3.tar.gz benasselstine@dl.sv.nongnu.org:/releases/lordsawar/
+
+
+when next to an enemy city, just attack it
+calculate to city should be different for enemy cities
+  friendly should go to the free spot that we can merge with
+  while enemy should go to the nearest corner
+
+it would be nice if ai path movement didn't always take the same path
+often, we can take the same number of moves to get to a different tile beside a city
+
+
+
+---
+
+gtk 4, use Gtk::Overlay with Gtk::Image to make our tiles.
+
+
+in the editor, images that we supply for graphics often need to have a width that is a multiple of the height.  we're only doing that for tilestylesets right now but the policy could be more widely applied to prevent garbage in garbage out.
+
+when we get a networked game and add the tilesets, etc to our personal collection, we need to ensure a unique name
+
+3x3 forests in the editor can cause crazy tiles.  not being smoothed properly.
+
+should we do anything when an armyset, etc gets removed from disk after it is loaded
+
+add a way to reset the hero names in the editor, and items, and player names.
+
+figure out the mysterious 1.65 number in smallmap.cpp.
+
+saw a crash when switching to a newly made shieldset in the editor.  can't reproduce.  saw the same with a tileset.
+
+maybe improve the ai a bit by: disbanding stacks and creating a stronger type somewhere
+favour cheaper army units for production when we don't have much money
+
+fix up the upgrader by painstakingly providing an upgrade path through each version of every file type.
+  (starting at whenever we used tar files.)
+
+make an svg armyset, tileset, shieldset, cityset to test if it works.
+
+the military advisor is somewhat medieval sounding , might want to make it more neutral for scenarios with other genres.
+  maybe move the text of it into the scenario editor.
+  this business of making it more neutral is probably a bad idea because my users expect a medieval tone.
+
+switch from gstreamermm to gstreamer
+
+are ai players limited by gold? do they just keep making more armies despite having 0gp treasury?
+
+editor needs to be able to handle tilesets with two different water tiles and so on.  we can only select the first 'water'.
+
+when the game is done, offer a replay. (idea of Timirtdinov Leonid)
+
+undo doesn't always place the cursor properly on entries and textviews
+
+preview army type in armyset editor.  pick tileset/shieldset/cityset/army.
+
+switch from gtk notebooks to gtk stack switchers
+
+it would be nice if the lobby messages, join/depart, etc were xmlized
+
+it would be nice if the editor showed a progress bar when opening a map, or importing a saved game
+
+need recently opened files in file menus

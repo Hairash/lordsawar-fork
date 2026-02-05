@@ -1,0 +1,1 @@
+/opt/homebrew/Cellar/intltool/0.51.0_2/share/aclocal/intltool.m4

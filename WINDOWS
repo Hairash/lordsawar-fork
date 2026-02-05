@@ -1,0 +1,53 @@
+Cross-compiling LordsAWar! for Windows on Fedora 31
+
+Fedora makes it easy to cross-compile for Windows because they make mingw-compiled packages available for almost all of our dependencies.
+
+$ sudo dnf install intltool automake autoconf m4 git libtool glib2-devel mingw32-filesystem mingw32-gcc-c++ mingw32-libarchive mingw32-cairomm mingw32-libsigc++20 mingw32-gettext mingw32-libxslt mingw32-libxml++ mingw32-gtkmm30 mingw32-nsis
+
+$ git clone git://git.savannah.nongnu.org/lordsawar.git
+
+$ cd lordsawar
+
+$ ./autogen.sh
+
+$ mingw32-configure --disable-gls --disable-ghs --disable-sound --program-prefix=""
+
+$ LDFLAGS="-mwindows -fstack-protector" LORDSAWAR_DATADIR="." make -e -j4
+
+$ sudo make install
+
+The approach here is to set the datadir to ".", so that we can put all of the data files in the same directory as the exe.  Compiling "." as the datadir into the program means that the default configuration file will be written with this path -- and the data files will be found on the first run without the user having to manually munge the .lordsawarrc file.
+
+The LDFLAGS="-mwindows" ensures that we run our .exe without a terminal.
+
+Sound is disabled because Fedora lacks a mingw-compiled gstreamermm package.
+
+
+mingw-bundledlls is used to collect up the required DLLs for the lordsawar.exe executable.  It can be downloaded here: https://github.com/mpreisler/mingw-bundledlls 
+
+Put it in your path, and make it executable.
+
+They update the DLL blacklist so make sure you check back for new versions of this script.
+
+Finally, we're ready to make a windows zip file that contains the game, the editor, the DLLS, the gnome icons, and all of our game data.
+
+$ ./make-windows-zip.sh
+
+It makes use the of mingw-bundledlls and the copy-gnome-icons.sh script.
+When it completes, you will have a lordsawar-windows.zip file.
+
+Yes it's annoying that we copy all of the gnome icons, but we really don't know which ones we're going to use.  Perhaps we could be smarter about it.
+
+The last step is to make the windows installer lordsawar-setup.exe.  The lordsawar-windows.zip file must be created so that the creation script can use it.
+
+$ ./make-windows-installer.sh
+
+The lordsawar-setup.exe file should now be present in the current working directory.
+
+Also try the game executable (not the setup) in wine:
+[first install all of the required 32-bit libraries,
+even though we're on a 64 bit system
+you'll also need libcanberra-gtk3, and PackageKit-gtk3-module ]
+
+$ cd /usr/i686-w64-mingw32/sys-root/mingw/share/lordsawar
+$ wine /path/to/lordsawar.exe

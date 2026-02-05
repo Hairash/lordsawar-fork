@@ -1,0 +1,46 @@
+.TH LORDSAWAR-GAME-HOST-CLIENT "6" "May 2020" "lordsawar 0.3.2" "Games"
+.SH NAME
+lordsawar-game-host-client \- administer or query a game host server
+.SH SYNOPSIS
+.B lordsawar-game-host-client
+[\fIOPTION\fR...] \fIHOST\fR
+.SH DESCRIPTION
+A command-line tool to manage a LordsAWar! game host server located at \fIHOST\fR.  Start hosting new games, stop hosting games, or ask it for a list of hosted games.
+.TP
+\fB\-p\fR, \fB\-\-profile\fR \fIID\fR
+Use this identity to make requests to the remote server.  The ID looks like a guid.
+.TP
+\fB\-h\fR, \fB\-\-host\fR \fIFILE\fR
+Ask the server to host a new game.  This command uploads \fIFILE\fR to the remote server begins a new game with it.  \fIFILE\fR is .map scenario file.
+.TP
+\fB\-u\fR, \fB\-\-unhost\fR \fIID\fR
+Ask the server to stop hosting a game.  The ID looks like a guid.
+.TP
+\fB\-p\fR, \fB\-\-port\fR \fINUMBER\fR
+Connect to the remote server on the given port.
+.TP
+\fB\-t\fR, \fB\-\-terminate
+Ask the server to stop.  The games continue to be hosted, but our ability to control them (or host new games), goes away until the server starts back up.
+.TP
+\fB\-r\fR, \fB\-\-reload
+Ask the server to reload it's list of hosted games from disk.
+.TP
+\fB\-l\fR, \fB\-\-list
+Ask the server to show a list of games it is hosting.
+.TP
+\fB\-?\fB, \fB\-\-help\fR
+Give this help list.
+.PP
+When --profile is not specified, the first profile in \fIprofiles.xml\fR is used by default.
+When a --port is not specified, port 22998 is assumed.
+When \fIHOST\fR is not specified on the command-line, 127.0.0.1 is assumed.
+
+.SH "FILES"
+.TP 18n
+.I ~/.lordsawarrc
+The configuration file.
+.TP
+.I ~/.lordsawar/profiles.xml
+The data file representing the list of profiles.
+.SH "REPORTING BUGS"
+Report bugs to <https://savannah.nongnu.org/bugs/?group=lordsawar>.

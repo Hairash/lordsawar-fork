@@ -1,0 +1,37 @@
+[Desktop Entry]
+
+Name=LordsAWar!
+Name[ca]=LordsAWar!
+Name[da]=LordsAWar!
+Name[de]=LordsAWar!
+Name[fr]=LordsAWar!
+Name[ja]=LordsAWar!
+Name[ru]=LordsAWar!
+Name[sv]=LordsAWar!
+Name[tr]=LordsAWar!
+GenericName=Turn-based strategy game
+GenericName[ca]=Joc d'estratègia per torns
+GenericName[da]=Rundebaseret strategispil
+GenericName[de]=Rundenbasiertes Strategiespiel
+GenericName[fr]=Jeu de stratégie au tour par tour
+GenericName[hu]=Körökre osztott stratégiai játék
+GenericName[ja]=ターンベースの戦略ゲーム
+GenericName[ru]=Пошаговая стратегическая игра
+GenericName[sv]=Turbaserat strategispel
+GenericName[tr]=Sıra temelli strateji oyunu
+Comment=Play a clone of Warlords II
+Comment[ca]=Juga a un clon de Warlords II
+Comment[da]=Spil en klon af Warlords II
+Comment[de]=Spiele einen Klon von Warlords II
+Comment[fr]=Jouez à un clone de Warlords II
+Comment[ja]=Warlords IIのクローンを遊ぶ
+Comment[ru]=Играть в клон Warlords II
+Comment[sv]=Spela en klon av Warlords II
+Comment[tr]=Warlords II klonu oyna
+
+Type=Application
+Exec=lordsawar
+Icon=lordsawar
+Terminal=false
+Categories=Game;StrategyGame;
+Keywords=turn-based;multiplayer;city;army;hero;quest;warlords;

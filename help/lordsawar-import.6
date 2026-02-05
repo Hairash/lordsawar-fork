@@ -1,0 +1,35 @@
+.TH LORDSAWAR-IMPORT "6" "May 2020" "lordsawar 0.3.2" "Games"
+.SH NAME
+lordsawar-import \- Transfer your scenarios from Warlords II
+.SH SYNOPSIS
+.B lordsawar-import
+[\fIOPTION\fR...] [\fIFILE\fR]
+.br
+.B lordsawar-import
+[\fIOPTION\fR...] [\fIDIRECTORY\fR]
+.SH DESCRIPTION
+This tool converts Warlords II .SCZ files into LordsAWar! map files.  Alternatively this tool can operate on a directory that contains the unpacked SCZ file.  In particular, the directory must contain .SCN, .ITM, .RD, .MAP, .SPC, and .SGN files.
+
+No attempt is made to import the graphics from the Warlords scenario.
+
+This tool does not support the importing of .SZP files, or saved game files.
+
+The resulting file is saved as the basename of your FILE or directory, with a .map extension added.  For example, if you converted a directory called ERYTHEA/, the converted file will be called ERYTHEA.map.
+
+.SH OPTIONS
+.TP
+\fB\-a\fB, \fB\-\-army\-file\fR \fIFILE\fR
+Use this Warlords 2 army file.  It is a .DAT file, 1798 bytes long.
+.TP
+\fB\-h\fB, \fB\-\-help\fR
+Give this help list.
+.PP
+.SH "BUGS"
+The bottommost row of converted scenarios can often have errors on it.
+
+Unfortunately this tool does not import the contents of cities -- the cities themselves will be imported, but they won't have any armies that can be produced.  
+
+Ruin defenders are not imported, and neither are the rewards (items) that can be found inside ruins.
+
+.SH "REPORTING BUGS"
+Report bugs to <https://savannah.nongnu.org/bugs/?group=lordsawar>.

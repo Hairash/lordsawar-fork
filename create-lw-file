@@ -1,0 +1,32 @@
+#!/bin/bash
+
+exitstatus="0"
+# put the files given on the command line into a tarball with the same name as the first file in that list.  that first file gets overwritten.
+files=$*
+tmpdir=`mktemp -q -d /tmp/lw-tar.XXXXXX `
+# -q is quiet and -d is --directory.
+# short options are used here for portability purposes on systems that don't
+# see the benefit of the explanatory power of long options.
+file=`basename $1`
+if [ "x$tmpdir" != "x" ]; then
+  cp $files $tmpdir
+  tarball=$file.tar
+  origdir=`pwd`
+  cd $tmpdir
+  tmpfiles=""
+  for f in $files; do
+          tmpfiles="$tmpfiles `basename $f`"
+  done
+  #we want to use --clamp-mtime but it is too new. (requires GNU tar version 1.29)
+  #we want to use --sort=name but it is too new.
+  tar -cvf $tarball $tmpfiles --mtime="@${SOURCE_DATE_EPOCH:-$(date +%s)}" --mode=go=rX,u+rw,a-s --owner=root --group=root --numeric-owner
+  if [ "$?" != "0" ]; then
+    exitstatus="1";
+  fi
+  cd $origdir
+  cp -f $tmpdir/$tarball $1
+  rm -f $tmpdir/*
+  rmdir $tmpdir
+fi
+
+exit $exitstatus

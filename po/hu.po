@@ -1,0 +1,8081 @@
+# Hungarian translation for lordsawar.
+# Copyright (C) 2014 Yoyodyne, Inc & Joe Hansen.
+# This file is distributed under the same license as the lordsawar package.
+#
+# Balázs Úr <urbalazs@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: lordsawar 0.3.0-pre3\n"
+"Report-Msgid-Bugs-To: bug-gnu-gettext@gnu.org\n"
+"POT-Creation-Date: 2014-07-09 10:19-0400\n"
+"PO-Revision-Date: 2014-12-03 21:21+0100\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ../dat/glade/about-dialog.ui.h:1
+msgid ""
+"Copyright © 2006-2014 Ben Asselstine\n"
+"(and many other copyright holders)"
+msgstr ""
+"Copyright © 2006-2014 Ben Asselstine\n"
+"(és számos egyéb szerzői jog tulajdonos)"
+
+#: ../dat/glade/about-dialog.ui.h:3
+msgid ""
+"Freedom is the most important \n"
+"feature of this game."
+msgstr ""
+"A szabadság a játék legfontosabb\n"
+"funkciója."
+
+#: ../dat/glade/about-dialog.ui.h:5
+msgid "The LordsAWar Website"
+msgstr "A LordsAWar weboldala"
+
+#: ../dat/glade/about-dialog.ui.h:6
+msgid ""
+"LordsAWar! is licensed under the GNU General Public License version 3,\n"
+"or (at your option) any later version of the license.  This license extends \n"
+"to all source code, artwork assets and music and sound assets.\n"
+"\n"
+"To see the terms of the license, visit: http://www.gnu.org/licenses/gpl"
+msgstr ""
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../dat/glade/about-dialog.ui.h:12
+msgid "Joe Hansen"
+msgstr "Úr Balázs"
+
+#: ../dat/glade/army-bonus-dialog.ui.h:1 ../dat/glade/game-window.ui.h:36
+msgid "Army Bonus"
+msgstr ""
+
+#: ../dat/glade/army-bonus-dialog.ui.h:2 ../dat/glade/city-window.ui.h:10
+#: ../dat/glade/destination-dialog.ui.h:2 ../dat/glade/diplomacy-dialog.ui.h:7
+#: ../dat/glade/game-options-dialog.ui.h:23 ../dat/glade/hero-dialog.ui.h:1
+#: ../dat/glade/hero-levels-dialog.ui.h:2
+#: ../dat/glade/history-report-dialog.ui.h:1
+#: ../dat/glade/item-bonus-dialog.ui.h:2
+#: ../dat/glade/main-preferences-dialog.ui.h:2
+#: ../dat/glade/preferences-dialog.ui.h:2 ../dat/glade/report-dialog.ui.h:1
+#: ../dat/glade/ruin-report-dialog.ui.h:2
+#: ../dat/glade/item-report-dialog.ui.h:2
+#: ../dat/glade/stack-info-dialog.ui.h:5
+#: ../dat/glade/editor/itemlist-dialog.ui.h:10
+#: ../dat/glade/editor/reward-list-dialog.ui.h:2
+#: ../dat/glade/editor/tile-preview-dialog.ui.h:2
+#: ../dat/glade/editor/tileset-selector-editor-dialog.ui.h:8
+#: ../dat/glade/editor/tileset-flag-editor-dialog.ui.h:6
+#: ../dat/glade/editor/tileset-explosion-picture-editor-dialog.ui.h:7
+#: ../dat/glade/editor/tilestyle-organizer-dialog.ui.h:2
+#: ../dat/glade/editor/tileset-smallmap-building-colors-dialog.ui.h:2
+#: ../dat/glade/editor/smallmap-editor-dialog.ui.h:2
+msgid "Close"
+msgstr "Bezárás"
+
+#: ../dat/glade/army-gains-level-dialog.ui.h:1
+msgid "Army Gained Level"
+msgstr ""
+
+#: ../dat/glade/army-gains-level-dialog.ui.h:2
+msgid "Choose"
+msgstr ""
+
+#: ../dat/glade/buy-production-dialog.ui.h:1
+msgid "Buy Production"
+msgstr ""
+
+#: ../dat/glade/buy-production-dialog.ui.h:2
+#: ../dat/glade/city-raze-dialog.ui.h:1 ../dat/glade/city-rename-dialog.ui.h:1
+#: ../dat/glade/fight-order-dialog.ui.h:2
+#: ../dat/glade/game-lobby-dialog.ui.h:10
+#: ../dat/glade/game-preferences-dialog.ui.h:12
+#: ../dat/glade/load-scenario-dialog.ui.h:7
+#: ../dat/glade/new-network-game-dialog.ui.h:2
+#: ../dat/glade/new-profile-dialog.ui.h:3
+#: ../dat/glade/pick-network-game-to-join-dialog.ui.h:2
+#: ../dat/glade/signpost-change-dialog.ui.h:2
+#: ../dat/glade/use-item-dialog.ui.h:2
+#: ../dat/glade/new-random-map-dialog.ui.h:25
+#: ../dat/glade/editor/armyset-info-dialog.ui.h:2
+#: ../dat/glade/editor/city-editor-dialog.ui.h:2
+#: ../dat/glade/editor/map-info-dialog.ui.h:2
+#: ../dat/glade/editor/new-map-dialog.ui.h:26
+#: ../dat/glade/editor/switch-sets-dialog.ui.h:2
+#: ../dat/glade/editor/players-dialog.ui.h:2
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:2
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:2
+#: ../dat/glade/editor/select-army-dialog.ui.h:2
+#: ../dat/glade/editor/select-hidden-ruin-dialog.ui.h:2
+#: ../dat/glade/editor/select-item-dialog.ui.h:2
+#: ../dat/glade/editor/select-reward-dialog.ui.h:2
+#: ../dat/glade/editor/signpost-editor-dialog.ui.h:2
+#: ../dat/glade/editor/stack-editor-dialog.ui.h:2
+#: ../dat/glade/editor/temple-editor-dialog.ui.h:2
+#: ../dat/glade/editor/tileset-info-dialog.ui.h:2
+#: ../dat/glade/editor/masked-image-editor-dialog.ui.h:2
+#: ../dat/glade/editor/image-editor-dialog.ui.h:2
+#: ../dat/glade/editor/hero-editor-dialog.ui.h:7
+#: ../dat/glade/editor/backpack-editor-dialog.ui.h:2
+#: ../dat/glade/editor/editor-quit-dialog.ui.h:3
+#: ../dat/glade/editor/tile-size-editor-dialog.ui.h:2
+#: ../dat/glade/editor/cityset-info-dialog.ui.h:2
+#: ../dat/glade/editor/shieldset-info-dialog.ui.h:2
+msgid "Cancel"
+msgstr "Mégse"
+
+#: ../dat/glade/buy-production-dialog.ui.h:3
+msgid "Buy"
+msgstr "Vásárlás"
+
+#: ../dat/glade/city-defeated-dialog.ui.h:1
+msgid "Victory!"
+msgstr "Győzelem!"
+
+#: ../dat/glade/city-defeated-dialog.ui.h:2
+msgid "Occupy"
+msgstr "Elfoglalás"
+
+#: ../dat/glade/city-defeated-dialog.ui.h:3
+msgid "Pillage"
+msgstr "Fosztogatás"
+
+#: ../dat/glade/city-defeated-dialog.ui.h:4
+msgid "Sack"
+msgstr "Kifosztás"
+
+#: ../dat/glade/city-defeated-dialog.ui.h:5 ../dat/glade/city-window.ui.h:8
+msgid "Raze"
+msgstr "Lerombolás"
+
+#: ../dat/glade/city-defeated-dialog.ui.h:6
+msgid "The city is yours! Will you..."
+msgstr "A város a tiéd! Mit fogsz tenni…"
+
+#: ../dat/glade/city-looted-dialog.ui.h:1
+#: ../dat/glade/city-pillaged-dialog.ui.h:1
+#: ../dat/glade/city-razed-dialog.ui.h:2
+#: ../dat/glade/city-sacked-dialog.ui.h:1
+#: ../dat/glade/game-loaded-dialog.ui.h:2 ../dat/glade/game-over-dialog.ui.h:1
+#: ../dat/glade/hero-brings-allies-dialog.ui.h:1
+#: ../dat/glade/medal-awarded-dialog.ui.h:2
+#: ../dat/glade/military-advisor-dialog.ui.h:1
+#: ../dat/glade/next-player-turn-dialog.ui.h:2
+#: ../dat/glade/player-died-dialog.ui.h:2
+#: ../dat/glade/quest-assigned-dialog.ui.h:1
+#: ../dat/glade/quest-report-dialog.ui.h:2
+#: ../dat/glade/quest-expired-dialog.ui.h:2
+#: ../dat/glade/ruinfight-finished-dialog.ui.h:1
+#: ../dat/glade/ruinfight-started-dialog.ui.h:1
+#: ../dat/glade/ruin-rewarded-dialog.ui.h:1
+#: ../dat/glade/ruin-searched-dialog.ui.h:1 ../dat/glade/sage-dialog.ui.h:1
+#: ../dat/glade/surrender-refused-dialog.ui.h:2
+#: ../dat/glade/triumphs-dialog.ui.h:2
+#: ../dat/glade/use-item-on-player-dialog.ui.h:2
+#: ../dat/glade/use-item-on-city-dialog.ui.h:2
+msgid "Continue"
+msgstr "Folytatás"
+
+#: ../dat/glade/city-looted-dialog.ui.h:2
+msgid "Your troops have looted the city!"
+msgstr ""
+
+#: ../dat/glade/city-pillaged-dialog.ui.h:2
+msgid "Your troops have pillaged the city!"
+msgstr ""
+
+#: ../dat/glade/city-razed-dialog.ui.h:1
+#: ../dat/glade/city-sacked-dialog.ui.h:2
+msgid "Your troops have sacked the city!"
+msgstr ""
+
+#: ../dat/glade/city-raze-dialog.ui.h:2 ../dat/glade/city-rename-dialog.ui.h:2
+#: ../dat/glade/fight-order-dialog.ui.h:3
+#: ../dat/glade/new-network-game-dialog.ui.h:3
+#: ../dat/glade/new-profile-dialog.ui.h:4
+#: ../dat/glade/signpost-change-dialog.ui.h:3
+#: ../dat/glade/editor/armyset-info-dialog.ui.h:3
+#: ../dat/glade/editor/city-editor-dialog.ui.h:3
+#: ../dat/glade/editor/map-info-dialog.ui.h:3
+#: ../dat/glade/editor/players-dialog.ui.h:3
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:3
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:3
+#: ../dat/glade/editor/signpost-editor-dialog.ui.h:3
+#: ../dat/glade/editor/stack-editor-dialog.ui.h:3
+#: ../dat/glade/editor/temple-editor-dialog.ui.h:3
+#: ../dat/glade/editor/tileset-info-dialog.ui.h:3
+#: ../dat/glade/editor/masked-image-editor-dialog.ui.h:3
+#: ../dat/glade/editor/image-editor-dialog.ui.h:3
+#: ../dat/glade/editor/hero-editor-dialog.ui.h:8
+#: ../dat/glade/editor/backpack-editor-dialog.ui.h:3
+#: ../dat/glade/editor/tile-size-editor-dialog.ui.h:3
+#: ../dat/glade/editor/cityset-info-dialog.ui.h:3
+#: ../dat/glade/editor/shieldset-info-dialog.ui.h:3
+msgid "OK"
+msgstr "OK"
+
+#: ../dat/glade/city-rename-dialog.ui.h:3
+#: ../dat/glade/game-lobby-dialog.ui.h:8 ../dat/glade/hero-offer-dialog.ui.h:3
+#: ../dat/glade/ruin-report-dialog.ui.h:3
+#: ../dat/glade/editor/armyset-info-dialog.ui.h:5
+#: ../dat/glade/editor/armyset-window.ui.h:61
+#: ../dat/glade/editor/city-editor-dialog.ui.h:7
+#: ../dat/glade/editor/itemlist-dialog.ui.h:11
+#: ../dat/glade/editor/map-info-dialog.ui.h:5
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:5
+#: ../dat/glade/editor/temple-editor-dialog.ui.h:5
+#: ../dat/glade/editor/tileset-info-dialog.ui.h:5
+#: ../dat/glade/editor/tileset-window.ui.h:22
+#: ../dat/glade/editor/hero-editor-dialog.ui.h:3
+#: ../dat/glade/editor/cityset-info-dialog.ui.h:5
+#: ../dat/glade/editor/shieldset-info-dialog.ui.h:5
+#: ../src/gls/gls-client-tool.cpp:129 ../src/ghs/ghs-client-tool.cpp:94
+msgid "Name:"
+msgstr "Név:"
+
+#: ../dat/glade/city-window.ui.h:1 ../dat/glade/destination-dialog.ui.h:3
+#: ../src/gui/city-window.cpp:252 ../src/gui/destination-dialog.cpp:217
+msgid "Current:"
+msgstr "Jelenlegi:"
+
+#: ../dat/glade/city-window.ui.h:2
+msgid "Stop"
+msgstr "Leállítás"
+
+#: ../dat/glade/city-window.ui.h:3 ../dat/glade/hero-dialog.ui.h:7
+#: ../dat/glade/editor/backpack-editor-dialog.ui.h:5
+msgid "Stop producing armies"
+msgstr ""
+
+#: ../dat/glade/city-window.ui.h:4
+msgid "Buy..."
+msgstr "Vásárlás…"
+
+#: ../dat/glade/city-window.ui.h:5 ../dat/glade/hero-dialog.ui.h:9
+#: ../dat/glade/editor/backpack-editor-dialog.ui.h:7
+msgid "Buy a production capability"
+msgstr ""
+
+#: ../dat/glade/city-window.ui.h:6
+msgid "Vector..."
+msgstr "Vektor…"
+
+#: ../dat/glade/city-window.ui.h:7
+msgid "Set destination for produced armies"
+msgstr ""
+
+#: ../dat/glade/city-window.ui.h:9
+msgid "Rename"
+msgstr "Átnevezés"
+
+#: ../dat/glade/destination-dialog.ui.h:1
+msgid "Choose Destination"
+msgstr "Cél kiválasztása"
+
+#: ../dat/glade/destination-dialog.ui.h:4
+msgid "4t"
+msgstr "4t"
+
+#: ../dat/glade/destination-dialog.ui.h:5
+msgid ""
+"See\n"
+"All"
+msgstr ""
+
+#: ../dat/glade/destination-dialog.ui.h:7
+msgid "Next Turn:"
+msgstr "Következő kör:"
+
+#: ../dat/glade/destination-dialog.ui.h:8
+msgid "Turn After:"
+msgstr ""
+
+#: ../dat/glade/destination-dialog.ui.h:9
+msgid "Vector"
+msgstr "Vektor"
+
+#: ../dat/glade/destination-dialog.ui.h:10
+msgid ""
+"Click here to vector to\n"
+"a new city"
+msgstr ""
+
+#: ../dat/glade/destination-dialog.ui.h:12
+msgid "Change"
+msgstr "Változtatás"
+
+#: ../dat/glade/destination-dialog.ui.h:13
+msgid ""
+"Click here to change the\n"
+"destination of armies"
+msgstr ""
+
+#: ../dat/glade/diplomacy-dialog.ui.h:1
+msgid "Diplomatic Proposals"
+msgstr ""
+
+#: ../dat/glade/diplomacy-dialog.ui.h:2
+msgid "Your offers and replies"
+msgstr ""
+
+#: ../dat/glade/diplomacy-dialog.ui.h:3
+msgid "player name"
+msgstr "játékos neve"
+
+#: ../dat/glade/diplomacy-dialog.ui.h:4
+msgid "Diplomatic State"
+msgstr ""
+
+#: ../dat/glade/diplomacy-dialog.ui.h:5
+msgid "Their Proposals"
+msgstr ""
+
+#: ../dat/glade/diplomacy-dialog.ui.h:6
+msgid "Report"
+msgstr "Jelentés"
+
+#: ../dat/glade/diplomacy-report-dialog.ui.h:1
+msgid "Diplomacy Report"
+msgstr "Diplomáciai jelentés"
+
+#: ../dat/glade/fight-order-dialog.ui.h:1 ../dat/glade/game-window.ui.h:9
+msgid "Fight Order"
+msgstr ""
+
+#: ../dat/glade/fight-order-dialog.ui.h:4
+msgid "Reset"
+msgstr "Visszaállítás"
+
+#: ../dat/glade/fight-order-dialog.ui.h:5
+msgid "Reverse Order"
+msgstr "Fordított sorrend"
+
+#: ../dat/glade/game-loaded-dialog.ui.h:1
+msgid "Game Loaded"
+msgstr "Játék betöltve"
+
+#: ../dat/glade/game-lobby-dialog.ui.h:1
+msgid "Network Game"
+msgstr "Hálózati játék"
+
+#: ../dat/glade/game-lobby-dialog.ui.h:2
+#: ../dat/glade/game-preferences-dialog.ui.h:8
+#: ../dat/glade/preferences-dialog.ui.h:3
+#: ../dat/glade/editor/main-window.ui.h:16
+#: ../dat/glade/editor/players-dialog.ui.h:4
+#: ../src/gui/network-game-selector-dialog.cpp:55
+#: ../src/gui/network-game-selector-dialog.cpp:74
+msgid "Players"
+msgstr "Játékosok"
+
+#: ../dat/glade/game-lobby-dialog.ui.h:3
+msgid "Send:"
+msgstr "Küldés:"
+
+#: ../dat/glade/game-lobby-dialog.ui.h:4
+msgid "Chat"
+msgstr "Csevegés"
+
+#: ../dat/glade/game-lobby-dialog.ui.h:5
+msgid "Show Options"
+msgstr "Beállítások megjelenítése"
+
+#: ../dat/glade/game-lobby-dialog.ui.h:6
+msgid "Turn:"
+msgstr "Kör:"
+
+#: ../dat/glade/game-lobby-dialog.ui.h:7
+msgid "Cities:"
+msgstr "Városok:"
+
+#: ../dat/glade/game-lobby-dialog.ui.h:9
+msgid "Scenario Details"
+msgstr "Szövegkönyv részletek"
+
+#: ../dat/glade/game-lobby-dialog.ui.h:11
+msgid "Play"
+msgstr "Indítás"
+
+#: ../dat/glade/game-options-dialog.ui.h:1
+msgid "Average"
+msgstr "Átlagos"
+
+#: ../dat/glade/game-options-dialog.ui.h:2
+msgid "Strong"
+msgstr "Erős"
+
+#: ../dat/glade/game-options-dialog.ui.h:3
+msgid "Active"
+msgstr "Aktív"
+
+#: ../dat/glade/game-options-dialog.ui.h:4
+msgid "Defensive"
+msgstr "Védekező"
+
+#: ../dat/glade/game-options-dialog.ui.h:5
+msgid "Never Allowed"
+msgstr "Sosem engedélyezett"
+
+#: ../dat/glade/game-options-dialog.ui.h:6
+msgid "Only On Capture"
+msgstr "Csak elfoglaláskor"
+
+#: ../dat/glade/game-options-dialog.ui.h:7
+msgid "Always Allowed"
+msgstr "Mindig engedélyezett"
+
+#: ../dat/glade/game-options-dialog.ui.h:8
+msgid "Game Options"
+msgstr "A játék beállításai"
+
+#: ../dat/glade/game-options-dialog.ui.h:9
+msgid "View Enemies"
+msgstr "Ellenség figyelése"
+
+#: ../dat/glade/game-options-dialog.ui.h:10
+msgid "View Production"
+msgstr "Termelés figyelése"
+
+#: ../dat/glade/game-options-dialog.ui.h:11
+msgid "Neutral Cities:"
+msgstr "Semleges városok:"
+
+#: ../dat/glade/game-options-dialog.ui.h:12 ../dat/glade/game-window.ui.h:23
+#: ../dat/glade/game-button-box-desktop.ui.h:6
+#: ../dat/glade/game-button-box-large-screen.ui.h:6
+#: ../dat/glade/game-button-box-netbook.ui.h:6
+msgid "Diplomacy"
+msgstr "Diplomácia"
+
+#: ../dat/glade/game-options-dialog.ui.h:13
+msgid "Cusp of War"
+msgstr ""
+
+#: ../dat/glade/game-options-dialog.ui.h:14
+msgid "Razing Cities:"
+msgstr "Városok lerombolása:"
+
+#: ../dat/glade/game-options-dialog.ui.h:15
+msgid "Hidden Map"
+msgstr "Rejtett térkép"
+
+#: ../dat/glade/game-options-dialog.ui.h:16
+msgid "Quests:"
+msgstr "Küldetések:"
+
+#: ../dat/glade/game-options-dialog.ui.h:17
+msgid "Affecting Difficulty"
+msgstr "A nehézséget érintő"
+
+#: ../dat/glade/game-options-dialog.ui.h:18
+msgid "Intense Combat"
+msgstr "Heves küzdelem"
+
+#: ../dat/glade/game-options-dialog.ui.h:19
+msgid "Military Advisor"
+msgstr "Katonai tanácsadó"
+
+#: ../dat/glade/game-options-dialog.ui.h:20
+msgid "Random Turns"
+msgstr "Véletlenszerű körök"
+
+#: ../dat/glade/game-options-dialog.ui.h:21
+msgid "Quick Start:"
+msgstr "Gyors kezdés:"
+
+#: ../dat/glade/game-options-dialog.ui.h:22
+msgid "Not Affecting Difficulty"
+msgstr "A nehézséget nem érintő"
+
+#: ../dat/glade/game-options-dialog.ui.h:24
+msgid "Off"
+msgstr "Ki"
+
+#: ../dat/glade/game-options-dialog.ui.h:25
+msgid "Evenly Divided"
+msgstr "Egyformán megosztva"
+
+#: ../dat/glade/game-options-dialog.ui.h:26
+msgid "Enemy Head Start"
+msgstr "Ellenség kezd"
+
+#: ../dat/glade/game-options-dialog.ui.h:27
+msgid "One Per Player"
+msgstr "Játékosonként egy"
+
+#: ../dat/glade/game-options-dialog.ui.h:28
+msgid "One Per Hero"
+msgstr "Hősönként egy"
+
+#: ../dat/glade/game-preferences-dialog.ui.h:1
+msgid "Beginner"
+msgstr "Kezdő"
+
+#: ../dat/glade/game-preferences-dialog.ui.h:2
+msgid "Intermediate"
+msgstr "Középhaladó"
+
+#: ../dat/glade/game-preferences-dialog.ui.h:3
+msgid "Advanced"
+msgstr "Haladó"
+
+#: ../dat/glade/game-preferences-dialog.ui.h:4
+msgid "I am the Lord Of War!"
+msgstr "Én vagyok a háború ura!"
+
+#: ../dat/glade/game-preferences-dialog.ui.h:5
+#: ../dat/glade/editor/new-map-dialog.ui.h:4
+msgid "Custom"
+msgstr "Egyéni"
+
+#: ../dat/glade/game-preferences-dialog.ui.h:6 ../dat/glade/game-window.ui.h:2
+#: ../dat/glade/splash-window.ui.h:1
+msgid "New Game"
+msgstr "Új játék"
+
+#: ../dat/glade/game-preferences-dialog.ui.h:7
+msgid "Game Name:"
+msgstr "Játék neve:"
+
+#: ../dat/glade/game-preferences-dialog.ui.h:9
+msgid "Rating:"
+msgstr "Értékelés:"
+
+#: ../dat/glade/game-preferences-dialog.ui.h:10
+msgid "Difficulty"
+msgstr "Nehézség"
+
+#: ../dat/glade/game-preferences-dialog.ui.h:11
+msgid "Edit Options"
+msgstr "Beállítások szerkesztése"
+
+#: ../dat/glade/game-preferences-dialog.ui.h:13
+msgid "Start Game"
+msgstr "Játék indítása"
+
+#: ../dat/glade/game-quit-dialog.ui.h:1 ../dat/glade/game-window.ui.h:7
+#: ../dat/glade/splash-window.ui.h:5 ../dat/glade/editor/armyset-window.ui.h:9
+#: ../dat/glade/editor/main-window.ui.h:14
+#: ../dat/glade/editor/tileset-window.ui.h:8
+#: ../dat/glade/editor/cityset-window.ui.h:8
+#: ../dat/glade/editor/shieldset-window.ui.h:8
+msgid "Quit"
+msgstr "Kilépés"
+
+#: ../dat/glade/game-quit-dialog.ui.h:2
+#: ../dat/glade/temple-visit-dialog.ui.h:1
+#: ../src/gui/ruin-report-dialog.cpp:131 ../src/gui/ruin-report-dialog.cpp:163
+msgid "No"
+msgstr "Nem"
+
+#: ../dat/glade/game-quit-dialog.ui.h:3
+#: ../dat/glade/temple-visit-dialog.ui.h:2
+#: ../src/gui/ruin-report-dialog.cpp:127
+msgid "Yes"
+msgstr "Igen"
+
+#: ../dat/glade/game-quit-dialog.ui.h:4
+msgid ""
+"Are you sure you\n"
+"want to quit this game\n"
+"O great and valiant\n"
+"warrior?"
+msgstr ""
+"Biztos vagy benne, hogy\n"
+"ki szeretnél lépni ebből a játékból\n"
+"Ó nagy és bátor\n"
+"harcos?"
+
+#: ../dat/glade/game-window.ui.h:1 ../dat/glade/main-preferences-dialog.ui.h:8
+msgid "Game"
+msgstr "Játék"
+
+#: ../dat/glade/game-window.ui.h:3 ../dat/glade/splash-window.ui.h:3
+msgid "Load Game"
+msgstr "Játék betöltése"
+
+#: ../dat/glade/game-window.ui.h:4
+msgid "Save Game"
+msgstr "Játék mentése"
+
+#: ../dat/glade/game-window.ui.h:5
+msgid "Save Game As..."
+msgstr "Játék mentése másként…"
+
+#: ../dat/glade/game-window.ui.h:6
+msgid "Show Lobby"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:8
+msgid "Order"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:10
+msgid "Move All"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:11 ../src/gui/game-window.cpp:1090
+msgid "Disband"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:12
+#: ../dat/glade/editor/signpost-editor-dialog.ui.h:4 ../src/maptile.cpp:224
+#: ../src/gui/game-window.cpp:1056 ../src/editor/main-window.cpp:1451
+msgid "Signpost"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:13
+msgid "Group/Ungroup"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:14
+msgid "Leave Here"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:15
+msgid "Next"
+msgstr "Következő"
+
+#: ../dat/glade/game-window.ui.h:16 ../src/gui/game-window.cpp:1127
+msgid "Resign"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:17
+msgid "Reports"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:18 ../dat/glade/report-dialog.ui.h:3
+msgid "Army"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:19 ../dat/glade/history-report-dialog.ui.h:2
+#: ../dat/glade/report-dialog.ui.h:5
+#: ../dat/glade/editor/city-editor-dialog.ui.h:4 ../src/maptile.cpp:221
+#: ../src/editor/main-window.cpp:1447
+msgid "City"
+msgstr "Város"
+
+#: ../dat/glade/game-window.ui.h:20 ../dat/glade/history-report-dialog.ui.h:5
+#: ../dat/glade/report-dialog.ui.h:7
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:4
+#: ../src/gui/sage-dialog.cpp:127 ../src/editor/players-dialog.cpp:56
+msgid "Gold"
+msgstr "Arany"
+
+#: ../dat/glade/game-window.ui.h:21 ../dat/glade/report-dialog.ui.h:9
+#: ../dat/glade/editor/city-editor-dialog.ui.h:11
+msgid "Production"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:22 ../dat/glade/report-dialog.ui.h:11
+msgid "Winning"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:24
+msgid "Quest"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:25 ../dat/glade/hero-dialog.ui.h:10
+#: ../dat/glade/editor/main-window.ui.h:18
+#: ../dat/glade/editor/backpack-editor-dialog.ui.h:8
+msgid "Items"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:26
+#: ../dat/glade/editor/hero-editor-dialog.ui.h:2 ../src/gui/hero-dialog.cpp:92
+#: ../src/gui/hero-levels-dialog.cpp:42 ../src/gui/quest-report-dialog.cpp:50
+msgid "Hero"
+msgstr "Hős"
+
+#: ../dat/glade/game-window.ui.h:27
+msgid "Inspect"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:28
+msgid "Plant Flag"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:29
+msgid "Levels"
+msgstr "Szintek"
+
+#: ../dat/glade/game-window.ui.h:30
+msgid "Search"
+msgstr "Keresés"
+
+#: ../dat/glade/game-window.ui.h:31 ../dat/glade/use-item-dialog.ui.h:1
+msgid "Use Item"
+msgstr "Elem használata"
+
+#: ../dat/glade/game-window.ui.h:32 ../dat/glade/editor/main-window.ui.h:37
+#: ../dat/glade/editor/tileset-window.ui.h:19
+msgid "View"
+msgstr "Nézet"
+
+#: ../dat/glade/game-window.ui.h:33 ../dat/glade/editor/main-window.ui.h:38
+msgid "Fullscreen"
+msgstr "Teljes képernyő"
+
+#: ../dat/glade/game-window.ui.h:34
+#: ../dat/glade/main-preferences-dialog.ui.h:1
+#: ../dat/glade/preferences-dialog.ui.h:1 ../dat/glade/splash-window.ui.h:4
+msgid "Preferences"
+msgstr "Beállítások"
+
+#: ../dat/glade/game-window.ui.h:35 ../dat/glade/editor/main-window.ui.h:40
+msgid "Toggle Grid"
+msgstr "Rács ki- és bekapcsolása"
+
+#: ../dat/glade/game-window.ui.h:37
+msgid "Build"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:38 ../dat/glade/new-random-map-dialog.ui.h:18
+#: ../src/gui/history-report-dialog.cpp:95
+#: ../src/gui/network-game-selector-dialog.cpp:56
+#: ../src/gui/network-game-selector-dialog.cpp:75
+msgid "Cities"
+msgstr "Városok"
+
+#: ../dat/glade/game-window.ui.h:39
+msgid "Vectoring"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:40 ../dat/glade/new-random-map-dialog.ui.h:21
+#: ../dat/glade/editor/new-map-dialog.ui.h:17
+msgid "Ruins"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:41 ../dat/glade/stack-info-dialog.ui.h:2
+#: ../dat/glade/editor/stack-editor-dialog.ui.h:4
+#: ../src/editor/main-window.cpp:1445
+msgid "Stack"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:42 ../dat/glade/hero-dialog.ui.h:5
+#: ../src/gui/history-report-dialog.cpp:54
+msgid "History"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:43 ../dat/glade/history-report-dialog.ui.h:3
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:4 ../src/maptile.cpp:222
+#: ../src/gui/ruin-report-dialog.cpp:122 ../src/editor/main-window.cpp:1449
+msgid "Ruin"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:44 ../dat/glade/history-report-dialog.ui.h:4
+msgid "Events"
+msgstr "Események"
+
+#: ../dat/glade/game-window.ui.h:45 ../dat/glade/history-report-dialog.ui.h:6
+msgid "Winners"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:46 ../dat/glade/triumphs-dialog.ui.h:1
+msgid "Triumphs"
+msgstr ""
+
+#: ../dat/glade/game-window.ui.h:47 ../dat/glade/editor/armyset-window.ui.h:15
+#: ../dat/glade/editor/main-window.ui.h:41
+#: ../dat/glade/editor/tileset-window.ui.h:21
+#: ../dat/glade/editor/cityset-window.ui.h:11
+#: ../dat/glade/editor/shieldset-window.ui.h:12
+msgid "Help"
+msgstr "Súgó"
+
+#. if it's this player's turn
+#: ../dat/glade/game-window.ui.h:48 ../src/gui/game-window.cpp:1539
+#: ../src/gui/game-window.cpp:2340 ../src/gui/game-lobby-dialog.cpp:274
+#: ../src/gui/network-game-selector-dialog.cpp:54
+#: ../src/gui/network-game-selector-dialog.cpp:73
+msgid "Turn"
+msgstr "Kör"
+
+#: ../dat/glade/game-window.ui.h:49
+msgid "End Turn"
+msgstr "Kör vége"
+
+#: ../dat/glade/game-window.ui.h:51
+#, no-c-format
+msgid "Turn: %6"
+msgstr "Kör: %6"
+
+#: ../dat/glade/hero-dialog.ui.h:2
+msgid "Previous Hero"
+msgstr "Előző hős"
+
+#: ../dat/glade/hero-dialog.ui.h:3
+msgid "Next Hero"
+msgstr "Következő hős"
+
+#: ../dat/glade/hero-dialog.ui.h:4
+msgid "Your Heroes"
+msgstr "Saját hősök"
+
+#: ../dat/glade/hero-dialog.ui.h:6
+msgid "Drop"
+msgstr "Eldobás"
+
+#: ../dat/glade/hero-dialog.ui.h:8
+msgid "Pick up"
+msgstr "Felvétel"
+
+#: ../dat/glade/hero-levels-dialog.ui.h:1
+msgid "Hero Levels"
+msgstr "Hős szintek"
+
+#: ../dat/glade/hero-offer-dialog.ui.h:1
+msgid "male"
+msgstr "férfi"
+
+#: ../dat/glade/hero-offer-dialog.ui.h:2
+msgid "female"
+msgstr "nő"
+
+#: ../dat/glade/hero-offer-dialog.ui.h:4 ../dat/glade/surrender-dialog.ui.h:2
+msgid "Decline"
+msgstr "Elutasítás"
+
+#: ../dat/glade/hero-offer-dialog.ui.h:5 ../dat/glade/surrender-dialog.ui.h:3
+msgid "Accept"
+msgstr "Elfogadás"
+
+#: ../dat/glade/item-bonus-dialog.ui.h:1
+msgid "Item Bonus"
+msgstr "Elem bónusz"
+
+#: ../dat/glade/load-scenario-dialog.ui.h:1
+msgid "Select Scenario To Play"
+msgstr "Az indítandó szövegkönyv kiválasztása"
+
+#: ../dat/glade/load-scenario-dialog.ui.h:2
+msgid "Add Scenario"
+msgstr "Szövegkönyv hozzáadása"
+
+#: ../dat/glade/load-scenario-dialog.ui.h:3
+msgid "Remove Scenario"
+msgstr "Szövegkönyv eltávolítása"
+
+#: ../dat/glade/load-scenario-dialog.ui.h:4
+msgid "Number of Players:"
+msgstr "Játékosok száma:"
+
+#: ../dat/glade/load-scenario-dialog.ui.h:5
+msgid "Number of Cities:"
+msgstr "Városok száma:"
+
+#: ../dat/glade/load-scenario-dialog.ui.h:6
+msgid "Scenarios"
+msgstr "Szövegkönyvek"
+
+#: ../dat/glade/load-scenario-dialog.ui.h:8
+#: ../dat/glade/editor/select-army-dialog.ui.h:3
+#: ../dat/glade/editor/select-hidden-ruin-dialog.ui.h:3
+#: ../dat/glade/editor/select-item-dialog.ui.h:3
+#: ../dat/glade/editor/select-reward-dialog.ui.h:3
+msgid "Select"
+msgstr "Kiválasztás"
+
+#: ../dat/glade/main-preferences-dialog.ui.h:3
+msgid "Show popup at beginning of turn"
+msgstr "Felugró ablak megjelenítése a kör elején"
+
+#: ../dat/glade/main-preferences-dialog.ui.h:4
+#: ../dat/glade/preferences-dialog.ui.h:4
+msgid "Show Commentator"
+msgstr "Beszélő megjelenítése"
+
+#: ../dat/glade/main-preferences-dialog.ui.h:5
+msgid "Show plain windows"
+msgstr "Egyszerű ablakok megjelenítése"
+
+#: ../dat/glade/main-preferences-dialog.ui.h:6
+msgid "(requires restart)"
+msgstr "(újraindítást igényel)"
+
+#: ../dat/glade/main-preferences-dialog.ui.h:7
+#: ../dat/glade/preferences-dialog.ui.h:5
+msgid "Interface:"
+msgstr ""
+
+#: ../dat/glade/main-preferences-dialog.ui.h:9
+#: ../dat/glade/preferences-dialog.ui.h:9
+msgid "Play music"
+msgstr "Zene lejátszása"
+
+#: ../dat/glade/main-preferences-dialog.ui.h:10
+#: ../dat/glade/preferences-dialog.ui.h:10
+msgid "Volume:"
+msgstr "Hangerő:"
+
+#: ../dat/glade/main-preferences-dialog.ui.h:11
+msgid "Sound"
+msgstr "Hang"
+
+#: ../dat/glade/main-preferences-dialog.ui.h:12
+#: ../dat/glade/preferences-dialog.ui.h:12
+msgid "Netbook"
+msgstr "Netbook"
+
+#: ../dat/glade/main-preferences-dialog.ui.h:13
+#: ../dat/glade/preferences-dialog.ui.h:13
+msgid "Desktop"
+msgstr "Asztali"
+
+#: ../dat/glade/main-preferences-dialog.ui.h:14
+#: ../dat/glade/preferences-dialog.ui.h:14
+msgid "Large Screen"
+msgstr "Nagy képernyő"
+
+#: ../dat/glade/medal-awarded-dialog.ui.h:1
+msgid "Medal Awarded"
+msgstr ""
+
+#: ../dat/glade/new-network-game-dialog.ui.h:1
+#: ../dat/glade/splash-window.ui.h:2
+msgid "New Network Game"
+msgstr "Új hálózati játék"
+
+#: ../dat/glade/new-network-game-dialog.ui.h:4
+#: ../dat/glade/editor/city-editor-dialog.ui.h:13
+#: ../dat/glade/editor/reward-list-dialog.ui.h:4
+#: ../dat/glade/editor/stack-editor-dialog.ui.h:10
+msgid "Remove"
+msgstr "Eltávolítás"
+
+#: ../dat/glade/new-network-game-dialog.ui.h:5
+#: ../dat/glade/editor/city-editor-dialog.ui.h:12
+#: ../dat/glade/editor/reward-list-dialog.ui.h:3
+#: ../dat/glade/editor/stack-editor-dialog.ui.h:9
+msgid "Add"
+msgstr "Hozzáadás"
+
+#: ../dat/glade/new-network-game-dialog.ui.h:6
+msgid "Profiles"
+msgstr "Profilok"
+
+#: ../dat/glade/new-network-game-dialog.ui.h:7
+msgid ""
+"I want to join a game\n"
+"already in progress."
+msgstr ""
+"Egy már folyamatban lévő\n"
+"játékhoz szeretnék csatlakozni."
+
+#: ../dat/glade/new-network-game-dialog.ui.h:9
+msgid ""
+"I want to start a new game\n"
+"that others can join."
+msgstr ""
+"Egy új játékot szeretnék indítani\n"
+"amelyhez mások csatlakozhatnak."
+
+#: ../dat/glade/new-profile-dialog.ui.h:1
+msgid "New Profile"
+msgstr "Új profil"
+
+#: ../dat/glade/new-profile-dialog.ui.h:2
+msgid "Nickname:"
+msgstr "Becenév:"
+
+#: ../dat/glade/next-player-turn-dialog.ui.h:1
+msgid "Next Turn"
+msgstr "Következő kör"
+
+#: ../dat/glade/pick-network-game-to-join-dialog.ui.h:1
+msgid "Pick a game to Join"
+msgstr "Válassz egy játékot, amelyhez csatlakozol"
+
+#: ../dat/glade/pick-network-game-to-join-dialog.ui.h:3
+msgid "Connect"
+msgstr "Csatlakozás"
+
+#: ../dat/glade/pick-network-game-to-join-dialog.ui.h:4
+msgid ""
+"Type in the name of the computer\n"
+"whose game you would like to join."
+msgstr ""
+"Gépeld be a számítógép nevét, amely\n"
+"játékához csatlakozni szeretnél."
+
+#: ../dat/glade/pick-network-game-to-join-dialog.ui.h:6
+msgid "Hostname:"
+msgstr "Gépnév:"
+
+#: ../dat/glade/pick-network-game-to-join-dialog.ui.h:7
+#: ../src/gls/gls-client-tool.cpp:87 ../src/gls/gls-client-tool.cpp:131
+#: ../src/ghs/ghs-client-tool.cpp:96
+msgid "Port:"
+msgstr "Port:"
+
+#: ../dat/glade/pick-network-game-to-join-dialog.ui.h:8
+msgid "Games"
+msgstr "Játékok"
+
+#: ../dat/glade/pick-network-game-to-join-dialog.ui.h:9
+msgid "Clear All Games"
+msgstr "Minden játék törlése"
+
+#: ../dat/glade/pick-network-game-to-join-dialog.ui.h:10
+msgid "Recently Joined Games"
+msgstr "Legutóbb csatlakozott játékok"
+
+#: ../dat/glade/player-died-dialog.ui.h:1
+msgid "Game Lost"
+msgstr ""
+
+#: ../dat/glade/player-resign-completed-dialog.ui.h:1
+msgid "Resigned"
+msgstr ""
+
+#: ../dat/glade/player-resign-completed-dialog.ui.h:2
+msgid ""
+"Ha!  Now I've burned everything!\n"
+"Let the enemy come!"
+msgstr ""
+
+#: ../dat/glade/preferences-dialog.ui.h:6
+msgid "Movement Speed:"
+msgstr "Mozgási sebesség:"
+
+#: ../dat/glade/preferences-dialog.ui.h:7
+msgid "Slow"
+msgstr "Lassú"
+
+#: ../dat/glade/preferences-dialog.ui.h:8
+msgid "Fast"
+msgstr "Gyors"
+
+#: ../dat/glade/preferences-dialog.ui.h:11
+msgid "Settings"
+msgstr "Beállítások"
+
+#: ../dat/glade/quest-report-dialog.ui.h:1
+msgid "Quests Report"
+msgstr ""
+
+#: ../dat/glade/quest-report-dialog.ui.h:3
+msgid "Hero:"
+msgstr "Hős:"
+
+#: ../dat/glade/quest-expired-dialog.ui.h:1
+msgid "Quest Expired"
+msgstr ""
+
+#: ../dat/glade/report-dialog.ui.h:2
+msgid "Number of armies each side owns"
+msgstr ""
+
+#: ../dat/glade/report-dialog.ui.h:4
+msgid "Number of cities each side owns"
+msgstr ""
+
+#: ../dat/glade/report-dialog.ui.h:6
+msgid "Amount of gold each side possesses"
+msgstr ""
+
+#: ../dat/glade/report-dialog.ui.h:8
+msgid "Armies you produced this turn"
+msgstr ""
+
+#: ../dat/glade/report-dialog.ui.h:10
+msgid "Who is the most powerful nation"
+msgstr ""
+
+#: ../dat/glade/ruinfight-finished-dialog.ui.h:2
+msgid "...is victorious! or ...is slain by it!"
+msgstr ""
+
+#: ../dat/glade/ruinfight-started-dialog.ui.h:2
+msgid "So and so encounters a monster and..."
+msgstr ""
+
+#: ../dat/glade/ruin-report-dialog.ui.h:1
+msgid "Ruin Report"
+msgstr ""
+
+#: ../dat/glade/ruin-report-dialog.ui.h:4
+#: ../dat/glade/editor/temple-editor-dialog.ui.h:8
+#: ../dat/glade/editor/tileset-window.ui.h:24
+msgid "Type:"
+msgstr "Típus:"
+
+#: ../dat/glade/ruin-report-dialog.ui.h:5
+msgid "Explored:"
+msgstr ""
+
+#: ../dat/glade/ruin-report-dialog.ui.h:6
+#: ../dat/glade/item-report-dialog.ui.h:4
+msgid "Details"
+msgstr "Részletek"
+
+#: ../dat/glade/item-report-dialog.ui.h:1
+msgid "Item Report"
+msgstr "Elem jelentés"
+
+#: ../dat/glade/item-report-dialog.ui.h:3
+msgid "label"
+msgstr "címke"
+
+#: ../dat/glade/ruin-rewarded-dialog.ui.h:2
+msgid "The Sages show thee the site of X where Y can be found."
+msgstr ""
+
+#: ../dat/glade/sage-dialog.ui.h:2
+msgid ""
+"The Sage greets you warmly...\n"
+"\"Welcome, O seeker of knowledge.\n"
+"I can show thee many things - items, money or maps.\n"
+"What wouldst thou ask of me\""
+msgstr ""
+
+#: ../dat/glade/signpost-change-dialog.ui.h:1
+msgid "Message:"
+msgstr "Üzenet:"
+
+#: ../dat/glade/stack-info-dialog.ui.h:1
+msgid "Stack Info"
+msgstr ""
+
+#: ../dat/glade/stack-info-dialog.ui.h:3
+msgid "Ungroup"
+msgstr ""
+
+#: ../dat/glade/stack-info-dialog.ui.h:4
+msgid "Group"
+msgstr ""
+
+#. This is text on a toggle button that means "Group".  Pressing this button gathers the army units on this tile into one stack.
+#: ../dat/glade/stack-tile-box-desktop.ui.h:2
+#: ../dat/glade/stack-tile-box-large-screen.ui.h:1
+#: ../src/gui/stack-tile-box.cpp:278
+msgid "Grp"
+msgstr ""
+
+#: ../dat/glade/surrender-dialog.ui.h:1
+msgid "An Offer of Peace!"
+msgstr ""
+
+#: ../dat/glade/surrender-refused-dialog.ui.h:1
+msgid "Surrender Refused!"
+msgstr ""
+
+#: ../dat/glade/temple-visit-dialog.ui.h:3
+msgid ""
+"Your armies have been blessed!\n"
+"\n"
+"Do you seek a quest?"
+msgstr ""
+
+#: ../dat/glade/treachery-dialog.ui.h:1
+msgid "Treachery!"
+msgstr ""
+
+#: ../dat/glade/treachery-dialog.ui.h:2
+msgid "Whoops!  Pardon me, friend."
+msgstr ""
+
+#: ../dat/glade/treachery-dialog.ui.h:3
+msgid "Attack!"
+msgstr "Támadás!"
+
+#: ../dat/glade/use-item-dialog.ui.h:3
+msgid "Use"
+msgstr "Használat"
+
+#: ../dat/glade/use-item-on-player-dialog.ui.h:1
+msgid "Select a Player to Target"
+msgstr ""
+
+#: ../dat/glade/use-item-on-player-dialog.ui.h:3
+msgid "Which player do you want to target?"
+msgstr ""
+
+#: ../dat/glade/use-item-on-city-dialog.ui.h:1
+msgid "Select a City to Target"
+msgstr ""
+
+#: ../dat/glade/new-random-map-dialog.ui.h:1
+#: ../dat/glade/editor/new-map-dialog.ui.h:1
+#: ../dat/glade/editor/switch-sets-dialog.ui.h:9
+msgid "Normal"
+msgstr "Normál"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:2
+#: ../dat/glade/editor/new-map-dialog.ui.h:2
+#: ../dat/glade/editor/switch-sets-dialog.ui.h:10
+#: ../dat/glade/editor/tileset-selector-editor-dialog.ui.h:3
+#: ../dat/glade/editor/tileset-explosion-picture-editor-dialog.ui.h:4
+#: ../src/shieldstyle.cpp:77 ../src/shieldstyle.cpp:81
+msgid "Small"
+msgstr "Kicsi"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:3
+#: ../dat/glade/editor/new-map-dialog.ui.h:3
+#: ../dat/glade/editor/switch-sets-dialog.ui.h:11
+msgid "Tiny"
+msgstr "Apró"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:4
+msgid "Make a New Random Map"
+msgstr "Egy új véletlenszerű térkép készítése"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:5
+#: ../dat/glade/editor/new-map-dialog.ui.h:14
+#: ../dat/glade/editor/switch-sets-dialog.ui.h:3
+msgid "Tile Size:"
+msgstr "Csempeméret:"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:6
+#: ../dat/glade/editor/new-map-dialog.ui.h:9
+#: ../dat/glade/editor/switch-sets-dialog.ui.h:4
+msgid "Tile Set:"
+msgstr "Csempekészlet:"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:7
+#: ../dat/glade/editor/new-map-dialog.ui.h:10
+#: ../dat/glade/editor/switch-sets-dialog.ui.h:5
+msgid "Shield Set:"
+msgstr "Pajzskészlet:"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:8
+#: ../dat/glade/editor/new-map-dialog.ui.h:12
+#: ../dat/glade/editor/switch-sets-dialog.ui.h:7
+msgid "Army Set:"
+msgstr "Hadseregkészlet:"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:9
+#: ../dat/glade/editor/new-map-dialog.ui.h:11
+#: ../dat/glade/editor/switch-sets-dialog.ui.h:6
+msgid "City Set:"
+msgstr "Városkészlet:"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:10
+#: ../dat/glade/editor/new-map-dialog.ui.h:6
+msgid "Size:"
+msgstr "Méret:"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:11
+msgid "Cities can produce allies"
+msgstr "A városok szövetségeseket hozhatnak létre"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:12
+#: ../dat/glade/editor/new-map-dialog.ui.h:18
+#: ../dat/tilesets/default/default.lwt.in.h:3
+#: ../dat/tilesets/bigdefault/bigdefault.lwt.in.h:3
+#: ../dat/tilesets/stark/stark.lwt.in.h:3
+#: ../dat/tilesets/bigstark/bigstark.lwt.in.h:3
+#: ../dat/tilesets/wesnoth/wesnoth.lwt.in.h:3
+#: ../dat/tilesets/bigwesnoth/bigwesnoth.lwt.in.h:3 ../src/Tile.cpp:148
+#: ../src/Tile.cpp:155
+msgid "Grass"
+msgstr "Fű"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:13
+#: ../dat/glade/editor/new-map-dialog.ui.h:19
+#: ../dat/tilesets/default/default.lwt.in.h:4
+#: ../dat/tilesets/bigdefault/bigdefault.lwt.in.h:4
+#: ../dat/tilesets/stark/stark.lwt.in.h:4
+#: ../dat/tilesets/bigstark/bigstark.lwt.in.h:4
+#: ../dat/tilesets/wesnoth/wesnoth.lwt.in.h:4
+#: ../dat/tilesets/bigwesnoth/bigwesnoth.lwt.in.h:4 ../src/Tile.cpp:149
+msgid "Water"
+msgstr "Víz"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:14
+#: ../dat/glade/editor/new-map-dialog.ui.h:20
+#: ../dat/tilesets/default/default.lwt.in.h:8
+#: ../dat/tilesets/bigdefault/bigdefault.lwt.in.h:8
+#: ../dat/tilesets/stark/stark.lwt.in.h:8
+#: ../dat/tilesets/bigstark/bigstark.lwt.in.h:8
+#: ../dat/tilesets/wesnoth/wesnoth.lwt.in.h:8
+#: ../dat/tilesets/bigwesnoth/bigwesnoth.lwt.in.h:8 ../src/Tile.cpp:153
+msgid "Swamp"
+msgstr "Mocsár"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:15
+#: ../dat/glade/editor/new-map-dialog.ui.h:21
+#: ../dat/tilesets/default/default.lwt.in.h:5
+#: ../dat/tilesets/bigdefault/bigdefault.lwt.in.h:5
+#: ../dat/tilesets/stark/stark.lwt.in.h:5
+#: ../dat/tilesets/bigstark/bigstark.lwt.in.h:5
+#: ../dat/tilesets/wesnoth/wesnoth.lwt.in.h:5
+#: ../dat/tilesets/bigwesnoth/bigwesnoth.lwt.in.h:5 ../src/Tile.cpp:150
+msgid "Forest"
+msgstr "Erdő"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:16
+#: ../dat/glade/editor/new-map-dialog.ui.h:22
+#: ../dat/tilesets/default/default.lwt.in.h:6
+#: ../dat/tilesets/bigdefault/bigdefault.lwt.in.h:6
+#: ../dat/tilesets/stark/stark.lwt.in.h:6
+#: ../dat/tilesets/bigstark/bigstark.lwt.in.h:6
+#: ../dat/tilesets/wesnoth/wesnoth.lwt.in.h:6
+#: ../dat/tilesets/bigwesnoth/bigwesnoth.lwt.in.h:6 ../src/Tile.cpp:151
+msgid "Hills"
+msgstr "Hegyek"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:17
+#: ../dat/glade/editor/new-map-dialog.ui.h:23
+#: ../dat/tilesets/default/default.lwt.in.h:7
+#: ../dat/tilesets/bigdefault/bigdefault.lwt.in.h:7
+#: ../dat/tilesets/stark/stark.lwt.in.h:7
+#: ../dat/tilesets/bigstark/bigstark.lwt.in.h:7
+#: ../dat/tilesets/wesnoth/wesnoth.lwt.in.h:7
+#: ../dat/tilesets/bigwesnoth/bigwesnoth.lwt.in.h:7
+msgid "Mountains"
+msgstr "Hegyvidék"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:19
+#: ../dat/glade/editor/main-window.ui.h:28
+#: ../src/editor/new-map-dialog.cpp:132
+msgid "Random"
+msgstr "Véletlenszerű"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:20
+#: ../dat/glade/editor/new-map-dialog.ui.h:16
+msgid "Temples"
+msgstr "Templomok"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:22
+#: ../dat/glade/editor/new-map-dialog.ui.h:15
+msgid "Signposts"
+msgstr "Útjelző táblák"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:23
+msgid "Other Map Objects"
+msgstr "Egyéb térképobjektumok"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:24
+#: ../dat/glade/editor/map-info-dialog.ui.h:4
+#: ../dat/glade/editor/new-map-dialog.ui.h:25
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:7
+msgid "Map"
+msgstr "Térkép"
+
+#: ../dat/glade/new-random-map-dialog.ui.h:26
+#: ../dat/glade/editor/new-map-dialog.ui.h:27
+msgid "Create Random Map"
+msgstr "Véletlenszerű térkép létrehozása"
+
+#: ../dat/glade/editor/armyset-info-dialog.ui.h:1
+#: ../dat/glade/editor/tileset-info-dialog.ui.h:1
+#: ../dat/glade/editor/cityset-info-dialog.ui.h:1
+#: ../dat/glade/editor/shieldset-info-dialog.ui.h:1
+msgid "Edit Shieldset Info"
+msgstr "Pajzskészlet információk szerkesztése"
+
+#: ../dat/glade/editor/armyset-info-dialog.ui.h:4
+#: ../dat/glade/editor/main-window.ui.h:23
+msgid "Armyset"
+msgstr "Hadseregkészlet"
+
+#: ../dat/glade/editor/armyset-info-dialog.ui.h:6
+#: ../dat/glade/editor/tileset-info-dialog.ui.h:6
+#: ../dat/glade/editor/cityset-info-dialog.ui.h:6
+#: ../dat/glade/editor/shieldset-info-dialog.ui.h:6
+msgid "Directory:"
+msgstr "Könyvtár:"
+
+#: ../dat/glade/editor/armyset-info-dialog.ui.h:7
+#: ../dat/glade/editor/armyset-window.ui.h:36
+#: ../dat/glade/editor/tileset-info-dialog.ui.h:7
+#: ../dat/glade/editor/cityset-info-dialog.ui.h:7
+#: ../dat/glade/editor/shieldset-info-dialog.ui.h:7
+#: ../src/gls/gls-client-tool.cpp:128 ../src/ghs/ghs-client-tool.cpp:93
+msgid "Id:"
+msgstr "Azonosító:"
+
+#: ../dat/glade/editor/armyset-info-dialog.ui.h:8
+#: ../dat/glade/editor/tileset-info-dialog.ui.h:8
+#: ../dat/glade/editor/cityset-info-dialog.ui.h:8
+#: ../dat/glade/editor/shieldset-info-dialog.ui.h:8
+msgid "Filename:"
+msgstr "Fájlnév:"
+
+#: ../dat/glade/editor/armyset-info-dialog.ui.h:9
+#: ../dat/glade/editor/map-info-dialog.ui.h:6
+#: ../dat/glade/editor/tileset-info-dialog.ui.h:9
+#: ../dat/glade/editor/cityset-info-dialog.ui.h:9
+#: ../dat/glade/editor/shieldset-info-dialog.ui.h:9
+msgid "Description"
+msgstr "Leírás"
+
+#: ../dat/glade/editor/armyset-info-dialog.ui.h:10
+#: ../dat/glade/editor/map-info-dialog.ui.h:7
+#: ../dat/glade/editor/tileset-info-dialog.ui.h:10
+#: ../dat/glade/editor/cityset-info-dialog.ui.h:10
+#: ../dat/glade/editor/shieldset-info-dialog.ui.h:10
+msgid "Copyright"
+msgstr "Szerzői jog"
+
+#: ../dat/glade/editor/armyset-info-dialog.ui.h:11
+#: ../dat/glade/editor/map-info-dialog.ui.h:8
+#: ../dat/glade/editor/tileset-info-dialog.ui.h:11
+#: ../dat/glade/editor/cityset-info-dialog.ui.h:11
+#: ../dat/glade/editor/shieldset-info-dialog.ui.h:11
+msgid "License"
+msgstr "Licenc"
+
+#: ../dat/glade/editor/armyset-window.ui.h:1
+msgid "radiobutton"
+msgstr "választógomb"
+
+#: ../dat/glade/editor/armyset-window.ui.h:2
+#: ../src/editor/armyset-window.cpp:1606
+msgid "LordsAWar! Armyset Editor"
+msgstr "LordsAWar! hadseregkészlet szerkesztő"
+
+#: ../dat/glade/editor/armyset-window.ui.h:3
+#: ../dat/glade/editor/main-window.ui.h:3
+#: ../dat/glade/editor/tileset-window.ui.h:2
+#: ../dat/glade/editor/cityset-window.ui.h:2
+#: ../dat/glade/editor/shieldset-window.ui.h:2
+msgid "File"
+msgstr "Fájl"
+
+#: ../dat/glade/editor/armyset-window.ui.h:4
+msgid "New Armyset"
+msgstr "Új hadseregkészlet"
+
+#: ../dat/glade/editor/armyset-window.ui.h:5
+msgid "Load Armyset"
+msgstr "Hadseregkészlet betöltése"
+
+#: ../dat/glade/editor/armyset-window.ui.h:6
+msgid "Save Armyset"
+msgstr "Hadseregkészlet mentése"
+
+#: ../dat/glade/editor/armyset-window.ui.h:7
+#: ../dat/glade/editor/tileset-window.ui.h:6
+#: ../dat/glade/editor/cityset-window.ui.h:6
+#: ../dat/glade/editor/shieldset-window.ui.h:6
+msgid "Save A Copy"
+msgstr "Másolat mentése"
+
+#: ../dat/glade/editor/armyset-window.ui.h:8
+msgid "Validate Armyset"
+msgstr "Hadseregkészlet ellenőrzése"
+
+#: ../dat/glade/editor/armyset-window.ui.h:10
+#: ../dat/glade/editor/main-window.ui.h:15
+#: ../dat/glade/editor/reward-list-dialog.ui.h:5
+#: ../dat/glade/editor/tileset-window.ui.h:9
+#: ../dat/glade/editor/cityset-window.ui.h:9
+#: ../dat/glade/editor/shieldset-window.ui.h:9
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: ../dat/glade/editor/armyset-window.ui.h:11
+msgid "Armyset Information"
+msgstr "Hadseregkészlet információk"
+
+#: ../dat/glade/editor/armyset-window.ui.h:12
+msgid "Edit Ship Picture"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:13
+msgid "Edit Hero Flag Picture"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:14
+msgid "Edit Bag of Items Picture"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:16
+msgid "The number of turns needed to make this unit."
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:17
+msgid "Turns:"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:18
+msgid "The cost to make a single instance of this unit type."
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:19
+msgid "Cost:"
+msgstr "Költség:"
+
+#: ../dat/glade/editor/armyset-window.ui.h:20
+msgid "The ongoing cost of this unit per turn."
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:21
+msgid "Upkeep:"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:22
+msgid "The power of this unit."
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:23
+msgid "Strength:"
+msgstr "Erősség:"
+
+#: ../dat/glade/editor/armyset-window.ui.h:24
+msgid "The movement points for this unit."
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:25
+msgid "Max Moves:"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:26
+msgid "Defends Ruins?"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:27
+msgid "Is Awardable?"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:28
+msgid "Is awardable to heroes as a reward."
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:29
+msgid "The cost of this unit type in the buy production dialog."
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:30
+msgid "New Cost:"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:31
+msgid "The distance this unit can see on a fog map (in tiles.)"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:32
+msgid "Sight:"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:33
+msgid "The experience points awarded for killing this unit."
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:34
+msgid "Exp Points:"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:35
+msgid "The unique type id for this unit."
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:37
+msgid "Not A Hero"
+msgstr "Nem hős"
+
+#: ../dat/glade/editor/armyset-window.ui.h:38
+msgid "Female Hero"
+msgstr "Női hős"
+
+#: ../dat/glade/editor/armyset-window.ui.h:39
+msgid "Male Hero"
+msgstr "Férfi hős"
+
+#: ../dat/glade/editor/armyset-window.ui.h:40
+msgid "Travels faster in forests"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:41
+msgid "Travels faster in marshland"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:42
+msgid "Travels faster in hills"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:43
+msgid "Travels faster in mountains"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:44
+msgid "Can Fly"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:45
+msgid "Movement Bonus"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:46
+msgid "+1 Str in Open"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:47
+msgid "+2 Str in Open"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:48
+msgid "+1 Str in Forest"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:49
+msgid "+1 Str in Hills"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:50
+msgid "+1 Str in City"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:51
+msgid "+2 Str in City"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:52
+msgid "+1 to Stack in Hills"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:53
+msgid "Subtract All City Bonus"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:54
+msgid "-1 Str to Enemy Stack"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:55
+msgid "+1 Str to Stack"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:56
+msgid "+2 Str to Stack"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:57
+msgid "Subtract All Non-Hero Bonuses"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:58
+msgid "Subtract all Hero Bonuses"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:59
+msgid "Fighting Bonus"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:60
+msgid "Capabilities"
+msgstr ""
+
+#: ../dat/glade/editor/armyset-window.ui.h:62
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:7
+#: ../dat/glade/editor/temple-editor-dialog.ui.h:7
+msgid "Description:"
+msgstr "Leírás:"
+
+#: ../dat/glade/editor/armyset-window.ui.h:63
+msgid "Neutral Picture:"
+msgstr "Semleges fénykép:"
+
+#: ../dat/glade/editor/armyset-window.ui.h:64
+#: ../src/editor/armyset-window.cpp:915 ../src/editor/armyset-window.cpp:1089
+#: ../src/editor/cityset-window.cpp:166 ../src/editor/tileset-window.cpp:356
+#: ../src/editor/tileset-window.cpp:368 ../src/editor/tileset-window.cpp:377
+msgid "no image set"
+msgstr "nincs kép beállítva"
+
+#: ../dat/glade/editor/armyset-window.ui.h:65
+msgid "Black Picture:"
+msgstr "Fekete fénykép:"
+
+#: ../dat/glade/editor/armyset-window.ui.h:66
+msgid "Orange Picture:"
+msgstr "Narancs fénykép:"
+
+#: ../dat/glade/editor/armyset-window.ui.h:67
+msgid "Dark Blue Picture:"
+msgstr "Sötétkék fénykép:"
+
+#: ../dat/glade/editor/armyset-window.ui.h:68
+msgid "White Picture:"
+msgstr "Fehér fénykép:"
+
+#: ../dat/glade/editor/armyset-window.ui.h:69
+msgid "Green Picture:"
+msgstr "Zöld fénykép:"
+
+#: ../dat/glade/editor/armyset-window.ui.h:70
+msgid "Yellow Picture:"
+msgstr "Sárga fénykép:"
+
+#: ../dat/glade/editor/armyset-window.ui.h:71
+msgid "Light Blue Picture:"
+msgstr "Világoskék fénykép:"
+
+#: ../dat/glade/editor/armyset-window.ui.h:72
+msgid "Red Picture:"
+msgstr "Piros fénykép:"
+
+#: ../dat/glade/editor/armyset-window.ui.h:73
+msgid "Same for all"
+msgstr "Ugyanaz mindhez"
+
+#: ../dat/glade/editor/armyset-window.ui.h:74
+msgid "Appearance"
+msgstr "Megjelenés"
+
+#: ../dat/glade/editor/city-editor-dialog.ui.h:1
+msgid "Edit City"
+msgstr "Város szerkesztése"
+
+#: ../dat/glade/editor/city-editor-dialog.ui.h:5
+#: ../dat/glade/editor/stack-editor-dialog.ui.h:5
+msgid "Owner:"
+msgstr "Tulajdonos:"
+
+#: ../dat/glade/editor/city-editor-dialog.ui.h:6
+msgid "Capital"
+msgstr ""
+
+#: ../dat/glade/editor/city-editor-dialog.ui.h:8
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:8
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:6
+#: ../dat/glade/editor/signpost-editor-dialog.ui.h:5
+#: ../dat/glade/editor/temple-editor-dialog.ui.h:6
+msgid "Randomize"
+msgstr ""
+
+#: ../dat/glade/editor/city-editor-dialog.ui.h:9
+msgid "Income:"
+msgstr "Bevétel:"
+
+#: ../dat/glade/editor/city-editor-dialog.ui.h:10
+msgid "Burned down"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:1
+msgid "Anywhere"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:2
+msgid "On a City"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:3
+msgid "On a Ruin"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:4
+msgid "On a Temple"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:5
+msgid "On a Signpost"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:6
+msgid "On a Road"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:7
+msgid "On a Port"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:8
+msgid "On a Bridge"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:9
+msgid "Item Editor"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:12
+msgid "+1 to Hero's Strength"
+msgstr "+1 a hős erejéhez"
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:13
+msgid "+2 to Hero's Strength"
+msgstr "+2 a hős erejéhez"
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:14
+msgid "+3 to Hero's Strength"
+msgstr "+3 a hős erejéhez"
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:15
+msgid "+1 to Stack's Strength"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:16
+msgid "+2 to Stack's Strength"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:17
+msgid "+3 to Stack's Strength"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:18
+msgid "Stack Can Fly"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:19
+msgid "Double Movement of Stack"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:20
+msgid "+2 Gold Per City"
+msgstr "+2 arany városonként"
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:21
+msgid "+3 Gold Per City"
+msgstr "+3 arany városonként"
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:22
+msgid "+4 Gold Per City"
+msgstr "+4 arany városonként"
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:23
+msgid "+5 Gold Per City"
+msgstr "+5 arany városonként"
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:24
+msgid "Bonuses"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:25
+msgid "Steals Gold from Enemy"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:26
+msgid "Sinks Enemy Ships"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:27
+msgid "Kills All Units of Giant Worms"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:28
+msgid "Burns Bridge"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:29
+msgid "Capture Ruin Keeper"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:30
+msgid "Summon Monster"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:31
+msgid "Disease City"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:32
+msgid "Pick Up Bags"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:33
+msgid "Add Movement Points"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:34
+msgid "Raise Defenders in City"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:35
+msgid "Persuade Neutral City"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:36
+msgid "Teleport to City"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:37
+msgid "Number of Uses:"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:38
+msgid "Uses"
+msgstr ""
+
+#: ../dat/glade/editor/itemlist-dialog.ui.h:39
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:5
+msgid "Item"
+msgstr "Elem"
+
+#: ../dat/glade/editor/main-window.ui.h:1
+msgid "toolbutton"
+msgstr "eszközgomb"
+
+#. init GUI stuff
+#: ../dat/glade/editor/main-window.ui.h:2 ../src/editor/main-window.cpp:1899
+#: ../src/editor/main.cpp:62 ../dat/lordsawar-editor.desktop.in.in.h:1
+msgid "LordsAWar! Scenario Editor"
+msgstr "LordsAWar! szövegkönyv szerkesztő"
+
+#: ../dat/glade/editor/main-window.ui.h:4
+#: ../dat/glade/editor/new-map-dialog.ui.h:5
+msgid "New Map"
+msgstr "Új térkép"
+
+#: ../dat/glade/editor/main-window.ui.h:5
+msgid "Load Map"
+msgstr "Térkép betöltése"
+
+#: ../dat/glade/editor/main-window.ui.h:6
+msgid "Save Map"
+msgstr "Térkép mentése"
+
+#: ../dat/glade/editor/main-window.ui.h:7
+msgid "Save Map As"
+msgstr "Térkép mentése másként"
+
+#: ../dat/glade/editor/main-window.ui.h:8
+msgid "Import Map from Saved Game"
+msgstr "Térkép importálása elmentett játékból"
+
+#: ../dat/glade/editor/main-window.ui.h:9
+msgid "Save a picture of the map."
+msgstr "A térkép fényképének mentése."
+
+#: ../dat/glade/editor/main-window.ui.h:10
+msgid "Export Map As Image"
+msgstr "Térkép exportálása képként"
+
+#: ../dat/glade/editor/main-window.ui.h:11
+msgid "Save a picture of the map showing just the terrain."
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:12
+msgid "Export Terrain Map As Image"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:13
+msgid "Validate"
+msgstr "Ellenőrzés"
+
+#: ../dat/glade/editor/main-window.ui.h:17
+msgid "Map Info"
+msgstr "Térkép információk"
+
+#: ../dat/glade/editor/main-window.ui.h:19
+msgid "Rewards"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:20
+msgid "Smooth Screen"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:21
+msgid "Smooth Entire Map"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:22
+#: ../dat/glade/editor/switch-sets-dialog.ui.h:1
+msgid "Switch Image Sets"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:24
+#: ../dat/glade/editor/cityset-window.ui.h:30
+#: ../dat/glade/editor/cityset-info-dialog.ui.h:4
+msgid "Cityset"
+msgstr "Városkészlet"
+
+#: ../dat/glade/editor/main-window.ui.h:25
+#: ../dat/glade/editor/shieldset-info-dialog.ui.h:4
+msgid "Shieldset"
+msgstr "Pajzskészlet"
+
+#: ../dat/glade/editor/main-window.ui.h:26
+#: ../dat/glade/editor/tileset-info-dialog.ui.h:4
+msgid "Tileset"
+msgstr "Csempekészlet"
+
+#: ../dat/glade/editor/main-window.ui.h:27
+msgid "Miniature Map"
+msgstr "Miniatűr térkép"
+
+#: ../dat/glade/editor/main-window.ui.h:29
+msgid "All Cities"
+msgstr "Minden város"
+
+#: ../dat/glade/editor/main-window.ui.h:30
+msgid "Unnamed Cities"
+msgstr "Névtelen városok"
+
+#: ../dat/glade/editor/main-window.ui.h:31
+msgid "All Ruins"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:32
+msgid "Unnamed Ruins"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:33
+msgid "All Temples"
+msgstr "Minden templom"
+
+#: ../dat/glade/editor/main-window.ui.h:34
+msgid "Unnamed Temples"
+msgstr "Névtelen templomok"
+
+#: ../dat/glade/editor/main-window.ui.h:35
+msgid "All Signs"
+msgstr "Minden jel"
+
+#: ../dat/glade/editor/main-window.ui.h:36
+msgid "Unnamed Signs"
+msgstr "Névtelen jelek"
+
+#: ../dat/glade/editor/main-window.ui.h:39
+msgid "Toggle Tile Graphics"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:42
+msgid "Pointer.  Click to inspect objects."
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:43
+msgid "Draw 1x1 terrain"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:44
+msgid "Draw 2x2 terrain"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:45
+msgid "Draw 3x3 terrain"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:46
+msgid "Draw 6x6 terrain"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:47
+msgid "Remove object"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:48
+msgid "Move object"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:49
+msgid "Add a stack"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:50
+msgid "Add a city"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:51
+msgid "Add a ruin"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:52
+msgid "Add a temple"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:53
+msgid "Add a port"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:54
+msgid "Add a sign"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:55
+msgid "Add a road"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:56
+msgid "Add a bridge"
+msgstr ""
+
+#: ../dat/glade/editor/main-window.ui.h:57
+msgid "Add a bag"
+msgstr ""
+
+#: ../dat/glade/editor/map-info-dialog.ui.h:1
+msgid "Edit Map Info"
+msgstr ""
+
+#: ../dat/glade/editor/new-map-dialog.ui.h:7
+msgid "Width:"
+msgstr "Szélesség:"
+
+#: ../dat/glade/editor/new-map-dialog.ui.h:8
+msgid "Height:"
+msgstr "Magasság:"
+
+#: ../dat/glade/editor/new-map-dialog.ui.h:13
+msgid "Fill style:"
+msgstr "Kitöltési stílus:"
+
+#: ../dat/glade/editor/new-map-dialog.ui.h:24
+msgid "   Cities"
+msgstr "   Városok"
+
+#: ../dat/glade/editor/switch-sets-dialog.ui.h:8
+msgid "Image Sets"
+msgstr ""
+
+#: ../dat/glade/editor/players-dialog.ui.h:1
+msgid "Edit Players"
+msgstr "Játékosok szerkesztés"
+
+#: ../dat/glade/editor/players-dialog.ui.h:5
+msgid "Randomize Gold"
+msgstr ""
+
+#: ../dat/glade/editor/players-dialog.ui.h:6
+msgid "All Human Players"
+msgstr ""
+
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:1
+msgid "Edit Reward"
+msgstr ""
+
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:6
+#: ../src/gui/sage-dialog.cpp:181
+msgid "Allies"
+msgstr ""
+
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:9
+msgid "Clear Item"
+msgstr ""
+
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:10
+msgid "Clear Ally Type"
+msgstr ""
+
+#. this is an x coordinate for a map point.
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:12
+msgid "x:"
+msgstr "x:"
+
+#. this is a y coordinate for a map point.
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:14
+msgid "y:"
+msgstr "y:"
+
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:15
+msgid "width:"
+msgstr "szélesség:"
+
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:16
+msgid "height:"
+msgstr "magasság:"
+
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:17
+msgid "Hidden Ruin"
+msgstr ""
+
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:18
+msgid "Clear Hidden Ruin"
+msgstr ""
+
+#: ../dat/glade/editor/reward-editor-dialog.ui.h:19
+msgid "Reward"
+msgstr ""
+
+#: ../dat/glade/editor/reward-list-dialog.ui.h:1
+msgid "Edit Rewards"
+msgstr ""
+
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:1
+msgid "Edit Ruin"
+msgstr ""
+
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:8
+#: ../src/editor/players-dialog.cpp:55 ../src/gui/game-lobby-dialog.cpp:322
+msgid "Type"
+msgstr ""
+
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:9
+msgid "Keeper:"
+msgstr ""
+
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:10
+msgid "Clear Keeper"
+msgstr ""
+
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:11
+msgid "Is Hidden?"
+msgstr ""
+
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:12
+msgid "Seen By:"
+msgstr ""
+
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:13
+msgid "Pick From List"
+msgstr ""
+
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:14
+msgid "Clear Reward"
+msgstr ""
+
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:15
+msgid "New Reward:"
+msgstr ""
+
+#: ../dat/glade/editor/ruin-editor-dialog.ui.h:16
+msgid "Random Reward"
+msgstr ""
+
+#: ../dat/glade/editor/select-army-dialog.ui.h:1
+msgid "Select Army"
+msgstr ""
+
+#: ../dat/glade/editor/select-hidden-ruin-dialog.ui.h:1
+msgid "Select Hidden Ruin"
+msgstr ""
+
+#: ../dat/glade/editor/select-item-dialog.ui.h:1
+msgid "Select Item"
+msgstr ""
+
+#: ../dat/glade/editor/select-reward-dialog.ui.h:1
+msgid "Select Reward"
+msgstr ""
+
+#: ../dat/glade/editor/signpost-editor-dialog.ui.h:1
+msgid "Edit Signpost"
+msgstr ""
+
+#: ../dat/glade/editor/stack-editor-dialog.ui.h:1
+msgid "Edit Stack"
+msgstr ""
+
+#: ../dat/glade/editor/stack-editor-dialog.ui.h:6
+msgid "is Fortified"
+msgstr ""
+
+#: ../dat/glade/editor/stack-editor-dialog.ui.h:7
+#: ../dat/glade/editor/hero-editor-dialog.ui.h:1
+msgid "Edit Hero Details"
+msgstr ""
+
+#: ../dat/glade/editor/stack-editor-dialog.ui.h:8
+msgid "Copy"
+msgstr ""
+
+#: ../dat/glade/editor/temple-editor-dialog.ui.h:1
+msgid "Edit Temple"
+msgstr ""
+
+#: ../dat/glade/editor/temple-editor-dialog.ui.h:4 ../src/maptile.cpp:223
+#: ../src/gui/ruin-report-dialog.cpp:162 ../src/editor/main-window.cpp:1453
+msgid "Temple"
+msgstr ""
+
+#: ../dat/glade/editor/tile-preview-dialog.ui.h:1
+#: ../dat/glade/editor/tileset-window.ui.h:20
+msgid "Preview Tile"
+msgstr ""
+
+#: ../dat/glade/editor/tile-preview-dialog.ui.h:3
+msgid "TileStyle Id:"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-selector-editor-dialog.ui.h:1
+msgid "Selector Editor"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-selector-editor-dialog.ui.h:2
+#: ../dat/glade/editor/tileset-explosion-picture-editor-dialog.ui.h:3
+#: ../src/shieldstyle.cpp:79
+msgid "Large"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-selector-editor-dialog.ui.h:4
+#: ../dat/glade/editor/tileset-flag-editor-dialog.ui.h:2
+#: ../dat/glade/editor/tileset-explosion-picture-editor-dialog.ui.h:5
+#: ../dat/glade/editor/masked-image-editor-dialog.ui.h:4
+#: ../dat/glade/editor/image-editor-dialog.ui.h:4
+msgid "Image:"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-selector-editor-dialog.ui.h:5
+#: ../dat/glade/editor/tileset-flag-editor-dialog.ui.h:3
+msgid "Shieldset:"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-selector-editor-dialog.ui.h:6
+#: ../dat/glade/editor/tileset-flag-editor-dialog.ui.h:4
+#: ../dat/glade/editor/tileset-explosion-picture-editor-dialog.ui.h:6
+msgid "Preview"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-selector-editor-dialog.ui.h:7
+#: ../dat/glade/editor/tileset-window.ui.h:11
+msgid "Army Unit Selector"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-flag-editor-dialog.ui.h:1
+msgid "Flag Editor"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-flag-editor-dialog.ui.h:5
+msgid "Stack Flags"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-explosion-picture-editor-dialog.ui.h:1
+msgid "Explosion Editor"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-explosion-picture-editor-dialog.ui.h:2
+msgid "Explosion"
+msgstr ""
+
+#: ../dat/glade/editor/masked-image-editor-dialog.ui.h:1
+#: ../dat/glade/editor/image-editor-dialog.ui.h:1
+msgid "Change Image"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-window.ui.h:1
+#: ../src/editor/tileset-window.cpp:1462
+msgid "LordsAWar! Tileset Editor"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-window.ui.h:3
+msgid "New Tileset"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-window.ui.h:4
+msgid "Load Tileset"
+msgstr "Csempekészlet betöltése"
+
+#: ../dat/glade/editor/tileset-window.ui.h:5
+msgid "Save Tileset"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-window.ui.h:7
+msgid "Validate Tileset"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-window.ui.h:10
+msgid "Tileset info"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-window.ui.h:12
+msgid "Explosion Picture"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-window.ui.h:13
+msgid "Roads Picture"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-window.ui.h:14
+msgid "Bridges Picture"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-window.ui.h:15
+msgid "Fog Picture"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-window.ui.h:16
+msgid "Flag Picture"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-window.ui.h:17
+msgid "Organize TileStyles"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-window.ui.h:18
+msgid "Mini-Map Building Colours"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-window.ui.h:23
+msgid "Pattern:"
+msgstr "Minta:"
+
+#: ../dat/glade/editor/tileset-window.ui.h:25
+msgid "First Colour:"
+msgstr "Első szín:"
+
+#: ../dat/glade/editor/tileset-window.ui.h:26
+msgid "Moves:"
+msgstr "Lépés:"
+
+#: ../dat/glade/editor/tileset-window.ui.h:27
+msgid "Second Colour:"
+msgstr "Második szín:"
+
+#: ../dat/glade/editor/tileset-window.ui.h:28
+msgid "Miniature Map Appearance:"
+msgstr "Miniatűr térkép megjelenés:"
+
+#: ../dat/glade/editor/tileset-window.ui.h:29
+msgid "Third Colour:"
+msgstr "Harmadik szín:"
+
+#: ../dat/glade/editor/tileset-window.ui.h:30
+msgid "Tile"
+msgstr "Csempe"
+
+#: ../dat/glade/editor/tileset-window.ui.h:31
+msgid "TileStyle Set Image:"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-window.ui.h:32
+msgid "Tile Style"
+msgstr "Csempestílus"
+
+#: ../dat/glade/editor/tileset-window.ui.h:33
+msgid "Images"
+msgstr "Képek"
+
+#: ../dat/glade/editor/tilestyle-organizer-dialog.ui.h:1
+msgid "Organize Tile Images"
+msgstr "Csempeképek szervezése"
+
+#: ../dat/glade/editor/tilestyle-organizer-dialog.ui.h:3
+msgid "Categories"
+msgstr "Kategóriák"
+
+#: ../dat/glade/editor/tilestyle-organizer-dialog.ui.h:4
+msgid "Selected Category"
+msgstr "Választott kategória"
+
+#: ../dat/glade/editor/tilestyle-organizer-dialog.ui.h:5
+#: ../src/editor/tilestyle-organizer-dialog.cpp:220
+msgid "Unsorted TileStyles"
+msgstr "Rendezetlen csempestílusok"
+
+#: ../dat/glade/editor/hero-editor-dialog.ui.h:4
+msgid "Male"
+msgstr "Férfi"
+
+#: ../dat/glade/editor/hero-editor-dialog.ui.h:5
+msgid "Female"
+msgstr "Nő"
+
+#: ../dat/glade/editor/hero-editor-dialog.ui.h:6
+msgid "Edit Backpack"
+msgstr ""
+
+#: ../dat/glade/editor/backpack-editor-dialog.ui.h:1
+msgid "Backpack Editor"
+msgstr ""
+
+#: ../dat/glade/editor/backpack-editor-dialog.ui.h:4
+msgid "Remove item"
+msgstr "Elem eltávolítása"
+
+#: ../dat/glade/editor/backpack-editor-dialog.ui.h:6
+msgid "Add Item"
+msgstr "Elem hozzáadása"
+
+#: ../dat/glade/editor/editor-quit-dialog.ui.h:1
+msgid "Save changes?"
+msgstr "Változtatások mentése?"
+
+#: ../dat/glade/editor/editor-quit-dialog.ui.h:2
+msgid "Close without Saving"
+msgstr "Bezárás mentés nélkül"
+
+#: ../dat/glade/editor/editor-quit-dialog.ui.h:4
+msgid "Save"
+msgstr "Mentés"
+
+#: ../dat/glade/editor/editor-quit-dialog.ui.h:5
+msgid "Save changes before closing?"
+msgstr "Változtatások mentése bezárás előtt?"
+
+#: ../dat/glade/editor/tile-size-editor-dialog.ui.h:1
+msgid "Change Tile Size?"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-smallmap-building-colors-dialog.ui.h:1
+msgid "Colours of Buildings on the Miniature Map"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-smallmap-building-colors-dialog.ui.h:3
+msgid "Road Colour:"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-smallmap-building-colors-dialog.ui.h:4
+msgid "Ruin Colour:"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-smallmap-building-colors-dialog.ui.h:5
+msgid "Temple Colour:"
+msgstr ""
+
+#: ../dat/glade/editor/tileset-smallmap-building-colors-dialog.ui.h:6
+msgid "<b>Colours of Buildings on the Miniature map</b>"
+msgstr ""
+
+#: ../dat/glade/editor/cityset-window.ui.h:1
+#: ../src/editor/cityset-window.cpp:820
+msgid "LordsAWar! Cityset Editor"
+msgstr ""
+
+#: ../dat/glade/editor/cityset-window.ui.h:3
+msgid "New Cityset"
+msgstr "Új városkészlet"
+
+#: ../dat/glade/editor/cityset-window.ui.h:4
+msgid "Load Cityset"
+msgstr "Városkészlet betöltése"
+
+#: ../dat/glade/editor/cityset-window.ui.h:5
+msgid "Save Cityset"
+msgstr "Városkészlet mentése"
+
+#: ../dat/glade/editor/cityset-window.ui.h:7
+msgid "Validate Cityset"
+msgstr "Városkészlet ellenőrzése"
+
+#: ../dat/glade/editor/cityset-window.ui.h:10
+#: ../src/editor/cityset-window.cpp:475
+msgid "Edit Cityset Information"
+msgstr "Városkészlet információk szerkesztése"
+
+#: ../dat/glade/editor/cityset-window.ui.h:12
+#: ../dat/glade/editor/shieldset-window.ui.h:13
+msgid "About"
+msgstr "Névjegy"
+
+#: ../dat/glade/editor/cityset-window.ui.h:13
+msgid "(9 pictures on a row)"
+msgstr "(9 fénykép egy sorban)"
+
+#: ../dat/glade/editor/cityset-window.ui.h:14
+msgid "(8 pictures)"
+msgstr "(8 fénykép)"
+
+#: ../dat/glade/editor/cityset-window.ui.h:15
+msgid "(1 picture)"
+msgstr "(1 fénykép)"
+
+#: ../dat/glade/editor/cityset-window.ui.h:16
+msgid "(3 pictures)"
+msgstr "(3 fénykép)"
+
+#: ../dat/glade/editor/cityset-window.ui.h:17
+msgid "Towers Picture:"
+msgstr ""
+
+#: ../dat/glade/editor/cityset-window.ui.h:18
+msgid "Temple Picture:"
+msgstr ""
+
+#: ../dat/glade/editor/cityset-window.ui.h:19
+msgid "Ruins Picture:"
+msgstr ""
+
+#: ../dat/glade/editor/cityset-window.ui.h:20
+msgid "Signpost Picture:"
+msgstr ""
+
+#: ../dat/glade/editor/cityset-window.ui.h:21
+msgid "Port Picture:"
+msgstr ""
+
+#: ../dat/glade/editor/cityset-window.ui.h:22
+msgid "Razed Cities Picture:"
+msgstr ""
+
+#: ../dat/glade/editor/cityset-window.ui.h:23
+msgid "Cities Picture:"
+msgstr ""
+
+#: ../dat/glade/editor/cityset-window.ui.h:24
+msgid "Pictures"
+msgstr "Fényképek"
+
+#: ../dat/glade/editor/cityset-window.ui.h:25
+msgid "City:"
+msgstr "Város:"
+
+#: ../dat/glade/editor/cityset-window.ui.h:26
+msgid "Ruin:"
+msgstr ""
+
+#: ../dat/glade/editor/cityset-window.ui.h:27
+msgid "Temple:"
+msgstr "Templom:"
+
+#: ../dat/glade/editor/cityset-window.ui.h:28
+msgid "(e.g. a city sits on 2x2 tiles)"
+msgstr ""
+
+#: ../dat/glade/editor/cityset-window.ui.h:29
+msgid "Tile Widths"
+msgstr ""
+
+#: ../dat/glade/editor/shieldset-window.ui.h:1
+#: ../src/editor/shieldset-window.cpp:690
+msgid "LordsAWar! Shieldset Editor"
+msgstr "LordsAWar! pajzskészlet szerkesztő"
+
+#: ../dat/glade/editor/shieldset-window.ui.h:3
+msgid "New Shieldset"
+msgstr "Új pajzskészlet"
+
+#: ../dat/glade/editor/shieldset-window.ui.h:4
+msgid "Load Shieldset"
+msgstr "Pajzskészlet betöltése"
+
+#: ../dat/glade/editor/shieldset-window.ui.h:5
+msgid "Save Shieldset"
+msgstr "Pajzskészlet mentése"
+
+#: ../dat/glade/editor/shieldset-window.ui.h:7
+msgid "Validate Shieldset"
+msgstr "Pajzskészlet ellenőrzése"
+
+#: ../dat/glade/editor/shieldset-window.ui.h:10
+#: ../src/editor/shieldset-window.cpp:446
+msgid "Edit Shieldset Information"
+msgstr "Pajzskészlet információk szerkesztése"
+
+#: ../dat/glade/editor/shieldset-window.ui.h:11
+msgid "Copy White Shields Down"
+msgstr ""
+
+#: ../dat/glade/editor/shieldset-window.ui.h:14
+msgid "Player Colour:"
+msgstr ""
+
+#: ../dat/glade/editor/shieldset-window.ui.h:15
+msgid "Shield"
+msgstr ""
+
+#: ../dat/glade/editor/smallmap-editor-dialog.ui.h:1
+msgid "Miniature Map Editor"
+msgstr ""
+
+#: ../dat/glade/editor/smallmap-editor-dialog.ui.h:3
+msgid "Starting Point:"
+msgstr ""
+
+#: ../dat/glade/editor/smallmap-editor-dialog.ui.h:4
+msgid "Finishing Point:"
+msgstr ""
+
+#: ../dat/glade/editor/smallmap-editor-dialog.ui.h:5
+msgid "Choose Point..."
+msgstr ""
+
+#: ../dat/glade/editor/smallmap-editor-dialog.ui.h:6
+msgid "Clear"
+msgstr ""
+
+#: ../dat/glade/editor/smallmap-editor-dialog.ui.h:7
+msgid "Build Road"
+msgstr ""
+
+#: ../dat/glade/editor/smallmap-editor-dialog.ui.h:8
+msgid "Road Planner"
+msgstr ""
+
+#: ../dat/glade/editor/splash-window.ui.h:1 ../dat/lordsawar.desktop.in.in.h:1
+msgid "LordsAWar!"
+msgstr ""
+
+#: ../dat/glade/editor/splash-window.ui.h:2
+msgid "Please Wait..."
+msgstr ""
+
+#: ../dat/glade/game-button-box-desktop.ui.h:1
+#: ../dat/glade/game-button-box-large-screen.ui.h:1
+#: ../dat/glade/game-button-box-netbook.ui.h:1
+msgid "Move this stack along its path."
+msgstr ""
+
+#: ../dat/glade/game-button-box-desktop.ui.h:2
+#: ../dat/glade/game-button-box-large-screen.ui.h:2
+#: ../dat/glade/game-button-box-netbook.ui.h:2
+msgid "Select the next stack that can move."
+msgstr ""
+
+#: ../dat/glade/game-button-box-desktop.ui.h:3
+#: ../dat/glade/game-button-box-large-screen.ui.h:3
+#: ../dat/glade/game-button-box-netbook.ui.h:3
+msgid "Finish moving this stack."
+msgstr ""
+
+#: ../dat/glade/game-button-box-desktop.ui.h:4
+#: ../dat/glade/game-button-box-large-screen.ui.h:4
+#: ../dat/glade/game-button-box-netbook.ui.h:4
+msgid "Deselect this stack."
+msgstr ""
+
+#: ../dat/glade/game-button-box-desktop.ui.h:5
+#: ../dat/glade/game-button-box-large-screen.ui.h:5
+#: ../dat/glade/game-button-box-netbook.ui.h:5
+msgid "Center the map on this stack."
+msgstr ""
+
+#: ../dat/glade/game-button-box-desktop.ui.h:7
+#: ../dat/glade/game-button-box-large-screen.ui.h:7
+#: ../dat/glade/game-button-box-netbook.ui.h:7
+msgid "Put this stack in a defensive posture."
+msgstr ""
+
+#: ../dat/glade/game-button-box-desktop.ui.h:8
+#: ../dat/glade/game-button-box-large-screen.ui.h:8
+#: ../dat/glade/game-button-box-netbook.ui.h:8
+msgid "Search a temple or ruin."
+msgstr ""
+
+#: ../dat/glade/game-button-box-desktop.ui.h:9
+#: ../dat/glade/game-button-box-large-screen.ui.h:9
+#: ../dat/glade/game-button-box-netbook.ui.h:9
+msgid "Move all stacks along their routes."
+msgstr ""
+
+#: ../dat/glade/game-button-box-desktop.ui.h:10
+#: ../dat/glade/game-button-box-large-screen.ui.h:10
+#: ../dat/glade/game-button-box-netbook.ui.h:10
+msgid "End your turn."
+msgstr ""
+
+#: ../dat/shield/default/default.lws.in.h:1
+#: ../dat/citysets/default/default.lwc.in.h:1
+#: ../dat/citysets/bigdefault/bigdefault.lwc.in.h:1
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:1
+#: ../dat/army/default/default.lwa.in.h:1
+#: ../dat/tilesets/default/default.lwt.in.h:1
+#: ../dat/tilesets/bigdefault/bigdefault.lwt.in.h:1
+#: ../src/gui/new-random-map-dialog.cpp:138
+#: ../src/gui/new-random-map-dialog.cpp:248
+#: ../src/gui/new-random-map-dialog.cpp:269
+#: ../src/gui/new-random-map-dialog.cpp:289
+#: ../src/editor/new-map-dialog.cpp:109 ../src/editor/new-map-dialog.cpp:293
+#: ../src/editor/new-map-dialog.cpp:311 ../src/editor/new-map-dialog.cpp:329
+#: ../src/editor/tileset-flag-editor-dialog.cpp:92
+#: ../src/editor/tileset-selector-editor-dialog.cpp:125
+msgid "Default"
+msgstr "Alapértelmezett"
+
+#: ../dat/shield/default/default.lws.in.h:2
+msgid "This is the default shieldset for LordsAWar!"
+msgstr "Ez a LordsAWar alapértelmezett pajzskészlete!"
+
+#: ../dat/shield/dol/dol.lws.in.h:1 ../dat/citysets/dol/dol.lwc.in.h:1
+#: ../dat/citysets/bigdol/bigdol.lwc.in.h:1
+msgid "Dol"
+msgstr "Dol"
+
+#: ../dat/shield/dol/dol.lws.in.h:2
+msgid "This is the shieldset associated with the dol scenario."
+msgstr ""
+
+#: ../dat/shield/plain/plain.lws.in.h:1
+msgid "Plain"
+msgstr "Egyszerű"
+
+#: ../dat/shield/plain/plain.lws.in.h:2
+msgid "This is a simple shieldset."
+msgstr ""
+
+#: ../dat/citysets/default/default.lwc.in.h:2
+msgid "The default cityset of LordsAWar"
+msgstr ""
+
+#: ../dat/citysets/bigdefault/bigdefault.lwc.in.h:2
+msgid "The doublesized default cityset of LordsAWar"
+msgstr ""
+
+#: ../dat/citysets/dol/dol.lwc.in.h:2
+msgid "The cityset that goes with the Dol scenario of LordsAWar"
+msgstr ""
+
+#: ../dat/citysets/bigdol/bigdol.lwc.in.h:2
+msgid "A doublesized cityset that goes with the Dol scenario of LordsAWar"
+msgstr ""
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:2
+#: ../dat/army/default/default.lwa.in.h:2
+msgid "The default armyset of LordsAWar! Initally created by Sune Theodorsen of Fata Morgana in 2007 specifically for this game."
+msgstr ""
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:3
+#: ../dat/army/default/default.lwa.in.h:3
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:44
+msgid "Scouts"
+msgstr "Felderítők"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:4
+#: ../dat/army/default/default.lwa.in.h:4
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:53
+msgid "Light Inf."
+msgstr "Könnyű gyalogság"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:5
+#: ../dat/army/default/default.lwa.in.h:5
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:51
+msgid "Orcish Mob"
+msgstr "Ork csőcselék"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:6
+#: ../dat/army/default/default.lwa.in.h:6
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:45
+msgid "Heavy Inf."
+msgstr "Nehéz gyalogság"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:7
+#: ../dat/army/default/default.lwa.in.h:7
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:47
+msgid "Pikemen"
+msgstr "Lándzsás"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:8
+#: ../dat/army/default/default.lwa.in.h:8
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:65
+msgid "Archers"
+msgstr "íjászok"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:9
+#: ../dat/army/default/default.lwa.in.h:9
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:60
+msgid "Dwarves"
+msgstr "Törpék"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:10
+#: ../dat/army/default/default.lwa.in.h:10
+msgid "Minotaurs"
+msgstr "Minotauruszok"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:11
+#: ../dat/army/default/default.lwa.in.h:11
+msgid "Giants"
+msgstr "Óriások"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:12
+#: ../dat/army/default/default.lwa.in.h:12
+msgid "Spiders"
+msgstr "Pókok"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:13
+#: ../dat/army/default/default.lwa.in.h:13
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:62
+msgid "Light Cav."
+msgstr "Könnyű lovasság"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:14
+#: ../dat/army/default/default.lwa.in.h:14
+msgid "Wolfriders"
+msgstr "Farkaslovasok"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:15
+#: ../dat/army/default/default.lwa.in.h:15
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:67
+msgid "Heavy Cav."
+msgstr "Nehéz lovasság"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:16
+#: ../dat/army/default/default.lwa.in.h:16
+msgid "Catapults"
+msgstr "Katapultok"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:17
+#: ../dat/army/default/default.lwa.in.h:17
+msgid "Elephants"
+msgstr "Elefántok"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:18
+#: ../dat/army/default/default.lwa.in.h:18
+msgid "Giant Bats"
+msgstr "Óriás denevérek"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:19
+#: ../dat/army/default/default.lwa.in.h:19
+msgid "Pegasi"
+msgstr "Pegazus"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:20
+#: ../dat/army/default/default.lwa.in.h:20
+msgid "Griffins"
+msgstr "Griffmadár"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:21
+#: ../dat/army/default/default.lwa.in.h:21
+msgid "Giant Worms"
+msgstr "Óriás férgek"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:22
+#: ../dat/army/default/default.lwa.in.h:22
+msgid "Ghosts"
+msgstr "Szellemek"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:23
+#: ../dat/army/default/default.lwa.in.h:23
+msgid "Wizards"
+msgstr "Varázslók"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:24
+#: ../dat/army/default/default.lwa.in.h:24
+msgid "Unicorns"
+msgstr "Unikornis"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:25
+#: ../dat/army/default/default.lwa.in.h:25
+msgid "Elementals"
+msgstr "Elementálok"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:26
+#: ../dat/army/default/default.lwa.in.h:26
+msgid "Devils"
+msgstr "Ördögök"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:27
+#: ../dat/army/default/default.lwa.in.h:27
+msgid "Demons"
+msgstr "Démonok"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:28
+#: ../dat/army/default/default.lwa.in.h:28
+msgid "Archons"
+msgstr "Arkhónok"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:29
+#: ../dat/army/default/default.lwa.in.h:29
+msgid "Dragons"
+msgstr "Sárkányok"
+
+#: ../dat/army/bigdefault/bigdefault.lwa.in.h:30
+#: ../dat/army/default/default.lwa.in.h:30
+msgid "hero"
+msgstr "hős"
+
+#: ../dat/tilesets/default/default.lwt.in.h:2
+#: ../dat/tilesets/bigdefault/bigdefault.lwt.in.h:2
+msgid "A tileset made by David Baumgart for LordsAWar"
+msgstr ""
+
+#: ../dat/tilesets/stark/stark.lwt.in.h:1
+#: ../dat/tilesets/bigstark/bigstark.lwt.in.h:1
+msgid "Stark"
+msgstr "Stark"
+
+#: ../dat/tilesets/stark/stark.lwt.in.h:2
+msgid "A stark and simple tileset"
+msgstr ""
+
+#: ../dat/tilesets/bigstark/bigstark.lwt.in.h:2
+msgid "The doublesized stark tileset"
+msgstr ""
+
+#: ../dat/tilesets/wesnoth/wesnoth.lwt.in.h:1
+#: ../dat/tilesets/bigwesnoth/bigwesnoth.lwt.in.h:1
+msgid "Wesnoth"
+msgstr "Wesnoth"
+
+#: ../dat/tilesets/wesnoth/wesnoth.lwt.in.h:2
+msgid "A tileset based on Wesnoth tileset"
+msgstr ""
+
+#: ../dat/tilesets/bigwesnoth/bigwesnoth.lwt.in.h:2
+msgid "The doublesized tileset based on Wesnoth tileset"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:1
+#: ../dat/various/items/items.xml.in.h:1
+msgid "Shield of Courage"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:2
+#: ../dat/various/items/items.xml.in.h:2
+msgid "Troll Helm"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:3
+#: ../dat/various/items/items.xml.in.h:3
+msgid "Icesword"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:4
+#: ../dat/various/items/items.xml.in.h:4
+msgid "Armour of Gods"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:5
+#: ../dat/various/items/items.xml.in.h:5
+msgid "Crimson Banner"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:6
+#: ../dat/various/items/items.xml.in.h:6
+msgid "Crown of Loriel"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:7
+#: ../dat/various/items/items.xml.in.h:7
+msgid "Ring of Power"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:8
+#: ../dat/various/items/items.xml.in.h:8
+msgid "Horn of Ages"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:9
+#: ../dat/various/items/items.xml.in.h:9
+msgid "Staff of Ruling"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:10
+#: ../dat/various/items/items.xml.in.h:10
+msgid "Wings of Flying"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:11
+#: ../dat/various/items/items.xml.in.h:11
+msgid "Wand of Flight"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:12
+#: ../dat/various/items/items.xml.in.h:12
+msgid "Ring of Travel"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:13
+#: ../dat/various/items/items.xml.in.h:13
+msgid "Phantom Steed"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:14
+#: ../dat/various/items/items.xml.in.h:14
+msgid "Staff of Movement"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:15
+#: ../dat/various/items/items.xml.in.h:15
+msgid "Darksword"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:16
+#: ../dat/various/items/items.xml.in.h:16
+msgid "Beserker Helm"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:17
+#: ../dat/various/items/items.xml.in.h:17
+msgid "Bow of Eldros"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:18
+#: ../dat/various/items/items.xml.in.h:18
+msgid "Sceptre of Loriel"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:19
+#: ../dat/various/items/items.xml.in.h:19
+msgid "Magic Carpet"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:20
+#: ../dat/various/items/items.xml.in.h:20
+msgid "Cup of Haste"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:21
+#: ../dat/various/items/items.xml.in.h:21
+msgid "Boots of Speed"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:22
+#: ../dat/various/items/items.xml.in.h:22
+msgid "Eldros's Pouch"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:23
+#: ../dat/various/items/items.xml.in.h:23
+msgid "Spear of Ank"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:24
+#: ../dat/various/items/items.xml.in.h:24
+msgid "Lock of Safety"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:25
+#: ../dat/various/items/items.xml.in.h:25
+msgid "Horn of Siege"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:26
+#: ../dat/various/items/items.xml.in.h:26
+msgid "Staff of Might"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:27
+#: ../dat/various/items/items.xml.in.h:27
+msgid "Wings of the Eagle"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:28
+#: ../dat/various/items/items.xml.in.h:28
+msgid "Everful Purse"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:29
+#: ../dat/various/items/items.xml.in.h:29
+msgid "Okradon's Pouch"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:30
+#: ../dat/various/items/items.xml.in.h:30
+msgid "Firesword"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:31
+#: ../dat/various/items/items.xml.in.h:31
+msgid "Sword of Death"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:32
+#: ../dat/various/items/items.xml.in.h:32
+msgid "Chimes of Safety"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:33
+#: ../dat/various/items/items.xml.in.h:33
+msgid "Lightsword"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:34
+#: ../dat/various/items/items.xml.in.h:34
+msgid "Orb of Loriel"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:35
+#: ../dat/various/items/items.xml.in.h:35
+msgid "Witch's Broom"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:36
+#: ../dat/various/items/items.xml.in.h:36
+msgid "Silver Purse"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:37
+#: ../dat/various/items/items.xml.in.h:37
+msgid "Tome of War"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:38
+#: ../dat/various/items/items.xml.in.h:38
+msgid "Horn of Plenty"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:39
+msgid "Carthage"
+msgstr "Karthágó"
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:40
+msgid "Hannibal"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:41
+msgid "Rome"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:42 ../src/shield.cpp:113
+#: ../src/shield.cpp:115
+msgid "Neutral"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:43
+msgid "Roma"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:46
+msgid "Taras"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:48
+msgid "Gades"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:49
+msgid "New Carthage"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:50
+msgid "Numantia"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:52
+msgid "Saguntum"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:54
+msgid "Capua"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:55
+msgid "Syracuse"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:56
+msgid "Ausculum"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:57
+msgid "Croton"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:58
+msgid "Clusium"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:59
+msgid "Lilybaeum"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:61
+msgid "Lixus"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:63
+msgid "Carales"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:64
+msgid "Hadrumentum"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:66
+msgid "Placentia"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:68
+msgid "Massillia"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:69
+msgid "Leptis"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:70
+msgid "Tarraco"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:71
+msgid "Messana"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:72
+msgid "Gegovia"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:73
+msgid "Olisippo"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:74
+msgid "Temple of Io"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:75
+msgid "Temple of Belisama"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:76
+msgid "Temple of Apollo"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:77
+msgid "Temple of Jupiter"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:78 ../dat/ruinnames.xml.in.h:18
+msgid "Dark Tower"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:79 ../dat/ruinnames.xml.in.h:30
+msgid "Abandoned Town"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:80
+msgid "The Sibyl's Cave"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:81
+msgid "Defender's Helmet"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:82
+msgid "Scroll of Waterwalking"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:83
+msgid "Shield of Parrying"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:84
+msgid "Field Plate"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:85
+msgid "Healthy Cloak"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:86
+msgid "Ring of Endurance"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:87
+msgid "Enchanted Dagger"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:88
+msgid "Enchanted Sword"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:89
+msgid "Enchanted Axe"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:90
+msgid "Defense Rapier"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:91
+msgid "Skull Crusher"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:92
+msgid "Orcish Dagger"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:93
+msgid "Orcish Sword"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:94
+msgid "Magic Spear"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:95
+msgid "Enchanted Greatsword"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:96
+msgid "Orcish Greatsword"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:97
+msgid "Everburning Torch"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:98
+msgid "Dwarven Hammer"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:99
+msgid "Berserker Axe"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:100
+msgid "Elven Sword"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:101
+msgid "Power Halberd"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:102
+msgid "Baneblade"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:103
+msgid "Thrakil's Battleaxe"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:104
+msgid "Trident of the Seas"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:105
+msgid "Flaming Death"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:106
+msgid "Morningstar"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:107
+msgid "Sword of the Avatar"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:108
+msgid "Studded Armour"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:109
+msgid "Ranger Vest"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:110
+msgid "Wall Aegis"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:111
+msgid "Golden Shield"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:112
+msgid "Silver Cap"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:113
+msgid "Ruby Ring"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:114
+msgid "Golden Mask"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:115
+msgid "Crystal Rose"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:116
+msgid "Moon Blade"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:117
+msgid "Mace of the Zealot"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:118
+msgid "Tyrill lies to the southwest"
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:119 ../dat/signposts.xml.in.h:4
+msgid "Here lies a foolish warrior."
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:120
+msgid "Here in 255 BCE Marcus Atilius Regulus was defeated."
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:121
+msgid "Here in 279 BCE Pyrrhus won a \"Pyrrhic\" victory."
+msgstr ""
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:122
+msgid "The Second Punic War"
+msgstr "A második pun háború"
+
+#: ../dat/map/2ndPunic37/2ndPunic37.map.in.h:123
+msgid "Carthage has lost her dominance on the sea and you, Hannibal, are convinced that the only hope of avoiding the destruction of your city is to move to the attack - through Spain and across the Alps."
+msgstr "Karthágó elvesztette a tenger feletti dominanciáját, és neked, Hannibálnak meggyőződésed, hogy a városod pusztulása elkerülésének egyetlen reménye támadásba lendülni - Spanyolországon át és az Alpokon keresztül."
+
+#: ../src/armysetlist.cpp:186
+msgid "Error!  armyset: `%1' is malformed.  Skipping."
+msgstr ""
+
+#: ../src/armysetlist.cpp:192
+msgid "Error!  armyset: `%1' shares a duplicate armyset basename `%2' with `%3'.  Skipping."
+msgstr ""
+
+#: ../src/armysetlist.cpp:200
+msgid "Error!  armyset: `%1' shares a duplicate armyset id with `%2'.  Skipping."
+msgstr ""
+
+#: ../src/GameScenario.cpp:344
+msgid "Northwestern map"
+msgstr ""
+
+#: ../src/GameScenario.cpp:347
+msgid "Northern map"
+msgstr ""
+
+#: ../src/GameScenario.cpp:350
+msgid "Northeastern map"
+msgstr ""
+
+#: ../src/GameScenario.cpp:353
+msgid "Western map"
+msgstr ""
+
+#: ../src/GameScenario.cpp:356
+msgid "Central map"
+msgstr ""
+
+#: ../src/GameScenario.cpp:359
+msgid "Eastern map"
+msgstr ""
+
+#: ../src/GameScenario.cpp:362
+msgid "Southwestern map"
+msgstr ""
+
+#: ../src/GameScenario.cpp:365
+msgid "Southern map"
+msgstr ""
+
+#: ../src/GameScenario.cpp:368
+msgid "Southeastern map"
+msgstr ""
+
+#: ../src/GameScenario.cpp:693
+msgid "saved game file has wrong version.  expecting %1 but got %2."
+msgstr ""
+
+#: ../src/GameScenario.cpp:860
+msgid "Error! can't rename the temporary file `%1' to the autosave file `%2'.  %3"
+msgstr ""
+
+#: ../src/GameScenario.cpp:903
+msgid "There must be at least 2 players in the scenario."
+msgstr ""
+
+#: ../src/GameScenario.cpp:907
+msgid "There must be at least 2 cities in the scenario."
+msgstr ""
+
+#: ../src/GameScenario.cpp:918
+msgid "The player called `%1' lacks a starting city."
+msgstr ""
+
+#: ../src/GameScenario.cpp:934
+msgid "There is %1 unnamed city"
+msgid_plural "There are %1 unnamed cities"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/GameScenario.cpp:948
+msgid "There is %1 unnamed ruin"
+msgid_plural "There are %1 unnamed ruins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/GameScenario.cpp:962
+msgid "There is %1 unnamed temple"
+msgid_plural "There are %1 unnamed temples"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/GameScenario.cpp:976
+msgid "There is %1 neutral stack not in a city"
+msgid_plural "There are %1 neutral stacks not in cities"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/GameScenario.cpp:983
+msgid "Not all cities are reachable by a non-flying unit."
+msgstr ""
+
+#: ../src/GameScenario.cpp:987
+msgid "One or more ports are on land."
+msgstr ""
+
+#: ../src/GameScenario.cpp:989
+msgid "One or more bridges are on land."
+msgstr ""
+
+#: ../src/GameScenario.cpp:992
+msgid "One or more cities are on water."
+msgstr ""
+
+#: ../src/GameScenario.cpp:994
+msgid "One or more roads are on water."
+msgstr ""
+
+#: ../src/GameScenario.cpp:996
+msgid "One or more ruins are on water."
+msgstr ""
+
+#: ../src/GameScenario.cpp:998
+msgid "One or more temples are on water."
+msgstr ""
+
+#: ../src/GameScenario.cpp:1000
+msgid "One or more signs are on water."
+msgstr ""
+
+#: ../src/QKillHero.cpp:107
+msgid "You're still searching for him..."
+msgstr ""
+
+#: ../src/QKillHero.cpp:108
+msgid "Seen lately near ("
+msgstr ""
+
+#: ../src/QKillHero.cpp:116
+msgid "You have slain the wicked hero %1."
+msgstr ""
+
+#: ../src/QKillHero.cpp:121
+msgid "You could not slay the wicked hero %1."
+msgstr ""
+
+#: ../src/QKillHero.cpp:123
+msgid "The hero was slain by someone else!"
+msgstr ""
+
+#: ../src/QKillHero.cpp:129
+msgid "Kill the hero named %1, servant of player %2."
+msgstr ""
+
+#: ../src/QEnemyArmytype.cpp:117
+msgid "You have not killed a unit of enemy %1 yet."
+msgstr ""
+
+#: ../src/QEnemyArmytype.cpp:125
+msgid "You have killed a unit of enemy %1."
+msgstr ""
+
+#: ../src/QEnemyArmytype.cpp:126 ../src/QPillageGold.cpp:79
+#: ../src/QEnemyArmies.cpp:130
+msgid "Well done!"
+msgstr ""
+
+#: ../src/QEnemyArmytype.cpp:139
+msgid "You must destroy a unit of enemy %1."
+msgstr ""
+
+#: ../src/playerlist.cpp:304
+msgid "Statesman"
+msgstr ""
+
+#: ../src/playerlist.cpp:306
+msgid "Diplomat"
+msgstr ""
+
+#: ../src/playerlist.cpp:308
+msgid "Pragmatist"
+msgstr ""
+
+#: ../src/playerlist.cpp:310
+msgid "Politician"
+msgstr ""
+
+#: ../src/playerlist.cpp:312
+msgid "Deceiver"
+msgstr ""
+
+#: ../src/playerlist.cpp:314
+msgid "Scoundrel"
+msgstr ""
+
+#: ../src/playerlist.cpp:316
+msgid "Turncoat"
+msgstr ""
+
+#: ../src/playerlist.cpp:318
+msgid "Running Dog"
+msgstr ""
+
+#: ../src/playerlist.cpp:319 ../src/gui/hero-dialog.cpp:211
+#: ../src/gui/report-dialog.cpp:333
+msgid "unknown"
+msgstr ""
+
+#: ../src/GameMap.cpp:280
+msgid "Error!  Map Generator and Game Map tile sizes differ.  %1 != %2 || %3 != %4.  Exiting."
+msgstr ""
+
+#: ../src/citysetlist.cpp:126
+msgid "Error!  cityset: `%1' is malformed.  Skipping."
+msgstr ""
+
+#: ../src/citysetlist.cpp:133
+msgid "Error!  cityset: `%1' shares a duplicate cityset basename `%2' with `%3'.  Skipping."
+msgstr ""
+
+#: ../src/citysetlist.cpp:141
+msgid "Error!  cityset `%1' shares a duplicate cityset id with `%2'.  Skipping."
+msgstr ""
+
+#: ../src/citysetlist.cpp:149
+msgid "Error!  cityset: `%1' has a duplicate cityset id with `%2'.  Skipping."
+msgstr ""
+
+#: ../src/QPillageGold.cpp:73
+msgid "You have already stolen %1 gold pieces."
+msgstr ""
+
+#: ../src/QPillageGold.cpp:78
+msgid "You have managed to sack and pillage %1 gold."
+msgstr ""
+
+#: ../src/QPillageGold.cpp:89
+msgid "You shall sack and pillage %1 gold from thy mighty foes."
+msgstr ""
+
+#: ../src/QCityOccupy.cpp:89 ../src/QCityRaze.cpp:87 ../src/QCitySack.cpp:88
+msgid "You aren't afraid of doing it, are you?"
+msgstr ""
+
+#: ../src/QCityOccupy.cpp:94
+msgid "The priests thank you for occupying this evil place."
+msgstr ""
+
+#: ../src/QCityOccupy.cpp:102
+msgid "The occupation of city \"%1\" could not be accomplished."
+msgstr ""
+
+#: ../src/QCityOccupy.cpp:120
+msgid "You must take over the city \"%1\" and occupy it."
+msgstr ""
+
+#. note to translators: whether a ruin has been searched
+#: ../src/game.cpp:821
+msgid "Explored"
+msgstr ""
+
+#. note to translators: whether a ruin has been searched
+#: ../src/game.cpp:824
+msgid "Unexplored"
+msgstr ""
+
+#: ../src/tilesetlist.cpp:121
+msgid "Error!  Tileset: `%1' is malformed.  Skipping."
+msgstr ""
+
+#: ../src/tilesetlist.cpp:127
+msgid "Error!  tileset: `%1' shares a duplicate tileset subdir `%2' with `%3'. Skipping."
+msgstr ""
+
+#: ../src/tilesetlist.cpp:135
+msgid "Error!  tileset: `%1' shares a duplicate tileset id with `%2'.  Skipping."
+msgstr ""
+
+#: ../src/Configuration.cpp:192
+msgid "Configuration file has wrong version.  expected %1, but got %2"
+msgstr ""
+
+#: ../src/Configuration.cpp:195
+msgid "backing up config file `%1' to `%2'."
+msgstr ""
+
+#: ../src/Configuration.cpp:292
+msgid "Error!  couldn't save configuration file `%1'.  Exiting."
+msgstr ""
+
+#: ../src/Configuration.cpp:296
+msgid "created default configuration file `%1'."
+msgstr ""
+
+#: ../src/Configuration.cpp:309
+msgid "Error!  Couldn't create armyset directory `%1'.  Exiting."
+msgstr ""
+
+#: ../src/Configuration.cpp:315
+msgid "Error!  Couldn't create tileset directory `%1'.  Exiting."
+msgstr ""
+
+#: ../src/Configuration.cpp:322
+msgid "Error!  Couldn't create map directory `%1'.  Exiting."
+msgstr ""
+
+#: ../src/Configuration.cpp:329
+msgid "Error!  Couldn't create shieldset directory `%1'.  Exiting."
+msgstr ""
+
+#: ../src/Configuration.cpp:336
+msgid "Error!  Couldn't create cityset directory `%1'.  Exiting."
+msgstr ""
+
+#: ../src/shieldsetlist.cpp:118
+msgid "Error!  shieldset: `%1' is malformed.  Skipping."
+msgstr ""
+
+#: ../src/shieldsetlist.cpp:125
+msgid "Error!  shieldset: `%1' shares a duplicate shieldset basename `%2' with `%3'.  Skipping."
+msgstr ""
+
+#: ../src/shieldsetlist.cpp:136
+msgid "Error!  shieldset: `%1' shares a duplicate shieldset name `%2' with `%3'.  Skipping."
+msgstr ""
+
+#: ../src/shieldsetlist.cpp:145
+msgid "Error!  shieldset: `%1' shares a duplicate shieldset id with `%2'.  Skipping."
+msgstr ""
+
+#: ../src/MapGenerator.cpp:171
+msgid "flattening plains..."
+msgstr ""
+
+#: ../src/MapGenerator.cpp:174
+msgid "raining water..."
+msgstr ""
+
+#: ../src/MapGenerator.cpp:181
+msgid "raising hills..."
+msgstr ""
+
+#: ../src/MapGenerator.cpp:184
+msgid "raising mountains..."
+msgstr ""
+
+#: ../src/MapGenerator.cpp:190
+msgid "planting forests..."
+msgstr ""
+
+#: ../src/MapGenerator.cpp:193
+msgid "watering swamps..."
+msgstr ""
+
+#: ../src/MapGenerator.cpp:196
+msgid "normalizing terrain..."
+msgstr ""
+
+#: ../src/MapGenerator.cpp:201
+msgid "building cities..."
+msgstr ""
+
+#: ../src/MapGenerator.cpp:207 ../src/MapGenerator.cpp:1679
+#: ../src/MapGenerator.cpp:1693
+msgid "paving roads..."
+msgstr ""
+
+#: ../src/MapGenerator.cpp:213
+msgid "ruining ruins..."
+msgstr ""
+
+#: ../src/MapGenerator.cpp:216
+msgid "spawning temples..."
+msgstr ""
+
+#: ../src/MapGenerator.cpp:221
+msgid "building bridges..."
+msgstr ""
+
+#: ../src/MapGenerator.cpp:225
+msgid "raising signs..."
+msgstr ""
+
+#: ../src/MapGenerator.cpp:366
+msgid "paving bridges..."
+msgstr ""
+
+#: ../src/QEnemyArmies.cpp:124
+msgid "You have killed %1 so far."
+msgstr ""
+
+#: ../src/QEnemyArmies.cpp:129
+msgid "You have managed to slaughter %1 armies."
+msgstr ""
+
+#: ../src/QEnemyArmies.cpp:140
+msgid "You shall slaughter %1 armies of the treacherous %2."
+msgstr ""
+
+#. Initially give the first hero the player's standard.
+#: ../src/player.cpp:2441
+msgid "%1 Standard"
+msgstr ""
+
+#: ../src/player.cpp:2515
+msgid "Peace negotiated with %1."
+msgstr ""
+
+#: ../src/player.cpp:2523
+msgid "War declared with %1."
+msgstr ""
+
+#: ../src/player.cpp:4697
+msgid "old map"
+msgstr ""
+
+#: ../src/maptile.cpp:220 ../src/maptile.cpp:229
+msgid "None"
+msgstr "Nincs"
+
+#: ../src/maptile.cpp:225
+msgid "Road"
+msgstr "Út"
+
+#: ../src/maptile.cpp:226 ../src/gui/network-game-selector-dialog.cpp:58
+#: ../src/gui/network-game-selector-dialog.cpp:77
+msgid "Port"
+msgstr "Port"
+
+#: ../src/maptile.cpp:227
+msgid "Bridge"
+msgstr "Híd"
+
+#: ../src/shield.cpp:105
+msgid "White"
+msgstr "Fehér"
+
+#: ../src/shield.cpp:106
+msgid "Green"
+msgstr "Zöld"
+
+#: ../src/shield.cpp:107
+msgid "Yellow"
+msgstr "Sárga"
+
+#: ../src/shield.cpp:108
+msgid "Light Blue"
+msgstr "Világoskék"
+
+#: ../src/shield.cpp:109
+msgid "Red"
+msgstr "Piros"
+
+#: ../src/shield.cpp:110
+msgid "Dark Blue"
+msgstr "Sötétkék"
+
+#: ../src/shield.cpp:111
+msgid "Orange"
+msgstr "Narancssárga"
+
+#: ../src/shield.cpp:112
+msgid "Black"
+msgstr "Fekete"
+
+#: ../src/shieldstyle.cpp:78
+msgid "Medium"
+msgstr "Közepes"
+
+#: ../src/ruin.cpp:31
+msgid " is inhabited by monsters and full of treasure!"
+msgstr ""
+
+#: ../src/reward.cpp:433
+msgid "%1 Gold Piece"
+msgid_plural "%1 Gold Pieces"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/reward.cpp:441
+msgid "Allies: %1 x %2"
+msgstr ""
+
+#: ../src/reward.cpp:449
+msgid "Item: %1"
+msgstr "Elem: %1"
+
+#: ../src/reward.cpp:456
+msgid "Site: %1"
+msgstr ""
+
+#: ../src/reward.cpp:462
+msgid "Map: %1,%2 %3x%4"
+msgstr "Térkép: %1,%2 %3x%4"
+
+#: ../src/QCityRaze.cpp:92
+msgid "The priests thank you for razing this evil place."
+msgstr ""
+
+#: ../src/QCityRaze.cpp:99
+msgid "The razing of city \"%1\" could not be accomplished."
+msgstr ""
+
+#: ../src/QCityRaze.cpp:118
+msgid "You must conquer the city \"%1\" and burn it to the ground."
+msgstr ""
+
+#: ../src/temple.cpp:32
+msgid " can bless your armies or give you quests."
+msgstr ""
+
+#: ../src/tileset.cpp:496
+msgid "Error!  can't load tileset `%1'."
+msgstr "Hiba! Nem sikerült betölteni a(z) „%1” csempekészletet."
+
+#. note to translators: %1 is a file extension, %2 is a directory.
+#: ../src/tileset.cpp:829
+msgid "Couldn't find any tilesets (*%1) in `%2'."
+msgstr ""
+
+#: ../src/tileset.cpp:830 ../src/cityset.cpp:546 ../src/shieldset.cpp:312
+#: ../src/armyset.cpp:662
+msgid "Please check the path settings in ~/.lordsawarrc"
+msgstr ""
+
+#: ../src/gui/city-window.cpp:152
+msgid "Capital city of %1"
+msgstr "%1 fővárosa"
+
+#: ../src/gui/city-window.cpp:157
+msgid "Defence: %1"
+msgstr "Védelem: %1"
+
+#: ../src/gui/city-window.cpp:159
+msgid "Income: %1"
+msgstr "Bevétel: %1"
+
+#: ../src/gui/city-window.cpp:257 ../src/gui/buy-production-dialog.cpp:154
+msgid "No production"
+msgstr ""
+
+#. note to translators: %1/%2 is the no. of steps completed out of the
+#. total no. of steps in the production
+#: ../src/gui/city-window.cpp:271 ../src/gui/army-info-tip.cpp:134
+#: ../src/gui/army-info-tip.cpp:193
+msgid "Time: %1"
+msgstr "Idő: %1"
+
+#. note to translators: %1 is ranged strength
+#. note to translators: %1 is melee strength
+#. note to translators: %1 is melee strength, %2 is ranged strength
+#: ../src/gui/city-window.cpp:273 ../src/gui/army-info-tip.cpp:68
+#: ../src/gui/army-info-tip.cpp:128 ../src/gui/army-info-tip.cpp:187
+#: ../src/gui/buy-production-dialog.cpp:167 ../src/gui/hero-dialog.cpp:433
+#: ../src/gui/army-gains-level-dialog.cpp:67
+#: ../src/editor/select-army-dialog.cpp:169
+msgid "Strength: %1"
+msgstr "Erő: %1"
+
+#. note to translators: %1 is total moves
+#: ../src/gui/city-window.cpp:278 ../src/gui/army-info-tip.cpp:132
+#: ../src/gui/buy-production-dialog.cpp:172
+#: ../src/gui/army-gains-level-dialog.cpp:63
+#: ../src/editor/select-army-dialog.cpp:171
+msgid "Moves: %1"
+msgstr "Lépés: %1"
+
+#. fill in second column
+#: ../src/gui/city-window.cpp:280 ../src/gui/army-info-tip.cpp:136
+#: ../src/gui/army-info-tip.cpp:195 ../src/gui/buy-production-dialog.cpp:170
+msgid "Cost: %1"
+msgstr "Költség: %1"
+
+#: ../src/gui/city-window.cpp:282 ../src/gui/destination-dialog.cpp:229
+msgid "%1t"
+msgstr "%1t"
+
+#: ../src/gui/city-window.cpp:287
+msgid ", then to %1"
+msgstr ""
+
+#: ../src/gui/city-window.cpp:288 ../src/gui/report-dialog.cpp:410
+msgid "Standard"
+msgstr "Szabványos"
+
+#: ../src/gui/city-window.cpp:427
+msgid "Rename City"
+msgstr "Város átnevezése"
+
+#: ../src/gui/city-window.cpp:436
+msgid "Type the new name for this city:"
+msgstr "Gépeld be a város új nevét:"
+
+#: ../src/gui/city-window.cpp:461
+msgid "Raze City"
+msgstr ""
+
+#: ../src/gui/city-window.cpp:468
+msgid "Are you sure that you want to raze %1?"
+msgstr ""
+
+#: ../src/gui/city-window.cpp:471
+msgid "You won't be popular!"
+msgstr ""
+
+#: ../src/gui/preferences-dialog.cpp:66
+msgid "Observe"
+msgstr "Megfigyelés"
+
+#. *
+#. * if we're turning this player into a human,
+#. * then we desensitize the associated checkbutton
+#. * otherwise, we presume that we want to observe it
+#.
+#: ../src/gui/preferences-dialog.cpp:72 ../src/gui/preferences-dialog.cpp:137
+#: ../src/gui/preferences-dialog.cpp:189 ../src/gui/preferences-dialog.cpp:203
+msgid "Human"
+msgstr "Ember"
+
+#: ../src/gui/preferences-dialog.cpp:73
+msgid "Computer"
+msgstr "Számítógép"
+
+#: ../src/gui/preferences-dialog.cpp:75
+msgid "Networked"
+msgstr ""
+
+#: ../src/gui/quest-completed-dialog.cpp:47
+#: ../src/gui/quest-assigned-dialog.cpp:44
+#: ../src/gui/quest-report-dialog.cpp:98
+msgid "Quest for %1"
+msgstr ""
+
+#: ../src/gui/quest-completed-dialog.cpp:51
+msgid "%1 completed the quest!"
+msgstr ""
+
+#: ../src/gui/quest-completed-dialog.cpp:67
+msgid "You have been rewarded with %1 gold piece."
+msgid_plural "You have been rewarded with %1 gold pieces."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/quest-completed-dialog.cpp:75
+msgid "You have been rewarded with %1 ally."
+msgid_plural "You have been rewarded with %1 allies."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/quest-completed-dialog.cpp:82
+msgid "You have been rewarded with the %1."
+msgstr ""
+
+#: ../src/gui/quest-completed-dialog.cpp:88
+msgid "You are shown the site of %1\n"
+msgstr ""
+
+#: ../src/gui/quest-completed-dialog.cpp:95
+#: ../src/gui/ruin-rewarded-dialog.cpp:72
+msgid "where powerful allies can be found!"
+msgstr ""
+
+#: ../src/gui/quest-completed-dialog.cpp:99
+#: ../src/gui/ruin-rewarded-dialog.cpp:76
+msgid "where the %1 can be found!"
+msgstr ""
+
+#: ../src/gui/quest-completed-dialog.cpp:103
+#: ../src/gui/ruin-rewarded-dialog.cpp:79
+msgid "where a map can be found!"
+msgstr ""
+
+#: ../src/gui/quest-completed-dialog.cpp:105
+#: ../src/gui/ruin-rewarded-dialog.cpp:81
+msgid "where nothing can be found!"
+msgstr ""
+
+#: ../src/gui/quest-completed-dialog.cpp:107
+#: ../src/gui/ruin-rewarded-dialog.cpp:83
+msgid "where gold can be found!"
+msgstr ""
+
+#. this one shouldn't happen
+#: ../src/gui/quest-completed-dialog.cpp:109
+#: ../src/gui/ruin-rewarded-dialog.cpp:85
+msgid "where something important can be found!"
+msgstr ""
+
+#: ../src/gui/triumphs-dialog.cpp:76
+msgid "%1 hero earned fates worthy of legend!"
+msgid_plural "%1 heroes earned fates worthy of legend!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/triumphs-dialog.cpp:81
+msgid "%1 so-called hero slaughtered without mercy!"
+msgid_plural "%1 so-called heroes slaughtered without mercy!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/triumphs-dialog.cpp:109
+msgid "%1 navy not currently in service!"
+msgid_plural "%1 navies not currently in service!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/triumphs-dialog.cpp:113
+msgid "%1 navy rests with the fishes!"
+msgid_plural "%1 navies rest with the fishes!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/triumphs-dialog.cpp:127
+msgid "%1 army died to ensure final victory!"
+msgid_plural "%1 armies died to ensure final victory!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/triumphs-dialog.cpp:131
+msgid "%1 army smote like sheep!"
+msgid_plural "%1 armies smote like sheep!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/triumphs-dialog.cpp:146
+msgid "%1 unnatural creature returned from whence it came!"
+msgid_plural "%1 unnatural creatures returned from whence they came!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/triumphs-dialog.cpp:150
+msgid "%1 unnatural creature dispatched!"
+msgid_plural "%1 unnatural creatures dispatched!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/triumphs-dialog.cpp:175
+msgid "%1 standard betrayed by it's guardian!"
+msgid_plural "%1 standards betrayed by it's guardian!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/triumphs-dialog.cpp:180
+msgid "%1 standard wrested from a vanquished foe!"
+msgid_plural "%1 standards wrested from a vanquished foe!"
+msgstr[0] ""
+msgstr[1] ""
+
+#. note to translators: %1 is remaining moves, %2 is total moves
+#: ../src/gui/army-info-tip.cpp:73 ../src/gui/hero-dialog.cpp:437
+msgid "Moves: %1/%2"
+msgstr "Lépés: %1/%2"
+
+#: ../src/gui/army-info-tip.cpp:76 ../src/gui/buy-production-dialog.cpp:174
+#: ../src/gui/hero-dialog.cpp:440 ../src/editor/select-army-dialog.cpp:175
+msgid "Upkeep: %1"
+msgstr ""
+
+#. note to translators: %1 is remaining moves, %2 is total moves
+#: ../src/gui/army-info-tip.cpp:191
+msgid "Movement: %1"
+msgstr ""
+
+#: ../src/gui/buy-production-dialog.cpp:165
+msgid "Duration: %1"
+msgstr ""
+
+#: ../src/gui/army-bonus-dialog.cpp:40 ../src/gui/hero-levels-dialog.cpp:46
+#: ../src/gui/stack-info-dialog.cpp:209
+msgid "Str"
+msgstr ""
+
+#: ../src/gui/army-bonus-dialog.cpp:41 ../src/gui/hero-levels-dialog.cpp:47
+#: ../src/gui/stack-info-dialog.cpp:213
+msgid "Move"
+msgstr ""
+
+#: ../src/gui/army-bonus-dialog.cpp:43 ../src/gui/stack-info-dialog.cpp:217
+#: ../src/gui/item-bonus-dialog.cpp:39
+msgid "Bonus"
+msgstr ""
+
+#: ../src/gui/quest-assigned-dialog.cpp:51
+msgid "This hero already has a quest."
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:95
+#: ../src/gui/history-report-dialog.cpp:101
+#: ../src/gui/history-report-dialog.cpp:106
+#: ../src/gui/history-report-dialog.cpp:111
+#: ../src/editor/city-editor-dialog.cpp:46
+msgid "Turns"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:101
+msgid "Explored Ruins"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:106
+msgid "Gold Pieces"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:111
+msgid "Score"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:375
+msgid "City History"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:378
+msgid "Ruin History"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:381
+msgid "Event History"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:384
+msgid "Gold History"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:387
+msgid "Winner History"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:426
+msgid "On turn %1 you have %2 gold piece!"
+msgid_plural "On turn %1 you have %2 gold pieces!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/history-report-dialog.cpp:429
+msgid "On turn %1 you had %2 gold piece!"
+msgid_plural "On turn %1 you had %2 gold pieces!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/history-report-dialog.cpp:447
+msgid "On turn %1 you have %2 city!"
+msgid_plural "On turn %1 you have %2 cities!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/history-report-dialog.cpp:450
+msgid "On turn %1 you had %2 city!"
+msgid_plural "On turn %1 you had %2 cities!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/history-report-dialog.cpp:468
+#: ../src/gui/history-report-dialog.cpp:471
+msgid "By turn %1 you explored %2 ruin!"
+msgid_plural "By turn %1 you explored %2 ruins!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/history-report-dialog.cpp:494
+msgid "On turn %1 you are coming %2!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:496
+msgid "On turn %1 you were coming %2!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:523
+msgid "%1 %2 finds a sage!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:531
+msgid "%1 %2 emerges in %3"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:539
+msgid "%1 %2 begins a quest!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:547
+msgid "%1 %2 finishes a quest!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:555
+msgid "%1 %2 is killed in %3!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:563
+msgid "%1 %2 is killed in battle!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:571
+msgid "%1 %2 is killed while searching!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:579
+msgid "%1 %2 conquers %3!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:585
+msgid "%1 %2 utterly vanquished!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:594
+msgid "%1 %2 at peace with %3 %4!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:605
+msgid "%1 %2 at war with %3 %4!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:616
+msgid "%1 Treachery on %2 %3!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:625
+msgid "%1 %2 finds allies!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:634
+msgid "%1 %2 explores %3!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:645
+msgid "%1 %2 uses the %3 against %4 %5!"
+msgstr ""
+
+#: ../src/gui/history-report-dialog.cpp:650
+msgid "%1 %2 uses the %3!"
+msgstr ""
+
+#: ../src/gui/sage-dialog.cpp:56 ../src/gui/ruin-rewarded-dialog.cpp:47
+msgid "A Sage!"
+msgstr ""
+
+#: ../src/gui/sage-dialog.cpp:141
+msgid "parchment map"
+msgstr ""
+
+#: ../src/gui/sage-dialog.cpp:142
+msgid "vellum map"
+msgstr ""
+
+#: ../src/gui/sage-dialog.cpp:143
+msgid "paper map"
+msgstr ""
+
+#: ../src/gui/sage-dialog.cpp:144
+msgid "torn paper map"
+msgstr ""
+
+#: ../src/gui/sage-dialog.cpp:145
+msgid "dusty map"
+msgstr ""
+
+#: ../src/gui/sage-dialog.cpp:146
+msgid "blood-stained map"
+msgstr ""
+
+#: ../src/gui/hero-dialog.cpp:115 ../src/editor/players-dialog.cpp:57
+#: ../src/editor/city-editor-dialog.cpp:124
+#: ../src/editor/stack-editor-dialog.cpp:114
+#: ../src/editor/backpack-editor-dialog.cpp:51
+#: ../src/gui/game-lobby-dialog.cpp:321
+#: ../src/gui/network-game-selector-dialog.cpp:53
+#: ../src/gui/network-game-selector-dialog.cpp:72
+msgid "Name"
+msgstr "Név"
+
+#: ../src/gui/hero-dialog.cpp:116 ../src/editor/backpack-editor-dialog.cpp:52
+msgid "Attributes"
+msgstr "Attribútumok"
+
+#: ../src/gui/hero-dialog.cpp:117
+msgid "Status"
+msgstr "Állapot"
+
+#: ../src/gui/hero-dialog.cpp:147
+msgid "%1 finds a sage!"
+msgstr ""
+
+#: ../src/gui/hero-dialog.cpp:154
+msgid "%1 emerges in %2!"
+msgstr ""
+
+#: ../src/gui/hero-dialog.cpp:162
+msgid "%1 begins a quest!"
+msgstr ""
+
+#: ../src/gui/hero-dialog.cpp:169
+msgid "%1 finishes a quest!"
+msgstr ""
+
+#: ../src/gui/hero-dialog.cpp:176
+msgid "%1 is killed in %2!"
+msgstr ""
+
+#: ../src/gui/hero-dialog.cpp:184
+msgid "%1 is killed in battle!"
+msgstr ""
+
+#: ../src/gui/hero-dialog.cpp:191
+msgid "%1 is killed while searching!"
+msgstr ""
+
+#: ../src/gui/hero-dialog.cpp:199
+msgid "%1 conquers %2!"
+msgstr ""
+
+#: ../src/gui/hero-dialog.cpp:207
+msgid "%1 finds allies!"
+msgstr ""
+
+#: ../src/gui/hero-dialog.cpp:288 ../src/gui/hero-dialog.cpp:362
+#: ../src/gui/hero-dialog.cpp:383
+msgid "In backpack"
+msgstr ""
+
+#: ../src/gui/hero-dialog.cpp:308 ../src/gui/hero-dialog.cpp:385
+msgid "On the ground"
+msgstr ""
+
+#: ../src/gui/hero-dialog.cpp:405
+msgid "Battle: %1"
+msgstr ""
+
+#: ../src/gui/hero-dialog.cpp:422
+msgid "Command: %1"
+msgstr ""
+
+#: ../src/gui/hero-dialog.cpp:424
+msgid "Level: %1"
+msgstr ""
+
+#: ../src/gui/hero-dialog.cpp:426
+msgid "Experience: %1"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:843 ../src/gui/splash-window.cpp:165
+msgid "Choose Game to Load"
+msgstr "Válaszd ki a betöltendő játékot"
+
+#: ../src/gui/game-window.cpp:845 ../src/gui/game-window.cpp:893
+msgid "Army Saved Games (*.sav)"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:881
+msgid "Game was not saved!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:890 ../src/editor/main-window.cpp:861
+#: ../src/editor/main-window.cpp:893 ../src/editor/main-window.cpp:925
+msgid "Choose a Name"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:917
+msgid "Error saving game!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1002 ../src/gui/driver.cpp:616
+#: ../src/gui/driver.cpp:831 ../src/gui/driver.cpp:973
+msgid "Corrupted saved game file."
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1013 ../src/gui/driver.cpp:887
+msgid "Can't load networked game from file."
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1060
+msgid "Change the message on this sign:"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1097
+msgid "Are you sure you want to disband this group?"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1101
+msgid "(It contains %1 hero)."
+msgid_plural "(It contains %1 heroes)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/game-window.cpp:1131
+msgid "Are you sure you want to resign?"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1280
+msgid "No ruins or temples to show!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1484
+msgid "Congratulations to %1 for conquering the world!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1499
+msgid "The rule of %1 has permanently ended!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1505
+msgid ""
+"No further human resistance is possible\n"
+"but the battle will continue!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1507
+msgid ""
+"Press `CTRL-P' to stop the war\n"
+"and visit the sites of thy old battles."
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1703
+msgid "%1 finds "
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1707
+msgid "%1 gold pieces."
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1712
+msgid "%1 allies!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1717
+msgid "the %1!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1722
+msgid "a map!"
+msgstr ""
+
+#. so and so encounters a wolf...
+#: ../src/gui/game-window.cpp:1733
+msgid "Searching"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1750
+msgid "Hero Victorious"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1752
+msgid "Hero Defeated"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1759
+msgid "...and is victorious!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1761
+msgid "...and is slain by it!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1791
+msgid "Hero brings allies!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1796
+msgid "The hero brings %1 ally!"
+msgid_plural "The hero brings %1 allies!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/game-window.cpp:1820
+msgid "You graciously and benevolently accept their offer."
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1835
+msgid "Are you sure you want to attack %1?"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1838
+msgid "Other players may not like this!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1889
+msgid "%1 army has been blessed!"
+msgid_plural "%1 armies have been blessed!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/game-window.cpp:1892
+msgid "We have already blessed thee!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1895
+msgid "Seek more blessings in far temples!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1899
+msgid "Do you seek a quest?"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:1907
+msgid "_Close"
+msgstr "_Bezárás"
+
+#: ../src/gui/game-window.cpp:2034
+msgid "%1, you have triumphed in the battle of %2."
+msgstr "%1, győzelmet arattál %2 csatájában."
+
+#: ../src/gui/game-window.cpp:2035
+msgid "%1, you have claimed victory in the battle of %2."
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2036
+msgid "%1, you have shown no mercy in the battle of %2."
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2037
+msgid "%1, you have slain the foe in the battle of %2."
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2131
+msgid "%1 Looted"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2138
+msgid "Your armies loot %1 gold piece."
+msgid_plural "Your armies loot %1 gold pieces."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/game-window.cpp:2151
+msgid "Pillaged %1"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2178
+msgid "The loot is worth %1 gold piece."
+msgid_plural "The loot is worth %1 gold pieces."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/game-window.cpp:2193
+msgid "Sacked %1"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2199
+msgid ""
+"The city of %1 is sacked\n"
+"for %2 gold!\n"
+"\n"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2202
+msgid ""
+"Ability to produce %1 unit has been lost\n"
+"and only 1 unit remains"
+msgid_plural ""
+"Ability to produce %1 units has been lost\n"
+"and only 1 unit remains"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/game-window.cpp:2249
+msgid "%1 gp"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2279
+msgid "Razed %1"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2284
+msgid "The city of %1 is in ruins!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2366
+msgid ""
+"%1\n"
+"Turn %2"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2396
+msgid "Your unit of %1 is awarded the avenger's medal of valour!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2398
+msgid "Your unit of %1 is awarded the defender's medal of bravery!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2400
+msgid "Your unit of %1 is awarded the veteran's medal!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2402
+msgid "Your unit of %1 is awarded a medal!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2421
+msgid "%1, your turn continues."
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2445
+msgid "%1 did not complete the quest."
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2519
+msgid "Advisor!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2528
+msgid "My Good Lord!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2530
+msgid "Great and Worthy Lord!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2532
+msgid "O Champion of Justice!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2534
+msgid "O Mighty Leader!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2536
+msgid "O Great Warlord!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2544
+msgid "This battle will surely be as simple as butchering sleeping cattle!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2546 ../src/gui/game-window.cpp:2552
+msgid "A battle here would be as simple as butchering sleeping cattle!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2548
+msgid "I believe this battle will surely be as simple as butchering sleeping cattle!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2550
+msgid "This battle would be as simple as butchering sleeping cattle!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2554
+msgid "I believe this battle will be as simple as butchering sleeping cattle!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2556
+msgid "This battle shall be as simple as butchering sleeping cattle!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2561
+msgid "This battle will surely be an easy victory!  We cannot lose!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2563 ../src/gui/game-window.cpp:2569
+msgid "A battle here would be an easy victory!  We cannot lose!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2565
+msgid "I believe this battle will surely be an easy victory!  We cannot lose!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2567
+msgid "This battle would be an easy victory!  We cannot lose!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2571
+msgid "I believe this battle will be an easy victory!  We cannot lose!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2573
+msgid "This battle shall be an easy victory!  We cannot lose!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2578
+msgid "This battle will surely be a comfortable victory!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2580 ../src/gui/game-window.cpp:2586
+msgid "A battle here would be a comfortable victory!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2582
+msgid "I believe this battle will surely be a comfortable victory!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2584
+msgid "This battle would be a comfortable victory!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2588
+msgid "I believe this battle will be a comfortable victory!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2590
+msgid "This battle shall be a comfortable victory!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2595
+msgid "This battle will surely be a hard fought victory! But we shall win!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2597 ../src/gui/game-window.cpp:2603
+msgid "A battle here would be a hard fought victory! But we shall win!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2599
+msgid "I believe this battle will surely be a hard fought victory! But we shall win!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2601
+msgid "This battle would be a hard fought victory! But we shall win!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2605
+msgid "I believe this battle will be a hard fought victory! But we shall win!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2607
+msgid "This battle shall be a hard fought victory! But we shall win!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2612
+msgid "This battle will surely be very evenly matched!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2614 ../src/gui/game-window.cpp:2620
+msgid "A battle here would be very evenly matched!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2616
+msgid "I believe this battle will surely be very evenly matched!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2618
+msgid "This battle would be very evenly matched!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2622
+msgid "I believe this battle will be very evenly matched!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2624
+msgid "This battle shall be very evenly matched!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2629
+msgid "This battle will surely be difficult but not impossible to win!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2631 ../src/gui/game-window.cpp:2637
+msgid "A battle here would be difficult but not impossible to win!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2633
+msgid "I believe this battle will surely be difficult but not impossible to win!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2635
+msgid "This battle would be difficult but not impossible to win!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2639
+msgid "I believe this battle will be difficult but not impossible to win!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2641
+msgid "This battle shall be difficult but not impossible to win!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2646
+msgid "This battle will surely be a brave choice! I leave it to thee!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2648 ../src/gui/game-window.cpp:2654
+msgid "A battle here would be a brave choice! I leave it to thee!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2650
+msgid "I believe this battle will surely be a brave choice! I leave it to thee!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2652
+msgid "This battle would be a brave choice! I leave it to thee!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2656
+msgid "I believe this battle will be a brave choice! I leave it to thee!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2658
+msgid "This battle shall be a brave choice! I leave it to thee!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2663
+msgid "This battle will surely be a foolish decision!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2665 ../src/gui/game-window.cpp:2671
+msgid "A battle here would be a foolish decision!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2667
+msgid "I believe this battle will surely be a foolish decision!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2669
+msgid "This battle would be a foolish decision!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2673
+msgid "I believe this battle will be a foolish decision!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2675
+msgid "This battle shall be a foolish decision!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2680
+msgid "This battle will surely be sheerest folly!  Thou shouldst not attack!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2682 ../src/gui/game-window.cpp:2688
+msgid "A battle here would be sheerest folly!  Thou shouldst not attack!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2684
+msgid "I believe this battle will surely be sheerest folly!  Thou shouldst not attack!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2686
+msgid "This battle would be sheerest folly!  Thou shouldst not attack!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2690
+msgid "I believe this battle will be sheerest folly!  Thou shouldst not attack!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2692
+msgid "This battle shall be sheerest folly!  Thou shouldst not attack!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2697
+msgid "This battle will surely be complete and utter suicide!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2699 ../src/gui/game-window.cpp:2705
+msgid "A battle here would be complete and utter suicide!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2701
+msgid "I believe this battle will surely be complete and utter suicide!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2703
+msgid "This battle would be complete and utter suicide!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2707
+msgid "I believe this battle will be complete and utter suicide!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2709
+msgid "This battle shall be complete and utter suicide!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2758
+msgid "The Warlord Says..."
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2807
+msgid "%1 gold piece was stolen from %2!"
+msgid_plural "%1 gold pieces were stolen from %2!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/game-window.cpp:2818
+msgid "%1 army unit was sunk to the watery depths!"
+msgid_plural "%1 army units were sunk to the watery depths!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/game-window.cpp:2829
+msgid "%1 bag was retrieved by %2!"
+msgid_plural "%1 bags were retrieved by %2!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/game-window.cpp:2840
+msgid "%1 has burned a bridge!  None shall pass this way again!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2849
+msgid "%1 has turned a unit of %2 from %3!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2859
+msgid "%1 unit in %2 have perished!"
+msgid_plural "%1 units in %2 have perished!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/game-window.cpp:2870
+msgid "%1 unit of %2 have been raised in %3!"
+msgid_plural "%1 units of %2 have been raised in %3!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/game-window.cpp:2885
+msgid "%1 unit in %2 have been persuaded to fly your flag!"
+msgid_plural "%1 units in %2 have been persuaded to fly your flag!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/game-window.cpp:2891
+msgid "The citizens of %1 have been persuaded to fly your flag!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2900
+msgid "%1 has teleported to %2!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2911
+msgid "A unit of %1 has come to the aid of %2!"
+msgstr ""
+
+#: ../src/gui/game-window.cpp:2920
+msgid "%1 unit of %2 was banished by %3!"
+msgid_plural "%1 units of %2 were banished by %3!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/game-window.cpp:2931
+msgid "%1 movement point was added to %2 and accompanying units!"
+msgid_plural "%1 movement points were added to %2 and accompanying units!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/load-scenario-dialog.cpp:104
+msgid "Random Scenario"
+msgstr "Véletlen szövegkönyv"
+
+#: ../src/gui/load-scenario-dialog.cpp:126
+msgid "Play a new scenario with a random map.  You get to decide the number of players, and number of cities on the map.  You can also control the amount of the map that is covered in forest, water, swamps and mountains."
+msgstr "Egy új szövegkönyv indítása véletlenszerű térképpel. Meg kell határoznia a játékosok és a térképen lévő városok számát. Szabályoznia kell továbbá a térképen lévő erdő, víz, mocsár és hegyek mennyiségét."
+
+#: ../src/gui/load-scenario-dialog.cpp:164
+msgid "Select a scenario file to add to the library"
+msgstr ""
+
+#: ../src/gui/load-scenario-dialog.cpp:172 ../src/editor/main-window.cpp:792
+#: ../src/editor/main-window.cpp:928
+msgid "LordsAWar Maps (*.map)"
+msgstr ""
+
+#: ../src/gui/diplomacy-dialog.cpp:143
+msgid "Propose peace"
+msgstr ""
+
+#: ../src/gui/diplomacy-dialog.cpp:164
+msgid "Propose war on armies not in cities"
+msgstr ""
+
+#: ../src/gui/diplomacy-dialog.cpp:185
+msgid "Propose war"
+msgstr ""
+
+#: ../src/gui/driver.cpp:536
+msgid ""
+"Could not connect to gamehost server:\n"
+"%1:%2"
+msgstr ""
+
+#: ../src/gui/driver.cpp:557 ../src/gui/driver.cpp:589
+msgid "Gamehost Server Error: %1"
+msgstr ""
+
+#: ../src/gui/driver.cpp:559 ../src/gui/driver.cpp:591
+#: ../src/gui/driver.cpp:1227
+msgid "Server Failure"
+msgstr ""
+
+#: ../src/gui/driver.cpp:568
+msgid "Uploading."
+msgstr ""
+
+#: ../src/gui/driver.cpp:697
+msgid "Server went away."
+msgstr ""
+
+#: ../src/gui/driver.cpp:698
+msgid "Disconnected"
+msgstr ""
+
+#: ../src/gui/driver.cpp:715
+msgid ""
+"Could not connect to server:\n"
+"%1 %2"
+msgstr ""
+
+#: ../src/gui/driver.cpp:842
+msgid ""
+"Invalid map file.\n"
+"Please validate it in the scenario editor."
+msgstr ""
+
+#: ../src/gui/driver.cpp:1225
+msgid "Could not bind to port %1"
+msgstr ""
+
+#: ../src/gui/hero-levels-dialog.cpp:43
+msgid "Level"
+msgstr "Szint"
+
+#: ../src/gui/hero-levels-dialog.cpp:44
+msgid "Exp"
+msgstr ""
+
+#: ../src/gui/hero-levels-dialog.cpp:45
+msgid "Needs"
+msgstr ""
+
+#: ../src/gui/ruin-rewarded-dialog.cpp:68
+msgid "The sages show thee the site of %1\n"
+msgstr ""
+
+#: ../src/gui/surrender-refused-dialog.cpp:34
+msgid "Off with their heads!  I want it ALL!"
+msgstr ""
+
+#: ../src/gui/surrender-dialog.cpp:34
+msgid "Your enemy grudgingly surrenders!\n"
+msgid_plural "Your enemies respectfully surrender!\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/surrender-dialog.cpp:37
+msgid "Do you accept?"
+msgstr ""
+
+#: ../src/gui/ruin-report-dialog.cpp:64
+msgid "Ruins and Temples"
+msgstr ""
+
+#: ../src/gui/ruin-report-dialog.cpp:124
+msgid "Stronghold"
+msgstr ""
+
+#: ../src/gui/ruin-report-dialog.cpp:139
+msgid "It is especially well-guarded."
+msgstr ""
+
+#: ../src/gui/ruin-report-dialog.cpp:141
+msgid "Rumour speaks of a formidable force within."
+msgstr ""
+
+#: ../src/gui/ruin-report-dialog.cpp:144
+msgid "Even heroes are wary of this site."
+msgstr ""
+
+#: ../src/gui/ruin-report-dialog.cpp:146 ../src/gui/ruin-report-dialog.cpp:156
+msgid "Bones litter this place."
+msgstr ""
+
+#: ../src/gui/ruin-report-dialog.cpp:148
+msgid "It is guarded."
+msgstr ""
+
+#: ../src/gui/splash-window.cpp:90
+msgid "Rescue Crashed Game"
+msgstr ""
+
+#: ../src/gui/splash-window.cpp:167 ../src/editor/main-window.cpp:1771
+msgid "LordsAWar Saved Games (*.sav)"
+msgstr ""
+
+#: ../src/gui/splash-window.cpp:221
+msgid "New Networked Game"
+msgstr ""
+
+#: ../src/gui/quest-report-dialog.cpp:107
+msgid "No Quest"
+msgstr ""
+
+#: ../src/gui/quest-report-dialog.cpp:112
+msgid "Seek a quest in a temple!"
+msgstr ""
+
+#: ../src/gui/quest-report-dialog.cpp:115
+msgid "Quest?  What Quest?"
+msgstr ""
+
+#: ../src/gui/quest-report-dialog.cpp:118
+msgid "Thou hast no quests!"
+msgstr ""
+
+#: ../src/gui/report-dialog.cpp:86
+msgid "You produced %1 army this turn!"
+msgid_plural "You produced %1 armies this turn!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/report-dialog.cpp:202
+msgid "Army Report"
+msgstr ""
+
+#: ../src/gui/report-dialog.cpp:205
+msgid "City Report"
+msgstr ""
+
+#: ../src/gui/report-dialog.cpp:208
+msgid "Gold Report"
+msgstr ""
+
+#: ../src/gui/report-dialog.cpp:211
+msgid "Production Report"
+msgstr ""
+
+#: ../src/gui/report-dialog.cpp:214
+msgid "Winning Report"
+msgstr ""
+
+#: ../src/gui/report-dialog.cpp:240
+msgid "You have %1 army!"
+msgid_plural "You have %1 armies!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/report-dialog.cpp:272
+msgid "You have %1 city!"
+msgid_plural "You have %1 cities!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/report-dialog.cpp:304
+msgid "You have %1 gold piece!"
+msgid_plural "You have %1 gold pieces!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/report-dialog.cpp:317
+msgid "first"
+msgstr "első"
+
+#: ../src/gui/report-dialog.cpp:319
+msgid "second"
+msgstr "második"
+
+#: ../src/gui/report-dialog.cpp:321
+msgid "third"
+msgstr "harmadik"
+
+#: ../src/gui/report-dialog.cpp:323
+msgid "fourth"
+msgstr "negyedik"
+
+#: ../src/gui/report-dialog.cpp:325
+msgid "fifth"
+msgstr "ötödik"
+
+#: ../src/gui/report-dialog.cpp:327
+msgid "sixth"
+msgstr "hatodik"
+
+#: ../src/gui/report-dialog.cpp:329
+msgid "seventh"
+msgstr "hetedik"
+
+#: ../src/gui/report-dialog.cpp:331
+msgid "eighth"
+msgstr "nyolcadik"
+
+#: ../src/gui/report-dialog.cpp:368
+msgid "You are coming %1"
+msgstr ""
+
+#: ../src/gui/report-dialog.cpp:419
+msgid "%1 stops production!"
+msgstr ""
+
+#: ../src/gui/army-gains-level-dialog.cpp:54
+msgid "%1 has advanced to level %2!"
+msgstr ""
+
+#: ../src/gui/army-gains-level-dialog.cpp:58
+msgid "Choose an attribute to improve:"
+msgstr ""
+
+#: ../src/gui/army-gains-level-dialog.cpp:65
+msgid "Sight: %1"
+msgstr ""
+
+#: ../src/gui/hero-offer-dialog.cpp:46
+msgid "A Hero for %1"
+msgstr "%1 hőse"
+
+#: ../src/gui/hero-offer-dialog.cpp:75
+msgid "A hero in %2 wants to join you for %1 gold piece!"
+msgid_plural "A hero in %2 wants to join you for %1 gold pieces!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gui/hero-offer-dialog.cpp:79
+msgid "A hero in %1 wants to join you!"
+msgstr "Egy hős %1 városából csatlakozni szeretne hozzád!"
+
+#: ../src/gui/new-random-map-dialog.cpp:453
+msgid "Autogenerated"
+msgstr "Automatikusan előállított"
+
+#: ../src/gui/use-item-on-city-dialog.cpp:55
+msgid "Select a city to target."
+msgstr ""
+
+#: ../src/gui/use-item-on-city-dialog.cpp:58
+msgid "Select one of your cities to target."
+msgstr ""
+
+#: ../src/gui/use-item-on-city-dialog.cpp:61
+msgid "Select an enemy city to target."
+msgstr ""
+
+#: ../src/gui/use-item-on-city-dialog.cpp:64
+msgid "Select a neutral city to target."
+msgstr ""
+
+#: ../src/CreateScenarioRandomize.cpp:126
+msgid "southeast"
+msgstr "délkelet"
+
+#: ../src/CreateScenarioRandomize.cpp:128
+msgid "east"
+msgstr "kelet"
+
+#: ../src/CreateScenarioRandomize.cpp:130
+msgid "northeast"
+msgstr "északkelet"
+
+#: ../src/CreateScenarioRandomize.cpp:132
+msgid "south"
+msgstr "dél"
+
+#: ../src/CreateScenarioRandomize.cpp:134
+msgid "north"
+msgstr "észak"
+
+#: ../src/CreateScenarioRandomize.cpp:136
+msgid "southwest"
+msgstr "délnyugat"
+
+#: ../src/CreateScenarioRandomize.cpp:138
+msgid "west"
+msgstr "nyugat"
+
+#: ../src/CreateScenarioRandomize.cpp:140
+msgid "northwest"
+msgstr "északnyugat"
+
+#: ../src/CreateScenarioRandomize.cpp:141
+#: ../src/CreateScenarioRandomize.cpp:150
+msgid "nowhere"
+msgstr "sehol"
+
+#: ../src/CreateScenarioRandomize.cpp:156
+msgid "%1 lies to the %2"
+msgstr ""
+
+#: ../src/CreateScenarioRandomize.cpp:237
+msgid "The Sirians"
+msgstr "A szíriaiak"
+
+#: ../src/CreateScenarioRandomize.cpp:240
+msgid "Elvallie"
+msgstr "Elvallie"
+
+#: ../src/CreateScenarioRandomize.cpp:243
+msgid "Storm Giants"
+msgstr "Vihar óriások"
+
+#: ../src/CreateScenarioRandomize.cpp:246
+msgid "Horse Lords"
+msgstr "Ló urak"
+
+#: ../src/CreateScenarioRandomize.cpp:249
+msgid "Grey Dwarves"
+msgstr "Szürke törpék"
+
+#: ../src/CreateScenarioRandomize.cpp:252
+msgid "The Selentines"
+msgstr "A szelentinek"
+
+#: ../src/CreateScenarioRandomize.cpp:255
+msgid "Orcs of Kor"
+msgstr "Kor orkjai"
+
+#: ../src/CreateScenarioRandomize.cpp:258
+msgid "Lord Bane"
+msgstr "Lord Bane"
+
+#: ../src/CreateScenarioRandomize.cpp:261
+msgid "Neutrals"
+msgstr "Semlegesek"
+
+#. add a new empty item to the itemlist
+#. sets up the lists
+#: ../src/editor/itemlist-dialog.cpp:323 ../src/editor/itemlist-dialog.cpp:327
+#: ../src/editor/armyset-info-dialog.cpp:59
+#: ../src/editor/cityset-info-dialog.cpp:57
+#: ../src/editor/armyset-window.cpp:1488 ../src/editor/main-window.cpp:499
+#: ../src/editor/main-window.cpp:611 ../src/editor/tileset-info-dialog.cpp:59
+#: ../src/editor/tileset-window.cpp:816
+#: ../src/editor/shieldset-info-dialog.cpp:59 ../src/armyprotobase.cpp:40
+msgid "Untitled"
+msgstr "Névtelen"
+
+#: ../src/editor/itemlist-dialog.cpp:510 ../src/editor/itemlist-dialog.cpp:540
+#: ../src/editor/itemlist-dialog.cpp:558 ../src/editor/itemlist-dialog.cpp:661
+#: ../src/editor/itemlist-dialog.cpp:679
+msgid "No army type selected"
+msgstr ""
+
+#: ../src/editor/armyset-info-dialog.cpp:56
+#: ../src/editor/cityset-info-dialog.cpp:54
+#: ../src/editor/tileset-info-dialog.cpp:56
+#: ../src/editor/shieldset-info-dialog.cpp:56
+msgid "untitled"
+msgstr "névtelen"
+
+#: ../src/editor/armyset-info-dialog.cpp:129
+#: ../src/editor/cityset-info-dialog.cpp:127
+#: ../src/editor/tileset-info-dialog.cpp:129
+#: ../src/editor/shieldset-info-dialog.cpp:129
+msgid "That filename is already used."
+msgstr ""
+
+#: ../src/editor/armyset-info-dialog.cpp:137
+#: ../src/editor/cityset-info-dialog.cpp:135
+#: ../src/editor/tileset-info-dialog.cpp:137
+#: ../src/editor/shieldset-info-dialog.cpp:137
+msgid "That name is already in use."
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:486
+msgid "Make a New Armyset"
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:525
+msgid "Choose an Armyset to Load"
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:527
+msgid "LordsAWar Armysets (*.lwa)"
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:559
+msgid "There must be at least one army unit in the armyset."
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:562
+msgid "There must be at least one hero in the armyset."
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:565
+msgid "There must be at least one army unit with a production cost of more than zero."
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:568
+msgid "There must be at least one army unit than can defend a ruin."
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:571
+msgid "There must be at least one army unit than can be awarded to a hero."
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:574
+msgid "The ship image must be set."
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:577
+msgid "The hero's standard (the flag) image must be set."
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:580
+msgid "The picture for the bag of items must be set."
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:588
+msgid "%1 does not have an image set for the %2 player"
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:595
+msgid "An army unit does not have a name."
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:603
+msgid "The armyset is valid."
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:630
+msgid "Save a Copy of a Armyset"
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:678 ../src/editor/armyset-window.cpp:697
+#: ../src/editor/armyset-window.cpp:737
+msgid "Error!  Armyset could not be saved."
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:695
+msgid "Armyset is invalid, and is also the current working armyset."
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:758
+msgid "Select a Ship image"
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:784
+msgid "Select a Hero Flag image"
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:810
+msgid "Select a Bag image"
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:835
+msgid "Edit Armyset Information"
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:1056
+msgid "Select a %1 Army image"
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:1534
+msgid "Error!  The version of the armyset is unsupported."
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:1536
+msgid "Error!  Armyset could not be loaded."
+msgstr ""
+
+#: ../src/editor/armyset-window.cpp:1671 ../src/editor/cityset-window.cpp:827
+#: ../src/editor/tileset-window.cpp:1546
+#: ../src/editor/shieldset-window.cpp:761
+msgid ""
+"Couldn't add %1.png to:\n"
+"%2"
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:245
+msgid "Make a New Cityset"
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:278
+msgid "Choose a Cityset to Load"
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:280
+msgid "LordsAWar Citysets (*.lwc)"
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:310
+msgid "The cities picture is not set."
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:312
+msgid "The razed cities picture is not set."
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:314
+msgid "The port picture is not set."
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:316
+msgid "The signpost picture is not set."
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:318
+msgid "The ruins picture is not set."
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:320
+msgid "The temple picture is not set."
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:322
+msgid "The towers picture is not set."
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:324 ../src/editor/cityset-window.cpp:328
+msgid "The tile width for temples must be over zero."
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:326
+msgid "The tile width for ruins must be over zero."
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:336
+msgid "The cityset is valid."
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:358
+msgid "Save a Copy of a Cityset"
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:404 ../src/editor/cityset-window.cpp:423
+#: ../src/editor/cityset-window.cpp:457
+msgid "Error!  Cityset could not be saved."
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:421
+msgid "Cityset is invalid, and is also the current working cityset."
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:516
+msgid "Error!  The version of cityset is unsupported."
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:518
+msgid "Error!  Cityset could not be loaded."
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:623
+msgid "Select a Cities image"
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:651
+msgid "Select a Razed Cities image"
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:679
+msgid "Select a Port image"
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:707
+msgid "Select a Signpost image"
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:735
+msgid "Select a Ruins image"
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:763
+msgid "Select a Temples image"
+msgstr ""
+
+#: ../src/editor/cityset-window.cpp:791
+msgid "Select a Towers image"
+msgstr ""
+
+#: ../src/editor/city-editor-dialog.cpp:44
+#: ../src/editor/stack-editor-dialog.cpp:50
+msgid "Strength"
+msgstr ""
+
+#: ../src/editor/city-editor-dialog.cpp:45
+#: ../src/editor/stack-editor-dialog.cpp:51
+msgid "Max Moves"
+msgstr ""
+
+#: ../src/editor/city-editor-dialog.cpp:47
+#: ../src/editor/stack-editor-dialog.cpp:52
+msgid "Upkeep"
+msgstr ""
+
+#: ../src/editor/main-window.cpp:499 ../src/editor/main-window.cpp:611
+msgid "No description"
+msgstr ""
+
+#: ../src/editor/main-window.cpp:790
+msgid "Choose Map to Load"
+msgstr ""
+
+#: ../src/editor/main-window.cpp:823
+msgid "Could not load map %1."
+msgstr ""
+
+#: ../src/editor/main-window.cpp:847 ../src/editor/main-window.cpp:949
+msgid "Map was not saved!"
+msgstr ""
+
+#: ../src/editor/main-window.cpp:864 ../src/editor/main-window.cpp:896
+#: ../src/editor/tileset-window.cpp:1042
+#: ../src/editor/shieldset-window.cpp:734
+#: ../src/editor/tileset-selector-editor-dialog.cpp:305
+#: ../src/editor/image-editor-dialog.cpp:46
+#: ../src/editor/masked-image-editor-dialog.cpp:57
+msgid "PNG files (*.png)"
+msgstr ""
+
+#: ../src/editor/main-window.cpp:885 ../src/editor/main-window.cpp:917
+msgid "Map was not exported!"
+msgstr ""
+
+#: ../src/editor/main-window.cpp:1193
+msgid "Auto"
+msgstr ""
+
+#. note to translators: this is a coordinate pair (x, y)
+#: ../src/editor/main-window.cpp:1423
+msgid "(%1, %2)"
+msgstr "(%1, %2)"
+
+#: ../src/editor/main-window.cpp:1455
+msgid "Bag"
+msgstr ""
+
+#: ../src/editor/main-window.cpp:1742
+msgid "No errors."
+msgstr "Nincs hiba."
+
+#: ../src/editor/main-window.cpp:1745
+msgid ""
+"\n"
+"There is %1 more error"
+msgid_plural ""
+"\n"
+"There are %1 more errors"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/editor/main-window.cpp:1747
+msgid ""
+"\n"
+"There is %1 warning"
+msgid_plural ""
+"\n"
+"There are %1 warnings"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/editor/main-window.cpp:1769
+msgid "Choose Game to Load Map from"
+msgstr ""
+
+#: ../src/editor/main-window.cpp:1798
+msgid "Could not load game %1."
+msgstr ""
+
+#: ../src/editor/ruin-editor-dialog.cpp:203
+msgid "No keeper"
+msgstr ""
+
+#: ../src/editor/ruin-editor-dialog.cpp:319
+msgid "No reward"
+msgstr ""
+
+#: ../src/editor/select-army-dialog.cpp:158
+msgid "No army"
+msgstr ""
+
+#: ../src/editor/reward-editor-dialog.cpp:320
+msgid "No item"
+msgstr ""
+
+#: ../src/editor/reward-editor-dialog.cpp:366
+msgid "No ally"
+msgstr ""
+
+#: ../src/editor/reward-editor-dialog.cpp:420
+msgid "No Ruin"
+msgstr ""
+
+#: ../src/editor/main.cpp:77 ../src/main.cpp:143 ../src/gls/main.cpp:83
+#: ../src/gls/gls-client-main.cpp:112 ../src/ghs/main.cpp:91
+#: ../src/ghs/ghs-client-main.cpp:105 ../src/upgrade-file.cpp:64
+msgid "version"
+msgstr ""
+
+#: ../src/editor/main.cpp:78 ../src/main.cpp:144 ../src/gls/main.cpp:84
+#: ../src/gls/gls-client-main.cpp:113 ../src/ghs/main.cpp:92
+#: ../src/ghs/ghs-client-main.cpp:106 ../src/upgrade-file.cpp:66
+msgid "Options:"
+msgstr ""
+
+#: ../src/editor/main.cpp:79 ../src/main.cpp:145
+msgid "Shows this help screen"
+msgstr ""
+
+#: ../src/editor/main.cpp:81 ../src/main.cpp:154
+msgid "FILE can be a saved game file (.sav), or a map (.map) file."
+msgstr ""
+
+#: ../src/editor/main.cpp:83 ../src/main.cpp:156 ../src/gls/main.cpp:89
+#: ../src/gls/gls-client-main.cpp:128 ../src/ghs/main.cpp:99
+#: ../src/ghs/ghs-client-main.cpp:118 ../src/upgrade-file.cpp:71
+msgid "Report bugs to"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:86
+msgid "Lone"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:87
+msgid "Outer Top-Left"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:88
+msgid "Outer Top-Center"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:89
+msgid "Outer Top-Right"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:90
+msgid "Outer Bottom-Left"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:91
+msgid "Outer Bottom-Center"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:92
+msgid "Outer Bottom-Right"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:93
+msgid "Outer Middle-Left"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:94
+msgid "Inner Middle-Center"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:95
+msgid "Outer Middle-Right"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:96
+msgid "Inner Top-Left"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:97
+msgid "Inner Top-Right"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:98
+msgid "Inner Bottom-Left"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:99
+msgid "Inner Bottom-Right"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:100
+msgid "Top-Left To Bottom-Right"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:101
+msgid "Bottom-Left To Top-Right"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:102
+msgid "Other"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:103
+msgid "Unknown"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:112
+msgid "Solid"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:113
+msgid "Stippled"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:114
+msgid "Randomized"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:115
+msgid "Sunken"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:116
+msgid "Tablecloth"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:117
+msgid "Diagonal"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:118
+msgid "Crosshatched"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:119
+msgid "Sunken Striped"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:120
+msgid "Sunken Radial"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:463
+msgid "Make a New Tileset"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:516
+msgid "Choose a Tileset to Load"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:518
+msgid "LordsAWar Tilesets (*.lwt)"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:559
+msgid "Save a Copy of a Tileset"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:607 ../src/editor/tileset-window.cpp:626
+#: ../src/editor/tileset-window.cpp:666
+msgid "Error!  Tileset could not be saved."
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:624
+msgid "Tileset is invalid, and is also the current working tileset."
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1039
+msgid "Choose an Image"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1296
+msgid "Select a roads image"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1323
+msgid "Select a bridges image"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1349
+msgid "Select a fog image"
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1414
+msgid "Error!  The version of the tileset is unsupported."
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1416
+msgid "Error!  Tileset could not be loaded."
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1472
+msgid "There must be at least one tile in the tileset."
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1475
+msgid "There must be a grass tile in the tileset."
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1477
+msgid "There must be a water tile in the tileset."
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1479
+msgid "There must be a forest tile in the tileset."
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1481
+msgid "There must be a hills tile in the tileset."
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1483
+msgid "There must be a mountain tile in the tileset."
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1485
+msgid "There must be a swamp tile in the tileset."
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1489
+msgid "There must be at least one tilestyleset in the %1 tile."
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1493
+msgid "The image %1.png file of the %2 tile does not have a width as a multiple of its height."
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1505 ../src/editor/tileset-window.cpp:1512
+msgid "The %1 tile does not have enough of the right kind of tile styles."
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1518
+msgid "Only one tile can have a sunken radial pattern."
+msgstr ""
+
+#: ../src/editor/tileset-window.cpp:1526
+msgid "The tileset is valid."
+msgstr ""
+
+#: ../src/editor/tilestyle-organizer-dialog.cpp:214
+msgid "(%1 items)"
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:45
+msgid "no small shield set"
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:46
+msgid "no medium shield set"
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:47
+msgid "no large shield set"
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:210
+msgid "Make a New Shieldset"
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:254
+msgid "Choose a Shieldset to Load"
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:256
+msgid "LordsAWar Shieldsets (*.lws)"
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:290
+msgid "The shieldset must have 9 shields in it."
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:298
+msgid "%1 must have all three images specified."
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:306
+msgid "The height or width of a small shield image is zero."
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:309
+msgid "The height or width of a medium shield image is zero."
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:312
+msgid "The height or width of a large shield image is zero."
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:320
+msgid "The shieldset is valid."
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:333
+msgid "Save a Copy of a Shieldset"
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:381
+#: ../src/editor/shieldset-window.cpp:400
+#: ../src/editor/shieldset-window.cpp:426
+msgid "Error!  Shieldset could not be saved."
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:398
+msgid "Shieldset is invalid, and is also the current working shieldset."
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:552
+msgid "Error!  The version of the shieldset is not supported."
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:554
+msgid "Error!  Shieldset could not be loaded."
+msgstr ""
+
+#: ../src/editor/shieldset-window.cpp:729
+msgid "Choose a %1 %2 Shield image"
+msgstr ""
+
+#: ../src/editor/tile-size-editor-dialog.cpp:33
+msgid "Do you want to change the tile size from %1 to %2?"
+msgstr ""
+
+#: ../src/editor/editor-splash-window.cpp:54
+msgid "Loading Armysets"
+msgstr ""
+
+#: ../src/editor/editor-splash-window.cpp:61
+msgid "Loading Citysets"
+msgstr ""
+
+#: ../src/editor/editor-splash-window.cpp:67
+msgid "Loading Tilesets"
+msgstr ""
+
+#: ../src/editor/editor-splash-window.cpp:73
+msgid "Loading Shieldsets"
+msgstr ""
+
+#: ../src/gui/city-info-tip.cpp:60
+msgid "Razed!"
+msgstr ""
+
+#: ../src/gui/city-info-tip.cpp:78
+msgid "Capital of\n"
+msgstr ""
+
+#: ../src/gui/game-lobby-dialog.cpp:236
+msgid "Person"
+msgstr ""
+
+#: ../src/gui/game-lobby-dialog.cpp:323
+msgid "Controlled"
+msgstr ""
+
+#: ../src/gui/game-lobby-dialog.cpp:765
+msgid "People"
+msgstr "Emberek"
+
+#: ../src/gui/network-game-selector-dialog.cpp:57
+#: ../src/gui/network-game-selector-dialog.cpp:76
+msgid "Host"
+msgstr ""
+
+#: ../src/gui/new-network-game-download-window.cpp:29
+msgid "Downloading."
+msgstr "Letöltés."
+
+#: ../src/gui/new-network-game-dialog.cpp:62
+msgid "List the game on a remote server."
+msgstr "A játék listázása egy távoli kiszolgálón."
+
+#: ../src/gui/new-network-game-dialog.cpp:65
+msgid "List the game on %1."
+msgstr "A játék listázása ezen: %1."
+
+#: ../src/gui/new-network-game-dialog.cpp:70
+msgid "Host and list the game on a remote server."
+msgstr "Kiszolgálás és a játék listázása egy távoli kiszolgálón."
+
+#: ../src/gui/new-network-game-dialog.cpp:73
+msgid "Host and list the game on %1."
+msgstr "Kiszolgálás és a játék listázása ezen: %1."
+
+#: ../src/gui/item-report-dialog.cpp:87
+msgid "You have %1 item!"
+msgid_plural "You have %1 items!"
+msgstr[0] "%1 elemed van!"
+msgstr[1] "%1 elemed van!"
+
+#: ../src/gui/item-report-dialog.cpp:90
+msgid "You don't have any items!"
+msgstr "Nincs semmilyen elemed sem!"
+
+#: ../src/gui/stack-tile-box.cpp:276
+msgid "UnGrp"
+msgstr ""
+
+#: ../src/herotemplates.cpp:119
+msgid "Error!  can't load heronames file `%1'.  Exiting."
+msgstr ""
+
+#: ../src/xmlhelper.cpp:61
+msgid "Error opening `%1' for reading.  Exiting."
+msgstr ""
+
+#: ../src/xmlhelper.cpp:75
+msgid "Error opening `%1' for writing.  Exiting."
+msgstr ""
+
+#: ../src/xmlhelper.cpp:393
+msgid "Error!  couldn't get Gdk::RGBA value from xml tag `%1'."
+msgstr ""
+
+#: ../src/xmlhelper.cpp:440
+msgid "Error!  couldn't get Glib::ustring value from xml tag `%1'."
+msgstr ""
+
+#: ../src/xmlhelper.cpp:460
+msgid "Error!  couldn't get bool value from xml tag `%1'."
+msgstr ""
+
+#: ../src/xmlhelper.cpp:490
+msgid "Error!  couldn't get int value from xml tag `%1'."
+msgstr ""
+
+#: ../src/xmlhelper.cpp:509
+msgid "Error!  couldn't get guint32 value from xml tag `%1'."
+msgstr ""
+
+#: ../src/xmlhelper.cpp:530
+msgid "Error!  couldn't get double value from xml tag `%1'."
+msgstr ""
+
+#: ../src/xmlhelper.cpp:624 ../src/xmlhelper.cpp:692
+msgid "%1: Callback for xml tag returned false.  Stop parsing document."
+msgstr ""
+
+#: ../src/snd.cpp:70
+msgid "Error loading music descriptions; disabling music."
+msgstr ""
+
+#: ../src/armybase.cpp:83
+msgid "+1 str in open"
+msgstr ""
+
+#: ../src/armybase.cpp:86
+msgid "+2 str in open"
+msgstr ""
+
+#: ../src/armybase.cpp:89
+msgid "+1 str in woods"
+msgstr ""
+
+#: ../src/armybase.cpp:92
+msgid "+1 str in hills"
+msgstr ""
+
+#: ../src/armybase.cpp:95
+msgid "+1 str in city"
+msgstr ""
+
+#: ../src/armybase.cpp:98
+msgid "+2 str in city"
+msgstr ""
+
+#: ../src/armybase.cpp:101
+msgid "+1 stack in hills"
+msgstr ""
+
+#: ../src/armybase.cpp:104
+msgid "Cancel city bonus"
+msgstr ""
+
+#: ../src/armybase.cpp:107
+msgid "-1 enemy stack"
+msgstr ""
+
+#: ../src/armybase.cpp:109
+msgid "+1 stack"
+msgstr ""
+
+#: ../src/armybase.cpp:111
+msgid "+2 stack"
+msgstr ""
+
+#: ../src/armybase.cpp:114
+msgid "cancel non-hero"
+msgstr ""
+
+#: ../src/armybase.cpp:117
+msgid "cancel hero"
+msgstr ""
+
+#: ../src/ItemProto.cpp:197
+msgid "Allows Flight"
+msgstr ""
+
+#: ../src/ItemProto.cpp:199
+msgid "Doubles Movement"
+msgstr ""
+
+#: ../src/ItemProto.cpp:209
+msgid "Steals Gold"
+msgstr ""
+
+#: ../src/ItemProto.cpp:211
+msgid "Sink Ships"
+msgstr ""
+
+#: ../src/ItemProto.cpp:213
+msgid "Picks Up Bags"
+msgstr ""
+
+#: ../src/ItemProto.cpp:215
+msgid "+2 MP to stack"
+msgstr ""
+
+#: ../src/ItemProto.cpp:219
+msgid "Kills all %1"
+msgstr ""
+
+#: ../src/ItemProto.cpp:222
+msgid "Destroys a Bridge"
+msgstr ""
+
+#: ../src/ItemProto.cpp:224
+msgid "Removes Monster from Ruin"
+msgstr ""
+
+#: ../src/ItemProto.cpp:226
+msgid "Kills Defenders in a City"
+msgstr ""
+
+#: ../src/ItemProto.cpp:231
+msgid "Summons %1 at a %2"
+msgstr ""
+
+#: ../src/ItemProto.cpp:234
+msgid "Summons %1"
+msgstr ""
+
+#: ../src/ItemProto.cpp:237
+msgid "Add Defenders to a City"
+msgstr ""
+
+#: ../src/ItemProto.cpp:239
+msgid "Take a Neutral City"
+msgstr ""
+
+#: ../src/ItemProto.cpp:241
+msgid "Teleport Stack to a City"
+msgstr ""
+
+#: ../src/ItemProto.cpp:244
+msgid "+%1 Battle"
+msgstr ""
+
+#: ../src/ItemProto.cpp:246
+msgid "+%1 Command"
+msgstr ""
+
+#: ../src/ItemProto.cpp:248
+msgid "+%1 gold per city"
+msgstr ""
+
+#: ../src/cityset.cpp:193
+msgid "Error!  can't load cityset `%1'."
+msgstr ""
+
+#. note to translators: %1 is a file extension, %2 is a directory.
+#: ../src/cityset.cpp:545
+msgid "Couldn't find any citysets (*%1) in `%2'."
+msgstr ""
+
+#: ../src/shieldset.cpp:150
+msgid "Error!  can't load shieldet `%1'."
+msgstr ""
+
+#. note to translators: %1 is a file extension, %2 is a directory.
+#: ../src/shieldset.cpp:311
+msgid "Couldn't find any shieldsets (*%1) in `%2'."
+msgstr ""
+
+#: ../src/Itemlist.cpp:59
+msgid "Could not parse item description file `%1'.  Exiting."
+msgstr ""
+
+#: ../src/armyset.cpp:495
+msgid "Error!  can't load armyset `%1'."
+msgstr ""
+
+#. note to translators: %1 is a file extension, %2 is a directory.
+#: ../src/armyset.cpp:661
+msgid "Couldn't find any armysets (*%1) in `%2'."
+msgstr ""
+
+#: ../src/main.cpp:82
+msgid "non-numerical value for cache size"
+msgstr ""
+
+#: ../src/main.cpp:95
+msgid "non-numerical value for --seed"
+msgstr ""
+
+#: ../src/main.cpp:109 ../src/gls/main.cpp:66
+#: ../src/gls/gls-client-main.cpp:66 ../src/ghs/main.cpp:66
+#: ../src/ghs/ghs-client-main.cpp:63
+msgid "non-numerical value for --port"
+msgstr ""
+
+#: ../src/main.cpp:114 ../src/gls/main.cpp:71
+#: ../src/gls/gls-client-main.cpp:71 ../src/ghs/main.cpp:71
+#: ../src/ghs/ghs-client-main.cpp:68
+msgid "invalid value for --port"
+msgstr ""
+
+#: ../src/main.cpp:146
+msgid "Set the cache size for imagery to SIZE bytes"
+msgstr ""
+
+#: ../src/main.cpp:147
+msgid "Start with a test-scenario"
+msgstr ""
+
+#: ../src/main.cpp:148
+msgid "Seed the random number generator with NUMBER"
+msgstr ""
+
+#: ../src/main.cpp:149
+msgid "Non-interactive stress test"
+msgstr ""
+
+#: ../src/main.cpp:150
+msgid "Non-interactive network stress test"
+msgstr ""
+
+#: ../src/main.cpp:151
+msgid "Start a headless server"
+msgstr ""
+
+#: ../src/main.cpp:152 ../src/gls/main.cpp:87 ../src/ghs/main.cpp:96
+msgid "Start the server on the given port"
+msgstr ""
+
+#: ../src/main.cpp:166
+msgid "Error: Cannot specify -t and have a file specified."
+msgstr ""
+
+#: ../src/main.cpp:172
+msgid "Error: Cannot specify -s and have a file specified."
+msgstr ""
+
+#: ../src/main.cpp:178
+msgid "Error: Cannot specify -s and -t simultaneously."
+msgstr ""
+
+#: ../src/main.cpp:184
+msgid "Error: Must specify a file to load when specifying --turn."
+msgstr ""
+
+#: ../src/QCitySack.cpp:93
+msgid "The priests thank you for sacking this evil place."
+msgstr ""
+
+#: ../src/QCitySack.cpp:99
+msgid "The sacking of \"%1\" could not be accomplished."
+msgstr ""
+
+#: ../src/QCitySack.cpp:116
+msgid "You must take over and sack the city of \"%1\"."
+msgstr ""
+
+#: ../src/Tile.cpp:152
+msgid "Mountain"
+msgstr ""
+
+#: ../src/Commentator.cpp:66
+msgid "You are sadly in need of gold!"
+msgstr ""
+
+#: ../src/Commentator.cpp:69
+msgid "Your wealth is greather than the mightiest of dragons!"
+msgstr ""
+
+#: ../src/Commentator.cpp:70
+msgid "All your gold must surely be a burden!"
+msgstr ""
+
+#: ../src/Commentator.cpp:74
+msgid "Will no hero defend your honour?"
+msgstr ""
+
+#: ../src/Commentator.cpp:76
+msgid "I see heroes are flocking to your banner!"
+msgstr ""
+
+#: ../src/Commentator.cpp:80
+msgid "Your enemies mock your feeble endeavours!"
+msgstr ""
+
+#: ../src/Commentator.cpp:81
+msgid "How much adversity can you endure?"
+msgstr ""
+
+#: ../src/Commentator.cpp:82
+msgid "Your enemies are beyond measure!"
+msgstr ""
+
+#: ../src/Commentator.cpp:83
+msgid "Your dreams of conquest confound you!"
+msgstr ""
+
+#: ../src/Commentator.cpp:86
+msgid "Your sorry efforts have come to nought!"
+msgstr ""
+
+#: ../src/Commentator.cpp:90
+msgid "Victory is just beyond your reach!"
+msgstr ""
+
+#: ../src/Commentator.cpp:91
+msgid "Your destiny is forged in steel!"
+msgstr ""
+
+#: ../src/Commentator.cpp:92
+msgid "You stand at the crossroads of victory!"
+msgstr ""
+
+#: ../src/Commentator.cpp:93
+msgid "Attack is the best means of defence!"
+msgstr ""
+
+#: ../src/Commentator.cpp:94
+msgid "Do you feel the wolves snapping at your heels?"
+msgstr ""
+
+#: ../src/Commentator.cpp:97
+msgid "Warlord!  Your progress is astounding!"
+msgstr ""
+
+#: ../src/Commentator.cpp:100
+msgid "So, Warlord, you show some merit!"
+msgstr ""
+
+#: ../src/Commentator.cpp:101
+msgid "You are doing well... ...so far!"
+msgstr ""
+
+#: ../src/Commentator.cpp:106
+msgid "Beware!  Lest overconfidence consume you!"
+msgstr ""
+
+#: ../src/Commentator.cpp:107
+msgid "Your name evokes fear and loathing!"
+msgstr ""
+
+#: ../src/Commentator.cpp:118
+msgid "Ahh, the expectation of a coming battle!"
+msgstr ""
+
+#: ../src/Commentator.cpp:121
+msgid "Warlord... a might battle is brewing!"
+msgstr ""
+
+#: ../src/Commentator.cpp:125
+msgid "As your capital city has fallen, so shall you!"
+msgstr ""
+
+#: ../src/PixMask.cpp:131
+msgid "Could not load image file `%1'."
+msgstr ""
+
+#: ../src/gls/main.cpp:85 ../src/gls/gls-client-main.cpp:114
+#: ../src/ghs/main.cpp:93 ../src/ghs/ghs-client-main.cpp:107
+#: ../src/upgrade-file.cpp:67
+msgid "Display this help and exit"
+msgstr ""
+
+#: ../src/gls/main.cpp:86 ../src/ghs/main.cpp:94
+msgid "Do not detach from the controlling terminal"
+msgstr ""
+
+#: ../src/gls/main.cpp:101 ../src/ghs/main.cpp:116
+msgid "Could not detach from controlling terminal."
+msgstr ""
+
+#: ../src/gls/gls-client-main.cpp:81 ../src/ghs/ghs-client-main.cpp:78
+msgid "invalid profile id"
+msgstr ""
+
+#: ../src/gls/gls-client-main.cpp:111 ../src/ghs/ghs-client-main.cpp:104
+msgid "[OPTION]... [HOST]"
+msgstr ""
+
+#: ../src/gls/gls-client-main.cpp:115 ../src/ghs/ghs-client-main.cpp:108
+msgid "Use this identity, specified by profile id"
+msgstr ""
+
+#: ../src/gls/gls-client-main.cpp:116 ../src/ghs/ghs-client-main.cpp:109
+msgid "Connect to the server on the given port"
+msgstr ""
+
+#: ../src/gls/gls-client-main.cpp:117
+msgid "Remove a game, specified by scenario id"
+msgstr ""
+
+#: ../src/gls/gls-client-main.cpp:118
+msgid "Add a game"
+msgstr ""
+
+#: ../src/gls/gls-client-main.cpp:119
+msgid "See a list of games"
+msgstr ""
+
+#: ../src/gls/gls-client-main.cpp:120 ../src/ghs/ghs-client-main.cpp:111
+msgid "Reload the game list from disk"
+msgstr ""
+
+#: ../src/gls/gls-client-main.cpp:121
+msgid "Remove all games owned by the given profile id"
+msgstr ""
+
+#: ../src/gls/gls-client-main.cpp:122 ../src/ghs/ghs-client-main.cpp:114
+msgid "Stop the server"
+msgstr ""
+
+#: ../src/gls/gls-client-main.cpp:124
+msgid ""
+"Specifying a profile id of -1 to the --remove-all option will remove all games \n"
+"from the game list."
+msgstr ""
+
+#: ../src/gls/gls-client-main.cpp:126
+msgid ""
+"If HOST is not specified on the command-line, this tool will try to connect to \n"
+"the game-list server at 127.0.0.1."
+msgstr ""
+
+#: ../src/gls/gls-client-tool.cpp:72
+msgid "Map File:"
+msgstr ""
+
+#: ../src/gls/gls-client-tool.cpp:81 ../src/gls/gls-client-tool.cpp:130
+#: ../src/ghs/ghs-client-tool.cpp:95
+msgid "Host:"
+msgstr ""
+
+#: ../src/gls/gls-client-tool.cpp:92
+msgid "non-numerical value for port"
+msgstr ""
+
+#: ../src/gls/gls-client-tool.cpp:94
+msgid "invalid value for port"
+msgstr ""
+
+#: ../src/gls/gls-client-tool.cpp:119 ../src/ghs/ghs-client-tool.cpp:84
+msgid "Listing %1 game"
+msgid_plural "Listing %1 games"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/gls/gls-client-tool.cpp:132 ../src/ghs/ghs-client-tool.cpp:97
+msgid "Profile:"
+msgstr ""
+
+#: ../src/gls/gls-client-tool.cpp:180
+msgid "Error: Could not remove advertised game %1"
+msgstr ""
+
+#: ../src/gls/gls-client-tool.cpp:186
+msgid "Removed advertised game %1"
+msgstr ""
+
+#: ../src/gls/gls-client-tool.cpp:199
+msgid "Error: Could not advertise game %1"
+msgstr ""
+
+#: ../src/gls/gls-client-tool.cpp:205
+msgid "Advertised game %1"
+msgstr ""
+
+#: ../src/gls/gls-client-tool.cpp:214 ../src/ghs/ghs-client-tool.cpp:116
+msgid "Could not connect to game list server"
+msgstr ""
+
+#: ../src/gls/gls-client-tool.cpp:220 ../src/ghs/ghs-client-tool.cpp:122
+msgid "Server went away unexpectedly"
+msgstr ""
+
+#: ../src/gls/gamelist-server.cpp:127 ../src/ghs/gamehost-server.cpp:137
+msgid "no such game with that scenario id"
+msgstr ""
+
+#: ../src/gls/gamelist-server.cpp:133 ../src/gls/gamelist-server.cpp:188
+#: ../src/gls/gamelist-server.cpp:244 ../src/ghs/gamehost-server.cpp:143
+#: ../src/ghs/gamehost-server.cpp:456
+msgid "permission denied"
+msgstr ""
+
+#: ../src/gls/gamelist-server.cpp:260
+msgid "could not advertise game"
+msgstr ""
+
+#: ../src/ghs/main.cpp:95
+msgid "Advertise our hostname as this to game clients"
+msgstr ""
+
+#: ../src/ghs/main.cpp:97
+msgid "Allow the profile ids in this file to host games"
+msgstr ""
+
+#: ../src/ghs/main.cpp:108
+msgid "Error: could not find %1 program in path."
+msgstr ""
+
+#: ../src/ghs/ghs-client-main.cpp:110
+msgid "See a list of hosted games"
+msgstr ""
+
+#: ../src/ghs/ghs-client-main.cpp:112
+msgid "Stop hosting a game (specified by scenario id)"
+msgstr ""
+
+#: ../src/ghs/ghs-client-main.cpp:113
+msgid "Host a game"
+msgstr ""
+
+#: ../src/ghs/ghs-client-main.cpp:116
+msgid ""
+"If HOST is not specified on the command-line, this tool will try to connect to \n"
+"the game-host server at 127.0.0.1."
+msgstr ""
+
+#: ../src/ghs/ghs-client-tool.cpp:133
+msgid "Stopped hosting game %1"
+msgstr ""
+
+#: ../src/ghs/gamehost-server.cpp:148
+msgid "could not kill process"
+msgstr ""
+
+#: ../src/ghs/gamehost-server.cpp:183
+msgid "couldn't find lordsawar binary in path!"
+msgstr ""
+
+#: ../src/ghs/gamehost-server.cpp:244
+msgid "Game couldn't be setup properly."
+msgstr ""
+
+#: ../src/ghs/gamehost-server.cpp:256
+msgid "could not add game to list."
+msgstr ""
+
+#: ../src/ghs/gamehost-server.cpp:311
+msgid "malformed host new game message"
+msgstr ""
+
+#: ../src/ghs/gamehost-server.cpp:326
+msgid "Could not parse profile information."
+msgstr ""
+
+#: ../src/ghs/gamehost-server.cpp:366
+msgid "Not authorized to host on this server."
+msgstr ""
+
+#: ../src/ghs/gamehost-server.cpp:374
+msgid "Server too busy.  try again later."
+msgstr ""
+
+#: ../src/ghs/gamehost-server.cpp:396
+msgid "Could not read map file."
+msgstr ""
+
+#: ../src/ghs/gamehost-server.cpp:407
+msgid "protocol error."
+msgstr ""
+
+#: ../src/upgrade-file.cpp:68
+msgid "Show the file type instead of upgrading"
+msgstr ""
+
+#: ../src/upgrade-file.cpp:95
+msgid "%1 is already the latest version."
+msgstr ""
+
+#: ../src/upgrade-file.cpp:106
+msgid "Trying to upgrade the other files inside the tar file..."
+msgstr ""
+
+#: ../src/upgrade-file.cpp:113
+msgid "Armyset has been upgraded."
+msgstr ""
+
+#: ../src/upgrade-file.cpp:115
+msgid "Tileset has been upgraded."
+msgstr ""
+
+#: ../src/upgrade-file.cpp:117
+msgid "Cityset has been upgraded."
+msgstr ""
+
+#: ../src/upgrade-file.cpp:119
+msgid "Shieldset has been upgraded."
+msgstr ""
+
+#: ../src/upgrade-file.cpp:123
+msgid "None of the other files needed to be upgraded."
+msgstr ""
+
+#: ../src/upgrade-file.cpp:130
+msgid "Error: %1 could not be upgraded."
+msgstr ""
+
+#: ../src/upgrade-file.cpp:168
+msgid "Error: The --identify and --rewrite options cannot be used at the same time."
+msgstr ""
+
+#: ../src/file-compat.cpp:459 ../src/file-compat.cpp:472
+msgid "unknown file"
+msgstr ""
+
+#: ../src/file-compat.cpp:460
+msgid "primary configuration file"
+msgstr ""
+
+#: ../src/file-compat.cpp:461
+msgid "item description file"
+msgstr ""
+
+#: ../src/file-compat.cpp:462
+msgid "profiles file"
+msgstr ""
+
+#: ../src/file-compat.cpp:463
+msgid "recently played games file"
+msgstr ""
+
+#: ../src/file-compat.cpp:464
+msgid "recently hosted or recently advertised games file"
+msgstr ""
+
+#: ../src/file-compat.cpp:465
+msgid "recently edited documents file"
+msgstr ""
+
+#: ../src/file-compat.cpp:466
+msgid "armyset file"
+msgstr ""
+
+#: ../src/file-compat.cpp:467
+msgid "tileset file"
+msgstr ""
+
+#: ../src/file-compat.cpp:468
+msgid "cityset file"
+msgstr ""
+
+#: ../src/file-compat.cpp:469
+msgid "shieldset file"
+msgstr ""
+
+#: ../src/file-compat.cpp:470
+msgid "map or saved-game file"
+msgstr ""
+
+#. if (p != player && player)
+#. continue;
+#: ../src/game-client-decoder.cpp:68
+msgid "decoding action: %1"
+msgstr ""
+
+#: ../src/game-client-decoder.cpp:72
+msgid "warning, ignoring action for player %1"
+msgstr ""
+
+#: ../src/game-client-decoder.cpp:114
+msgid "received history: %1"
+msgstr ""
+
+#: ../src/namelist.cpp:40
+msgid "Error can't load namelist `%1'"
+msgstr ""
+
+#: ../dat/various/items/items.xml.in.h:39
+msgid "Scroll of Thievery"
+msgstr ""
+
+#: ../dat/various/items/items.xml.in.h:40
+msgid "Scroll of Great Tides"
+msgstr ""
+
+#: ../dat/various/items/items.xml.in.h:41
+msgid "Scroll of Retrieve Lost Items"
+msgstr ""
+
+#: ../dat/various/items/items.xml.in.h:42
+msgid "Staff of Many Steps"
+msgstr ""
+
+#: ../dat/various/items/items.xml.in.h:43
+msgid "Staff of Saint Patrick"
+msgstr ""
+
+#: ../dat/various/items/items.xml.in.h:44
+msgid "Wand of the Bridgeburners"
+msgstr ""
+
+#: ../dat/various/items/items.xml.in.h:45
+msgid "Staff of Charm Ruin Monster"
+msgstr ""
+
+#: ../dat/various/items/items.xml.in.h:46
+msgid "Whistle of Angelic Assistance"
+msgstr ""
+
+#: ../dat/various/items/items.xml.in.h:47
+msgid "Wand of Urban Pestilence"
+msgstr ""
+
+#: ../dat/various/items/items.xml.in.h:48
+msgid "Staff of Ghostly Defenders"
+msgstr ""
+
+#: ../dat/various/items/items.xml.in.h:49
+msgid "Staff of Persuasion"
+msgstr ""
+
+#: ../dat/various/items/items.xml.in.h:50
+msgid "Ring of Teleportation"
+msgstr ""
+
+#: ../dat/citynames.xml.in.h:1
+msgid "Hellgate"
+msgstr "Hellgate"
+
+#: ../dat/citynames.xml.in.h:2
+msgid "Karhain"
+msgstr "Karhain"
+
+#: ../dat/citynames.xml.in.h:3
+msgid "Shady Hill"
+msgstr "Shady Hill"
+
+#: ../dat/citynames.xml.in.h:4
+msgid "Moonshine"
+msgstr "Moonshine"
+
+#: ../dat/citynames.xml.in.h:5
+msgid "Devilian"
+msgstr "Devilian"
+
+#: ../dat/citynames.xml.in.h:6
+msgid "Ankh-Morpok"
+msgstr "Ankh-Morpok"
+
+#: ../dat/citynames.xml.in.h:7
+msgid "Warportal"
+msgstr "Warportal"
+
+#: ../dat/citynames.xml.in.h:8
+msgid "Fishbend"
+msgstr "Fishbend"
+
+#: ../dat/citynames.xml.in.h:9
+msgid "Meormon"
+msgstr "Meormon"
+
+#: ../dat/citynames.xml.in.h:10
+msgid "Darcor"
+msgstr "Darcor"
+
+#: ../dat/citynames.xml.in.h:11
+msgid "Anominam"
+msgstr "Anominam"
+
+#: ../dat/citynames.xml.in.h:12
+msgid "Tiburn"
+msgstr "Tiburn"
+
+#: ../dat/citynames.xml.in.h:13
+msgid "Timons"
+msgstr "Timons"
+
+#: ../dat/citynames.xml.in.h:14
+msgid "Gormenghast"
+msgstr "Gormenghast"
+
+#: ../dat/citynames.xml.in.h:15
+msgid "Lan"
+msgstr "Lan"
+
+#: ../dat/citynames.xml.in.h:16
+msgid "Scarpdale"
+msgstr "Scarpdale"
+
+#: ../dat/citynames.xml.in.h:17
+msgid "Watchtower"
+msgstr "Watchtower"
+
+#: ../dat/citynames.xml.in.h:18
+msgid "Capewell"
+msgstr "Capewell"
+
+#: ../dat/citynames.xml.in.h:19
+msgid "Ironfist"
+msgstr "Ironfist"
+
+#: ../dat/citynames.xml.in.h:20
+msgid "Forthmark"
+msgstr "Forthmark"
+
+#: ../dat/citynames.xml.in.h:21
+msgid "Rowahon"
+msgstr "Rowahon"
+
+#: ../dat/citynames.xml.in.h:22
+msgid "Tularean"
+msgstr "Tularean"
+
+#: ../dat/citynames.xml.in.h:23
+msgid "Stonegate"
+msgstr "Stonegate"
+
+#: ../dat/citynames.xml.in.h:24
+msgid "Atwood"
+msgstr "Atwood"
+
+#: ../dat/citynames.xml.in.h:25
+msgid "Heavensgate"
+msgstr "Heavensgate"
+
+#: ../dat/citynames.xml.in.h:26
+msgid "Lyrean"
+msgstr "Lyrean"
+
+#: ../dat/citynames.xml.in.h:27
+msgid "Thornsdale"
+msgstr "Thornsdale"
+
+#: ../dat/citynames.xml.in.h:28
+msgid "West End"
+msgstr "West End"
+
+#: ../dat/citynames.xml.in.h:29
+msgid "Banshire"
+msgstr "Banshire"
+
+#: ../dat/citynames.xml.in.h:30
+msgid "Pelerine"
+msgstr "Pelerine"
+
+#: ../dat/citynames.xml.in.h:31
+msgid "Casterbridge"
+msgstr "Casterbridge"
+
+#: ../dat/citynames.xml.in.h:32
+msgid "Lankhmar"
+msgstr "Lankhmar"
+
+#: ../dat/citynames.xml.in.h:33
+msgid "Crust"
+msgstr "Crust"
+
+#: ../dat/citynames.xml.in.h:34
+msgid "Lond Daer"
+msgstr "Lond Daer"
+
+#: ../dat/citynames.xml.in.h:35
+msgid "Welltown"
+msgstr "Welltown"
+
+#: ../dat/citynames.xml.in.h:36
+msgid "Remoldt"
+msgstr "Remoldt"
+
+#: ../dat/citynames.xml.in.h:37
+msgid "Hemmings"
+msgstr "Hemmings"
+
+#: ../dat/citynames.xml.in.h:38
+msgid "Greystone"
+msgstr "Greystone"
+
+#: ../dat/citynames.xml.in.h:39
+msgid "Hartons"
+msgstr "Hartons"
+
+#: ../dat/citynames.xml.in.h:40
+msgid "Udo"
+msgstr "Udo"
+
+#: ../dat/citynames.xml.in.h:41
+msgid "Nineveh"
+msgstr "Nineveh"
+
+#: ../dat/citynames.xml.in.h:42
+msgid "Boghazkoi"
+msgstr "Boghazkoi"
+
+#: ../dat/citynames.xml.in.h:43
+msgid "Kadesh"
+msgstr "Kadesh"
+
+#: ../dat/citynames.xml.in.h:44
+msgid "Highwater"
+msgstr "Highwater"
+
+#: ../dat/citynames.xml.in.h:45
+msgid "Kurigalzu"
+msgstr "Kurigalzu"
+
+#: ../dat/citynames.xml.in.h:46
+msgid "Brunnaburgh"
+msgstr "Brunnaburgh"
+
+#: ../dat/citynames.xml.in.h:47
+msgid "Chagamire"
+msgstr "Chagamire"
+
+#: ../dat/citynames.xml.in.h:48
+msgid "Behistun"
+msgstr "Behistun"
+
+#: ../dat/citynames.xml.in.h:49
+msgid "Preening"
+msgstr "Preening"
+
+#: ../dat/citynames.xml.in.h:50
+msgid "Lobatse"
+msgstr "Lobatse"
+
+#: ../dat/citynames.xml.in.h:51
+msgid "Shadowfallen"
+msgstr "Shadowfallen"
+
+#: ../dat/citynames.xml.in.h:52
+msgid "Nicaea"
+msgstr "Nicaea"
+
+#: ../dat/citynames.xml.in.h:53
+msgid "Innesfallen"
+msgstr "Innesfallen"
+
+#: ../dat/citynames.xml.in.h:54
+msgid "Spirit Cave"
+msgstr "Spirit Cave"
+
+#: ../dat/citynames.xml.in.h:55
+msgid "Yeol"
+msgstr "Yeol"
+
+#: ../dat/citynames.xml.in.h:56
+msgid "Coldpeak"
+msgstr "Coldpeak"
+
+#: ../dat/citynames.xml.in.h:57
+msgid "Tebizond"
+msgstr "Tebizond"
+
+#: ../dat/citynames.xml.in.h:58
+msgid "Goldvale"
+msgstr "Goldvale"
+
+#: ../dat/citynames.xml.in.h:59
+msgid "Harnew"
+msgstr "Harnew"
+
+#: ../dat/citynames.xml.in.h:60
+msgid "Yellowbone"
+msgstr "Yellowbone"
+
+#: ../dat/citynames.xml.in.h:61
+msgid "Hopwith"
+msgstr "Hopwith"
+
+#: ../dat/citynames.xml.in.h:62
+msgid "Therryd"
+msgstr "Therryd"
+
+#: ../dat/citynames.xml.in.h:63
+msgid "Whipsend"
+msgstr "Whipsend"
+
+#: ../dat/citynames.xml.in.h:64
+msgid "Hurldt"
+msgstr "Hurldt"
+
+#: ../dat/citynames.xml.in.h:65
+msgid "Pewrash"
+msgstr "Pewrash"
+
+#: ../dat/citynames.xml.in.h:66
+msgid "Howlfen"
+msgstr "Howlfen"
+
+#: ../dat/citynames.xml.in.h:67
+msgid "Prig"
+msgstr "Prig"
+
+#: ../dat/citynames.xml.in.h:68
+msgid "Shantytown"
+msgstr "Shantytown"
+
+#: ../dat/citynames.xml.in.h:69
+msgid "Targastin"
+msgstr "Targastin"
+
+#: ../dat/citynames.xml.in.h:70
+msgid "Jenryll"
+msgstr "Jenryll"
+
+#: ../dat/citynames.xml.in.h:71
+msgid "Kenquint"
+msgstr "Kenquint"
+
+#: ../dat/citynames.xml.in.h:72
+msgid "Yearway"
+msgstr "Yearway"
+
+#: ../dat/citynames.xml.in.h:73
+msgid "Meirstead"
+msgstr "Meirstead"
+
+#: ../dat/citynames.xml.in.h:74
+msgid "Urko"
+msgstr "Urko"
+
+#: ../dat/citynames.xml.in.h:75
+msgid "Millrock"
+msgstr "Millrock"
+
+#: ../dat/citynames.xml.in.h:76
+msgid "Shadwill"
+msgstr "Shadwill"
+
+#: ../dat/citynames.xml.in.h:77
+msgid "Poolstone"
+msgstr "Poolstone"
+
+#: ../dat/citynames.xml.in.h:78
+msgid "Wending"
+msgstr "Wending"
+
+#: ../dat/citynames.xml.in.h:79
+msgid "Jasp"
+msgstr "Jasp"
+
+#: ../dat/citynames.xml.in.h:80
+msgid "Dern"
+msgstr "Dern"
+
+#: ../dat/citynames.xml.in.h:81
+msgid "Tyrill"
+msgstr "Tyrill"
+
+#: ../dat/citynames.xml.in.h:82
+msgid "Pyronn"
+msgstr "Pyronn"
+
+#: ../dat/citynames.xml.in.h:83
+msgid "Quordia"
+msgstr "Quordia"
+
+#: ../dat/citynames.xml.in.h:84
+msgid "Fogwell"
+msgstr "Fogwell"
+
+#: ../dat/citynames.xml.in.h:85
+msgid "Sunstone"
+msgstr "Sunstone"
+
+#: ../dat/citynames.xml.in.h:86
+msgid "Cloudrock"
+msgstr "Cloudrock"
+
+#: ../dat/citynames.xml.in.h:87
+msgid "Greddle"
+msgstr "Greddle"
+
+#: ../dat/citynames.xml.in.h:88
+msgid "Farburg"
+msgstr "Farburg"
+
+#: ../dat/citynames.xml.in.h:89
+msgid "Tarfrey"
+msgstr "Tarfrey"
+
+#: ../dat/citynames.xml.in.h:90
+msgid "Meadford"
+msgstr "Meadford"
+
+#: ../dat/citynames.xml.in.h:91
+msgid "Seastone"
+msgstr "Seastone"
+
+#: ../dat/citynames.xml.in.h:92
+msgid "Highrock"
+msgstr "Highrock"
+
+#: ../dat/citynames.xml.in.h:93
+msgid "Lowstone"
+msgstr "Lowstone"
+
+#: ../dat/citynames.xml.in.h:94
+msgid "Ringtown"
+msgstr "Ringtown"
+
+#: ../dat/citynames.xml.in.h:95
+msgid "Gall"
+msgstr "Gall"
+
+#: ../dat/citynames.xml.in.h:96
+msgid "Sandstone"
+msgstr "Sandstone"
+
+#: ../dat/citynames.xml.in.h:97
+msgid "Lakerock"
+msgstr "Lakerock"
+
+#: ../dat/citynames.xml.in.h:98
+msgid "Woodring"
+msgstr "Woodring"
+
+#: ../dat/citynames.xml.in.h:99
+msgid "Fenring"
+msgstr "Fenring"
+
+#: ../dat/citynames.xml.in.h:100
+msgid "Three Marshes"
+msgstr "Three Marshes"
+
+#: ../dat/citynames.xml.in.h:101
+msgid "Cliff Town"
+msgstr "Cliff Town"
+
+#: ../dat/citynames.xml.in.h:102
+msgid "Blackstep"
+msgstr "Blackstep"
+
+#: ../dat/citynames.xml.in.h:103
+msgid "Whitestep"
+msgstr "Whitestep"
+
+#: ../dat/citynames.xml.in.h:104
+msgid "Redstep"
+msgstr "Redstep"
+
+#: ../dat/citynames.xml.in.h:105
+msgid "Ringstep"
+msgstr "Ringstep"
+
+#: ../dat/citynames.xml.in.h:106
+msgid "Swordstep"
+msgstr "Swordstep"
+
+#: ../dat/citynames.xml.in.h:107
+msgid "Shieldstep"
+msgstr "Shieldstep"
+
+#: ../dat/citynames.xml.in.h:108
+msgid "Redhelm"
+msgstr "Redhelm"
+
+#: ../dat/citynames.xml.in.h:109
+msgid "Middlehelm"
+msgstr "Middlehelm"
+
+#: ../dat/citynames.xml.in.h:110
+msgid "Anvil"
+msgstr "Anvil"
+
+#: ../dat/citynames.xml.in.h:111
+msgid "Blackfork"
+msgstr "Blackfork"
+
+#: ../dat/citynames.xml.in.h:112
+msgid "Blueshell"
+msgstr "Blueshell"
+
+#: ../dat/citynames.xml.in.h:113
+msgid "Bolt"
+msgstr "Bolt"
+
+#: ../dat/citynames.xml.in.h:114
+msgid "Skytower"
+msgstr "Skytower"
+
+#: ../dat/templenames.xml.in.h:1
+msgid "Shrine of the Paladin"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:2
+msgid "Shrine of the Crusader"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:3
+msgid "Shrine of Power"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:4
+msgid "Shrine of the Mists"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:5
+msgid "Warrior's Sanctuary"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:6
+msgid "Sanctuary of the Fallen"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:7
+msgid "Holy Place"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:8
+msgid "Temple of Flame"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:9
+msgid "Order of Fire"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:10
+msgid "Order of Spirit"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:11
+msgid "Brotherhood of Order"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:12
+msgid "Cathedral"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:13
+msgid "High Priest's seat"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:14
+msgid "Tomb of Kings"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:15
+msgid "Tomb of Warriors"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:16
+msgid "Small temple"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:17
+msgid "Peasant's church"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:18
+msgid "Monastery of Io"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:19
+msgid "Altar of Fate"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:20
+msgid "Offler's Temple"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:21
+msgid "Altar of Offler"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:22
+msgid "Ice temple"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:23
+msgid "Garden of Peace"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:24
+msgid "Garden of Frost"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:25
+msgid "Holy Wood"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:26
+msgid "House of Small Gods"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:27
+msgid "Silent Monastery"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:28
+msgid "Holy Ghost's Archive"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:29
+msgid "Tower of Prayers"
+msgstr ""
+
+#: ../dat/templenames.xml.in.h:30
+msgid "Druid's Home"
+msgstr ""
+
+#: ../dat/signposts.xml.in.h:1
+msgid "Beware!"
+msgstr ""
+
+#: ../dat/signposts.xml.in.h:2
+msgid "Danger!"
+msgstr ""
+
+#: ../dat/signposts.xml.in.h:3
+msgid "Keep out!"
+msgstr ""
+
+#: ../dat/signposts.xml.in.h:5
+msgid "Kilroy was here."
+msgstr ""
+
+#: ../dat/signposts.xml.in.h:6
+msgid "Turn back or die!"
+msgstr ""
+
+#: ../dat/signposts.xml.in.h:7
+msgid "Visitors Welcome"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:1
+msgid "Creepy Dungeon"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:2
+msgid "Dark Cellars"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:3
+msgid "Abandoned Temple"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:4
+msgid "Dark Temple"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:5
+msgid "Fallen Temple"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:6
+msgid "Unholy Temple"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:7
+msgid "Ruined Temple"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:8
+msgid "Misty Maze"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:9
+msgid "Ruined City"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:10
+msgid "Weird Ruins"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:11
+msgid "Dusty Caves"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:12
+msgid "Silent Lair"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:13
+msgid "Old Dragon's Lair"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:14
+msgid "Black Tomb"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:15
+msgid "Ancient Ruins"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:16
+msgid "Deserted Monastery"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:17
+msgid "Stormy Tower"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:19
+msgid "Savaged Castle"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:20
+msgid "Ruined Castle"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:21
+msgid "Misty Ruins"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:22
+msgid "Abandoned Village"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:23
+msgid "Ghost Town"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:24
+msgid "Silent Farm"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:25
+msgid "Barren Ruins"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:26
+msgid "Forbidden Lair"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:27
+msgid "Dark Hole"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:28
+msgid "Dark Dungeon"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:29
+msgid "Rampaged Village"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:31
+msgid "Goblin Hideout"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:32
+msgid "Orcish Hut"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:33
+msgid "Bone-filled Pit"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:34
+msgid "Rat-filled Catacombs"
+msgstr ""
+
+#: ../dat/ruinnames.xml.in.h:35
+msgid "Creepy Crypt"
+msgstr ""
+
+#: ../dat/heronames.xml.in.h:1
+msgid "Endurien"
+msgstr "Endurien"
+
+#: ../dat/heronames.xml.in.h:2
+msgid "Ondorien"
+msgstr "Ondorien"
+
+#: ../dat/heronames.xml.in.h:3
+msgid "Thordolf"
+msgstr "Thordolf"
+
+#: ../dat/heronames.xml.in.h:4
+msgid "Alagon"
+msgstr "Alagon"
+
+#: ../dat/heronames.xml.in.h:5
+msgid "Encalgrim"
+msgstr "Encalgrim"
+
+#: ../dat/heronames.xml.in.h:6
+msgid "Ingaron"
+msgstr "Ingaron"
+
+#: ../dat/heronames.xml.in.h:7
+msgid "Inloran"
+msgstr "Inloran"
+
+#: ../dat/heronames.xml.in.h:8
+msgid "Ongoladan"
+msgstr "Ongoladan"
+
+#: ../dat/heronames.xml.in.h:9
+msgid "Ilmorgrist"
+msgstr "Ilmorgrist"
+
+#: ../dat/heronames.xml.in.h:10
+msgid "Ganthag"
+msgstr "Ganthag"
+
+#: ../dat/heronames.xml.in.h:11
+msgid "Alcargrim"
+msgstr "Alcargrim"
+
+#: ../dat/heronames.xml.in.h:12
+msgid "Eldaragon"
+msgstr "Eldaragon"
+
+#: ../dat/heronames.xml.in.h:13
+msgid "Ingorian"
+msgstr "Ingorian"
+
+#: ../dat/heronames.xml.in.h:14
+msgid "Ilgarion"
+msgstr "Ilgarion"
+
+#: ../dat/heronames.xml.in.h:15
+msgid "Thorgolf"
+msgstr "Thorgolf"
+
+#: ../dat/heronames.xml.in.h:16
+msgid "Belcarain"
+msgstr "Belcarain"
+
+#: ../dat/heronames.xml.in.h:17
+msgid "Glathros"
+msgstr "Glathros"
+
+#: ../dat/heronames.xml.in.h:18
+msgid "Insharien"
+msgstr "Insharien"
+
+#: ../dat/heronames.xml.in.h:19
+msgid "Staelram"
+msgstr "Staelram"
+
+#: ../dat/heronames.xml.in.h:20
+msgid "Ellorgrist"
+msgstr "Ellorgrist"
+
+#: ../dat/heronames.xml.in.h:21
+msgid "Encanadan"
+msgstr "Encanadan"
+
+#: ../dat/heronames.xml.in.h:22
+msgid "Belloren"
+msgstr "Belloren"
+
+#: ../dat/heronames.xml.in.h:23
+msgid "Emorgrist"
+msgstr "Emorgrist"
+
+#: ../dat/heronames.xml.in.h:24
+msgid "Andaradan"
+msgstr "Andaradan"
+
+#: ../dat/heronames.xml.in.h:25
+msgid "Belsharien"
+msgstr "Belsharien"
+
+#: ../dat/heronames.xml.in.h:26
+msgid "Maedhring"
+msgstr "Maedhring"
+
+#: ../dat/heronames.xml.in.h:27
+msgid "Aladin"
+msgstr "Aladin"
+
+#: ../dat/heronames.xml.in.h:28
+msgid "Beldarian"
+msgstr "Beldarian"
+
+#: ../dat/heronames.xml.in.h:29
+msgid "Inmargrim"
+msgstr "Inmargrim"
+
+#: ../dat/heronames.xml.in.h:30
+msgid "Eldanas"
+msgstr "Eldanas"
+
+#: ../dat/heronames.xml.in.h:31
+msgid "Belshargrim"
+msgstr "Belshargrim"
+
+#: ../dat/heronames.xml.in.h:32
+msgid "Ilmorian"
+msgstr "Ilmorian"
+
+#: ../dat/heronames.xml.in.h:33
+msgid "Almarain"
+msgstr "Almarain"
+
+#: ../dat/heronames.xml.in.h:34
+msgid "Alloragon"
+msgstr "Alloragon"
+
+#: ../dat/heronames.xml.in.h:35
+msgid "Andoron"
+msgstr "Andoron"
+
+#: ../dat/heronames.xml.in.h:36
+msgid "Induradan"
+msgstr "Induradan"
+
+#: ../dat/heronames.xml.in.h:37
+msgid "Enmorath"
+msgstr "Enmorath"
+
+#: ../dat/heronames.xml.in.h:38
+msgid "Alsharain"
+msgstr "Alsharain"
+
+#: ../dat/heronames.xml.in.h:39
+msgid "Anmaron"
+msgstr "Anmaron"
+
+#: ../dat/heronames.xml.in.h:40
+msgid "Algaragon"
+msgstr "Algaragon"
+
+#: ../dat/heronames.xml.in.h:41
+msgid "Bandane"
+msgstr "Bandane"
+
+#: ../dat/heronames.xml.in.h:42
+msgid "Illorath"
+msgstr "Illorath"
+
+#: ../dat/heronames.xml.in.h:43
+msgid "Alcanan"
+msgstr "Alcanan"
+
+#: ../dat/heronames.xml.in.h:44
+msgid "Indurgrist"
+msgstr "Indurgrist"
+
+#: ../dat/heronames.xml.in.h:45
+msgid "Alcanen"
+msgstr "Alcanen"
+
+#: ../dat/heronames.xml.in.h:46
+msgid "Enduradan"
+msgstr "Enduradan"
+
+#: ../dat/heronames.xml.in.h:47
+msgid "Emoras"
+msgstr "Emoras"
+
+#: ../dat/heronames.xml.in.h:48
+msgid "Alcanadan"
+msgstr "Alcanadan"
+
+#: ../dat/heronames.xml.in.h:49
+msgid "Aldoran"
+msgstr "Aldoran"
+
+#: ../dat/heronames.xml.in.h:50
+msgid "Elsharadan"
+msgstr "Elsharadan"
+
+#: ../dat/heronames.xml.in.h:51
+msgid "Gilmorthas"
+msgstr "Gilmorthas"
+
+#: ../dat/heronames.xml.in.h:52
+msgid "Cormyr"
+msgstr "Cormyr"
+
+#: ../dat/heronames.xml.in.h:53
+msgid "Damonir"
+msgstr "Damonir"
+
+#: ../dat/heronames.xml.in.h:54
+msgid "Forgrym"
+msgstr "Forgrym"
+
+#: ../dat/heronames.xml.in.h:55
+msgid "Grimbald"
+msgstr "Grimbald"
+
+#: ../dat/heronames.xml.in.h:56
+msgid "Hunor"
+msgstr "Hunor"
+
+#: ../dat/heronames.xml.in.h:57
+msgid "Jomatta"
+msgstr "Jomatta"
+
+#: ../dat/heronames.xml.in.h:58
+msgid "Kyrian"
+msgstr "Kyrian"
+
+#: ../dat/heronames.xml.in.h:59
+msgid "Lasfallas"
+msgstr "Lasfallas"
+
+#: ../dat/heronames.xml.in.h:60
+msgid "Morthorg"
+msgstr "Morthorg"
+
+#: ../dat/heronames.xml.in.h:61
+msgid "Nyvar"
+msgstr "Nyvar"
+
+#: ../dat/heronames.xml.in.h:62
+msgid "Orogond"
+msgstr "Orogond"
+
+#: ../dat/heronames.xml.in.h:63
+msgid "Paylas"
+msgstr "Paylas"
+
+#: ../dat/heronames.xml.in.h:64
+msgid "Quelya"
+msgstr "Quelya"
+
+#: ../dat/heronames.xml.in.h:65
+msgid "Rimbanan"
+msgstr "Rimbanan"
+
+#: ../dat/heronames.xml.in.h:66
+msgid "Simisola"
+msgstr "Simisola"
+
+#: ../dat/heronames.xml.in.h:67
+msgid "Thorgorain"
+msgstr "Thorgorain"
+
+#: ../dat/heronames.xml.in.h:68
+msgid "Ulthmord"
+msgstr "Ulthmord"
+
+#: ../dat/heronames.xml.in.h:69
+msgid "Vangarian"
+msgstr "Vangarian"
+
+#: ../dat/heronames.xml.in.h:70
+msgid "Waldorath"
+msgstr "Waldorath"
+
+#: ../dat/heronames.xml.in.h:71
+msgid "Xermian"
+msgstr "Xermian"
+
+#: ../dat/heronames.xml.in.h:72
+msgid "Yamesh"
+msgstr "Yamesh"
+
+#: ../dat/heronames.xml.in.h:73
+msgid "Zorabadan"
+msgstr "Zorabadan"
+
+#: ../dat/heronames.xml.in.h:74
+msgid "Caethlin"
+msgstr "Caethlin"
+
+#: ../dat/heronames.xml.in.h:75
+msgid "Dundorflas"
+msgstr "Dundorflas"
+
+#: ../dat/heronames.xml.in.h:76
+msgid "Fanturian"
+msgstr "Fanturian"
+
+#: ../dat/heronames.xml.in.h:77
+msgid "Galbollan"
+msgstr "Galbollan"
+
+#: ../dat/heronames.xml.in.h:78
+msgid "Hathmort"
+msgstr "Hathmort"
+
+#: ../dat/heronames.xml.in.h:79
+msgid "Justarian"
+msgstr "Justarian"
+
+#: ../dat/heronames.xml.in.h:80
+msgid "Kelmore"
+msgstr "Kelmore"
+
+#: ../dat/heronames.xml.in.h:81
+msgid "Lurian"
+msgstr "Lurian"
+
+#: ../dat/heronames.xml.in.h:82
+msgid "Mandraes"
+msgstr "Mandraes"
+
+#: ../dat/heronames.xml.in.h:83
+msgid "Nethlia"
+msgstr "Nethlia"
+
+#: ../dat/heronames.xml.in.h:84
+msgid "Odger"
+msgstr "Odger"
+
+#: ../dat/heronames.xml.in.h:85
+msgid "Phaeros"
+msgstr "Phaeros"
+
+#: ../dat/heronames.xml.in.h:86
+msgid "Qyssia"
+msgstr "Qyssia"
+
+#: ../dat/heronames.xml.in.h:87
+msgid "Romodan"
+msgstr "Romodan"
+
+#: ../dat/heronames.xml.in.h:88
+msgid "Sigward"
+msgstr "Sigward"
+
+#: ../dat/heronames.xml.in.h:89
+msgid "Tumerain"
+msgstr "Tumerain"
+
+#: ../dat/heronames.xml.in.h:90
+msgid "Ur-gallant"
+msgstr "Ur-gallant"
+
+#: ../dat/heronames.xml.in.h:91
+msgid "Vindomell"
+msgstr "Vindomell"
+
+#: ../dat/heronames.xml.in.h:92
+msgid "Wastain"
+msgstr "Wastain"
+
+#: ../dat/heronames.xml.in.h:93
+msgid "Xaphocles"
+msgstr "Xaphocles"
+
+#: ../dat/heronames.xml.in.h:94
+msgid "Yorsha"
+msgstr "Yorsha"
+
+#: ../dat/heronames.xml.in.h:95
+msgid "Zygashian"
+msgstr "Zygashian"
+
+#: ../dat/heronames.xml.in.h:96
+msgid "Lutomere"
+msgstr "Lutomere"
+
+#: ../dat/heronames.xml.in.h:97
+msgid "Sharban"
+msgstr "Sharban"
+
+#: ../dat/heronames.xml.in.h:98
+msgid "Gryzyl"
+msgstr "Gryzyl"
+
+#: ../dat/heronames.xml.in.h:99
+msgid "Omelan"
+msgstr "Omelan"
+
+#: ../dat/heronames.xml.in.h:100
+msgid "Thastophere"
+msgstr "Thastophere"
+
+#: ../dat/heronames.xml.in.h:101
+msgid "Cohen"
+msgstr "Cohen"
+
+#: ../dat/lordsawar.desktop.in.in.h:2
+msgid "Turn-based strategy game"
+msgstr "Körökre osztott stratégiai játék"
+
+#: ../dat/lordsawar.desktop.in.in.h:3
+msgid "Play a clone of Warlords II"
+msgstr ""
+
+#: ../dat/lordsawar-editor.desktop.in.in.h:2
+msgid "Scenario Editor for LordsAWar!"
+msgstr "Szövegkönyv szerkesztő a LordsAWar játékhoz!"

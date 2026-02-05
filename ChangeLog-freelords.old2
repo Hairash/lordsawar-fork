@@ -1,0 +1,3854 @@
+2005-06-14    <ulf82@users.sf.net>
+
+	* editor: (Win/Lose)Game reactions cannot be passed negative values
+	anymore
+
+	* AUTHORS: Josef is now mentioned as developer. :)
+
+2005-06-14    <dr_maux@users.sf.net>
+
+	* po/POTFILES.in: - remove ObjectList.cpp from potfiles
+
+2005-06-14    <dr_maux@users.sf.net>
+
+	* added dat/various/network_screen.jpg a horrible network 
+          splash screen (needs better one from artists)
+
+2005-06-14    <dr_maux@users.sf.net>
+
+	* src/: netggz.cpp, netggz.h: - the other missing files for
+	  client-side GGZ support
+
+2005-06-14    <dr_maux@users.sf.net>
+
+	* src/server/main.cpp: - adding missing main.cpp file
+
+2005-06-13    <dr_maux@users.sf.net>
+
+	* first implementation of GGZ suppor for the client 
+
+        * basic GGZ handling in the server 
+
+        * fix for undefined fd() problem
+
+2005-06-10    <patton73@users.sf.net>
+
+	* ObjectList: moved the code into the .h and delete .cpp
+	  
+2005-06-05    <ulf82@users.sf.net>
+
+	* Quest et al: yet more review; purged a lot of functions
+
+	* army/hero: merged the "getOrig*stat*"-functions into the
+	"get*stat*"-functions via a boolean value to improve readability
+
+2005-06-03    <ulf82@users.sf.net>
+
+	* hills.png: added Phillips new hill images to test tileset
+
+2005-05-30    <ulf82@users.sf.net>
+
+	* Quest et al: more code review
+
+2005-05-29    <ulf82@users.sf.net>
+
+	* misc: more code reviewing
+
+2005-05-28    <ulf82@users.sf.net>
+
+	* TileSet: converted into a vector; fixed the black tileset bug
+
+	* GameMap: there is no longer a need for a static tileset attribute
+
+2005-05-27    <patton73@users.sf.net>
+
+	* fixed the VERSION problem, it was related to paragui.h
+	  that makes a "#unset VERSION" to avoid problems.
+	  Fixed passin the variable FL_VERSION at compile time.
+	* modified Makefile.am so that it installs freelords.desktop
+	  and when we wil have them also the icons
+	  
+2005-05-26    <patton73@users.sf.net>
+
+        * applied the second patch for ggzlib sent by Josef Spillner
+
+2005-05-25    <ulf82@users.sf.net>
+
+	* tilesets: added another image for a new tileset by Phillip
+
+2005-05-24    <patton73@users.sf.net>, <ulf82@users.sf.net>
+
+	* added the support files for libggz
+	* removed configure.in and added configure.ac
+	* acinclude.m4 : added the missing macros for libggz
+	* support for libggz is now optional (compile with --enable-ggz
+	  if you want it). There is still a bug : Makefile.am in the ggz
+	  directory still tries to install a file in /usr/local/etc/ but
+	  i think it should not because you need to be root to do that.
+	  Any clues for that?
+
+	* misc: some more review/small changes
+	  	
+2005-05-23    <ulf82@users.sf.net>
+
+	* Tutorial: applied changes to tutorial
+
+2005-05-22    <ulf82@users.sf.net>
+
+	* misc: started to review the code (use SDL types for the various
+	integers, make functions const etc.); unfinished yet
+	
+	* action: added three new actions (not yet implemented)
+
+	* Quests: added some functions for getting type and data
+
+2005-05-20    <patton73@users.sf.net>
+
+	* action: fixed a segfault when hero dies in a ruin.
+	
+2005-05-11    <ulf82@users.sf.net>
+
+	* action: some small changes again
+
+	* Savefile: merged some version into the original description
+
+2005-05-10    <patton73@users.sf.net>
+
+	* wiped defs.h and moved some definitions
+	    _ moved the CHARACTER_* defs into MapGenerator.h
+    	    _ moved the MAPTILE_* defs into maptile.h
+	* used SDL_Delay instead of usleep where possible
+	  (it takes milliseconds not microseconds)
+	  
+	* updated it.po and POTFILES.in
+	
+2005-05-10    <ulf82@users.sf.net>
+
+	* tutorial: updated savegame version
+
+	* splash: it is now possible to load arbitrary maps
+
+2005-05-09    <patton73@users.sf.net>, <ulf82@users.sf.net>
+
+	* configure.in and all Makefile.am : added the options --disable-optimizations
+	  to permit debugging without modifying all generated Makefiles.
+
+	* action: finished rewriting action classes
+
+	* real_player: used new actions
+	      
+2005-05-06    <ulf82@users.sf.net>
+
+	* misc: finished implementation of new armysetlist code
+
+	* defs: removed FREELORDS_VERSION (also done by autoconf), put army bonus
+	descriptions in army class
+
+2005-05-05    <ulf82@users.sf.net>
+
+	* armysets: armysets now contain two new data tags: name and id, the id
+	should be unique, and armysets are to be referenced by their id in the
+	future; added a README file for the armysets
+
+	* armysetlist: complete rewrite; absorbed armyset class
+
+	* army: now also saves the maximum movement. Seems to have been forgotten
+	long ago
+
+	* misc: implemented this change
+	
+2005-05-04    <patton73@users.sf.net>
+
+	* added a small label showing the current position of the 
+	  mouse cursor as in the editor (the label tells the absolute position
+	  in the map not the relative as in the editor)
+
+2005-04-22    <ulf82@users.sf.net>
+
+	* army, hero: made several functions constant, some small changes with
+	graphics stuff; this fixes an endless loop
+
+	* misc: used const army pointers when referring to armies in an armyset
+
+2005-04-21    <ulf82@users.sf.net>
+
+	* army: removed pixmap copying, this would lead to problems anyway.
+
+2005-04-20    <ulf82@users.sf.net>
+
+	* added a testing directory for a new tileset
+
+2005-04-17    <patton73@users.sf.net>
+
+	* removed armyset_army class.
+	  There is a problem related to the load_armyset() in armysetlist.cpp
+	  that lead to a segfault. Fron the editor is simpler to trace the bug
+          but still i have no idea of why it happens. (it is unplayable now).
+	  
+2005-04-14    <ulf82@users.sf.net>
+
+	* win: added an image for winning the game (Taylor Rolison)
+
+2005-04-11    <ulf82@users.sf.net>
+
+	* editor: replaced the PG_MultiLineEdit (event comments and message
+	reaction) by a normal PG_LineEdit. Looks ugly, but works at least
+
+	* editor: resized several buttons, labels etc.
+
+2005-04-10    <ulf82@users.sf.net>, <patton73@users.sf.net>
+
+	* questsreport: used a PG_RichEdit to display the quest text
+
+	* various dialogs: fixed problems with text size
+
+	* editor: fixed a bug which did not create a proper neutral player;
+	disabled event comments (the multilineedit is too buggy)
+
+
+	* fixed a bug in the tutorial that led to a seg-fault while
+	upgrading the city (this is not a bug of FL or of the Editor
+	perhaps the tutorial was made before patching the city.cpp with
+	initializations of production arrays)
+
+2005-04-08    <ulf82@users.sf.net>
+
+	* some small patches, translation update and checking
+
+2005-04-06    <ulf82@users.sf.net>
+
+	* Manual.de: added a note about the special characters in the German
+	translation
+
+2005-03-30    <ulf82@users.sf.net>, <patton73@users.sf.net>
+
+	* xmlhelper: the game now assumes ISO-8859-1 encoding for the savegames
+
+	* misc: some more checking of German translation
+
+	* Quest: fixed a bug with dead heroes fulfilling quests
+	
+	* fixed the xmlextractor bug.
+	  Now it extracts also comments and even names because a map 
+	  can have different names from armyset ones.
+
+	* update italian translation
+	
+2005-03-26    <ulf82@users.sf.net>
+
+	* tooltip: fixed hard clicking bug (i.e. no clicking with tooltip
+	displayed) and timer bug (tooltip removed other timers, too)
+
+2005-03-21    <ulf82@users.sf.net>
+
+	* smallmap: fixed some small graphical glitches
+
+2005-03-16    <ulf82@users.sf.net>
+
+	* w_edit, NextTurn: fixed a missing update when a hero was bought
+
+	* w_edit: fixed activating/deactivating of some buttons
+
+	* graphics: fixed some mask problems
+
+	* smallmap: removed some obsolete code
+
+2005-03-15    <ulf82@users.sf.net>
+
+	* TileSet, MapRenderer: implemented diagonal water transition
+
+	* tutorial: minor gameplay fixes
+
+2005-03-13    <ulf82@users.sf.net>
+
+    * misc: improved and checked German translation a bit
+
+    * RDelUnit: fixed segfault occuring in the tutorial
+
+	* tutorial: fixed a small story error
+
+2005-03-12    <patton73@users.sf.net>
+
+	* updated Manual.it (added Sauro Fabi to the list of
+	  contributors as italian translator)
+
+2005-03-11    <ulf82@users.sf.net>
+
+	* CreateScenario: fixed a leak and a problem with player death reportings
+
+	* timer: added a flag to disable the most usual timers
+
+	* misc: hero offer is now shown after next player popup; simplified the
+	code related to this
+
+2005-03-10    <ulf82@users.sf.net>
+
+	* playerlist: added flag for finished game; flag is set to true if game
+	ends
+
+	* ai_*: implemented usage of this flag to stop doing anything when the
+	game ends
+
+2005-03-08    <patton73@users.sf.net>
+
+	* fixed some memory leaks : player.cpp,bigmap.ccp,File.cpp
+	
+	* fixed a memory leak in tooltip (the label was never destroyed)
+
+2005-03-05    <ulf82@users.sf.net>
+
+	* CreateScenario: removed message when player in AI game dies
+
+	* misc: fixed uninitialised values shown by valgrind
+
+	* real_player: fixed a race condition when a city was successfully
+	defended
+
+2005-03-03    <patton73@users.sf.net>
+
+	* it.po: updated Italian translation
+	
+	* Event.cpp: avoid the translation of the d_comment
+	  (for now it should be translated as well)
+
+2005-03-03    <ulf82@users.sf.net>
+
+	* de.po: updated German translation
+
+2005-03-02    <ulf82@users.sf.net>
+
+	* doc: updated editor doc and German translation
+
+	* misc: added a possibility not to translate xml strings and applied it to
+	the several files
+
+2005-03-01    <patton73@users.sf.net>
+       
+	* fixed the tooltip appearing in wrong places 
+
+	* modified the about dialog to avoid code rewrite
+	  when an author name changes position
+	  (added Richard Johnson too)
+	
+	* when getting a quest for ruin search now the game 
+	  tells also the next town's name
+ 	 
+2005-02-28    <patton73@users.sf.net>, <ulf82@users.sf.net>
+
+	* fixed some bugs within the xml extractor
+	  now it escapes the " characters in a corret way
+
+	* Editor.de: more work on German translation
+	  
+2005-02-27    <ulf82@users.sf.net>
+
+	* doc: updated manual + german translation, started work on Editor.de
+
+2005-02-26    <ulf82@users.sf.net>
+
+	* finished editor manual
+
+	* acinclude: added modified paragui search macro to fix a configure
+	problem
+
+	* CreateScenario: implemented proper game wins and losses
+
+2005-02-25    <ulf82@users.sf.net>
+
+	* updated documentation
+
+	* events/editor: small fixes and changes
+
+	* tutorial: managed to ensure that evil player stays at his castle :)
+
+2005-02-24    <ulf82@users.sf.net>,<patton73@users.sf.net>
+
+	* editor: more finetuning
+
+	* items: added some more item descriptions
+
+	* tutorial: finished new tutorial
+	
+	* added the code to escape " characters to the xml extractor
+
+2005-02-23    <ulf82@users.sf.net>
+
+	* W_edit: fixed a bug with never triggering the NextTurn events
+
+	* Event: reactions are now inserted correctly
+
+	* editor/event: many small fixes
+
+2005-02-22    <ulf82@users.sf.net>
+
+	* editor: implemented event dialog; fixed many bugs and made dialogs
+	actually work; fixed a lot of smaller issues
+
+	* events, GameScenario: implemented disabling of events (else they are
+	raised in the map editor)
+
+	* tutorial: started to test editor by improving the tutorial (up to now,
+	it _does_ work)
+
+2005-02-20    <ulf82@users.sf.net>
+
+	* editor: added event dialog; added modal flags to all dialogs
+
+	* events: added functions for setting the data
+
+2005-02-19    <ulf82@users.sf.net>,<patton73@users.sf.net>
+
+	* Reactions: added functions for getting/setting the data
+
+	* editor: finished reaction dialog
+
+	* finished the code for xml gettext (still bad issues)
+	* patched temporarly the tutorial string messages
+	  to let the extractor work (there are issues with special
+	  characters they should be escaped in some way)  
+
+2005-02-18    <patton73@users.sf.net>, <ulf82@users.sf.net>
+
+	* commited some work about xml translation
+	* added the new directory /src/utils
+	* added the xml extractor code into it with the Makefile.am
+	* added the file updatexml to the po directory 
+	* added the empty file xml_extra_text.cpp to the po directory
+	* more work to come (still some issues)
+	
+	* editor: finished condition dialog, added SelectionDialog,
+	started work on ReactionDialog
+
+	* Event, tutorial: added a comment string, implemented this in the
+	tutorial
+
+2005-02-17    <ulf82@users.sf.net>
+
+	* editor: more work on the condition dialog
+
+	* events: renamed CStack to CArmy, because the former condition was
+	complete nonsense
+
+2005-02-16    <ulf82@users.sf.net>
+
+	* ERound, tutorial: fixed a bug that would not raise this event
+
+	* editor: started work on ConditionDialog
+
+2005-02-15    <ulf82@users.sf.net>
+
+	* events: added RRaiseEvent, RActEvent; events now save their type by the
+	value of d_type instead of as string, same goes for conditions and
+	reactions
+	
+	* misc: made new reactions work
+
+	* ruininfo: some slight modifications (ruinname displayed instead of id
+	and derived from pgthemewidget)
+
+	* TempleInfo: added something like the ruininfo for temples
+
+	* QRuinSearched: uses unsigned int for ruin id and ruin name for text
+	messages now
+
+2005-02-11    <ulf82@users.sf.net>
+
+	* events: added RCreateItem, RGameWin, RGameLose, RKillPlayer
+	RRevivePlayer, RTransferCity; removed REndGame
+
+	* tutorial: modified to use new reactions
+
+	* events: added event EStackMove, added reactions RCenter, RCenterObj
+
+2005-02-09    <ulf82@users.sf.net>
+
+	* events: added events EDummy, ENextTurn, EStackKilled
+
+	* stack: now raises a signal on death
+
+2005-02-08    <ulf82@users.sf.net>
+
+	* events: moved all events to a new subdirectory
+
+	* Condition, CPlayer: added a new class condition which checks for
+	additional conditions besides the events
+
+	* Event, Reaction: both can now have one or multiple conditions which must
+	be fulfilled for them to be triggered
+
+	* Events, Reactions: much changes connected with this, some other cleanup,
+	especially of stuff which is obsolete with the new conditions
+
+	* removed EPRound, EPCityConq (obsolete with new conditions)
+
+	* tutorial: updated to new savegame version + tested
+
+	* Condition: new conditions: CCounter, CLiving, CDead, CStack
+
+2005-02-07    <ulf82@users.sf.net>
+
+	* FogMap etc.: added a fogmap to the player instances (modified
+	contribution of Bryan Duff); however on second thought, fog is much more
+	difficult, so I have left out the full implementation; see TODO for
+	details on work to be done
+
+2005-02-02    <ulf82@users.sf.net>
+
+	* added ruinnames
+
+	* CreateScenario: implemented adding names to ruins and temples
+
+	* w_edit: using ruin and temple names as titles for some dialogs
+
+	* NextTurn: ruin keepers are now healed, too
+
+2005-02-01    <ulf82@users.sf.net>
+
+	* editor: implemented citiesreport
+
+	* CitiesReport: fixed a graphic bug, some updating to make it work with
+	the editor
+
+	* added templenames
+
+2005-01-31    <ulf82@users.sf.net>
+
+	* editor: fixed a segfault when a player owning e.g. cities was removed;
+	added find dialog; the maps now center properly; implemented stackreport
+
+	* StackReport: when an item is selected, the report now releases a signal
+	that is now also caught
+
+	* CitiesReport: the same
+
+2005-01-30    <ulf82@users.sf.net>
+
+	* editor: more or less finished player dialog; fixed bugs when multiple
+	players have the same name
+
+	* GraphicsCache: fixed an annoying bug when freeing city surfaces; swapped
+	mapping between list position and actuality of items
+
+2005-01-29    <ulf82@users.sf.net>
+
+	* editor: more work on player dialog, integrated it
+
+	* player: made copy constructor work properly
+
+2005-01-25    <ulf82@users.sf.net>
+
+	* editor: added skeleton for player dialog
+
+2005-01-21    <ulf82@users.sf.net>
+
+	* editor: (hopefully) finished stack dialog, created ruin dialog and
+	implemented it; fixed some bugs; implemented placing and modifying of
+	stacks
+
+	* armysetlist: implemented loading of "sight" attribute
+
+	* tutorial: some small balancing
+
+	* doc: added an editor manual, cleaned up/updated some docu
+
+2005-01-20    <ulf82@users.sf.net>
+
+	* editor: some more work on the stack dialog
+
+2005-01-15    <ulf82@users.sf.net>
+
+	* editor: fixed some bugs in the city dialog; started adding a stack
+	dialog
+
+2005-01-06    <ulf82@users.sf.net>
+
+	* Makefile.am: fixed a wrong ordering of subdirectories
+
+2004-12-20    <ulf82@users.sf.net>
+
+	* editor: more work on the city dialog, implemented it, fixed many issues
+	
+	* misc: replaced obsolete WaitForClick function
+
+2004-12-17    <ulf82@users.sf.net>
+
+	* editor: almost finished city dialog
+
+2004-12-16    <ulf82@users.sf.net>
+
+	* editor: a bit more work on the city dialog
+
+2004-12-13    <ulf82@users.sf.net>,<patton73@users.sf.net>
+
+	* GraphicsCache: fixed a segfault with displaying stacks of size 8
+	* Events: fixed the EplayerDead EKillAll bug
+	* updated the tutorial
+
+	* editor: added a dialog for selecting an army, started dialog for
+	modifying cities
+
+2004-12-12    <ulf82@users.sf.net>
+
+	* editor: added a dialog to modify temple attributes
+
+2004-12-09    <ulf82@users.sf.net>
+
+	* temple: fixed a segfault when getting a quest
+
+	* stacklist: inverted order: moving stack now joins waiting stack
+
+	* AI_Allocation: fixed a segfault that joining stacks would not disappear
+	from the list of available stacks
+
+	* GraphicsCache, bigmap: flags are now archived by GraphicsCache; along
+	the way, the flag images were reduced to 1 flag pic + 1 flag mask
+
+2004-12-08    <ulf82@users.sf.net>,<patton73@users.sf.net>
+
+	* stacklist: active stack is now set to 0 if active stack happens to be
+	  removed
+	* adjusted w_edit to work with different video resolutions
+
+2004-12-07    <ulf82@users.sf.net>
+
+	* cityinfo: fixed a displaying bug when upgrading a city
+
+2004-12-06    <patton73@users.sf.net>, <ulf82@users.sf.net>
+
+	* fixed the big jump of viewport in main window
+	* fixed that moveall button isn't set correctly
+	  now buttons are checked when the player clicks 
+	  an a stack in the bigmap.
+	  
+	* applied new item pictures from James Andrews, removed placeholders
+	
+	* RAddUnit: fixed a bug which would lead to a segfault once this reaction
+	has been triggered
+	
+	* GameScenario: fixed a bug which would lead to a segfault when quitting a
+	game concerning events
+	
+	* editor: fixed a small glitch when leaving and reentering the bigmap;
+	added a label showing the current position on the map
+	
+2004-12-05    <ulf82@users.sf.net>
+
+	* editor: added ability to place/erase cities, ruins, temples;
+	added dialog to set parameters for map generation
+	
+2004-12-04    <patton73@users.sf.net>, <ulf82@users.sf.net>
+
+	* fixed the stacklist memory leak
+	* fixed the real_player memory leak (line 222)
+	* editor: implemented changing terrain with mouse clicks; added
+	loading/saving
+
+	* Maptile: removed smoothed stat (useless)
+
+	* GameScenario: saveGame can now take arbitrary filename extensions
+	
+2004-12-03    <patton73@users.sf.net>, <ulf82@users.sf.net>
+
+	* fixed a bug related to the nextWithMove button
+	  that affected also the Moveall button. (Laszlo Toth)
+	* updated the tutorial with the new "d_sight" tag and raised to 0.3.5 version
+	* updated AUTHORS file and about.cpp to insert Laszlo Toth
+	* updated italian translation
+	* RealPlayer: (hopefully finally) fixed a segfault when attacking stack
+	dies or at least circumvented potential hazards
+
+	* editor: fixed a bug when changing the size of the map; implemented
+	some buttons, bigmap draws a grid when this is selected
+	
+2004-12-02    <patton73@users.sf.net>, <ulf82@users.sf.net>
+
+	* GraphicsCache: removed the typo bug about the razed caslte png
+	* Moved some code about the deselect stack from bigmap to w_edit
+	  now the "Esc" key and the right mouse button behave the same.
+	* fixed some bugs related to Ruin Search and moveall button  
+	* army: added a sight radius stat to the armies and applied it to all
+	armysets
+	
+2004-11-30    <patton73@users.sf.net>
+
+	* w_edit: fixed the moveall button bug (thanks to Laszlo Toth)
+	* some other updates
+
+2004-11-30    <ulf82@users.sf.net>
+
+	* stack: fixed a bug when getting heroes in a stack (thanks to Laszlo
+	Toth again)
+
+2004-11-29    <ulf82@users.sf.net>
+
+	* tutorial: fixed a bug when conquering the central village
+
+	* item: fixed a wrong freeing of a surface (thanks to Laszlo Toth)
+
+2004-11-28    <ulf82@users.sf.net>
+
+	* editor: added ability to draw stacks, temples, ruins, cities
+
+	* smallmap: hugely simplified drawing code (cut around 100 lines)
+
+	* GraphicsCache, bigmap: moved razedcitypic to GraphicsCache; removed
+	sword pic (no longer used for quite a while)
+
+2004-11-27    <ulf82@users.sf.net>
+
+	* editor: finished implementing very basic framework for simple map
+	creation and viewing
+
+2004-11-26    <ulf82@users.sf.net>
+
+	* about: improved drawing performance when scrolling
+
+	* editor: (much) more work on the editor
+
+2004-11-25    <patton73@users.sf.net>, <ulf82@users.sf.net>
+
+	* Fixed the tooltip bug (not appearing anymore)
+
+	* real_player: (hopefully) fixed a bug with stacks fighting
+
+	* Implemented the scrolling about dialog (still some issue with background)
+	
+	* w_edit, bigmap: removed some obsolete functions
+
+	* editor: started work on a mapeditor
+	
+2004-11-22    <patton73@users.sf.net>, <ulf82@users.sf.net>
+
+        * appiled Brian's Duff patch about stack deselecting
+
+	* defs: increased the smallmap timer interal by a factor of 10 to
+	  avoid a segfault
+
+2004-11-20    <patton73@users.sf.net>
+
+	* bigmap,smallmap : removed the PMutex and Vmutex that caused the segfault
+	* added the first version of the About dialog 
+	
+2004-11-19    <patton73@users.sf.net>, <ulf82@users.sf.net>
+
+	* it.po: updated Italian translation
+	* ported to paragui 1.1.8
+        * tutorial: fixed a bug caused by a wrong tag name
+
+2004-11-18    <ulf82@users.sf.net>
+
+        * player, realplayer: unified stack fighting and removed some 
+	  obsolete parameters; needs some more work (segfault)
+	
+2004-11-17    <ulf82@users.sf.net>
+
+	* tutorial: updated tutorial to make it run again
+
+2004-11-15    <ulf82@users.sf.net>
+
+	* cityinfo: finished city dialog
+
+	* armysets: broke up default armyset, added imperial armyset, modified the
+	rest
+
+2004-11-14    <ulf82@users.sf.net>
+
+	* many files: implemented the new basic and advanced production stuff
+
+	* cityinfo: rewritten parts of the code (not yet finished)
+
+2004-11-13    <ulf82@users.sf.net>
+
+	* real_player: changed pillaging code; city defense is now reduced or the
+	production is cleared
+
+	* city: rewrote the code; implemented basic and advanced production
+
+2004-11-12    <ulf82@users.sf.net>
+
+	* applied Bryan Duff's patch (unstable and incomplete)
+		- multi stack fight
+		- patch to city report (shows remaining duration)
+
+	* tutorial: fixed a segfault due to old army indices
+
+	* city: fixed a bug where the neutral player didn't get armies in the
+	beginning
+
+2004-11-11    <ulf82@users.sf.net>
+
+	* ETempleSearch: added an event if a specific temple is searched
+
+2004-11-09    <ulf82@users.sf.net>
+
+	* Armyset_army: added a new optional ability "gender"
+
+	* heroes.xml: applied this ability to hero definition
+
+	* misc files: heroes are now taken from the heroes armyset instead of the
+	player one, removed all restrictions to heroes having index 0 or 1 in the
+	armyset
+
+	* armysets: removed the heroes from the armysets; fixed some issues with
+	the masks
+
+2004-11-08    <ulf82@users.sf.net>
+
+	* heroes: created a new armyset to contain all the heroes
+
+2004-11-02    <patton73@users.sf.net>
+
+	* Manual.it, it.po: updated Italian translation
+		
+2004-10-30    <ulf82@users.sf.net>
+
+	* Manual.de, de.po: updated German translation
+
+2004-10-29    <ulf82@users.sf.net>
+
+	* Manual.de: some translation
+
+2004-10-27    <ulf82@users.sf.net>
+
+	* w_edit,temple: Getting a quest is now possible, even when there is more
+	than one hero in the stack
+
+2004-10-26    <patton73@users.sf.net>,<ulf82@users.sf.net>
+
+	* w_edit.cpp: rewritten the Move all button code because it had too many
+	              unpredictable bugs. This should be fixed now.
+	* TODO: addeed the urgent things for the 0.3.5 release.	      
+
+	* applied Bryan Duff's patch (modified terrain defense, added
+	turns_left_to_produce in cityinfo, some changes to fighting)
+
+2004-10-25    <ulf82@users.sf.net>
+
+	* configure.in: reduced required gettext version to 0.13
+
+	* various files: added flush to the debug macros
+
+	* city.h: more gold per city (helps AI player)
+
+	* AI_Analysis, AI_Allocation: better assessment of enemy stack strength;
+	stacks now don't move senselessly through the city any longer
+	
+	* RealPlayer: introduced minimum hits/evades to get a medal
+
+	* NextTurn: fixed an enedless loop when a computer-only game finished
+
+	* W_Edit: fixed problem with clicking on button and moving mouse
+
+2004-10-24    <patton73@users.sf.net>
+
+	* Updated italian Manual and italian translation
+		
+2004-10-22    <ulf82@users.sf.net>
+
+	* configure.in: increased gettext version to finally fix the make install
+	bug
+
+	* various files: put sentences together for simpler translation (finished)
+
+	* PG_FileDialog: implemented Return and Escape key
+
+	* various files: fixes for errors shown up in a valgrind run
+
+2004-10-21    <patton73@users.sf.net, ulf82@users.sf.net>
+	
+	* Applied Bryan Duff's patch about mouse clicking 
+	  behaviour
+
+	* items.png, Bigmap: when items are lying around on the ground, an image is
+	displayed
+
+	* various files: changed code so that sentences are now put together in
+	one translatable phrase (not yet finished)
+	
+	* updated italian translation
+
+2004-10-17    <ulf82@users.sf.net>
+
+	* manual: update
+
+2004-10-17    <friendless@users.sf.net>
+
+	* smart AI: fixed distance bugs
+
+2004-10-15    <ulf82@users.sf.net>
+
+	* PG_FileDialog: included defs.h (Bryan Duff)
+
+	* added an updated monsters_mask.png
+
+2004-10-14    <ulf82@users.sf.net>,<patton73@users.sf.net>
+
+        * PG_FileDialog: added gettext functions
+
+	* AI_Allocation: some small changes
+
+	* W_Edit: the medal dialog is only displayed for human players now
+
+	* Manual: some updating
+
+2004-10-13    <ulf82@users.sf.net>
+
+	* AI_Analysis et al.: commenting, fixed a bug with the distance
+	calculation
+
+2004-10-12    <ulf82@users.sf.net>
+
+	* citylist, city: improved the "player cannot produce while gold < 0" idea
+
+	* AI_Allocation: some commenting 
+
+	* monsters_mask.xml: Took the better mask from David Barnsdale
+
+2004-10-11    <ulf82@users.sf.net>
+
+	* AI_*: some commenting and small coding, enabled ruins as threats
+
+	* City: a city now doesn't produce armies if the player has <0 gold
+			I think it is a bit ill-constructed, however, if the player has
+			around 0 gold
+
+2004-10-04    <ulf82@users.sf.net>
+
+	* MapGenerator: removed a srand() call (patch by David Barnsdale)
+
+2004-10-02    <patton73@users.sf.net>
+
+        * fixed a bug with the new path algorithm and the  
+	  Next With Move button
+	* fixed (a typo pheraphs) in the path.ccp canMoveThere() function
+	  start and destination points were the same
+
+2004-10-02    <friendless@users.sf.net>
+        
+        * new path algorithm, simplified and documented path code.
+
+2004-09-30    <ulf82@users.sf.net>
+
+	* MapGenerator: appliead a patch by David Barnsdale which ensures that
+	islands always have a port city
+
+2004-09-29    <ulf82@users.sf.net>
+
+	* Threat, ai_smart: fixed a small bug, added comments
+
+2004-09-26    <ulf82@users.sf.net>
+
+	* AI_Analysis: some smaller changes
+
+2004-09-26    <patton73@users.sf.net>
+
+        * implemented the MoveAll button
+	* added the battles number of an army in the savegame
+	* updated italian translation and POTFILES.in with all new files
+
+2004-09-20    <patton73@users.sf.net>
+
+        * fixed a bug in the Hero Kill Quest
+	   - now the QKillHero checks if the target is killed by others
+	     and eventually raises the quest expire dialog.
+	* improved the Quest with the Quest Expired Dialog
+
+2004-09-19,20    <friendless@users.sf.net>
+
+	* AI_Analysis, AI_Allocation: made the allocation smarter, e.g. it no
+          longer allocates defenders to defend against ruins and neutral
+          cities.
+   
+
+2004-09-17    <ulf82@users.sf.net>
+
+	* AI_Analysis, Threat: some cosmetic changes, removed obsolete parameters
+
+2004-09-15    <patton73@users.sf.net>
+
+        * Applied the AMD64 patch sent by Bryan Duff 
+	* fixed a dat/various/Makefile.am problem
+
+2004-09-12    <friendless@users.sf.net>, <ulf82@users.sf.net>
+
+        * AI_Smart: did a lot of work on AI_Allocation so that the smart AI
+          player now allocates stacks for defence, offence, and
+	  reinforcements.
+	  
+	  * AI_Analysis: some more beautification, standardizing to coding
+	  conventions etc.
+
+	  * monsters_mask.png: added an updated mask from Thomas Plueschinger
+
+2004-09-11    <friendless@users.sf.net>
+
+	* AI_Smart: extracted a lot of the smartness out into AI_Analysis and 
+          AI_Allocation.
+        * real_player.cpp: added a MoveResult for the less commonly used
+          method so that AIs can tell what happened in a move, and make
+          decisions based on that.
+
+2004-09-09    <ulf82@users.sf.net>
+
+	* AI_Smart: some beautification, fixes, comments (neither finished nor
+	  tested)
+
+2004-09-05    <patton73@users.sf.net>
+
+	* fixed a bug stack.cpp in the algorithm for the select next 
+	  that can move button
+	* fixed 2 typos in w_edit.ccp about buttons  
+
+2004-09-08    <friendless@users.sf.net>
+
+	* CreateScenario.cpp: fixed a bug where all players were initially 
+	  allocated cities at the top of the map
+	* vastly improved the smart AI. It now creates a list of threats.
+	  When a stack attacks, it will attack the biggest threat to the 
+	  nearest friendly city.
+
+2004-09-05    <patton73@users.sf.net>
+
+	* fixed a bug in fight.cpp concerning medal of honour
+	* improved the algorithm for the next_wmove button
+	  (now it checks only the tiles where the stack can walk)
+	* added the moveall button do w_edit but must implement the algorithm
+	* fixed the button handling in w_edit : in destructor and some other methods
+
+2004-08-30    <patton73@users.sf.net>
+
+	* army level and medals : moved all possible code into the
+	  real_player class
+	* added ArmyMedalDialog.h ArmyMedalDialog.cpp (must finish it)
+	* army.h/army.cpp: added the printAllDebugInfo
+	* Item.h/ItemDialog.cpp: removed compiler warning
+		
+2004-08-30    <ulf82@users.sf.net>
+
+	* GamePreferences: fixed a segfault that occured in rare circumstances
+
+2004-08-26    <patton73@users.sf.net>
+
+	* w_edit: added tooltips on buttons
+	* w_edit,stacklist,stack: added "select next stack that can move" button
+	   it works quite well, but could be some issues because it does not check 
+	   if the stack can walk on a certain tile.  
+
+2004-08-25    <ulf82@users.sf.net>
+
+	* added two new item pics (thanks to James), two new items
+
+	* tutorial.map: implemented those two items
+
+	* applied John Farrell's smart ai patch
+
+	* ArmyDialog: added update after equipping/unequipping items
+
+	* tooltip: added black border
+
+	* misc dialogs: implemented key usage
+
+2004-08-24    <patton73@users.sf.net>
+
+	* More work on tooltips.
+	    Now it needs a black border
+	    Must finish adding tooltips to w_edit buttons
+	
+2004-08-22    <patton73@users.sf.net>, <ulf82@users.sf.net>
+      
+	* Started working on tooltips.
+
+	* w_edit: fixed a typo that caused a stack corruption on game ending
+
+2004-08-21    <ulf82@users.sf.net>
+
+	* w_edit: added highlighting of scroll buttons and new border pics;
+	reordered buttons
+
+	* Graphicscache: fixed a segfault when getArmyPic was called without a
+	medalsbonus
+
+	* ItemDialog: srolling works now
+
+	* tutorial: increased the heap of items to test scrolling
+
+2004-08-20    <patton73@users.sf.net>
+
+	* w_edit: added the previous button
+
+2004-08-17    <patton73@users.sf.net>
+
+	* MainWindow,w_edit: added the Esc button to deselect a stack
+	* Working on medal of honours (almost finished)
+	    - added load/save function to army
+	    - modified the tutorial map as well 
+
+2004-08-17    <ulf82@users.sf.net>
+
+	* two new border pics from Regis
+
+2004-08-16    <patton73@users.sf.net>, <ulf82@users.sf.net>
+
+	* various/borders/Makefaile.am was wrong fixed it
+	* smallmap: added John Farrell's patch (commented old one)
+	* ItemDialog: closed a bug that lead to a segfault while clicking
+	              on the buttons with no item on them.
+
+	* W_Edit: finished border. You can now scroll around by clicking on the
+	arrows around the bigmap
+
+2004-08-13    <ulf82@users.sf.net>
+
+	* ItemDialog: circumvented a bug with items being displayed multiple
+	times; added item description
+
+	* w_edit: started work for border around bigmap (buggy)
+
+2004-08-12    <ulf82@users.sf.net>
+
+	* MapGenerator: applied a patch by David Barnsdale for better connection
+	of water tiles
+
+	* added James' weapon pics 
+
+	* citynames, heronames: more names to choose from (John Farrell)
+
+	* tutorial: improvements of the English there (John Farrell)
+
+	* path: d_unit is no longer set to 0. Fixes a bug which randomly crashed
+	the game. (John Farrell)
+
+	* W_Edit: fixed a bug where pressing defendAndNext would continue with the
+	first (instead of the next) stack
+
+2004-08-08    <ulf82@users.sf.net>
+
+    * ItemDialog: added item exchange code (slightly buggy, the graphics are
+	not updated)
+
+    * main.cpp: fixed a bug with fullscreen not working properly (Thomas
+    Plonka)
+
+2004-08-04    <ulf82@users.sf.net>
+
+	* ItemDialog: enabled scrolling through backpack and ground
+
+	* tutorial: The hero has to get his items now (doesn't work yet)
+
+	* added some more ugly item pics
+
+2004-08-03    <ulf82@users.sf.net>
+
+	* ItemDialog: added code to display items
+
+2004-07-31    <ulf82@users.sf.net>
+
+	* various files: applied Thomas Plonkas 2nd keyboard patch, which
+	goes a bit further than the first one.
+
+2004-07-30    <patton@users.sf.net>, <ulf82@users.sf.net>
+
+    * Medals : Started working on medals of honour 
+    * added a medals file. 
+
+	* ItemDialog: some more work, implemented a link in the
+	ArmyDialog
+
+2004-07-29    <ulf82@users.sf.net>
+
+    * hero, Item: extended item abilities to all stats, the hero may now equip
+	exactly one item of each type
+
+    * ItemDialog: started work on dialog to exchange etc. items
+
+2004-07-27    <patton@users.sf.net>
+
+    * Levels : adjusted level masks and levels (now you get also stars 
+               to a maximum of 5 stars (level 26 and more).
+
+2004-07-26    <ulf82@users.sf.net>
+
+    * Item: added multiple boni per item
+
+2004-07-24    <ulf82@users.sf.net>
+
+    * Hero: added a list of equipped items and a backpack
+
+    * GameMap: stopped saving of the useless "buildings" list, saves and loads
+    items now.
+	
+    * Maptile: added an item stack
+	
+
+2004-07-23    <ulf82@users.sf.net>
+
+    * army: added functions to get modified and original values for the
+            armyset abilities including vitality, boni, moves etc. 
+
+    * hero: removed the name functions (already contained in armyset_army)
+
+    * ArmyLevelDialog: completely reworked dialog. It now shows the stats
+	               before and after the level advancement
+
+2004-07-21    <ulf82@users.sf.net>
+
+	* items: added a working items subdirectory with a Makefile, an items
+	description file and a very basic item picture for testing.
+
+	* Army et al.: added getDefense and getOrigDefense for distinction;
+	renamed getMaxStrength to getOrigStrength
+
+2004-07-20    <ulf82@users.sf.net>
+
+	* Itemlist: added comments
+
+	* Hero: added an item as private data and had the hero use/load/save it
+	        => works
+
+    * Tutorial: gave the hero an item of +5 strength
+
+2004-07-20    <ulf82@users.sf.net>
+
+    * ObjectList: applied a patch by Michael Scherer which fixes a bug when
+    compiling with gcc-3.4
+
+    * Item, File: mostly finished item stuff
+
+    * Itemlist: added class which holds items (not yet included in the game)
+
+    * ArmyDialog: displays the name instead of type of heroes
+
+2004-07-19    <patton@users.sf.net>
+
+    * Worked on Configuration files.
+      Now it searches for .freelordsrc and if it does not exist it searches
+      for DATAPATH/freelordsrc. It does not try to load both anymore.
+    * trivial changes to Configuration and xmlhelper.  
+
+2004-07-19    <ulf82@users.sf.net>
+
+    * RealPlayer: fixed a bug which would cause an endless loop if a unit in a
+    ruin raises a level
+
+    * Item: added a class to hold items
+    
+2004-07-19    <patton@users.sf.net>
+
+    * RealPlayer.cpp : Investigating the New level bug
+
+2004-07-18    <ulf82@users.sf.net>
+
+    * stack, bigmap: added function not to display stacks which are being
+    removed
+
+    * RDelUnit: added a reaction which removes an army
+
+    * army: removed the obsolete max_strength attribute
+
+
+2004-07-17    <ulf82@users.sf.net>
+
+    * RAddUnit: finished reaction which adds a unit to a player
+
+    * tutorial: updated to new savegame version and added an RAddUnit instance
+
+    * RUpdate: added a new reaction which updates the game screen
+    
+
+2004-07-16    <ulf82@users.sf.net>
+
+    * Army, Armyset_army: Army doesn't need to be supplied the armyset in the 
+    loading constructor any more; this simplifies the loading and fixes a bug
+    where armies would always be loaded with the player's armyset
+
+    * RAddUnit: some more tweaking
+    
+
+2004-07-15    <patton@users.sf.net>
+
+    * Tutorial : Fired out some bugs. 
+                 _ One concerning the Savegame
+                 _ One concerning the CityReport Dialog
+    * Updated Italian Translation (many errors)
+    * Added doc/it/Localization.HOWTO.it
+    * ArmyLevelDialog.cpp : Adjusted the output with all translations
+    * smallmap.cpp smallmap.h : Added Thomas Plonka's keyboard patch
+
+2004-08-15    <ulf82@users.sf.net>
+    
+    * EArmyKilled: fixed a bug where events where raised when they shouldn't
+
+    * fight: stopped messing around with army boni, which led to a bug where
+    army boni were scrambled when a stack fought without a hero
+
+    * Army: saved some more stats of the armies; increasing levels now pays
+    off even after saving/loading
+
+    * updated German translation
+
+2004-07-09    <patton@users.sf.net>
+
+    * tutorial: added a tutorial button to the splash
+                screen and adjusted the tutorial.map to
+		display info at round 0 instead of 1
+    * added a Makefile.am into the dat/map directory
+      to let tutorial.map being installed and then loaded 
+      with tutorial button.
+    * it.po updated translation
+    * Manual.it updated translation
+    
+2004-07-07    <patton@users.sf.net>
+
+    * it.po updated translation	      
+    * many files : modified dialogs to let the
+	           strings enter into buttons.
+    * GameOptionDialog.cpp, cityinfo.cpp modified some strings	
+    * added into dat/various/Makefile.am the level_mask.png line
+    * almost finished the italian translation of the manual
+    * updated the english manual in few points	
+    * Added the doc/it directory (moved in Manual.it and README.it)
+    * Added the doc/de directory (moved in Manual.de)	 
+
+2004-07-07    <ulf82@users.sf.net>
+
+    * ERuinSearch: added event that is raised when a ruin is searched
+
+    * tutorial: more work
+
+2004-07-05    <ulf82@users.sf.net>
+
+    * tutorial: some more work
+
+2004-07-03    <patton@users.sf.net>
+
+    * it.po finished first translation	      
+
+2004-07-03    <ulf82@users.sf.net>
+
+    * Armysetlist: changed behaviour of getArmyset to load non-existing
+    armysets
+
+    * RAddUnit: added a reaction which adds a unit to a player (broken)
+
+    * tutorial.map: some more work
+
+2004-07-02    <ulf82@users.sf.net>
+
+    * city, ruin, temple, GameMap: removed the d_buildings tag from the
+    savegame; instead, the single locations now care for the correct setup of
+    the buildings.
+
+    * tutorial.map: some more work on the map
+
+    * cityinfo: the title is set to the name of the ruin if existent
+
+2004-07-01    <ulf82@users.sf.net>
+
+    * tutorial.map: started work on a kind of tutorial
+
+    * RAddGold: added new Reaction to add gold to a player
+
+2004-06-29    <ulf82@users.sf.net>
+
+    * EPRound: extended Round event to apply only to specific players;
+    modified W_Edit and NextTurn along the way
+
+2004-06-28    <ulf82@users.sf.net>
+
+    * ERound: added event if a specific round starts; modified w_edit along
+    the way
+
+2004-06-26    <ulf82@users.sf.net>
+
+    * EPCityConq: added new event if city is conquered by a specific player
+
+    * EArmyKilled: added new event if an army is killed; modified GameScenario
+    and Army to implement this event
+
+2004-06-24    <ulf82@users.sf.net>
+
+    * ECityConq: added new event when a city is conquered
+
+2004-06-15    <ulf82@users.sf.net>
+
+    * Playerlist, Splash: connected event for ending the game with the
+    appropriate slot; modified code so that the game is now ended by an event
+    instead of the playerlist.
+
+2004-06-14    <ulf82@users.sf.net>
+
+    * GameScenario: added some code around an event list
+
+    * CreateScenario: events for ending the game are added
+
+    * SaveFile: updated documentation
+
+2004-06-12    <ulf82@users.sf.net>
+
+    * REndGame, RMessage: finished basic implementation
+
+2004-06-03    <ulf82@users.sf.net>
+
+    * REndGame, RMessage: added other reactions.
+
+2004-05-28    <ulf82@users.sf.net>
+
+    * playerlist: dead players are now marked as dead, not removed
+
+    * EKillAll: another event
+
+2004-05-25    <ulf82@users.sf.net>
+
+    * Event*: some more work on the event classes
+
+2004-05-23    <ulf82@users.sf.net>
+
+    * Event: added new EPlayerDead class and improved event class a bit
+
+    * Reaction: added base class for event actions
+
+    * Makefile: removed default -g compiler flag (bloats up the executable)
+
+2004-05-18    <patton@users.sf.net>, <ulf82@users.sf.net>
+
+    * it.po : updated some italian translations
+
+    * Event: added new event base class for scenario events
+    
+2004-05-08    <ulf82@users.sf.net>
+
+    * misc files: adjusted label positions and translations
+
+2004-05-04    <ulf82@users.sf.net>
+
+    * Manual: updates, added German translation (unfinished)
+
+2004-05-03    <ulf82@users.sf.net>
+
+    * Manual: some update
+
+    * de.po: updated German translation
+
+2004-05-02    <ulf82@users.sf.net>
+
+    * misc files: comments, i18n, removing
+
+    * Manual: some beautification
+
+2004-05-01    <ulf82@users.sf.net>
+
+    * misc files: comments, i18n, removing
+
+2004-04-29    <ulf82@users.sf.net>
+
+    * misc files: comments, i18n
+
+2004-04-23    <ulf82@users.sf.net>
+
+    * misc files: comments, i18n, removing
+
+    * HowToPlay: renamed to Manual, tiny changes
+
+2004-04-21    <ulf82@users.sf.net>
+
+    * player: comments
+
+2004-04-19    <ulf82@users.sf.net>
+
+    * misc files: comments, removing
+
+2004-04-17    <ulf8@users.sf.net>
+
+    * misc files: comments, i18n, removing
+
+2004-04-16    <ulf82@users.sf.net>
+
+    * misc files: comments, i18n, removing
+
+2004-04-15    <ulf82@users.sf.net>
+
+    * fight: fixed a bug; no terrain defense bonus was added
+
+    * misc files: comments, i18n, removing
+
+2004-04-10    <ulf82@users.sf.net>
+
+    * misc files: comments, i18n, removing
+
+2004-04-08    <ulf82@users.sf.net>
+
+    * misc files: more comments, i18n, removed obsolete functions
+
+2004-04-08    <ulf82@users.sf.net>
+
+    * misc files: more comments, i18n, removed several obsolete functions
+
+    * de.po: updated translation a bit
+
+2004-04-04    <ulf82@users.sf.net>
+
+    * QKillHero: inserted hero name in success message
+
+    * Path: fixed a bug when an obstacle occured in an already calculated path
+
+    * misc files: added i18n and doxygen-style comments, replaced tabs with
+    spaces
+
+2004-03-18    <ulf82@users.sf.net>
+
+    * QKillHero: fixed a bug where a hunting hero quest would cause a segfault
+
+    * ai_fast: (hopefully) fixed a segfault which would cause a crash when a
+    computer-only game finished
+
+2004-03-12    <ulf82@users.sf.net>
+
+    * defs.h: added ngettext macro
+
+    * misc files: some i18n and doxygen support
+
+2004-03-08    <patton@users.sf.net>
+
+    *  Finished localization for main.cpp
+	
+2004-03-09    <ulf82@users.sf.net>
+
+    * small patches
+      - changed save game umask in main.cpp (David Sterba)
+      - removed ABOUT-NLS from repository
+      - marked images as binary (David Sterba)
+
+2004-03-08    <patton@users.sf.net>
+
+    *  applied Dave's patch to the option dialog.
+	
+2004-03-06    <patton@users.sf.net>
+
+    * modified Makefiles.am and applied Dave's patches to compile 
+      under Debian, also cleaned autogen.sh and almost completed
+      adding the _() in main.cpp.
+      added AC_PREREQ(2.5) into configure.in to force using autoreconf 2.5.x
+
+2004-03-04    <ulf82@users.sf.net>
+
+    * OptionsDialog: added a class which collects the option items
+    (thanks to David Sterba)
+
+2004-03-02    <ulf82@users.sf.net>
+
+    * removed some more autogenerated files from the repository
+
+2004-03-02    <patton@users.sf.net>
+
+    * modified a typo in configure.in to avoid the gettext "intl"
+      warning as David Sterba worked out.
+    * modified all Makefiles.am to let the remove the Makefile.in
+      while doing "make distclean"
+    * Modified the autogen.sh to use autoreconf in correct manner
+    * cleaned the po directory of useless files 
+
+2004-03-01    <ulf82@users.sf.net>
+
+    * removed the autoconf/automake-generated files (Makefile.in etc.)
+    * added autogen script
+    * acinclude.m4: fixed some complaints from aclocal (quoting)
+
+2004-03-01    <patton73@users.sf.net>
+
+    * added a file ./depcomp because on red-hat 9 
+      the automake searches for it.
+
+2004-02-27    <patton73@users.sf.net>
+	
+    * worked out the gettext support
+    * added the /po directory and all its files
+    * modified configure.in to support the gettext
+    * modified the src/Makefile.am 	 
+    * added initial it.po
+    * added definitions to defs.h
+    * modified the main.cpp to support gettext	 
+    * added the necessary ABOUT-NLS
+    * applied some patches from David Sterba
+      - Configuration.cpp 
+      - main.cpp
+      - acincude.m4
+    
+2004-02-26    <patton73@users.sf.net>
+
+    * applied a working patch sent by David Sterba
+      that : enables clicking on all army icons and let display
+             names and info about the armies and disables 'buy' 
+	     button for unaffordable ones
+
+2004-02-18    <ulf82@users.sf.net>
+
+    * MapGenerator: fixed an endless loop with placing buildings if the
+    map consisted mainly of water (thanks to David Sterba for discovering)
+
+    * GamePreferencesDialog: set the maximum level for the terrain
+    sliders to 99 for graphical reasons
+
+2004-02-14    <ulf82@users.sf.net>
+
+    * misc files: added and used turnmode value to decide when armies
+    are produced/healed
+
+    * updated documentation on this issue
+
+    * NextTurn: finally fixed a bug where the bigmap would not be
+    updated correctly at the beginning of a player's turn
+
+    * W_Edit: fixed a hypothetical future bug which would cause a hangup
+    if a game was loaded with an AI player being active
+
+2004-02-13    <ulf82@users.sf.net>
+
+    * Bughunting:
+        - fixed a segfault when attacking from a castle
+        - fixed a bug where the bigmap wasn't completely refreshed at
+        the beginning of a player's turn
+        - cities are now placed solely on grass tiles
+        - enabled segfault-free background image in RuinSearchDialog
+        - extended and adjusted orcs armyset 
+
+2004-02-11    <ulf82@users.sf.net>
+
+    * w_edit: fixed a freeze when a hero offered his service and the
+    NextPlayerPopup was visible
+
+    * ai_fast: standard behaviour set to accepting a hero
+
+    * ArmyInfo: added doxygen-style comments
+
+2004-02-10    <ulf82@users.sf.net>
+
+    * several files: added/changed functions related to hero treatment
+
+    * Hero_offer, w_edit: enabled hero recruitment for human player
+
+    * ArmyDialog: added doxygen-style comments
+
+2004-02-09    <ulf82@users.sf.net>
+
+    * NextTurn: implemented hero recruitment (not yet working)
+
+    * Hero: moved name list to hero class
+
+    * Hero_offer: simplified a lot
+
+2004-02-06    <ulf82@users.sf.net>
+
+    * NextTurn: some more updates
+
+    * many files: integrated NextTurn class into code
+
+    * player classes: some work to reenable and unify hero recruitment
+
+2004-02-04    <ulf82@users.sf.net>
+
+    * NextTurn: almost finished class design, needs to be implemented,
+    though
+
+    * Internals: some small updates
+
+2004-01-30    <ulf82@users.sf.net>
+
+    * main: removed emergency quit (hitting escape quits program)
+
+2004-01-28    <ulf82@users.sf.net>
+
+    * GraphicsCache: implemented caching of city pics
+
+2004-01-27    <ulf82@users.sf.net>
+
+    * level_mask.png: moved to dat/various +  code changes for this
+
+    * GraphicsCache: some more work towards caching city pictures
+
+2004-01-26    <ulf82@users.sf.net>
+
+    * Internals: yet another chapter...
+    
+    * D_Buy_Production: fixed a small bug
+    
+    * GraphicsCache: did some preparations to cache city images
+
+2004-01-26    <patton73@users.sf.net>
+
+    * GameCache: added the code that displays the level masks
+    * Modified some other files : File, Army, cityinfo, d_buy_production.
+    * added a new file : dat/army/level_mask.png (this must be completed)	
+	
+2004-01-24    <ulf82@users.sf.net>
+
+    * Internals: some more chapters finished
+
+2004-01-20    <ulf82@users.sf.net>
+
+    * default.xml: extended default armyset to 16 unit types
+
+2004-01-16    <ulf82@users.sf.net>
+
+    * HowToPlay: updated player documentation
+
+    * armysets: added expvalue in each armyset
+
+2004-01-15    <patton73@users.sf.net>
+
+    * hero: removed a bug related to the "expvalue" value
+    
+2004-01-14    <patton73@users.sf.net>
+
+    * src/Makefile.am added the -Wall compiler flag
+    * src/*.* removed all Warnings given by gcc 3.2.2
+
+2004-01-12    <ulf82@users.sf.net>
+
+    * GamePreferencesDialog: removed obsolete start button for players
+
+2004-01-11    <patton73@users.sf.net>
+
+    * Added Xp and Level code
+       - added a new ArmyLevelDialog class to advance level
+       - various changes to the "army" and "armyset_army" classes
+         now the army has an "XpValue" attribute that is used to
+	 calculate the total Xp gained from a battle.
+       - ai_fast can advance level too
+       - In the savefile now you will find the army "expvalue" tag
+       - most of the code is in the "real_player" class
+       - the Xp value now is a double due to better calculations
+       
+    * Modified the /dat/army/default.xml to use the "expvalue" tag
+
+    * Updated TODO 
+    
+2004-01-09    <ulf82@users.sf.net>
+
+    * Internals: still some more work on the documentation
+
+2004-01-08    <ulf82@users.sf.net>
+
+    * changed pic for the razed castle (James Andrews)
+
+    * added some new errors to the installation instructions
+
+2004-01-06    <patton73@users.sf.net>
+
+    * Fixed the MagicKey Savefile bug.
+
+    * Fixed the ".sav" Savefile bug.
+
+2004-01-05    <ulf82@users.sf.net>
+
+    * misc files: the city defense level is now visible on the map by the
+    city tile. Removed many obsolete pictures and replaced them by a city and
+    a city mask picture. The code is somewhat of an ugly hack.
+
+    * MapCreator: players now start with a city defense level of 2
+
+2004-01-02    <ulf82@users.sf.net>
+
+    * Internals: further work on the documentation
+
+2004-01-01    <ulf82@users.sf.net>
+
+    * Hero_Offer: behaviour set to WF_MODAL
+
+    * Internals: some further work on the documentation
+
+2003-12-31    <ulf82@users.sf.net>
+
+    * main: changed the default behaviour with missing savegame dirs
+
+    * fixed some problems reported by 'make distcheck' and other installation
+    problems
+
+2003-12-29    <ulf82@users.sf.net>
+
+    * configure: fixed a bug in the paragui search routine (it failed if
+    paragui wasn't found in /usr/local)
+
+    * added mask for orcs (James Andrews) and new male hero recruitment
+    pic (Regis Leroy)
+
+    * main: setting PG_LogLevel to PG_LOG_MSG
+
+    * city: each production now carries the associated armyset around. So,
+    if a player conquers a city, the production doesn't suddenly change to
+    his armyset's production. Fixed some bugs along the way
+
+    * orcs: renamed the units, the values are still unadjusted
+
+2003-12-27    <ulf82@users.sf.net>
+
+    * W_Edit: fixed a bug which allowed the neutral player to get heroes
+
+2003-12-25    <ulf82@users.sf.net>
+
+    * misc files: applied Marek's patch for loading/saving and properly
+    displaying quests
+
+    * Hero_Offer: new Background picture when a hero offers his services
+
+2003-12-22    <ulf82@users.sf.net>
+
+    * Internals: some more work on this document
+
+2003-12-20    <ulf82@users.sf.net>
+
+    * added file Internals for documentation of the code (unfinished)
+
+    * added skeleton for NextTurn class
+
+2003-12-17    <ulf82@users.sf.net>
+
+    * orcs: added James new masks (amost working, but still broken)
+
+    * monsters: extended armyset to 16 units. Seems to be working now...
+
+    * W_Edit: now purges the GameScenario on deletion
+
+2003-12-15    <ulf82@users.sf.net>
+
+    * BuyProduction: the armies are now displayed with the player's colors
+
+    * misc files: changed the code to use the armyset size instead of the
+    fixed number of 12 armysets
+
+    * CreateScenario: fixed a bug which put player's cities next to each other.
+    Ruins now have arbitrary inhabitants (apart from heroes and ships).
+
+2003-12-14    <ulf82@users.sf.net>
+
+    * Xmlhelper: added zipping and obfuscation of save games (Andrea Paternesi)
+
+    * updated and removed some outdated documentation
+
+    * Configuration: added a configuration option for zipping save files
+
+    * ArmyDialog: used up move points are now displayed red
+
+2003-12-10    <ulf82@users.sf.net>
+
+    * File etc: added a function to scan for mapsets (Andrea Paternesi)
+
+    * many files: moved tiles to a new directory tilesets
+
+2003-12-09    <ulf82@users.sf.net>
+
+    * GraphicsCache: added a workaround if a stack has no owning player, this
+    fixes a segfault when searching a ruin
+
+    * armysets: added a "size" data field; changed pic for default armyset
+
+    * armyset/-list: loading and offering size (currently unused)
+
+2003-12-08    <ulf82@users.sf.net>
+
+    * GraphicsCache: fixed a bug which displayed the player colors a bit strange
+
+2003-12-06    <ulf82@users.sf.net>
+
+    * many files: implemented patch from Marek which makes quests working
+
+    * added new default armyset with working player colors
+
+2003-11-26    <ulf82@users.sf.net>
+
+    * bigmap: the stack selector frame animation works again
+
+    * did some tiny updates towards hardware implementation of surfaces
+
+    * updated TODO, BUGS and AUTHORS
+
+2003-11-22    <ulf82@users.sf.net>
+
+    * implemented new freelords theme (in the hope it fixes a font bug)
+
+    * GamePreferencesDialog: implemented part two of Andreas patch
+
+2003-11-21    <ulf82@users.sf.net>
+
+    * GraphicsCache, Configuration, main: added a configuration and command
+    line option to set the cache size and moved the value to the Configuration
+    class
+
+    * GameMap: renamed d_size and d_tileSet to s_size and s_tileSet (static
+    variables)
+
+    * Configuration: added a config option "hardware surfaces"
+
+2003-11-18    <ulf82@users.sf.net>
+
+    * applied a patch sent by Andrea Paternesi
+
+2003-11-13   <ulf82@users.sf.net>
+
+    * orc army set: changed mask. Masks still don't work correctly.
+
+2003-11-07   <ulf82@users.sf.net>
+
+    * armysetlist, GraphicsCache: finished player-specific colors
+
+    * cityinfo: uses Graphics cache to get army pics
+
+2003-11-05   <ulf82@users.sf.net>
+
+    * updated TODO etc.
+
+2003-10-31   <ulf82@users.sf.net>
+
+    * misc files: did some last touches to implement masks. Unfortunately,
+    the mask file is a bit broken, so I couldn't test.
+
+2003-10-28   <ulf82@users.sf.net>
+
+    * GraphicsCache: some finishing touches
+
+    * army: implemented getPixmap to go via the GraphicsCache. Seems to work.
+
+    * added monster armyset (needed for the masking stuff)
+
+    * d_buy_production: minor beautification
+
+2003-10-27   <ulf82@users.sf.net>
+
+    * GraphicsCache: final implementation (does nothing useful, but should work)
+
+    * w_edit: implemented a center button from Marek Publicewicz
+
+2003-10-24    <ulf82@users.sf.net>
+
+    * GraphicsCache: added class for caching surfaces (not finished)
+
+2003-10-23    <ulf82@users.sf.net>
+
+    * Player: added a player color palette and functions to init/access it
+
+2003-10-03    <ulf82@users.sf.net>
+
+    * aclocal.m4: implemented a new paragui search routine. Is a bit less
+    evolved than the original one, but it reliably finds paragui. :)
+
+2003-10-01    <ulf82@users.sf.net>
+
+    * Smallmap: added some code so lines/rects are only drawn within valid
+    pixel positions.
+
+    * W_Edit: timers are not started on computer turns from now on. Looks like
+    this fixes the occasional segfaults
+
+2003-09-29    <ulf82@users.sf.net>
+
+    * several files: fixed some bugs discovered by a valgrind run
+
+    * w_edit: all timers are stopped now on computer turns. Seems to be a
+    source of some problems...Update: not the only one
+
+2003-09-26    <ulf82@users.sf.net>
+
+    * BigMap: timers are now stopped when a game finishes.
+
+    * GamePreferencesDialog: worked around a bug which would lead to a segfault
+    if you had an edit widget activated when starting the game.
+
+    * configure.in: configure now gives out an error if it doesn't find
+    SDL_image or expat
+
+2003-09-22    <ulf82@users.sf.net>
+
+    * Fight: fixed a segfault and a bug with two stacks fighting each other on
+    open terrain
+
+    * Bigmap: fixed a bug which would cause the screen to flicker if you let a
+    unit with no movement left not move; fixed another bug which would prevent
+    the border of the map to be displayed
+
+2003-09-21    <ulf82@users.sf.net>
+
+    * stack: included assert.h after a bugreport
+
+2003-09-20    <ulf82@users.sf.net>
+
+    * bigmap: fixed a bug which would prevent the drawing of the map as long
+    as no stack was selected and another bug with smooth scrolling
+
+    * defs.h: added some constants for timer intervals and applied them in the
+    source
+
+    * configure.in: added automatic installation of a freelordsrc file
+
+2003-09-17    <ulf82@uses.sf.net>
+
+    * bigmap, MapRenderer: completely rewrote the smooth scrolling code, is
+    a bit buggy now, before it is activated you have to select the next unit(??)
+
+2003-09-13    <ulf82@users.sf.net>
+
+    * bigmap: fixed a segfault with smooth scrolling
+
+2003-09-12    <ulf82@users.sf.net>
+
+    * bigmap: implemented smooth scrolling, but it looks ugly, crashes sometimes
+    and has some bugs
+
+2003-09-05    <ulf82@users.sf.net>
+
+    * MapRenderer: finished work on functions
+
+2003-08-12    <ulf82@users.sf.net>
+
+    * MapRenderer: still some more work on the functions (still incomplete)
+
+    * removed some unneccessary includes
+
+2003-08-11    <ulf82@users.sf.net>
+
+    * MapRenderer: some more work on these functions (incomplete)
+
+2003-08-09    <ulf82@users.sf.net>
+
+    * MapRenderer: added some functions for drawing partial maptiles at the
+    border of the screen for smooth scrolling
+
+2003-08-08    <ulf82@users.sf.net>
+
+    * MapGenerator: tried some more normalization
+
+2003-08-03    <ulf82@users.sf.net>
+
+    * w_edit: fixed a bug which caused the next_player screen to be shown and
+    allowed the player to select if a city should be conquered when starting a
+    testing game
+
+2003-08-02    <ulf82@users.sf.net>
+
+    * smallmap: improved drawing of units and temples (they can hopefully be
+    identified easier now)
+
+2003-08-01    <ulf82@users.sf.net>
+
+    * changed colour values in default mapset (for smallmap colours)
+
+    * MapGenerator: buildings now have a minimum distance from each other
+
+    * smallmap: started improving the city pictures etc.
+
+2003-07-31    <ulf82@users.sf.net>
+
+    * INSTALL: updated some information
+
+    * splash: fixed a bug when starting a testing game. Another one popped up.
+    
+2003-07-29    <ulf82@users.sf.net>
+
+    * many files: each player now has a stacklist which contains all stacks of 
+    this player instead of a global stacklist
+
+2003-07-28    <ulf82@users.sf.net>
+
+    * stacklist, player: started some compatible work towards removing global
+    stacklist pointer
+
+    * Configuration, main: changed behaviour when configuration files are not
+    found
+
+2003-07-26    <ulf82@users.sf.net>
+
+    * Citylist: implemented as singleton
+
+2003-07-24    <ulf@reelords.org>
+
+    * Templelist, Ruinlist: implemented as singleton
+
+2003-07-22    <ulf@freelords.org>
+
+    * RealPlayer: fixed a bug which would cause an army to fight itself in a
+    ruined city
+
+    * playerlist etc: implemented class Playerlist as singleton
+
+    * moved Templelist and Ruinlist to separate files
+
+2003-07-13    <ulf@freelords.org>
+
+    * added and implemented class hero to hold the hero name
+
+2003-07-10    <ulf@freelords.org>
+
+    * Bigmap, RealPlayer: implemented razing of cities
+
+    * implemented a stackreport
+
+2003-06-29    <ulf@freelords.org>
+
+    * MapGenerator: included Vibhus normalizing code and seem to have fixed a
+    new "city in water" bug
+
+2003-06-12    <midramas@freelords.org>
+
+    * updated TODO
+
+2003-06-08    <ulf@freelords.org>
+
+    * CitiesReport: implemented report
+
+    * fixed a bug with the player colours not displayed properly
+
+2003-06-07    <ulf@freelords.org>
+
+    * CreateScenario: fixed a bug which displayed neutral player's cities as
+    the cities of a normal player
+
+    * W_Edit: fixed a bug which could sometimes lead to a segfault on quitting
+    the game
+
+    * many files: did some updating to the coding style, almost finished so
+    I remove this task from the TODO list
+
+    * Armysetlist: implemented as soliton
+
+2003-06-06    <ulf@freelords.org>
+
+    * replaced file.h by File.h
+
+2003-06-05    <ulf@freelords.org>
+
+    * GameMap: fixed a bug when loading a game
+
+2003-06-03    <midramas@freelords.org>
+
+    * removed unnecessary includes
+
+2003-06-02    <ulf@freelords.org>
+
+    * ArmyDialog: finished work
+
+2003-06-01    <ulf@freelords.org>
+
+    * ArmyDialog: implemented and started work on it
+
+2003-05-31    <ulf@freelords.org>
+
+    * Stacklist: fixed a segfault
+
+    * misc files: made the timers work. The fight dialogs now don't flicker
+    anymore and the message boxes now don't vanish on a timer event.
+
+    * ArmyDialog: added the basic construct for an army info widget
+
+2003-05-30    <ulf@freelords.org>
+
+    * GamePreferencesDialog: made the buttons for the map sizes work
+
+    * W_Edit: smallmap is now placed better if you take a non-100x100 mapsize
+
+    * smallmap: fixed a small nasty bug when leaving and reentering the smallmap
+
+    * Stacklist: fixed a problem with finding the next stack
+
+    * smallmap/bigmap: added functions to interrupt/restart the timers
+
+2003-05-29    <ulf@freelords.org>
+
+    * GameMap: the map is now internally represented as a Maptile** which gives
+    the flexibility of different map sizes
+
+    * many files: removed a separate x- and y-size for the map, it now has only
+    one size
+
+    * GamePreferencesDialog: fixed a bug which wouldn't show some sliders when
+    clicking on "load map" and back on "random"; added new buttons
+
+    * several files: removed the dependency that a map has to be of size 100
+
+    * path: the path is now loaded corectly from a savegame
+
+2003-05-26    <ulf@freelords.org>
+
+    * CreateScenario: added debug() output and finally fixed a nasty bug when
+    playing around with the terrain sliders
+
+    * CreateScenario, MapCreationDialog: implemented use of MapCreationDialog
+
+    * GameMap, many files: first small step towards different map sizes; the
+    map itself is now only accessed via GameMap::getTile()
+
+2003-05-23    <ulf@freelords.org>
+
+    * CreateScenario: You can now play around with the terrainconfig sliders.
+    If the sum is !=0, the relative percentages are calculated correctly.
+
+2003-05-22    <ulf@freelords.org>
+
+    * misc files: removed the obsolete functions from ealier times related to
+    the random map generation etc. Reloading a map directly works now again.
+
+    * GameMap: made the tileset static to (at least temporarily) fix a bug
+    which would overwise show only black tiles.
+
+    * GamePreferencesDialog: implemented different Terrain percentages, but
+    it doesn't work yet, so don't mess around with the terrain sliders.
+
+2003-05-19    <ulf@freelords.org>
+
+    * GamePreferencesDialog, splash: integrated CreateScenario. Effect for the
+    player: ruins now have up to three sometimes less strong inhabitants.
+    ATTENTION: reloading a map (random.map) directly doesn't work. I'm still
+    migrating the codebase to using CreateScenario.
+
+2003-05-18    <ulf@freelords.org>
+
+    * CreateScenario: (hopefully) finished the implementation, now I only need
+    to integrate it
+
+2003-05-13    <midramas@freelords.org>
+
+    * mapdef: rename to GameMap and redesigned as Singleton instead of global
+    accessable variable
+
+2003-05-07    <midramas@freelords.org>
+
+    * CreateScenario: didn't compile
+
+2003-05-05    <ulf@freelords.org>
+
+    * mapdef: added function fill, which fills the map directly from the
+    MapGenerator, removed templelist argument in constructor
+
+    * CreateScenario: continued work
+
+2003-05-03    <midramas@freelords.org>
+
+    * Configuration: fixed a bug that prevented the second configuration
+    file to be read
+
+    * TileSet: use File:: function instead of explicit image loading
+
+2003-04-29    <ulf@freelords.org>
+
+    * hero_offer: instead of using a python script, Hero_offer now uses a
+    heronames file which is in the data path.
+
+2003-04-28    <ulf@freelords.org>
+
+    * w_edit: improved the hero offering, no more errors should occur with it...
+
+    * Configuration: significantly improved handling of the config files. Now,
+    first /etc/freelordsrc is read and can then be overridden by ~/.freelordsrc
+
+2003-04-28    <midramas@freelords.org>
+
+    * automake/autoconf: make install is now possible
+
+    * Configuration: a sane config for users has been set (e.g. /usr/local/)
+    & don't exit if a config file wasn't found. the standard config should
+    work on all "make install" platforms
+
+    * README, HACKER, INSTALL: updated
+
+2003-04-27    <ulf@freelords.org>
+
+    * w_edit: moved hero offer to another place and introduced dialog again
+
+2003-04-22    <midramas@freelords.org>
+
+    * .freelordsrc: configuration is now parsed from /etc/freelordsrc
+    or ./freelordsrc (prefered). for documentation of and an example see
+    doc/freelordsrc. This currently works only on linux, windows follows
+    soon. directory structured had to change for easier installation of
+    freelords.
+
+    * load game: bugfix
+
+    * PG_FileSelector: improved
+
+2003-04-22    <midramas@freelords.org>
+
+    * started to remove all global variables
+
+    * using libtool now
+
+    * removed virtual (== not correct) separation of common and graphics
+
+2003-04-21    <ulf@freelords.org>
+
+    * CreateScenario: further work
+
+    * MapGenerator: added functions so that you can access the data without
+    having to dump the map
+
+2003-04-21    <midramas@freelords.org>
+
+    * MapRenderer: using variations now
+
+    * NextPlayerPopup: added! can click anywhere to hide now!
+
+2003-04-20    <ulf@freelords.org>
+
+    * Tile: surfaces are now deleted in destructor
+
+	* TileSet: fixed a bug which displayed mountains as swamps. The tile types
+	are now ordered according to their type and not according to the order in
+	the xml description file
+
+    * MapGenerator: updated to meet coding standards; you can now set the
+	number of objects and percentages of maptiles
+
+    * CreateScenario: continued work, implemented some functions
+
+    * various small name and type changes
+
+2003-04-19    <ulf@freelords.org>
+
+    * real_player: when occupying a city, the production is now set to the
+    first (normally weakest) unit; when pillaging, the production is now
+    deleted.
+
+	* some files: replaced some tabstops with spaces (some toying around...),
+	some other cosmetic and small bug fixes
+
+2003-04-18    <midramas@freelords.org>
+
+    * tileset: removed desert, w2 tileset is now standard
+
+    * Bigmap, SmallMap: cleanup, improved animation of selector
+
+2003-04-16    <ulf@freelords.org>
+
+    * MapGenerator, defs, mapdef: now using macros for maptile characters and
+    variables for the percentage of the single maptiles in MapGenerator (needed
+    by CreateScenario)
+
+    * CreateScenario: played a bit around (not much done)
+
+2003-04-16    <midramas@freelords.org>
+
+    * bigmap: added animation of selector
+
+2003-04-14    <midramas@freelords.org>
+    
+    * Makfiles: cleaned up a bit, use -O now!
+
+    * all code: some none initialized variables have been set
+
+2003-04-14    <ulf@freelords.org>
+
+    * doc/Savefile: updated documentation concerning the counter
+
+    * defs.h, Gamescenario: upgraded savefile version, now using a macro
+    declared in defs.h
+
+    * CreateScenario: started some work, but not much
+
+2003-04-14    <tobi@freelords.org>
+
+    * initial directory for later FreeLords PG Theme added. ;)
+
+2003-04-12    <midramas@freelords.org>
+
+    * implement arrow-pictures for waypoints
+
+2003-04-12    <ulf@freelords.org>
+
+    * added classes Counter and CreateScenario
+    
+    * many files: implemented Counter
+
+2003-04-10    <ulf@freelords.org>
+
+    * migrated all paragui signals to libsigc++
+
+2003-04-10    <midramas@freelords.org>
+
+    * GameScenario: "many players" + name change bugs fixed
+
+2003-04-08    <ulf@freelords.org>
+
+    * players, w_edit: moved all paragui signals to libsigc++
+
+2003-04-07    <ulf@freelords.org>
+
+    * players, w_edit: used signals for signalling status (=money) updates
+
+2003-04-03    <ulf@freelords.org>
+
+    * players, w_edit: using signals for signalling city occupation
+
+2003-04-02    <ulf@freelords.org>
+
+    * players, w_edit: using signals for signalling start/end turn
+
+    * city, realplayer, cityoccupationdialog: improved pillaging, you can now
+    pillage whenever a production is in the city, the other production is
+    automatically rearranged
+
+2003-04-01    <midramas@freelords.org>
+
+    * w_edit: cosmetic cleanups + bugfix that prevented the message
+    stackMoved to be processed
+
+    * w_edit: used alpha blending for buttons instead of black images (and
+    therefore removed the black button images)
+
+    * bigmap: fixed a crash in ~Bigmap
+
+2003-04-01    <ulf@freelords.org>
+
+    * actions: added action for pillaging and had it inserted into actionlist
+
+2003-03-31    <midramas@freelords.org>
+
+    * bigmap, d_buy_production: memory leaks and a bug fixed 
+
+    * file: made a class File out of namespace file (has the same effect, but
+    private can be used). added a function to load and convert an image.
+
+    * pics: changed to use alpha channel instead of colorkey + put all flags
+    of one color into one file
+
+2003-03-29    <midramas@freelords.org>
+
+    * fixed a nasty crash when occupying/razing a city where pillaging wasn't
+    possible
+
+2003-03-28    <midramas@freelords.org>
+
+    * many small namespace fixes found while cross-compiling
+
+2003-03-23    <ulf@freelords.org>
+
+    * put some new targets (improved fighting animation, 256 colours) in TODO
+
+    * player: added (and implemented) cityPillage and invadeCity, the last one
+    is now called whenever the player occupies a city
+
+    * w_edit: players now have a chance of pillaging a city
+
+2003-03-23    <midramas@freelords.org>
+
+    * removed static map (50MB less memory usage)
+
+2003-03-13    <ulf@freelords.org>
+   
+    * updated Makefiles so you can compile freelords. :)
+
+2003-03-12    <midramas@freelords.org>
+
+    * final implementation of the tileset code finished (~120 lines)
+
+2003-03-11    <midramas@freelords.org>
+
+    * reimplemented standard tileset a bit different! uses less memory now
+
+2003-03-10    <midramas@freelords.org>
+
+    * almost finished implementing the standard tileset
+
+2003-03-09    <ulf@freelords.org>
+
+    * file: fixed a bug which would lead to a crash when an armyset is selected
+    on startup
+
+    * GamePreferencesDialog: fixed a bug (at least for my gcc3.2), which
+    prevented a computer player to be started
+
+2003-03-05    <ulf@freelords.org>
+
+    * GameScenario, splash, mainwindow: bailing out when an error occurs during
+    loading of a savegame
+
+    * armysetlist: fixed a bug which allowed land units to travel over water
+
+    * ai_dummy: fixed a bug which allowed you to play the neutral player
+
+    * updated TODO: removed these errors (I think I won't write this point any
+    more)
+    
+2003-03-02    <ulf@freelords.org>
+
+    * xmlhelper: all data tags now have to start with a "d_" (done automatically
+    when using xmlhelper), this is transparent to the user (i.e. automatically
+    prepended); also removed all unnecessary functions, such as notifyTag etc.
+
+    * GameScenario: loading code doesn't use notifyTag etc. any more
+
+    * changed armyset description file to fit the new requirements
+
+    * doc/Savefile: updated documentation
+
+    * updated TODO: removed the task above and added GameScenario handling and
+    bug fixing
+
+2003-02-10    <midramas@freelords.org>
+
+    * more cosmetic changes
+
+2003-02-07    <midramas@freelords.org>
+
+    * cosmetic changes! introduce a nice bug: neutral player is
+    playable now :)
+
+2003-02-06	  <tobi@freelords.org>
+
+    * freelords-autopack.sh: optimized routines, added "CVS/*", "*~" remove
+    routine.
+
+2003-02-03    <ulf@freelords.org>
+
+    * MainWindow: it is now possible to load (and select!) a game in the game
+    screen; also implemented save and saveas as one would expect it (the first
+    saves the game in the last opened/saved file, the second opens a selection
+    dialog)
+
+    * XML_Helper, GameScenario, various files: some changes to the xml document
+    (see docs/SaveFile for further info)
+
+2003-02-01    <ulf@freelords.org>
+
+    * PG_FileSelector: fixed a segfault in the destructor
+
+2003-01-29    <ulf@freelords.org>, <midramas@freelords.org>
+
+    * GamePreferencesDialog: changed the "Start" CheckButton to a ToggleButton
+
+    * PG_FileSelector: fixed some annoying bugs mentioned by Ulf
+
+    * splash, w_edit: removed d_gameScenario from Splash and had w_edit care
+    for its removal
+
+    * MainWindow: added functionality for game loading to menu bar
+
+    * splash: now uses PG_FileSelector for loading files (PG_FileSelector
+    broken, so you get a segfault)
+
+2003-01-26    <ulf@freelords.org>
+
+    * action: renamed some tags because of a deficite in xmlhelper
+
+    * doc/Savefile: finished and updated to 0.2.0
+
+    * save: version number updated to 0.2.0
+
+    * splash, w_edit:   used loadGame() for starting up a loaded game
+
+    * path: fixed a bug which prevented players from moving their units after
+    loading a game
+
+2003-01-23    <ulf@freelords.org>
+
+    * mapdef, GameScenario, stack, ruinlist: fixed loading bugs, but still buggy
+
+2003-01-20    <ulf@freelords.org>, <midramas@freelords.org>
+
+    * player_preferences: fixed a bug (problem of my compiler?) which would add
+    all players to a game
+
+    * GameScenario, Splash: finished work on load code, but it is buggy yet
+
+    * doc/Savefile: some more work on this document
+
+    * GamePreferencesDialog, GameScenario, player_preferencs: startup screen
+    finished
+
+2003-01-19    <ulf@freelords.org>
+
+    * temples, city: finished loading code
+
+    * ruin, army, stack, stacklist: done loading code
+
+    * doc: added Savefile for description of save game layout (not finished yet)
+
+2003-01-16    <ulf@freelords.org>
+
+    * made player abstract again, now my problems are gone
+
+    * city, temples: added/completed loading (not workable yet)
+
+2003-01-06    <ulf@freelords.org>
+
+    * fixed some compilation bugs (gcc-3 is stricter e.g. with namespaces)
+
+2003-01-05    <midramas@freelords.org>
+
+    * D_Map, MapConfiguratioDialog: started merging all game configuration
+    dialogs into a single dialog wich will enable much easier startup process
+    and is a cleaner approach regarding multiplayer support
+
+2003-01-03    <midramas@freelords.org>
+
+    * Server, Client: added some signals & slots for network data handling
+
+    * many files modified to comly with FL-Coding-Style
+    
+    * rewrote armyset spec file xxx.xml to be a vaild XML file
+    
+    * armysetlist: using XMLhelper now and load all pixmaps from a single
+    xxx.png file
+
+2003-01-02    <midramas@freelords.org>
+
+    * GameScenario, Splash: modified for initial multilayer support
+
+    * moved class client to server/Client and rewrote from Qt!! to CPPSocket
+
+    * city: modified to comply with FL-Coding-Style (mostly done)
+
+2002-12-24    <midramas@freelords.org>
+
+    * MultiPlayerModeDialog: almost finished
+
+    * GameScenario: removed splash dependency
+
+    * all: modifications to fit to the coding style
+
+2002-12-23    <midramas@freelords.org>
+
+    * Mapdef: modified to fit to the coding style
+
+    * ServerDialog: enhanced
+
+    * MultiPlayerModeDialog: added
+
+2002-12-18    <midramas@freelords.org>
+
+    * removed unnecessary configure.in
+
+    * added server directory
+
+2002-12-17    <ulf@freelords.org>
+
+    * playerlist: added get_by_id
+
+    * xmlhelper: added various getData functions (for bool, int, string, double)
+
+    * playerlist, player, action: added load functionality
+
+    * player: had to change it because as abstract class it wouldn't work
+    together with libsigc++ (why?)
+
+    * action: fixed a bug which caused the action type to be saved as boolean
+
+2002-12-13    <ulf@freelords.org>
+
+    * xmlhelper: bugfixes...
+    
+    * mapdef: added loading constructor
+
+2002-12-12    <ulf@freelords.org>
+
+    * xmlhelper: finished loading functions
+
+2002-12-11   <midramas@freelords.org>
+
+    * NEWS: added again. Contains the ChangeLog reduced to the important
+    messages. Those are the points used for freshmeat.net and linuxgames
+    announcements.
+
+2002-12-10   <ulf@freelords.org>
+
+    * xmlhelper: did some work for loading of xml data
+
+2002-12-08    <midramas@freelords.org>
+
+    * configure.in: added check for libsigc++
+    
+    * Makefile.in: added libsigc++ CFLAGS and LFLAGS
+    
+    * emit macro clashed with libsigc++. reverted everything to SendMessage
+    
+    * PG_FileSelector: replaced pgfiledialog with the working PG_FileSelector
+
+2002-12-05    <ulf@freelords.org>
+
+    * xmlhelper: started providing load functions
+
+2002-12-02    <ulf@freelords.org>, <midramas@freelords.org>
+
+    * mapdef: changed save function and reduced size of savefile by 90%
+    * xmlhelper: renamed ios_base to ios
+
+2002-12-01    <ulf@freelords.org>
+
+    * temple, ruin, city: added save function
+
+    * citylist.h: extended classes Ruinlist and Templelist for save purposes
+
+    * GameScenario, MainWindow: added saving of game
+
+    * INSTALL: adjusted installation instructions
+    
+
+2002-11-30    <ulf@freelords.org>
+
+    * playerlist, stacklist: changed save function to use xmlhelper class
+
+2002-11-29    <ulf@freelords.org>
+
+    * xmlhelper: added class to help saving/reading xml files (basic layout)
+    and migrated mapdef::save to use this class
+
+2002-11-22    <ulf@freelords.org>
+
+    * player: have now unique id's (useful for saving)
+
+    * stacklist, playerlist: added save function
+
+2002-11-21   <ulf@freelords.org>
+
+    * splash: finally fixed the memory leak
+
+    * mapdef: added save function 
+
+    * real_player, path: fixed a bug which allowed ships to travel over land
+
+2002-11-18    <ulf@freelords.org>
+
+    * playerlist: fixed a bug which assigned wrong castle colours
+
+2002-11-16    <tobi@freelords.org>
+
+    * updated "freelords-autopack.sh" to new versioning system (FreeLords-CVS-SDL-YYYYMMDD)
+
+2002-11-12    <ulf@freelords.org>
+
+    * mapdef: fixed a bug which caused cities to have no name and temples/ruins
+    to be placed in water
+
+    * MapGenerator: fixed a bug which made an empty string a valid city name
+
+    * splash: temporarily fixed a bug which caused a segfault on a game end,
+    this one needs a final fix, though (some large pointers aren't freed)
+
+    * playerlist: fixed a bug which had the neutral player be claimed as winner
+    of the game
+
+2002-11-08    <ulf@freelords.org>
+
+    * GameScenario: fixed a segfault when playing with more than 3 players
+
+    * GameScenario: did some alpha work for saving games
+
+    * mapdef, MapGenerator: The city names are selected by the map generator
+    and mapdef reads them from the random.map file (useful for further changes)
+    This is currently a bit broken (cities don't get any names)
+
+2002-11-06    <ulf@freelords.org>
+
+    * fixed a bug which demanded the player to defeat the neutral player, too
+
+    * ported gold report
+
+2002-11-04    <ulf@freelords.org>
+
+    * the map creation dialog is now shown again
+
+    * sorted out the player class and created some basic and derived class with
+    separated functionality (e.g. separated AI players from human players);
+    adjusted the rest of the code to work with these changes
+
+2002-10-31    <ulf@freelords.org>
+
+    * moved some of the game initialization stuff around, kicked out map dialog
+    (needs some fixing now), closed some memory leaks when exiting a game on the
+    way
+
+2002-10-29    <midramas@freelords.org>
+
+    * added class MapConfDialog (working, but doesn't yet pass the values to
+    the MapGenerator yet)
+
+2002-10-28    <midramas@freelords.org>
+
+    * when using the fl scrip FreeLords didn't start with the passed
+    commandline parameters - fixed
+
+2002-10-28    <ulf@freelords.org>
+
+    * fixed a small bug in the random map generator (temples and ruins placed in
+    water)
+
+2002-10-25    <ulf@freelords.org>
+
+    * fixed two small bugs in the random map generator (cities-over-ruins and
+    no-temple bugs)
+
+2002-09-24    <midramas@freelords.org>
+
+    * TODO: updated TODO list
+
+    * MapGenerator: integrated the C++ MapGenerator from Vibhu Rishi (the
+    python mapgenerator genmap.py will be available in the distribution as
+    long as the generated random.map is better). The C++ MapGenerator is
+    a hell faster. Thx Vibhu
+
+2002-09-23    <midramas@freelords.org>
+
+    * many files: applied all patches from "Proud Papa" Mark
+        - Capitals are now evenly distributed on the map
+        - get_strongest_army fix
+        - fight fixes
+        - Start of configuration for neutral city production
+        - fix a crash in the cityinfo dialog when buying a production under
+          certain circumstances
+
+2002-08-27    <tobi@freelords.org>
+
+    * fmII: changed relesename of CVS snapshots at freshmeat.net to CVS-SDL-YYYYMMDD    
+
+2002-08-26    <ulf@freelords.org>
+
+    * many files: moved stack moving to player class; this had quite an impact
+    on a lot of other classes and fixes a bug when a stack came to halt on 
+    another stack
+
+    * path: fixed a bug which allowed stacks travelling over other stacks
+
+2002-08-25    <ulf@freelords.org>
+
+    * all: some minor adjustements to make freelords compile with gcc3.2
+
+    * Makefile: removed the -Werror flag
+
+2002-08-02    <midramas@freelords.org>
+
+    * all: Ported to Win32 (effort 5 days)! From now on all changes have to
+    be cross-checked with Win32 before we can make a new release
+
+    * all: Works with ParaGUI 1.0.2 now
+
+    * *.py: Changed the python scripts so that they will work flawlessly on
+    Win32
+
+    * all: fixed a bug that caused a crash when exiting the game
+
+    * all: fixed one 50MB memory leak and 25+ small leaks
+
+    * player: added basic AI scripting framework
+
+    * player: implemented an easy AI player (try computer against computer ;)
+
+    * added MapCreationDialog: shows a nice progressbar when creating a map
+
+    * main: added some more command line options for resolution setting
+
+    * main: enabled -t, --testing flag: takes last random map and sets up
+    a scenario with 2 computer players
+
+    * smallmap: added a small animation to the Viewrect
+
+    * MainWindow: added configuration option menupoint that disables the
+    popup window announcing the next player => good for testing (we
+    should make a dialog instead of menuoptions)
+
+    * added class Configuration
+
+    * hero_offer: fixed a bug that caused the hero pic to appear black on the
+    hero offer dialog
+
+    * INSTALL: added information how to get FreeLords running on Windows.
+
+2002-07-25    <ulf@freelords.org>
+
+	* added some functions to player class to move stacks (not finished yet)
+
+2002-07-19    <ulf@freelords.org>
+
+	* action, player, cityinfo: moved production change, upgrading and
+	buying productions to the player class
+
+	* playerlist, player, w_edit: changed some message sending a bit
+
+	* added HowToPlay on request of Vibhu Rishi
+
+2002-07-13    <ulf@freelords.org>
+
+	* ruin, temple: added ids
+
+	* action, player: added actions and functions for searching ruins and
+	temples and gaining rewards
+
+	* w_edit, RuinSearchDialog: restructured searching of ruins
+
+	* fight: cavalry doesn't gain bonus when fighting cities or in ruins
+
+2002-07-08    <ulf@freelords.org>
+
+	* occupying and razing cities is now handled via the player class
+
+	* fight: some tuning (critical hits, heroes don't gain hero bonus)
+
+	* ruin, GameScenario: hacked stacks associated with ruins in the game
+
+2002-06-21    <ulf@freelords.org>
+
+	* added some action classes
+
+	* added city_raze and city_occupy to player class (not workable yet)
+
+2002-06-20    <ulf@freelords.org>
+
+	* applied patch sent by Filip Van Raemdonck
+
+	* minor changes to player::stack_fight_city
+
+2002-06-10    <ulf@freelords.org>
+
+	* moved city fight to player class (to be improved yet)
+
+	* some minor changes in design of stack and fight class
+
+2002-06-09    <ulf@freelords.org>
+
+	* action: added Action_Join and Action_Fight_City
+
+	* moved stack joining to player class
+
+2002-06-02    <ulf@freelords.org>
+
+	* moved stack splitting to player class
+
+2002-05-27    <ulf@freelords.org>
+
+	* prefixed a "std::" to each STL function. This is a bugfix for the 
+	gcc 3.1
+
+2002-05-27    <ulf@freelords.org>
+
+	* added actions.h /actions.cpp
+
+2002-03-01    <midramas@freelords.org>
+
+	* many files: works now with ParaGUI 1.0
+
+2002-01-28    <ulf@freelords.org>
+
+	* stacklist: the non-city fights are now handled via the player class
+			
+
+2002-01-27    <ulf@freelords.org>
+
+	* fight, fightdialog, stacklist: largely rewrote the fighting, yet 
+	almost nothing has changed
+
+	* stack, stacklist: added some helper functions for cleaning up
+
+2002-01-21    <ulf@freelords.org>
+
+	* Player: finished fighting in player class (still not usable)
+
+2002-01-18    <ulf@freelords.org>
+	
+	* W_Edit: Heroes will now apply again occasionally (dirty hack)
+
+	* Stack, Army: added copy constructor
+
+	* defs.h, Player: changed some of the actionlist stuff and hacked
+	some fighting in the player class (not finished yet, but it should
+	compile)
+
+2002-01-15    <midramas@freelords.org>
+
+	* CityOccupationDialog, W_Edit: Improved occupation handling and
+	razing cities works
+
+2002-01-07    <ulf@freelords.org>
+
+	* W_Edit, Playerlist, Player: changed the way the next turn is handed
+	over to the next player
+
+2002-01-06    <ulf@freelords.org>, <midramas@freelords.org>
+
+	* CityInfo: fixed a segfault when leaving the dialog
+
+	* MainWindow: added a menubar
+
+2001-12-29    <ulf@freelords.org>
+
+	* w_edit: fixed a bug where a draw against a monster in a ruin counted
+	as a win
+
+	* defs: added some typedefs for the actionlist
+
+2001-12-22    <midramas@freelords.org>
+
+	* added new button pics from James Andrews
+
+2001-12-20    <midramas@freelords.org>
+
+	* some cleanups of compilation issues depending on ParaGUI version
+
+	* improved CityOccupationDialog (not yet finished)
+
+2001-12-18    <midramas@freelords.org>
+
+	* some updates to get FreeLords working with ParaGUI 1.0.0beta1
+
+2001-12-17    <ulf@freelords.org>
+
+	* fixed some compilation problems reported by Matthew J. Gillen (so he
+	finds his name here :))
+
+2001-12-12    <midramas@freelords.org>
+	
+	* added class CityOccupationDialog
+
+	* added class PG_FileDialog
+
+2001-12-10    <midramas@freelords.org>
+
+	* bigmap: implemented the new city pictures from Daniel Rigos
+	
+2001-12-09    <ulf@freelords.org>
+
+	* stack, army: added id value to identfy stacks
+
+2001-12-06    <midramas@freelords.org>
+
+	* smallmap, bigmap: increased the drawing performance by at least
+	200%. Scrolling (moving the viewrect on the smallmap) is now smooth.
+	As a side note there is only one viewrect for both maps now, which
+	removes the otherwise needed sync function changed_viewrect().
+	
+2001-12-06    <midramas@freelords.org>
+
+	* removed libxml and libxml++ from the dependencies, so expat is the
+	only XML parser required to build FreeLords now
+
+2001-12-04    <midramas@freelords.org>
+
+	* Makefiles: added PROFILERFLAGS for gprof
+
+	* player_preferences: fixed multiple armysets
+
+	* buttons: implemented pictures for the buttons on the main page
+	(thanks to James Andrews)
+
+2001-11-30    <ulf@freelords.org>
+
+	* path: fixed a bug which placed the first point of the path at the
+	stack's current location
+
+2001-11-28    <midramas@freelords.org>
+
+	* RuinSearchDialog: added a dialog when searching a ruin
+
+	* Object: Added a layer above class Location
+
+	* ObjectList: renamed LocationList to ObjectList
+
+	* many important bugfixes
+
+2001-11-25    <ulf@freelords.org>
+
+	* path: fixed a zero pointer reference in check_path and improved the
+	function
+
+2001-11-22    <ulf@freelords.org>, <midramas@freelords.org>
+	
+	* many files: complete bug fixing session that took many
+	hours, but FreeLords needed for a long time. many bugs have been fixed
+	so that I'm confident that we can release 0.1.0 now
+
+2001-11-21    <midramas@freelords.org>
+
+	* FightDialog: should look somewhat better now
+
+2001-11-20    <midramas@freelords.org>
+
+	* path: fixed "move" bug, but there seem to other too
+	(e.g: you can't move into a city now; or it crashes
+	 on checking the path)
+
+2001-11-19    <midramas@freelords.org>
+
+	* flags: implemented the new flags drawn by James Andrews
+
+	* bigmap: small bugfixes and optimisations
+
+	* design.txt: updated some sections that have already changed
+	due to our latest work on this project
+
+2001-11-15    <midramas@freelords.org>
+
+	* playerlist, player: cleaned up
+
+	* pics, selector: remove
+
+2001-11-14    <ulf@freelords.org>, <midramas@freelords.org>
+
+	* stacklist: fixed a bug in setting the "next" stack
+
+	* path: fixed a bug which allowed armies to travel through enemy cities
+
+2001-11-13    <ulf@freelords.org>, <midramas@freelords.org>
+
+	* changed class Game_Scenario to GameScenario and cleanup it
+	all up! Removed the global variable *game_scenario
+
+	* ported MessageBox for blessing in temple
+
+	* fixed hot-seat mode
+
+	* updated freelords.uml a bit + miscellanous small changes
+	
+	* player: started to adjust it to the UML diagram
+
+2001-11-11   <ulf@freelords.org>
+
+	* path: complete rewrite of the whole class, paths should look finer
+	and calculate faster now, ships are now handled correctly
+
+	* tiny fixes to the army definitions
+
+2001-11-10    <midramas@freelords.org>
+
+	* added class LocationList
+
+	* cleanups in class W_Edit
+
+2001-11-08    <midramas@freelords.org>
+
+	* various cleanups
+
+	* added class Location (as outlined in the UML)
+
+2001-11-06    <midramas@freelords.org>
+
+	* changed some source so that it compiles with
+	the CVS version of ParaGUI 1.0.0! This step was needed
+	to enable needed features and improvements of this
+	version
+
+2001-11-05    <ulf@freelords.org>
+
+	* path: added functions for clean removal of objects
+
+	* stack: stack now uses these functions
+
+	* defs.h: some changes in unit definitions
+
+2001-11-05    <ulf@freelords.org>
+
+	* pathitem: merged these files with path.* and removed them from
+	the repository
+
+2001-11-04    <midramas@freelords.org>
+
+	* fight: again fixed, because the dead stacks didn't
+	get removed from the stacklist
+
+	* splash, d_map, startup_screen, player_preferences:
+	many interface simplifications
+
+2001-11-01    <ulf@freelords.org>
+
+	* fight: the hero bonus is now taken into account
+
+2001-10-29    <midramas@freelords.org>
+
+	* again many interface changes
+
+	* stacklist: clustering removed and simplified
+
+	* fight, FightDialog: big changes, doesn't crash
+	and seems to work again
+
+2001-10-27    <midramas@freelords.org>
+
+	* many interface simplifications that aren't yet drawn
+	in the UML! (stack, path, ...)
+
+	* fight: simplified and doesn't crash anymore
+
+
+2001-10-01    <midramas@freelords.org>
+
+	* fl: the start script has been changed to accept the
+	-l option. If this is set only the LD_LIBRARY_PATH
+	environment variable is set. Then the game can be started
+	with ./freelords as usual! This is important for debugging
+	with gdb, because it doesn't accept shell scripts as
+	executables (UPDATE: DOESN'T WORK!!)
+	
+	* path: changed the Path class so that it now inhertis 
+	list<PG_Point*> instead of using an additional variable
+       	to hold the list! This simplifies the interface a bit. 
+
+	* bigmap: doesn't need a path variable. removed.
+
+	* stack, stacklist: the stack class has now a variable
+	path which is in fact of type Path*. This allows each
+	stack to calculate it's own path as it should be! 
+	
+	* armysetlist: Parsing the XML file seems to work now.
+	Game can be loaded and crashes when trying to move an
+	army.
+	
+2001-09-25    <midramas@freelords.org>
+
+	* small changes to the Makefiles
+
+	* further fixes in many files
+
+	* moved some classes to common which had no graphical
+	content
+
+	* enhanced design.txt with Quest information
+
+2001-09-24    <midramas@freelords.org>
+
+	* every subdirectory has a Makefile now and of each
+       	subdirectory a shared library is built
+
+	* added a fl script in src directory which is needed to 
+	start freelords, otherwise the correct library paths
+	aren't set
+
+2001-09-22    <ulf@freelords.org>
+
+	* almost finished freelords.uml
+
+	* added new "basic types" to defs.h
+
+2001-09-21    <midramas@freelords.org>
+
+        * first steps to build libraries for each source directory
+
+        * seperated class Armysetlist from file armyset.h/cpp
+
+        * added missing variable "grouped" and needed functions
+        to class Army (who knows when this got lost?)
+
+        * did some code fixing so that it will hopefully compile soon
+
+2001-09-14    <ulf@freelords.org>
+
+	* extended freelords.uml
+
+2001-08-31    <midramas@freelords.org>
+
+        * fight: seperated the fight class to graphic/d_fight and
+        common/fight. This implementation won't compile, still much
+        todo.
+
+        * extended freelords.uml and design.txt (Fight sections)
+
+2001-08-29    <ulf@freelords.org>
+
+	* armyset: added deleting functions
+
+	* extended freelords.uml
+
+2001-08-01    <ulf82@users.sf.net>
+
+	* army, armyset, armyset_army: rewrite to fit in the new design
+
+	* added doc/freelords.uml to cvs tree
+
+	* added file.h/cpp for file access
+
+2001-07-16    <gnosticus@gmx.at>
+
+        * improved performace of the smallmap redrawing
+
+2001-07-15    <ulf82@users.sf.net>
+
+	* two small bugfixes
+
+2001-07-13    <gnosticus@gmx.at>
+
+	* fixed the black flags
+
+	* various bug fixes
+
+2001-07-12    <gnosticus@gmx.at>
+
+	* fight, fightitem, stacklist: continued to port fight
+	components
+
+2001-07-11    <gnosticus@gmx.at>
+
+	* fight, fightitem: started porting to ParaGUI
+
+2001-07-10    <gnosticus@gmx.at>
+
+	* w_edit: added signal to reflect moving in the bigmap
+	also in the smallmap
+
+	* bigmap: added debuging code for missing flags
+
+2001-06-24    <ulf82@users.sf.net>
+
+	* player, playerlist, gamescenario: added messaging
+
+	* mapdef: fixed a small memory leak
+
+2001-06-21    <gnosticus@gmx.at>
+
+	* changed all over complicated sprintf commands
+
+	* main: added parameter detection. try it out with freelords -h
+	or freelords --help
+	
+	* main: changed resolution detection. see freelords --help
+	or freelords -h for more information
+
+2001-06-20    <ulf82@users.sf.net>
+
+	* removed several obsolete comments
+
+	* citylist: fixed a bug when locating cities
+
+	* defs, smallmap, w_edit: implemented a sample callback for the 
+	viewrect_changed event using the new style
+
+2001-06-18    <gnosticus@gmx.at>
+
+	* pic: added James Andrews new flag pics
+
+	* bigmap: implemented flags as pictures
+
+	* bigmap, smallmap: fixed a bug that didn't show those widgets
+	with ParaGUI 0.7.1
+
+2001-06-13    <gnosticus@gmx.at>
+
+	* pic: added James Andrews new swamp pics
+
+2001-05-28    <gnosticus@gmx.at>
+
+        * mapdef: changed the rendering code again - it crashes sometimes
+        but there's no need for special workarounds anymore - will fix
+        this soon
+
+        * pic: added James Andrews new mountain pics
+
+2001-05-25    <gnosticus@gmx.at>
+
+	* main: now checking for available resolutions and using the best
+	resolution in fullscreen mode
+
+	* w_edit: fixed a bug that caused a crash when selecting a stack +
+	calculating the size of bigmap now correctly + changed the way
+	signals are handled
+
+	* bigmap: path is now shown, but the problem doesn't seem to be
+	completely fixed + flags are now shown
+
+	* defs: added macros for signal handling
+
+        * specification: updated by Jimmy Chin (getting better everday :)
+
+2001-05-21    <ulf82@users.sourceforge.net>
+
+	* bugfix: when loading armysets (Jimmy Chin)
+
+	* updated: AUTHORS 
+
+2001-05-18    <gnosticus@gmx.at>
+
+        * d_buy_production, cityinfo: porting of those two finished
+
+2001-05-17    <gnosticus@gmx.at>
+
+        * d_buy_production: started to port
+
+        * bigmap, cityinfo: cityinfo ported and activated in bigmap
+
+2001-05-15    <ulf82@users.sourceforge.net>
+
+	* gamescenario + all lists: added fl_clear() and fl_erase which 
+	also free memory, game_scenario now frees all memory of the 
+	lists on exit
+
+2001-05-07    <ulf82@users.sourceforge.net>
+
+	* defs.h: added defs.h which now contains the macros formerly in 
+	armyset_army.h and mapset_tile.h
+
+	* armyset.cpp: Armyset now clears it's memory on destruction
+
+
+....porting....	(done by Michael)
+
+2001-04-20    <gnosticus@gmx.at>
+
+        * all files: started port to SDL + ParaGUI
+
+2001-04-17    <gnosticus@gmx.at>
+
+	* cityinfo: fixed bug that subtracted too much gold when
+	upgrading a city
+
+	* mapdef: fixed bug that allowed cities in water (Daniel Nilsson)
+
+	* w_edit: when buying a production the player gold changed are
+	immediately reflected in the gold-status on the main screen
+	(Daniel Nilsson)
+
+	* player: changed to QObject to allow emitting of status_changes
+	(Daniel Nilsson)
+
+	* playerlist: passes the status_changes of player up to w_edit
+	(Daniel Nilsson)
+
+	* w_edit: fixed bug that didn't activate the search button upon a heros
+	arrival on a ruin or temple (Daniel Nilsson)
+
+2001-04-16    <ulf82@users.sourceforge.net>
+
+	* fight: implemented ARMY_HERO, ARMY_CAVALRY, ARMY_ANTICAVALRY 
+	(not tested yet)
+
+	* game_scenario, mapdef: fixed a large memory leak; mapdef now 
+	deletes the map array on destruction ( >1meg per game)
+
+2001-04-13    <ulf82@users.sourceforge.net>
+
+	* many files: implemented army bonus structure and first army 
+	bonus (ARMY_SHIP)
+
+	* bigmap, stacklist, w_edit: fixed a segfault bug during fights
+
+	* city: fixed a bug which caused a segfault when the city was 
+	full of armies
+
+	* city: fixed a bug which made cities produce a hero if 
+	production was set to none
+
+	* cityinfo: the gold needed for buying a production is now 
+	subtracted from the players gold
+
+	* stacklist: fixed a bug which could cause an endless loop in 
+	Stacklist::join()
+
+2001-04-08    <ulf82@users.sourceforge.net>
+
+	* w_edit: heroes now can also search temples
+
+	* re-edited config files for the two armysets
+	(design reasons & adjusted army properties a bit)
+
+	* move bonus is now done via macros defined in mapset_tile.h
+
+2001-04-04    <gnosticus@gmx.at>
+
+	* added two new hill pictures instead of the old one (James Andrews)
+
+	* maptile: implemented the new hill pictures and randomly choose which
+	one to draw -> because the rendering engine is dependent on the pictures
+	we get from James Andrews (and he has still not decided how to do them)
+	it is a quick hack. The rendering engine definitely needs to be rewritten
+	in the next releases (0.2.0?)
+
+2001-04-01    <ulf82@users.sourceforge.net>
+
+	* bigmap, w_edit, stackinfo: the stackinfo widget now stays visible 
+	throughout the game; this also fixes a bug when losing a battle
+	(Ulf Lorenz)
+
+	* client: fixed a recursive macro call when DEBUG_IT was enabled
+	(Ulf Lorenz)
+
+2001-03-28    <gnosticus@gmx.at>
+
+        * fight, stacklist: fixed bug that caused segfault after losing
+        a fight and clicking somewhere on the map (Ulf Lorenz)
+
+2001-03-20    <gnosticus@gmx.at>
+
+	* many files: memory leak fixed (in Fight), added class Fightitem,
+       	setRGB bugfix and general code cleanup (Ulf Lorenz)
+
+2001-03-12    <gnosticus@gmx.at>
+
+	* mapdef: load map function now works, just create a map in the mapeditor
+	and load it in FreeLords
+	
+	* pics: new pictures from James Andrews
+
+	* many files: patch so that all armies in the city defend it against
+	attackers (Daniel Nilsson)
+
+2001-03-05    <gnosticus@gmx.at>
+
+	* many files: memory leak fixing and code clean-up (Ulf Lorenz)
+
+2001-03-02    <gnosticus@gmx.at>
+	
+	* many files: used explicit typecasting to avoid error messages
+	on broken compilers
+
+2001-02-28    <gnosticus@gmx.at>
+
+	* mapdef: updates to "smoothing-code"
+
+	* stack: show strongest army or hero as picture for stack
+	(Daniel Nilsson)
+
+2001-02-27    <gnosticus@gmx.at>
+
+	* added new hills pic (James Andrews)
+
+2001-02-26    <gnosticus@gmx.at>
+
+	* citiesreport: implemented cities-report (Daniel Nilsson)
+
+	* stacklist: bugfix when moving armies (Daniel Nilsson)
+
+	* stack: always displaying heroes first in stack (Daniel Nilsson)
+
+2001-02-25    <gnosticus@gmx.at>
+
+	* armyset_army: changed enum move_bonus to be more reasonable
+	(Ulf Lorenz)
+
+	* updated default.xml of default armyset (Ulf Lorenz)
+
+	* changed default to default.xml of third_age (Ulf Lorenz)
+
+	* army: deleted property move_bonus. now accessable with get_move_bonus()
+	- from armyset_army (Ulf Lorenz)
+
+	* stacklist: fixed a bug that could cause segfault when attacker dies
+	(Ulf Lorenz)
+
+	* mapset_tile: added enum Maptile_Type + methods/properties (Ulf Lorenz)
+
+	* pic/map/default/default added Maptiley_Type (Ulf Lorenz)
+
+	* mapdef:added loading Maptile_Typed from mapdef-file (Ulf Lorenz)
+
+	* stack: changed to use move_bonus (Ulf Lorenz)
+
+	* army: rewritten decrement_moves (Ulf Lorenz)
+
+	* army: fixed a small bug in decrement_moves
+
+	* w_main: bugfix "no signal" (Ulf Lorenz)
+
+	* new water pictures (James Andrews)
+	
+2001-02-20    <gnosticus@gmx.at>
+
+	* armyset_army, army: added move bonus variable
+
+	* armyset: changed load function to use the new XML format
+
+2001-02-20    <gnosticus@gmx.at>
+
+	* d_buy_production, cityinfo: finished implementing "buy production"
+
+2001-02-20    <gnosticus@gmx.at>
+
+	* cityinfo: fixed bug that allowed upgrading of city without enough
+	money 
+	
+	* d_buy_production: implemented "buy production" in cityinfo
+
+2001-02-19    <gnosticus@gmx.at>
+
+	* selector: removed! implemented in bigmap now... was not enough to
+	justify a class 
+
+	* maptile: added new forest! looks like we get a decoration layer soon
+
+2001-02-05    <gnosticus@gmx.at>
+
+	* path: improvements to the path finding algorithm + bugfixes
+	(Ulf Lorenz)
+
+2001-02-03    <gnosticus@gmx.at>
+
+	* path, bigmap, stacklist: improvements to the path finding
+	algorithm & recalculation when obstacles are in the way
+	(Ulf Lorenz)
+
+2001-01-26    <gnosticus@gmx.at>
+
+	* path, pathitem: implemented the shortest path algorithm A*
+	(Ulf Lorenz)
+
+2001-01-26    <gnosticus@gmx.at>
+
+	* mapset_tile: changed number of pixmaps to 29 
+
+	* mapdef: added smooth(int, int) & smooth_all() function. together
+	they calculate the correct transitions for the map 
+
+2000-12-29    <gnosticus@gmx.at>
+
+	* armyinfo: changed Single_StackInfo to Armyinfo and gave it it's
+	own class :) 
+
+	* many files: added multiple armysets 
+
+	* pics: put the pictures of map & army to it specific classes
+	and cleaned up pics in that way 
+
+	* stackinfo: fixed bug that caused layout errors 
+
+2000-12-29    <gnosticus@gmx.at>
+
+	* stackinfo: added new class Single_StackInfo which implements
+	a hitpoint status bar 
+
+	* w_main: added hitpoints to armies (Ulf Lorenz)
+
+	* d_map: added for further options when selecting random maps
+
+	* many files: changed file structure again (Ulf Lorenz)
+
+2000-12-17    <gnosticus@gmx.at>
+
+	* global: deleted defaults commandline option (not needed anymore)
+	
+	* client: added many new methods 
+
+	* many files: too many changes to list 
+
+2000-12-10    <gnosticus@gmx.at>
+
+	* smallmap: fixed problem that scrolling to the	bottom right corner
+        didn't result in viewing the bottom right part of the map in the
+        bigmap widget 
+
+	* goldreport: added goldreport. click on Report->Gold and see for
+	yourself (Ulf Lorenz)
+
+	* genmap.py: fixed genmap.py to create random maps without cities
+	placed in the water (John Farrell)
+
+	* hero_male_names.py: added script that generates random names for male
+	heroes (John Farrell)
+
+2000-11-28    <gnosticus@gmx.at>
+
+	* cityinfo: added "no production" button and checking for the status
+	 of the "buy production" button 
+
+	* w_edit: fixed crash when occupying a city and clicking "next turn"
+
+	* city: added set_random_armytypes() 
+
+2000-11-28    <gnosticus@gmx.at>
+
+	* cityinfo: changed the dialog to be more informative on
+	the production and added the buy_production button  
+
+	* genmap.py: new version wich produced 2 maps, one that shows the
+	maptiles, the other one the building. bugfix has been done to 
+	the cities (John Farrell)
+
+	* bigmap: fixed but that allowed viewing of other players cities
+
+2000-11-26    <gnosticus@gmx.at>
+
+	* mapdef: implemented the city_database. when creating a random
+	map, the cities will now get a name randomly chosen from the
+	citynames textfile 
+
+	* stack: bugfix when splitting a stack (Ulf Lorenz)
+
+2000-11-21    <gnosticus@gmx.at>
+
+	* stack: changed moving behaviour, now stacks stop when something
+	blocks it's path 
+
+	* many files: maps that are made with the mapeditor can be loaded
+	
+
+	* w_edit: fixed bug with buttons that didn't show correct state
+	(enabled, disabled) when changing the selected stack 
+
+	* pictures: updated default armyset 
+
+	* mapdef: fixed bug that caused segfault on startup sometimes
+	
+	
+2000-11-20    <gnosticus@gmx.at>
+
+	* genmap.py: implemented a python script John Farrell sent me
+	that generates random maps	  (Michael Bartl, John Farrell)
+	
+	* mapset_tile: added a class that handles a single tile of
+	a mapset -> this splitted the mapset_tile from the maptile
+	and saves memory (at least 200kb)
+
+2000-11-19    <gnosticus@gmx.at>
+
+	* all files: major rewrite 
+
+2000-10-30    <gnosticus@gmx.at>
+
+	* many files: changed to allow different mapsets 
+
+2000-10-18    <tobi@kreativ-langeweile.de>
+
+	* CVS Snapshot-source released at SF		(Tobias Mathes)
+
+	* Opening of "old" file Archive at 
+	  http://www.ideenpark.de/files/CVS/		(Tobias Mathes)
+
+2000-10-16    <gnosticus@gmx.at>
+
+	* ruin, w_main: added search function for heroes in ruins
+
+	* stack: fixed joining and splitting of stacks again - always
+	pointer problems 
+
+	* many_files: added armyset from 666_god + completed armyset from
+	James Andrews 
+
+	* army: added production_cost variable which is needed for the
+	"buy production" function 
+
+	* many_files: changed the paths to the various pics for the new
+	directory structure 
+
+2000-10-13    <tobi@kreativ-langeweile.de>
+
+	* "AUTHORS" update				(Anluan O'Brien)
+
+	* added rejoining of stacks that have been 
+	splitRFT					(Anluan O'Brien)
+
+	* CVS Snapshot-source released at SF		(Tobias Mathes)
+
+	* "AUTHORS" update				(Tobias Mathes)
+
+	* RFT - Request for time ... have one at WE	(Tobias Mathes)
+
+2000-10-12    <tobi@kreativ-langeweile.de>
+
+	* website upload				(Tobias Mathes)
+	
+	* army-graphics added to "Screenshots.shtml"	(Tobias Mathes)
+
+2000-10-11    <gnosticus@gmx.at>
+
+	* moving stacks: changed the stack behaviour to be more consistent
+	with w*rl*rds and to enhance playability 
+
+	* startup_screen: added defaults 2 players and removed
+	the not used progressbar 
+
+2000-10-10    <gnosticus@gmx.at>
+
+	* added buttons: move stack, stack defend, stack defend + next stack,
+	next stack, stack search 
+
+	* path: added class that draws the path of a stack 
+
+	* stack: excluded the function to calculate the path and changed
+	the move_it function to use the calculated path	
+
+2000-10-09    <gnosticus@gmx.at>
+
+	* placeXXX: the place functions are MUCH faster now (Michael Bart)
+
+	* temple: added temple - not yet searchable for hero 
+
+	* ruin: added ruin - not yet searchable for hero 
+
+	* w_main: changed display_first_city() to only show
+	the first city when it is NOT on the screen 
+
+	* hero_offer: excluded the dialog for hero offerings
+	from w_main and made hero_offer.h/cpp with some minor
+	enhancements 
+
+	* pics: added James Andrews new army pics, thanx to James 
+
+	* pics: converted water.xpm & demon.xpm to png
+	to make the package smaller 
+
+	* stack: changed the city defense calculation to reflect the
+	city-defense-level - not tested yet 
+
+	* added: sword picture from Daniel Rigos 
+
+	* fight: now with delay to make progress visible 
+
+	* smallmap: changed so that stacks and cities are visible on it
+	
+
+	* fixed: SEG-FAULT on stack-splitting 
+
+	* many_files: made many "asthetic changes 
+
+2000-10-05    <golfnut299@bigfoot.com> <gnosticus@gmx.at>
+	
+	* cityinfo: added an upgrade button so now you can
+	upgrade the citys defense level for cash 
+
+	* many_files: made some "asthetic" changes 
+
+	* pictures: changed the city pic with the new one from 
+	Daniel Rigos (MUCH better) and used this pictures background
+	as new grass pic 
+
+	* pics: excluded the pics class from global and	added a load function
+	to easier import different file formats - PNG, BMP, XPM,...
+	
+
+	* stack: Implemented a check so that all armies in a city will defend
+	it, also if the armies are defeated, the victor is allowed in.
+	(Chris Slater)
+
+	* many_files: All types of warriors now have defence and vitality stats
+	(Chris Slater)
+
+	* fight: Changed the luck factor from +/- 25% to +/- 15%. Also added
+	a terrain factor where the armies recieve bonuses during combat.
+	(Chris Slater)
+	
+2000-10-04    <gnosticus@gmx.at>
+
+	* smallmap: changed the way the viewrect reactes to the mouse 
+	
+
+	* mapdef: changed the city distribution so that
+	cities can't overlap anymore - very slow 
+
+	* many_files: added heroes, but without any special abilities 
+
+	* city: fixed a small bug in City::produce_army() 
+
+2000-10-03    <gnosticus@gmx.at>
+
+	* global: added that all players start with one stack 
+
+	* global, city, player: added neutral player + cities 
+
+	* Makefile: changed so that -lqt is found now (Chris Slater)
+
+	* stack: squashed a hideous bug that caused a crash sometimes when
+	joining stacks - took me 2 1/2 hours! 
+
+	* many_files: made code more readable and "asthetic" (Chris Slater)
+
+	* stack: added fight when occupying a city (Chris Slater)
+
+	* splash_screen.png: changed the filetype of the splash_picture to
+	decrement the filesize from 640k to 240k 
+
+	* selector, bigmap: added a selector - a marker that indicates
+	which stack is selected 
+
+2000-10-02    <gnosticus@gmx.at>
+
+	* w_main: added function to display first city of activePlayer
+	on beginning of turn 
+
+	* smallMap, bigMap: changed code to seperate smallMap from bigMap
+
+	* w_main: added announcement of next player for 1st player 
+	
+	
+
+2000-09-30    <gnosticus@gmx.at>
+
+	* splash: added splash_screen - thanks to Daniel Rigos for
+	the great pic 

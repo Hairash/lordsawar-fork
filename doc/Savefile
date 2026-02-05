@@ -1,0 +1,1693 @@
+Copyright (C) 2003, 2004, 2005 Ulf Lorenz
+Copyright (C) 2004, 2005, 2006 Andrea Paternesi
+Copyright (C) 2007, 2009, 2010, 2014, 2021 Ben Asselstine
+This document describes the format of a lordsawar save game. 
+
+
+The save game files are in uncompressed tar format. 
+The first file is the scenario file, which is an xml file.  It is this scenario file format that is described in this document.
+The rest of the files are in the tar file are: 
+a .lwc file: a lordsawar cityset, 
+a .lws file: a lordsawar shieldset
+a .lwa file: a lordsawar armyset, 
+a .lwt file: a lordsawar tileset
+
+Each of these accompanying files is also an uncompressed tar file containing an xml file and associated .png image files.
+
+The scenario file is known as a "savegame" in this document.
+
+The tags are displayed here as they appear in the save game.  
+The text in between the tags are comments.  There are two kinds of tags:
+
+- tags to structure the savefile  (e.g. <player>)
+- data tags (e.g. <d_id>)
+
+The first kind of tags defines a structure for the savegames, which is 
+important when loading it. The latter tags actually store the data. As 
+an example, here is a draft of the list of players:
+
+<playerlist>
+    <player>
+        <d_id>      player's Id     </d_id>
+        <d_name>    player's name   </d_name>
+        ...
+    </player>
+    <player>
+    ...
+    </player>
+    ...
+</playerlist>
+
+The player tags here enclose the definition of a single player. The 
+actual name etc. of these players are stored within data tags. Data 
+tags always start with a "d_".
+
+Order of the data tags does not matter, but the order of the sections
+does matter.
+
+The version of the savegame is encoded in the first opening "lordsawar" tag.
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<lordsawar version="xxx">
+    <counter>
+        <d_curID>   This value should be always higher than the largest Id that
+                    has been assigned since new Id's will be assigned from this
+                    value on.
+                    Unique successive Ids are given to newly created game 
+                    objects, and this value holds the next Id to assign.
+        </d_curID>
+    </counter>
+    <itemlist>
+      This is a list of item prototypes that can be used to make actual items 
+      on demand.  e.g. for a reward.
+      <itemproto>
+        <d_name> The name of the item </d_name>
+        <d_bonus> The capabilities this item has.  The format of this field
+                  is string based, and has strings of the form described in 
+                  ItemProto::Bonus of ItemProto.h.  An example value is:
+                  ItemProto::ADD1STR ItemProto::ADD2GOLDPERCITY
+        </d_bonus>
+        <d_uses_left> How many this item can be used.  Most items can't be
+                      explicitly used.
+        </d_uses_left>
+      </itemproto>
+    </itemlist>
+    
+    <playerlist>
+        <d_active> the Id of the active player </d_active>
+        <d_neutral> the Id of the neutral player </d_neutral>
+        <player>
+            <d_id>      the Id of the player  (we use 0 .. 8)   </d_id>
+            <d_name>    the name of the player                  </d_name>
+            <d_immortal> (boolean) player lives on after losing all cities</d_immortal>
+            <d_color>   the hex value for the colour.  e.g. #FCFCFC
+                        or three consecutive numbers under 256 like 100 40 100
+
+                        also accepts sets of colours like '#aaaaaa #bbbbbb #cccccc',
+                        for when we want the player to have many colours
+            </d_color>
+            <d_armyset> Id of the player's armyset
+                        Lines up with <d_id> in army/file.lwa->file.lwa
+                                                                </d_armyset>
+            <d_gold>    the gold pieces owned by the player     </d_gold>
+            <d_dead>    true, if player is dead, false if not   </d_dead>
+            <d_type>    the type of the player
+                        0   human player
+                        1   ai player of type AI_Fast
+                        2   ai player of type AI_Dummy
+                        4   ai player of type AI_Smart
+                        8   networked player
+
+                        whenever there's an enumeration like this, we can have a number
+                        or the string version, like so:
+
+                        Player::HUMAN
+                        Player::AI_FAST
+                        Player::AI_DUMMY
+                        Player::AI_SMART
+                        Player::NETWORKED
+
+                        "dummy" means neutral player.
+            </d_type>
+ 
+            <d_join>    if d_type=1 (boolean) the ai merges stacks together         </d_join>
+            <d_maniac>  if d_type=1 (boolean) the ai razes all cities it occupies   </d_maniac>
+            <d_upkeep>  number of gold pieces paid this turn for upkeep
+                                                                </d_upkeep>
+            <d_income>  number of gold pieces given to us in taxes </d_income>
+            <d_fight_order> a space separated list of army type Ids that
+                            determine the order in which armies fight
+                            in battle.                          
+                            These Ids line up with order of armies in
+                            the armyset.                </d_fight_order>
+            <d_diplomatic_states>
+              a space separated list of numbers.
+              If we're at peace (=1), war in the field (=2), or full war (=3).  
+              One numeric value for each other player (excluding us).  Values 
+              relate to the DiplomaticState enumeration in player.h.
+            </d_diplomatic_states>
+            <d_diplomatic_rank>
+              Where we are in the listing of diplomacy.  Lower values are 
+              better here.  Lowest is 1.  Maximum is the number of alive 
+              players.
+            </d_diplomatic_rank>
+            <d_diplomatic_title>  A textual representation of the diplomatic 
+                                  rank.
+            </d_diplomatic_title>
+            <d_diplomatic_proposals>
+              A space separated list of numbers.
+              If we're offering peace, war in the field, or full war.  One
+              numeric value for each other player (excluding us).  Values 
+              relate to the DiplomaticProposal enumeration in player.h
+            </d_diplomatic_proposals>
+            <d_diplomatic_scores>
+              A space separated list of numbers.
+               How bad we feel about each other player.  One numeric value for
+               every other player.  Lower is better.  (FIXME: confirm)
+            </d_diplomatic_scores>
+            <d_observable> Whether or not to show the movements of this player. 
+               Lines up with the checkbox in the preferences dialog.
+            </d_observable>
+            <history>
+                The only tag common to all history types is the tag "type".
+                Everything else depends on the type of the history event. 
+                The whole historylist of a player comes here with as many 
+                tags as necessary.  For example purposes, one history tag
+                will be shown for each kind of history event.  This data is
+                used to populate the history reports.
+            </history>
+            <history>
+                <d_type>1</d_type> (player starts a turn)
+            </history>
+            <history>
+                <d_type>2</d_type> (player's hero finds a sage)
+                <d_hero> the hero's name </d_name>
+            </history>
+            <history>
+                <d_type>3</d_type> (player gold report)
+                <d_gold> how much gold the player has </d_gold>
+            </history>
+            <history>
+                <d_type>4</d_type> (player has a hero emerge somewhere)
+                <d_hero> the hero's name </d_name>
+                <d_city> the name of the city </d_name>
+            </history>
+            <history>
+                <d_type>5</d_type> (player took over a city)
+                <d_city> the Id of the city the player took over </d_city>
+            </history>
+            <history>
+                <d_type>6</d_type> (player razed a city)
+                <d_city> the Id of the city the player razed </d_city>
+            </history>
+            <history>
+                <d_type>7</d_type> (player's hero starts a quest)
+                <d_hero> the hero's name </d_name>
+            </history>
+            <history>
+                <d_type>8</d_type> (player's hero completes a quest)
+                <d_hero> the hero's name </d_name>
+            </history>
+            <history>
+                <d_type>9</d_type> (player's hero killed in a city)
+                <d_hero> the hero's name </d_name>
+                <d_city> the name of the city </d_name>
+            </history>
+            <history>
+                <d_type>10</d_type> (hero killed in battle outside of a city)
+                <d_hero> the hero's name </d_name>
+            </history>
+            <history>
+                <d_type>11</d_type> (hero killed while searching a ruin)
+                <d_hero> the hero's name </d_name>
+            </history>
+            <history>
+                <d_type>12</d_type> (hero takes over a city)
+                <d_hero> the hero's name </d_name>
+            </history>
+            <history>
+                <d_type>13</d_type> (player total score report)
+                <d_score> an integer between 0 and 100 representing
+                          how well the player is doing </d_score>
+            </history>
+            <history>
+                <d_type>14</d_type> (player is vanquished)
+            </history>
+            <history>
+                <d_type>15</d_type> (player declares peace with another player)
+                <d_opponent_id>the player we're at peace with.</d_opponent_id>
+            </history>
+            <history>
+                <d_type>16</d_type> (player declares war with another player)
+                <d_opponent_id>the player we're at war with.</d_opponent_id>
+            </history>
+            <history>
+                <d_type>17</d_type> (player declares war via treachery)
+                <d_opponent_id>the player we've treacherously attacked.
+                </d_opponent_id>
+            </history>
+            <history>
+                <d_type>18</d_type> (player's hero finds allies)
+                <d_hero> id of the hero </d_hero>
+            </history>
+            <history>
+                <d_type>19</d_type> (player has ended a turn)
+            </history>
+            <history>
+                <d_type>20</d_type> (player's hero explores a ruin)
+                <d_hero> name of the hero </d_hero>
+                <d_ruin> id of the ruin searched </d_ruin>
+            </history>
+            <history>
+                <d_type>21</d_type> (hero has been told where a ruin is)
+                <d_hero> name of the hero </d_hero>
+                <d_hero> id of the ruin</d_hero>
+            </history>
+            <history>
+                <d_type>22</d_type> (hero has used an item)
+                <d_hero_name> name of the hero </d_hero_name>
+                <d_item_name> name of the item </d_item_name>
+                <d_item_bonus> what the item can do (ItemProto::Bonus) 
+                </d_item_bonus>
+                <d_opponent_id> id of the player we used it against 
+                </d_opponent_id>
+            </history>
+
+            <stacklist>
+                This list contains all stacks of the player.
+            
+                <d_active> the Id of the current activestack   </d_active>
+
+                <stack>
+                    <d_id>         the Id of the stack         </d_id>
+                    <d_player>     the Id of the stack's player</d_player>
+                    <d_x>          x position of the stack on the map </d_x>
+                    <d_y>          y position of the stack on the map </d_y>
+                    <d_defending>  is the stack defending? (defending stacks 
+                                   will be ignored if the player clicks 
+                                   on "next stack")
+                    </d_defending>
+                    <d_parked>  is the stack parked?  This just means the 
+                                player doesn't want to deal with this 
+                                stack again this turn.
+                    </d_parked>
+                    <d_moves_exhausted_at_point>
+                        Which point in the path we stop moving at because 
+                        we will run out of movement points.
+                        This value is an index, starting at 0.
+                    </d_moves_exhausted_at_point>
+                    
+                    <path>
+                        <d_size> how many items does the path contain </d_size>
+                        <d_x>   a space separated list of all x coordinates 
+                                (in order) of the path's items
+                        </d_x>
+                        <d_y>   the same for the y coordinates   </d_y>
+                    </path>
+
+                    Up to eight army tags follow.  Order of armies is the
+                    order within the stack.
+                    
+                    <army>
+                        <d_id>     the Id of the army            
+                        </d_id>
+                        <d_type>   the type of the army (0 means first 
+                                   army type of the armyset, 1 second etc.)
+                        </d_type>
+                        <d_armyset>  Id of the army's armyset   
+                        </d_armyset>
+                        <d_hp>       how many hitpoints the army has. 
+                          normally 2. unless it's injured and it will be 1.
+                          zero means dead.
+                          hp gets refreshed at the start of a round.
+                        </d_hp>
+                        <d_moves>    how many movement points the 
+                                     army has left                   
+                        </d_moves>
+                        <d_max_moves> maximum number of movement 
+                                      points the army can move   
+                        </d_max_moves>
+                        <d_strength>  the strength of the army   
+                        </d_strength>
+                        <d_xp>        the experience points of the army </d_xp>
+                        <d_level> always 0 for non heroes.
+                          heroes use this value.
+                        </d_level>
+                        <d_medals>   the value data tags are three boolean 
+                                     values separated by spaces one foreach 
+                                     medal type; 0 means no medal 1 means medal
+                           the first medal is given to army units that scores
+                           more than 90% of hits in a battle.
+                           the second medal is given to army units that are
+                           rarely hit.
+                           the third medal is given to army units that survive
+                            a number of battles.
+                        </d_medals>
+                        <d_numberbattles> how many battles this army has fought
+                        </d_numberbattles> 
+                        <d_sight>  the view radius on hidden map (in tiles)
+                          1 means 3x3 box centered on the stack.  2 means 5x5.
+                        </d_sight>
+	                <d_expvalue>  how many xp this army is worth if killed  
+                        </d_expvalue>
+                        <d_ship> whether or not this army is in a ship
+                        </d_ship>
+                        <d_visited_temples>
+                            a space separated list of temple Ids that the
+                            army has been blessed at
+                        </d_visited_temples>
+                        <d_upkeep> gp this army unit uses up per turn
+                        </d_upkeep>
+                        <d_move_bonus>
+                           a set of Tile::Type enumerations from Tile.h
+                           Possibly bitwise OR'd like so:
+                              Tile::FOREST | Tile::HILLS
+                        </d_move_bonus>
+                        <d_army_bonus>
+                          a set of combat bonuses from armybase.h
+                          Possibly bitwise OR'd like so:
+                              ArmyBase::ADD1STRINOPEN | ArmyBase::SUB2ENEMYSTACK
+                        </d_army_bonus>
+                        <d_max_moves_multiplier>
+                          our real max moves is actually max-moves times this.
+                          normally 1 but can be 2 when an item is affecting
+                          this player, its moves can be doubled.
+                        </d_max_moves_multiplier>
+                    </army>
+
+                    <hero>
+                        <d_name>      the name of the hero     
+                        </d_name>
+                        <d_gender >   the gender of the hero     
+                                      Hero::MALE, Hero::FEMALE
+                          (yes, i would like to make this non-binary someday)
+                        </d_gender>
+                        <backpack>
+                              <item>
+                                  <d_name> the name of the item              
+                                  </d_name>
+                                  <d_plantable> can this item be planted
+                                  </d_plantable>
+                                  <d_plantable_owner>  this id of player who
+                                                       can plant this item
+                                  </d_plantable_owner>
+                                  <d_planted>
+                                    boolean.  whether or not this item is
+                                    planted in the ground so that army units
+                                    can be vectored to it.  when in a hero's
+                                    backpack, this value will always be false.
+                                  </d_planted>
+                                  <d_orig_plantable_owner>
+                                     the id of the player who started with
+                                     this item (to determine what colour it is)
+                                  </d_orig_plantable_owner>
+                                  <d_id>        a unique Id of the item 
+                                  </d_id>
+                                  <d_bonus> see earlier description of ItemProto
+                                  </d_bonus>
+                              </item>
+
+                              ...
+
+                        </backpack>
+
+                        ... the rest is the same as the army tag
+
+                    </hero>
+
+                    ...more armies or heroes...
+                </stack>
+
+                ...more stacks...
+
+            </stacklist>
+
+            <fogmap>
+                <d_width> width of the map	        </d_width>
+                <d_height> height of the map	        </d_height>
+                <d_map>  fog of war information
+                         each line contains WIDTH numbers, and a new line
+                         there are a total of HEIGHT lines
+                         if a number is 0, then that tile is hidden
+                         if a number is 1, then that tile is exposed
+                                                        </d_map>
+            </fogmap>
+            <triumphs>
+                The following data is used to fill out the triumphs report:
+                <d_hero> a space separated list of the number of heroes
+                         we have killed, per player
+                </d_hero>
+                <d_special> a space separated list of the number of special
+                            armies (dragons, etc) that we have killed, per
+                            player
+                </d_special>
+                <d_normal>a space separated list of the number of normal
+                          armies we have killed per player
+                </d_normal>
+                <d_ship>a space separated list of the number of ships we have
+                        killed per player
+                </d_ship>
+                <d_flag>a space separated list of the number of times we have
+                        captured an enemy's standard, per player
+                </d_flag>
+            </triumphs>
+
+            <action>
+                The only tag common to all action types is the "d_type" tag.
+                Everything else depends on the type of the action. The whole
+                actionlist of a player comes here with as many tags as
+                necessary.  For example purposes, one action tag
+                will be shown for each kind of action event.
+            </action>
+
+            <action>
+                <d_type>1</d_type> (.. stack moved ..)
+                <d_stack>  the Id of the stack             </d_stack>
+                <d_x>      x position of the destination   </d_x>
+                <d_y>      y position of the destination   </d_y>
+            </action>
+
+            <action>
+                <d_type>2</d_type> (.. stack split ..)
+                <d_orig_stack> the Id of the original stack         </d_orig_army>
+                <d_new_stack>  the Id of the freshly created stack  </d_new_army>
+                <d_moved>      a space-separated list of the 8 figures.
+                               They describe the Id's of the armies which have
+                               been added to stack new_army. If <8 armies
+                               have moved, the rest of the fields are filled
+                               with zeros
+                </d_moved>
+            </action>
+            
+            <action>
+               <d_type>3</d_tag> (.. stack fight ..)
+               <d_attackers> list of attacking stack's Ids separated by spaces </d_attackers>
+               <d_defenders> list of defending stack's Ids separated by spaces </d_defenders>
+
+               it can also have an arbitrary number of subtags built like this:
+
+               <item>
+                   <d_turn>   combat round           </d_turn>
+                   <d_id>     id of the damaged unit </d_id>
+                   <d_damage> amount of damage done  </d_damage>
+               </item>
+            </action>
+            
+            <action>
+                <d_type>4</d_type> (.. stack joined ..)
+                <d_receiver>  the Id of the army which survives the joining
+                </d_receiver>
+                <d_joining>   the Id of the army which is destroyd after the
+                              joining
+                </d_joining>
+            </action>
+
+            <action>
+                <d_type>5</d_type> (.. ruin searched ..)
+                <d_ruin>     the Id of the searched ruin     </d_ruin>
+                <d_seeker>   the Id of the searching stack   </d_seeker>
+                <d_searched> has the keeper been defeated and the ruin
+                             successfully searched?
+                </d_searched>
+            </action>
+
+            <action>
+                <d_type>6</d_type> (.. temple searched ..)
+                <d_temple> the Id of the visited temple    </d_temple>
+                <d_stack>  the Id of the visiting stack    </d_stack>
+            </action>
+
+            <action>
+                <d_type>7</d_type> (.. city occupied ..)
+                <d_city> the Id of the occupied city </d_city>
+            </action>
+
+            <action>
+                <d_type>8</d_type> (.. city pillaged ..)
+                <d_city> the Id of the pillaged city </d_city>
+            </action>
+
+            <action>
+                <d_type>9</d_type> (.. city razed ..)
+                <d_city> the Id of the burnt down city </d_city>
+            </action>
+
+            <action>
+                <d_type>10</d_type> (.. city upgraded defense ..)
+                <d_city> the Id of the affected city </d_city>
+            </action>
+
+            <action>
+                <d_type>11</d_type> (.. city buy production ..)
+                <d_city>     the city Id we bought production for    	       </d_city>
+                <d_slot>     the slot that got replaced                        </d_slot>
+                <d_type>     the index of the army to be produced              </d_type>
+            </action>
+
+            <action>
+                <d_type>12</d_type> (.. city change production ..)
+                <d_city>     the city Id whose production is changed         </d_city>
+                <d_prod>     selected slot index                             </d_prod>
+            </action>
+
+            <action>
+                <d_type>13</d_type> (.. a reward is given ..)
+                <reward>
+                  Look at lordsawar.rewardlist for a description of a reward.
+                </reward>
+            </action>
+
+            <action>
+                <d_type>14</d_type> (.. hero gets a quest ..)
+                <d_hero>  the hero that has got the quest             </d_hero>
+                <d_quest> 1,2,3, depends on the quest type            </d_quest>
+                <d_data>  the Id of the object, depends on quest type </d_data>
+            </action>
+
+            <action>
+                <d_type>15</d_type> (.. hero picks up/drops an item ..)
+                <d_hero> the hero that equips the item </d_hero>
+                <d_item> item that is equipped         </d_item>
+                <d_dest> where the item is equipped    </d_dest>
+            </action>
+
+            <action>
+                <d_type>16</d_type> (.. army level-up ..)
+                <d_army> the army that has advanced a level </d_army>
+                <d_stat> the stat that was raised           </d_stat>
+            </action>
+
+            <action>
+                <d_type>17</d_type> (.. city sacked ..)
+                <d_city> the Id of the sacked city </d_city>
+            </action>
+
+            <action>
+                <d_type>18</d_type> (.. stack disbanded ..)
+                <d_stack> the Id of the stack disbanded </d_stack>
+            </action>
+
+            <action>
+                <d_type>19</d_type> (.. signpost changed ..)
+                <d_signpost> the Id of the signpost changed </d_signpost>
+                <d_message> the new message on the sign </d_message>
+            </action>
+
+            <action>
+                <d_type>20</d_type> (.. city rename ..)
+                <d_city> the Id of the city that was renamed </d_city>
+                <d_name> the new name of the city </d_name>
+            </action>
+
+            <action>
+                <d_type>21</d_type> (.. city vector ..)
+                <d_city> the Id of the city being vectored from </d_city>
+		<d_x> the x position being vectored to </d_x>
+                <d_y> the y position being vectored to </d_y>
+            </action>
+
+            <action>
+                <d_type>22</d_type> (.. fight order changed ..)
+                <d_order > a space separated list of army type Ids that
+                           represent the order in which they will fight in 
+                           battle
+                </d_order>
+		<d_x> the x position being vectored to </d_x>
+                <d_y> the y position being vectored to </d_y>
+            </action>
+
+            <action>
+                <d_type>23</d_type> (.. player resigns ..)
+            </action>
+
+            <action>
+                <d_type>24</d_type> (.. player plants an item ..)
+                <d_hero> the id of the hero </d_hero>
+                <d_item> the id of the item </d_item>
+            </action>
+
+            <action>
+                <d_type>25</d_type> (.. city produces army ..) 
+                <d_army_type > the id of the army type </d_army_type>
+                <d_city > the id of the destination city </d_city>
+                <d_vectored> was it vectored here? </d_vectored>
+            </action>
+
+            <action>
+                <d_type>26</d_type> (.. vector army ..) 
+                <d_army_type > the id of the army type </d_army_type>
+		<d_x> the x position being vectored to </d_x>
+                <d_y> the y position being vectored to </d_y>
+            </action>
+
+            <action>
+                <d_type>27</d_type> (.. new diplomatic states ..)
+            </action>
+
+            <action>
+                <d_type>28</d_type> (.. new diplomatic proposals ..)
+            </action>
+
+            <action>
+                <d_type>29</d_type> (.. new diplomatic scores ..)
+            </action>
+
+            <action>
+                <d_type>30</d_type> (.. end a turn ..)
+            </action>
+
+            <action>
+                <d_type>31</d_type> (.. conquer a city ..)
+            </action>
+
+            <action>
+                <d_type>32</d_type> (.. recruit a hero ..)
+            </action>
+
+            <action>
+                <d_type>33</d_type> (.. rename a player ..)
+            </action>
+
+            <action>
+                <d_type>34</d_type> (.. city destitute, stop production ..)
+            </action>
+
+            <action>
+                <d_type>35</d_type> (.. initialize a turn ..)
+            </action>
+
+            <action>
+                <d_type>36</d_type> (.. loot a city ..)
+            </action>
+
+            <action>
+                <d_type>37</d_type> (.. use an item ..)
+            </action>
+            <action>
+                <d_type>38</d_type> (.. change order of armies in a stack ..)
+            </action>
+            <action>
+                <d_type>39</d_type> (.. give hp and moves back to stacks ..)
+            </action>
+            <action>
+                <d_type>40</d_type> (.. give hp back to stacks in ruins ..)
+            </action>
+            <action>
+                <d_type>41</d_type> (.. collect taxes and pay upkeep ..)
+            </action>
+            <action>
+                <d_type>42</d_type> (.. kill player ..)
+            </action>
+            <action>
+                <d_type>43</d_type> (.. stack defend ..)
+            </action>
+            <action>
+                <d_type>44</d_type> (.. take the stack out of defend ..)
+            </action>
+            <action>
+                <d_type>45</d_type> (.. stack park ..)
+            </action>
+            <action>
+                <d_type>46</d_type> (.. take the stack out of park ..)
+            </action>
+            <action>
+                <d_type>47</d_type> (.. select a stack ..)
+            </action>
+            <action>
+                <d_type>48</d_type> (.. deselect the stack ..)
+            </action>
+
+        </player>
+
+        ...more players...
+        
+    </playerlist>
+    
+    <map>
+        <d_width>    the width of the map </d_width>
+        <d_height >    the height of the map </d_height >
+        <d_tileset> name of the tileset used
+          this is the basename of the file, minus the .lwt extension</d_tileset>
+        <d_cityset> name of the cityset used
+          this is the basename of the file, minus the .lwc extension</d_cityset>
+        <d_shieldset> name of the shieldset used
+          this is the basename of the file, minus the .lws extension
+        </d_shieldset>
+        <d_types>
+            First, there is a newline sign at the end of the string.
+            Following this is a long long row of numbers indicating the type of
+            terrain. The saving goes left to right row by row.
+            The numbers for the terrain:
+                0   grass
+                1   water
+                2   forest
+                3   hills
+                4   mountains
+                5   swamp
+            each row ends with a newline
+        </d_types>
+        <d_styles>
+            an array of tilestyles.  Each tilestyle is stored as a 2 digit
+            hexadecimal number.
+            It is newline separated like the d_types tag.
+            (this tag is easily the worst.  the pits.)
+        <d_styles>
+
+        <itemstack>
+
+           an itemstack is a bag on the ground.
+
+           <d_x> the x location of the item </d_x>
+           <d_y> the y location of the item </d_y>
+           <item>
+               See lordsawar.playerlist.player.stacklist.stack.hero.backpack 
+               for a description of an "item".
+               special items can be "planted" to allow army units to be
+               vectored to this location.
+           </item>
+        </itemstack>
+        ... more itemstacks ...
+    </map>
+
+    <citylist>
+        <city>
+            <d_id>          the Id of the city
+            </d_id>
+            <d_name>        the name of the city
+            </d_name>
+            <d_x>           x position of the city on the map
+            </d_x>
+            <d_y>           y position of the city on the map
+            </d_y> 
+            <d_owner>       Id of the city's owning player
+            </d_owner>
+            <d_active_production_slot>  The index of the current production 
+                                        slot, or -1
+            </d_active_production_slot>
+            <d_duration> the number of turns until the army units shows up, or
+                         if not producing, this value is -1.
+            </d_duration>
+            <d_gold>        the amount of gold the city provides each turn
+            </d_gold>
+            <d_burnt>       true if the city has been razed
+            </d_burnt>
+            <d_defense>     defense level of the city
+              this value doesn't do anything. just for show.
+            </d_defense>
+            <d_capital>     true if this is a capital city
+            </d_capital>
+            <d_capital_owner> the Id of the player who's capital this is.
+                              only present if d_capital is true.
+            </d_capital_owner>
+            <d_vectoring>
+              space separated position of where this city is vectoring to.
+              x comes first, then y.
+              if the city is not vectoring, then the value is "-1, -1".
+            </d_vectoring>
+            <d_build_production>
+              boolean. if true it allows new army units to be bought via
+              the buy button in the city window.
+            </d_build_production>
+
+            Now up to 4 armies appear.  These aren't armies like they appear
+            in stacks.  These are army templates/prototypes to be used to
+            produce new armies in cities. armyprodbase stands for:
+            Army Production Base.
+            <slot>
+              <armyprodbase>
+              </armyprodbase>
+            </slot>
+            <slot/>
+            <slot/>
+            <slot/>
+        </city>
+
+        ...more cities...
+
+    </citylist>
+
+    <templelist>
+        <temple>
+            <d_id>     the Id of the temple        </d_id>
+            <d_name>   the name of the temple      </d_name>
+            <d_type>   the type of the temple 
+                      numeric.  0 or 1.
+                      only affects the picture     </d_type>
+            <d_x>      x position of the temple    </d_x>
+            <d_y>      y position of the temple    </d_y>
+            <d_description> temple blurb           </d_description>
+        </temple>
+
+        ...more temples...
+
+    </templelist>
+
+    <ruinlist>
+        <ruin>
+            <d_id>         the Id of the ruin              </d_id>
+            <d_name>       the name of the ruin            </d_name>
+            <d_type>       the type of the ruin
+               one of Ruin::RUIN, Ruin::STRONGHOLD, Ruin::SAGE
+               affects the image but also affects how it operates </d_type>
+            <d_x>          x position of the ruin          </d_x>
+            <d_y>          y position of the ruin          </d_y>
+            <d_searched>   has the ruin been searched yet? </d_searched>
+            <d_sage>       is this ruin a sage? (boolean)  </d_sage>
+            <d_hidden>     is this ruin hidden? (boolean)  </d_hidden>
+            <d_owner>      player id of player who can see this ruin.
+                           this value is the neutral player's id if the
+                           ruin is visible by all.
+            <d_description> ruin blurb                     </d_description>
+            </d_owner>
+            <reward>
+              Look at lordsawar.rewardlist for a description of a reward.
+            </reward>
+            <keeper>
+              <d_name> the name of the monster encountered </d_name>
+              <stack>
+                  ....
+                  The stack the hero will fight (if not a sage)
+                  Here follows a complete description of the stack which guards
+                  the ruin.  This stack contains a single army unit.
+                  The name of the army unit is disregarded here in favour of
+                  lordsawar.ruinlist.ruin.keeper.d_name
+                  ....
+              </stack>
+            </keeper>
+        </ruin>
+
+        ...more ruins...
+
+    </ruinlist>
+
+    <rewardlist>
+        the one-time reward list, where random rewards are chosen from
+        <reward>
+            The only tags common to all reward types is the tag "type",
+            and "name".
+            Everything else depends on the type of the reward. 
+            For example purposes, one reward tag will be shown for 
+            each kind of reward.
+        </reward>
+        <reward>
+            <d_type>1</d_type> (..give gold..)
+            <d_name></d_name>
+
+            <d_gold>amount of gold</d_gold>
+        </reward>
+        <reward>
+            <d_type>2</d_type> (..give allies..)
+            <d_name></d_name>
+
+            <d_num_allies> give this many allies
+            </d_num_allies>
+            <d_ally_type> the allies have this army type id 
+            </d_ally_type>
+            <d_ally_armyset> the id of the armyset for this army type
+            </d_ally_armyset>
+        </reward>
+        <reward>
+            <d_type>3</d_type> (..give item..)
+            <d_name></d_name>
+
+            <item>
+                the item to give
+                See lordsawar.playerlist.player.stacklist.stack.hero.backpack
+                for a description of an item.
+            </item>
+        </reward>
+        <reward>
+            <d_type>4</d_type> (..show a hidden ruin..)
+            <d_name></d_name>
+
+            <d_x> the x position of the hidden ruin </d_x>
+            <d_y> the y position of the hidden ruin </d_y>
+        </reward>
+        <reward>
+            <d_type>5</d_type> (..show a part of a hidden map..)
+            <d_name></d_name>
+
+            <d_height> the map is this many tiles high</d_height>
+            <d_width> the map is this many tiles wide</d_width>
+            <location>
+                <d_id>id of the map</d_id>
+                <d_name>name of the map</d_name>
+                <d_x> the upper left corner of the map, x position </d_x>
+                <d_y> the upper left corner of the map, y position </d_y>
+            </location>
+        </reward>
+
+        ...more rewards...
+
+    </rewardlist>
+
+    <signpostlist>
+        the list of signs on the map
+        <signpost>
+            <d_id>the id of the signpost</d_id>
+            <d_name>the message on the sign <d_name>
+            <d_x>the x position on the map<d_x>
+            <d_y>the y position on the map<d_y>
+        </signpost>
+
+        ...more signposts...
+
+    </signpostlist>
+
+    <roadlist>
+        the list of road tiles on the map
+        <road>
+            <d_id>the id of the road tile</d_id>
+            <d_type>the style of road
+               See Road::Type in road.h for a listing. <d_type>
+            <d_x>the x position on the map<d_x>
+            <d_y>the y position on the map<d_y>
+        </road>
+
+        ...more road tiles...
+
+    </roadlist>
+    <portlist>
+        the list of port tiles on the map
+        <port>
+            <d_id>the id of the port tile</d_id>
+            <d_x>the x position on the map<d_x>
+            <d_y>the y position on the map<d_y>
+        </port>
+
+        ...more port tiles...
+
+    </portlist>
+    <bridgelist>
+        the list of bridge tiles on the map
+        <bridge>
+            <d_id>the id of the bridge tile</d_id>
+            <d_name>the name of the bridge (unused) <d_name>
+            <d_type>the style of bridge
+              See Bridge::Type in bridge.h a listing.  <d_type>
+            <d_x>the x position on the map<d_x>
+            <d_y>the y position on the map<d_y>
+        </bridge>
+
+        ...more bridge tiles...
+
+    </bridgelist>
+    <stonelist>
+        the list of standing stone tiles on the map
+        <stone>
+            <d_id>the id of the stone</d_id>
+            <d_type>the style of stone configuration
+               See Stone::Type in stone.h for a listing.
+               there are a lot of configurations because it goes 
+               with underlying road types.  <d_type>
+            <d_x>the x position on the map<d_x>
+            <d_y>the y position on the map<d_y>
+        </stone>
+
+        ...more stone tiles...
+
+    </stonelist>
+    <questlist>
+        the list of outstanding quests
+        <quest>
+            Every quest contains a common section, and then a specific 
+            section that depends on that quest type.
+            The common section:
+            <d_type> Quest type.  For example purposes, one quest per type
+                     will follow.
+              See Quest::Type in Quest.h for a listing.
+            </d_type>
+            <d_hero> the id of the hero
+            </d_hero>
+            <d_hero_name> the name of the hero
+            </d_hero_name>
+            <d_pending> whether or not this quest is pending deletion at the
+                        end of the round (boolean)
+            </d_pending>
+            <d_player> the id of the player owning the hero
+            </d_player>
+        </quest>
+        <quest>
+            ...go kill a hero
+            <d_type>Quest::KILLHERO</d_type>
+            [common quest tags]
+            <d_to_kill> id of hero to kill </d_to_kill>
+        </quest>
+        <quest>
+            ...go kill some of a player's armies
+            <d_type>Quest::KILLARMIES</d_type>
+            [common quest tags]
+
+            <d_to_kill> kill this many armies </d_to_kill>
+            <d_killed> this many killed so far </d_killed>
+            <d_victim_player> only count killed armies from 
+                              th player with this id
+            </d_victim_player>
+        </quest>
+        <quest>
+            ...go sack a city
+            <d_type>Quest::CITYSACK</d_type>
+            [common quest tags]
+
+            <d_city> the id of the city to sack </d_city>
+        </quest>
+        <quest>
+            ...go raze a city
+            <d_type>Quest::CITYRAZE</d_type> 
+            [common quest tags]
+
+            <d_city> the id of the city to raze </d_city>
+        </quest>
+        <quest>
+            ...go occupy a city
+            <d_type>Quest::CITYOCCUPY</d_type> 
+            [common quest tags]
+
+            <d_city> the id of the city to occupy </d_city>
+        </quest>
+        <quest>
+            ...go kill a particular kind of army
+            <d_type>Quest::KILLARMYTYPE</d_type> 
+            [common quest tags]
+
+            <d_type_to_kill> the army type id of the army to kill
+            </d_type_to_kill>
+        </quest>
+        <quest>
+            ...go pillage a certain amount of gold
+            <d_type>Quest::PILLAGEGOLD</d_type>
+            [common quest tags]
+
+            <d_to_pillage> the amount of gold to pillage</d_to_pillage>
+            <d_pillaged> the amount pillaged so far</d_pillaged>
+        </quest>
+
+        ...more quests...
+
+    </questlist>
+
+    <vectoredunitlist>
+        the list of vectored units that are "in the air"
+        <vectoredunit>
+          <d_id> the Id of the vectored unit </d_id>
+          <d_name> the name of the vectored unit (unused) </d_name>
+          <d_x> the source x position of the unit on the map </d_x>
+          <d_y> the source y position on the map </d_y>
+          <d_duration> how many more turns before the vectored unit shows up
+          </d_duration>
+          <d_dest_x> the destination x position on the map </d_dest_x>
+          <d_dest_y> the destination y position on the map </d_dest_y>
+          <d_player> the id of the player who is vectoring the unit
+          </d_player>
+          <army>
+              the army template to be vectored
+              this army layout is the same as the one in a city
+          </army>
+        </vectoredunit>
+
+        ...more vectored units...
+
+    </vectoredunitlist>
+    <turnlist>
+      a listing of every player's actions by turn
+        <turn>
+           <d_owner>Id of the player moving this turn</d_owner>
+           <action/>
+
+           ... more actions...
+
+        </turn>
+    </turnlist>
+    <herotemplates>
+      the heroes that can show up.
+      <herotemplate>
+         <d_name> the name of the hero </d_name>
+         <d_gender> Hero::MALE, Hero::FEMALE </d_gender>
+         <d_owner> player id that this hero shows up for </d_owner>
+      </herotemplate>
+
+      ...more hero templates...
+
+    </herotemplates>
+    <scenario>
+        <d_id> a guid </d_id>
+        <d_name> name of the scenario  </d_name>
+        <d_comment> scenario description </d_comment>
+        <d_copyright> name of copyright holder plus year <d_copyright>
+        <d_license> license info for this scenario <d_license>
+        <d_turn> the current turn number the game is on</d_turn>
+        <d_turnmode> boolean value used to set the armies healing at 
+                     the beginning of the player's turn or at the 
+                     beginning of the new round (e.g. refresh hp)
+        </d_turnmode>
+        <d_view_enemies> see contents of enemy stacks  (boolean)
+        </d_view_enemies>
+        <d_view_production> see enemy production in cities (boolean)
+        </d_view_enemies>
+        <d_quests> heroes can go on quests sometimes, or not.
+           See QuestPolicy in game-parameters.h
+        </d_quests>
+        <d_hidden_map> fog of war. (boolean)
+        </d_hidden_map>
+        <d_diplomacy> declare war before attacking. (boolean)
+        </d_diplomacy>
+        <d_neutral_cities>
+            the disposition of neutral cities.
+            See NeutralCities in game-paramters.h
+        </d_neutral_cities>
+        <d_intense_combat> make fights more difficult. (boolean)
+        </d_intense_combat>
+        <d_military_advisor> make battle prognositcation available. (boolean)
+        </d_military_advisor>
+        <d_random_turns> switch-up player ordering every round. (boolean)
+        </d_random_turns>
+        <d_cusp_of_war> makes computer players attack early </d_cusp_of_war>
+        <d_razing_cities> when to allow razing of cities
+          See RazingCities in game-parameters.h
+        </d_razing_cities>
+        <d_vectoring_mode> change how vectoring works
+          See VectoringMode in game-parameters.h
+        </d_vectoring_mode>
+        <d_build_production_mode>  
+          how often the buy button can be used in certain cities to make new
+          army units.
+          See BuildProductionMode in game-parameters.h
+        </d_build_production_mode>
+        <d_sacking mode> controls when to allow sacking
+          See SackingMode in game-parameters.h
+        </d_sacking mode>
+        <d_playmode>  if this is a hotseat game or a network game.
+          See GameScenario::PlayMode in GameScenario.h
+        </d_playmode>
+        <d_surrender_already_offered> a boolean.
+          true if the computer players have attempted to parley for peace.
+        </d_surrender_already_offered>
+
+    </scenario>
+</lordsawar>
+
+Shieldset files (.lws) hold images for shields and progress bars, as well as
+the default colours of players.  It has the following structure:
+
+<shieldset version="xxx">
+    <d_id> A unique numeric id among all shieldsets on the system. 
+           can't be zero.
+    </d_id>
+    <d_name> A name of this shieldset, suitable for display</d_name>
+    <d_copyright> A place for copyright notices.</d_copyright>
+    <d_license> A place for a license notice.</d_license>
+    <d_info> A description for this shieldset.</d_info>
+  
+    The small shields are the turn indicator shields.  Scale all small 
+    shield images to this height and width:
+    <d_small_width></d_small_width>
+    <d_small_height></d_small_height>
+
+    The medium shields are the city indicators on the small map.  Scale all 
+    medium shield images to this height and width:
+    <d_medium_width></d_medium_width>
+    <d_medium_height></d_medium_height>
+
+    The large shields are the player indicators in the fight window, and 
+    other places in the game.  Scale all large shield images to this 
+    height and width:
+    <d_large_width></d_large_width>
+    <d_large_height></d_large_height>
+
+    Now come the list of shields that are potential seats in a scenario...
+    <shield>
+        <d_owner> The player id.  A unique numeric id that starts at zero.  
+                  The last one is the neutral player.  Maximum value is 8.
+        </d_owner>
+        <d_color> The colour for this player.  The shields, armies, flags, and
+                  selectors are all coloured with this colour. 
+                  A hex string or a 3 numbers between 0-255 representing red,
+                  green and blue.
+        </d_color>
+        <shieldstyle>
+             <d_type>ShieldStyle::SMALL</d_type>
+             <d_image>The basename of the image for the small white shield.
+             </d_image>
+             <d_image_num_masks>
+             </d_image_num_masks>
+        </shieldstyle>
+        <shieldstyle>
+             <d_type>ShieldStyle::MEDIUM</d_type>
+             <d_image> The basename of the image for the medum white shield
+             </d_image>
+             <d_image_num_masks>
+             </d_image_num_masks>
+        </shieldstyle>
+        <shieldstyle>
+             <d_type>ShieldStyle::LARGE</d_type>
+             <d_image> The basename of the image for the large white shield.
+             </d_image>
+             <d_image_num_masks>
+             </d_image_num_masks>
+        </shieldstyle>
+       <tartan>
+         tartans are the graphics relating to the progress bar
+           <d_left_image> basename of the image showing the left
+                                      side of the tartan</d_left_image>
+           <d_left_image_num_masks></d_left_image_num_masks>
+           <d_center_image> basename of the image showing the center repeating
+                                      portion of the tartan</d_center_image>
+           <d_center_image_num_masks></d_center_image_num_masks>
+           <d_right_image> basename of the image showing the right
+                                      side of the tartan</d_right_image>
+           <d_right_image_num_masks></d_right_image_num_masks>
+       </tartan>
+    </shield>
+
+    ...more shield objects...
+    
+</shieldset>
+
+Cityset files (.lwc) hold images for buildings, as well as the number of tiles
+that some buildings may occupy on the map.
+
+<cityset version="xxx">
+    <d_id> A unique numeric id among all citysets on the system. can't be zero. </d_id>
+    <d_name> A name of this cityset, suitable for display</d_name>
+    <d_copyright> A place for copyright notices.</d_copyright>
+    <d_license> A place for a license notice.</d_license>
+    <d_info> A description for this cityset.</d_info>
+
+    <d_tilesize> The width and height of a tile.  in pixels.  <d_tilesize>
+
+    Now come the images.  When more than one object is represented in an 
+    image file, it is on the same row.  the height must be a divisor of the 
+    width.  When filenames are given, the .png extension is not included; nor
+    is a path (e.g. a basename is provided).
+
+    <d_cities> The basename of the image for the castles.  
+               Must be an image holding 9 city images on the same row.  
+               The last image is the neutral city.
+    </d_cities>
+    <d_razed_cities> The basename of the image for the razed castles.  
+                     must be an image holding 8 city images on the same row.  
+                     neutral cities cannot be razed so there isn't an image 
+                     for that.
+    </d_razed_cities>
+    <d_port>The basename of the image for a port icon.<d_port>
+    <d_ruins> The basename of the image for the ruins.  
+              must be an image holding 3 ruin images on the same row.
+    <d_ruins>
+    <d_temples> The basename of the image for temples.
+                must be an image holding 2 temple images on the same row.
+    <d_temples>
+    <d_towers> The basename of the image for towers.  
+               towers are what stacks go into after they've been in defend mode
+               for a turn.  must be an image holding 8 tower images on the same
+               row.  neutral towers do not exist.
+    </d_towers>
+    <d_signpost>basename of a sign graphic</d_signpost>
+
+
+    Now come the tile widths:
+    How many tiles a building takes up on the big map. a 3 means 3x3.
+    The images for these buildings are scaled to be 3*40 (tile width*tilesize)
+    across and high, for example.  Cities are normally 2x2.  Ruins are 1x1.
+    <d_city_tile_width> How many tiles the cities occupy.  Must be a numeric
+                        value above zero.  The city image is scaled to this
+                        new width.
+    </d_city_tile_width>
+    <d_temple_tile_width> How many tiles the temples occupy.
+    </d_temple_tile_width>
+    <d_ruin_tile_width> How many tiles the ruins occupy.</d_ruin_tile_width>
+
+</cityset>
+
+
+Armyset files (.lwa) hold images for army unit types, as well as their properties.
+<armyset version="xxx">
+    <d_id> A unique numeric id among all armysets on the system. can't be zero. </d_id>
+    <d_name> A name of this armyset, suitable for display</d_name>
+    <d_copyright> A place for copyright notices.</d_copyright>
+    <d_license> A place for a license notice.</d_license>
+    <d_info> A description for this armyset.</d_info>
+
+    <d_tilesize> The width and height of a tile.  in pixels.<d_tilesize>
+
+    Now come some images.  When filenames are given, the .png extension is not
+    included. nor is a path.  for example: "foo.png" is represented as "foo".
+    Wach of these images come in two halves on a single row.  The white in the
+    right half represents where the player's colour will be on the left half.
+    <d_stackship> The basename of the image for when a stack is in a boat.
+      there are 8 of these on a row, followed by a second row of their
+      colour masks. one for each player.
+    </d_stackship>
+    <d_stackship_num_masks>
+      how many colour masks are in the stack's ship image file.
+      typically 1.
+    </d_stackship_num_masks>
+    <d_plantedstandard> The basename of the image for the hero's flag.
+      there are 8 of these on a row, followed by a second row of their
+      colour masks. one for each player.
+    </d_plantedstandard>
+    <d_plantedstandard_num_masks>
+      how many colour masks are in the stack's ship image file.
+      typically 1.
+    </d_plantedstandard_num_masks>
+    <d_bag> The basename of the image for what items on the map look like.
+            This is the graphic for the bag of stuff.  
+    </d_bag>
+
+    Now come the selectors.  These selectors override what's in tileset.
+    We have one per player.
+    <d_white_small_selector> the basename of the white selector when only one
+      army unit is selected. 
+      there are as many of these as you wish on a row, followed by another row
+      of their colour masks.
+      each is a frame of animation.
+    </d_white_small_selector>
+    <d_white_small_selector_num_masks>
+      how many colour masks there are in white's small selector image.
+      typically just 1.
+    </d_white_small_selector_num_masks>
+    <d_white_large_selector> same as small, but for stacks with all army units
+      selected.
+    </d_white_large_selector>
+    ...
+    then green, yellow, dark_blue, orange, light_blue, red, and black.
+
+    Now come the armies.  These are army Types, not instances of armies.
+    <armyproto>
+         <d_id> A unique numeric id among all other army types in this set.
+                starts at zero.  This is also a shared numeric id with army 
+                types in other armysets! when this id is the same as another 
+                id in another armyset, The armytypes are meant to be of the 
+                same kind.  0 is usually scouts.  You can give your ids high
+                values to avoid any collisions with someone else's ids, in the
+                case where you don't want any sort of compatibility with your 
+                armyset and someone else's.
+         </d_id>
+         <d_name> A name for this army type, suitable for display.
+         </d_name>
+
+
+         Now come the images for this army type.  These images have two halves.
+         where the white pixels on the right side of the image represent where
+         the player's colour will be on the left side of the image.
+         Usually all of these point to the same image, but you can get fancy
+         and make different images for each player for the same army unit.
+
+         When the images don't have two halves, the num_masks will be a number
+         higher than one.
+         <d_image_white></d_image_white>
+         <d_image_white_num_masks></d_image_white_num_masks>
+         <d_image_green></d_image_green>
+         <d_image_green_num_masks></d_image_green_num_masks>
+         <d_image_yellow></d_image_yellow>
+         <d_image_yellow_num_masks></d_image_yellow_num_masks>
+         <d_image_light_blue></d_image_light_blue>
+         <d_image_light_blue_num_masks></d_image_light_blue_num_masks>
+         <d_image_red></d_image_red>
+         <d_image_red_num_masks></d_image_red_num_masks>
+         <d_image_dark_blue></d_image_dark_blue>
+         <d_image_dark_blue_num_masks></d_image_dark_blue_num_masks>
+         <d_image_orange></d_image_orange>
+         <d_image_orange_num_masks></d_image_orange_num_masks>
+         <d_image_black></d_image_black>
+         <d_image_black_num_masks></d_image_black_num_masks>
+         <d_image_neutral></d_image_neutral>
+         <d_image_neutral_num_masks></d_image_neutral_num_masks>
+
+         Now come the properties for this army type...
+         <d_description> A place for some text describing this army type.  
+                         it isn't displayed in the game.  
+         </d_description>
+         <d_production> The number of turns needed to create one of these 
+                        army units in a city.
+         </d_production>
+         <d_new_production_cost> The number of gold pieces to bring this army 
+                                 type in as a new producible type of army unit 
+                                 in a city.  This is the price in the build 
+                                 production dialog.  If this value is zero, 
+                                 this type of army unit is not purchasable.
+         </d_new_production_cost>
+         <d_production_cost> The number of gold pieces to create a single 
+                             instance of this army type in a city.
+         </d_production_cost>
+         <d_upkeep> The number of gold pieces needed to sustain this army 
+                    unit every turn.
+         </d_upkeep>
+         <d_awardable> true or false.  Whether or not this army unit type is 
+                       given to heroes as a reward.
+         </d_awardable>
+         <d_defends_ruins> true or false.  Whether or not this army unit type 
+                           is a monster that can inhabit a ruin.
+         </d_defends_ruins>
+         <d_move_bonus> This is the movement bonus flags.  
+                        These can be bitwise OR'd.
+                        The movement bonus means that certain terrain types .
+                        can be moved through at a cost of 2, like grass.
+                        The bonus flags are:
+	                Tile::GRASS
+                            Open plains.
+	                Tile::WATER
+	                    A lake, ocean, river, puddle, moat, or anything 
+                            else that is watery.
+	                Tile::FOREST
+	                    Trees in great abundance, also includes shrubberies.
+	                Tile::HILLS
+	                    Hilly terrain, generally passable.
+	                Tile::MOUNTAIN
+	                    Very hilly terrain, generally not passable except
+                            by flight.
+	                Tile::SWAMP
+	                    Marshy terrain.
+
+                        To give the army unit the ability to pass through 
+                        forest and swamp, the values are bitwise OR'd like so:
+                            Tile::FOREST Tile::SWAMP
+
+                        To give an army unit the gift of flight, the move bonus
+                        is a bitwise OR of all of these flags. 
+         </d_move_bonus>
+         <d_army_bonus>This is the army bonus flags, or fighting flags.  
+                       These can be bitwise OR'd.
+                       These bonuses mean the army unit has certain special
+                       abilities in battle.
+                       The bonus flags are:
+                       ArmyBase::ADD1STRINOPEN
+                            Provides +1 strength to the army when positioned 
+                            in the open.
+                       ArmyBase::ADD2STRINOPEN
+                            Provides +2 strength to the army when positioned 
+                            in the open.
+                       ArmyBase::ADD1STRINFOREST
+                            Provides +1 strength to the army when positioned 
+                            in the forest.
+                       ArmyBase::ADD1STRINHILLS
+                            Provides +1 strength to the army when positioned 
+                            in the hills.
+                       ArmyBase::ADD1STRINCITY
+                            Provides +1 strength to the army when positioned 
+                            in a city.
+                       ArmyBase::ADD2STRINCITY
+                            Provides +2 strength to the army when positioned 
+                            in a city.
+                       ArmyBase::ADD1STACKINHILLS
+                            Provides +1 strength to the stack when positioned 
+                            in the hills.
+                       ArmyBase::SUBALLCITYBONUS
+                            Negate any city bonuses from an enemy stack during 
+                            afFight.
+                       ArmyBase::SUB1ENEMYSTACK
+                            Negates 1 strength point from an enemy stack during
+                            a fight.
+                       ArmyBase::ADD1STACK
+                            Provides +1 strength to all army units in the stack.
+                       ArmyBase::ADD2STACK
+                            Provides +2 strength to all army units in the stack.
+                       ArmyBase::SUBALLNONHEROBONUS
+                            Negate all non-hero bonuses in an enemy stack 
+                            during a fight.
+                       ArmyBase::SUBALLHEROBONUS
+                            Negate all hero bonuses in an enemy atack during a 
+                            fight.
+                       ArmyBase::FORTIFY
+                            Provides a +1 strength to all army units in a 
+                            fortified stack.
+                       ArmyBase::ADD2STRINFOREST
+                            Provides a +2 strength to army units in the woods.
+                       ArmyBase::ADD2STRINHILLS
+                            Provides a +2 strength to army units in the hills.
+                       ArmyBase::SUB2ENEMYSTACK
+                            Negates 2 strength points from an enemy Stack
+                            during a Fight.
+                       ArmyBase::CONFER_MOVE_BONUS
+                            The stack gets whatever movement bonus this army
+                            unit has. e.g. if the army unit moves well in the
+                            swamp with this bonus the whole stack the army
+                            unit is in will too.
+
+                       When an army unit has more than one army bonus, it is 
+                       bitwise OR'd like so:
+                            ArmyBase::ADD1STRINOPEN ArmyBase::SUBALLHEROBONUS
+         </d_army_bonus>
+         <d_max_moves>The army unit receives this many movement points at the 
+                      beginning of a turn.  These movement points refer to the
+                      unit's movement ability on land or in the air, and not in
+                      a boat.
+                      A suitable minimum value for this is the maximum number 
+                      of points needed to cross the most taxing kind of terrain.
+                      e.g. so the unit can move one tile in the worst terrain.
+         </d_max_moves>
+         <d_gender>If this army type is a hero, the gender is Hero::MALE, or 
+                   Hero::FEMALE. Otherwise Hero::NONE.
+         </d_gender>
+         <d_strength>The power of this army unit.  minimum value of 1.
+         </d_strength>
+         <d_sight>The number of tiles this army unit can see on a fog map.  
+                  a value of 1 means a grid of 3x3 is seen around the player.  
+                  a value of 2 means 5x5.
+         </d_sight>
+         <d_expvalue>The number of experience points awarded for killing this 
+                     army type.
+         </d_expvalue>
+    </armyproto>
+
+    ...more armyproto objects...
+
+    To be a valid armyset, one of these armies needs to be a hero, one
+    army needs to be able to defend ruins, and one needs to be awardable.
+    Also, one army unit needs to have a new_production_cost set.
+</armyset>
+
+Tileset files (.lwt) hold images for the terrain, as well as tile properties.
+<tileset version="xxx">
+    <d_id> a unique numeric id among all tilesets on the system. can't be zero. </d_id>
+    <d_name>a name of this tileset, suitable for display</d_name>
+    <d_copyright>a place for copyright notices.</d_copyright>
+    <d_license>a place for a license notice.</d_license>
+    <d_info>a description for this tileset.</d_info>
+
+    <d_tilesize>the width and height of a tile.  in pixels.  <d_tilesize>
+
+    Now come some images associated with this tileset that go on top of 
+    terrain imagery.  The names are for files without paths, and without the 
+    trailing .png suffix.  Some of the images are shaded in the player's
+    colour, and some are not.
+
+    <d_large_selector> The basename of the image of the animated box selector 
+                       that encompasses the active stack.  The image is 6 
+                       columns by 2 rows.  The bottom row in white is the 
+                       portion that will be replaced with the player's colour
+                       in the top row.  Each box represents another frame in
+                       the 6 frame animation.
+    </d_large_selector>
+    <d_large_selector_num_masks>
+    </d_large_selector_num_masks>
+    <d_small_selector> The basename of the image of the animated box selector
+                       that encompasses the single selected army unit.  The
+                       image is 4 columns by 2 rows
+    </d_small_selector>
+    <d_small_selector_num_masks>
+    </d_small_selector_num_masks>
+    <d_explosion> The basename of the image of the fight explosion.  It is 
+                  sometimes shown scaled over 2x2 tiles, and sometimes at 1x1.
+    </d_explosion>
+    <d_roads> The basename of the image of the road tiles.  There are 15 
+              different road pictures in this image, all on the same row.  If
+              you make your own roads, the order of the road kinds in the image
+              has to be identical.
+    </d_roads>
+    <d_bridges> The basename of the image of the bridge tiles.  there are 
+                only 4 different bridge pictures in this image; horizontal, 
+                connecting west, horizontal connecting east, vertical 
+                connecting south, and vertical connecting north.  
+                e.g. connecting to road, not bridge.
+    </d_bridges>
+    <d_fog> The basename of the image of the fog tiles.  There are 15 different
+            fog tiles.  The purpose of these tiles is to obscure view of the 
+            map when we're playing with a hidden map.  These graphics get put 
+            on top of all other map graphics, so you really want parts of some
+            tiles to be opaque and other parts to be transparent.  
+    </d_fog>
+    <d_flasg> The basename of the image of the stack flags.  There are 8 
+              different flags, each shaded in the player's colour.  The bottom
+              row in white represents where the player's colour will be shaded 
+              on the top row.  The flags represent the number of army units in
+              the stack.
+    </d_flags>
+    <d_flags_num_masks>
+    </d_flags_num_masks>
+    <standing_stones> The basename of the image of the standing stone tiles.
+      There are a great many of these, as per Stone::Type in stone.h.
+    </standing_stones>
+
+    Now come the movement bonus images that show us what terrain a stack
+    moves particularly well on.  These aren't scaled or anything.
+    each contains a basename of an image file that can get chopped up
+    and reassembled with others, like for example if a stack moves well
+    in both hills and forest.
+
+   <d_movebonus_all></d_movebonus_all>
+   <d_movebonus_water> </d_movebonus_water>
+   <d_movebonus_forest> </d_movebonus_forest>
+   <d_movebonus_hills> </d_movebonus_hills>
+   <d_movebonus_mountains> </d_movebonus_mountains>
+   <d_movebonus_swamp> </d_movebonus_swamp>
+
+    Now come a description of what some buildings look like on the smallmap...
+    <road_smallmap>
+         The colour of road lines on the small map.
+         <d_color>   The hex value for the colour.  e.g. #FCFCFC </d_color>
+    </road_smallmap>
+    <ruin_smallmap>
+         The colour of ruin dots on the small map.
+         <d_color>   The hex value for the colour.  e.g. #FFFFFF </d_color>
+    </ruin_smallmap>
+    <temple_smallmap>
+         The colour of temple dots on the small map.
+         <d_color>   The hex value for the colour.  e.g. #FFFFFF </d_color>
+    </temple_smallmap>
+
+    Now come the tiles that represent various terrain tiles on the map.  
+    There's one tile each for grass, water, forest, mountains, swamp and hills.
+    <tile>
+         <d_name> The name of the tile.  Shown in the editor. </d_name>
+         <d_moves> How many movement points it takes for a stack to to move
+           over this type of terrain when not flying or having a movement
+           bonus.
+         </d_moves>
+         <d_type> The kind of terrain that this tile describes.  One of: 
+              Tile::GRASS Tile::WATER Tile::FOREST Tile::HILLS
+              Tile::MOUNTAIN Tile::SWAMP
+         </d_type>
+
+         The smallmap object defines how this tile looks on the mini-map.
+         <smallmap>
+              <d_pattern> The fill pattern for pixels of this terrain type.
+                          One of:
+                               SmallTile::SOLID
+                               SmallTile::STIPPLED
+                               SmallTile::RANDOMIZED
+                               SmallTile::SUNKEN
+                               SmallTile::TABLECLOTH
+                               SmallTile::DIAGONAL
+                               SmallTile::CROSSHATCH
+                               SmallTile::SUNKEN_STRIPED
+                               SmallTile::SUNKEN_RADIAL
+              </d_pattern>
+
+              Now come the colours for the pattern.  Some patterns use one 
+              colour (Solid), and some patterns use all three colours.
+              <d_color>   The hex value for the colour.  e.g. #FFFFFF </d_color>
+              <d_2nd_color>  </d_2nd_color>
+              <d_3rd_color>  </d_3rd_color>
+         </smallmap>
+
+         Now we have a bunch of tilestylesets.  They are images that define 
+         what this tile looks like on the big map.  Each image has a bunch of 
+         tile pictures on a single row.  It is important to not have any 
+         transparent regions in these images because there is nothing else
+         behind them.
+         <tilestyleset>
+              <d_name> The basename of the image for this tilestyleset. 
+              </d_name>
+
+              Now we have a bunch of tilestyle objects that define each square
+              in the row.  One for each square.
+              <tilestyle>
+                   <d_id> A unique id among all tilestyles in this file (not
+                          just this tilestyleset.)  It is necessary to supply
+                          this value in hexadecimal format.
+                   </d_id>
+                   <d_type>
+                       Equates to TileStyle::Type in src/tilestyle.h.
+                       See tile-transition.txt for more information.
+                   </d_type>
+              </tilestyle>
+              ...more tilestyle objects...
+         </tilestyleset>
+         ...more tilestyleset objects...
+    </tile>
+    ...more tile objects...
+
+    To be a valid tileset, one kind of each tile needs to be present.  only 
+    one tile can use the sunken radial pattern.
+</tileset>

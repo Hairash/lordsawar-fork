@@ -1,0 +1,32 @@
+# Win32 Makefile for src
+
+CXX = i586-mingw32msvc-g++
+STRIP = i586-mingw32msvc-strip
+INCLUDES =  -Iserver -I/usr/i586-mingw32msvc/include/sigc++
+CPPFLAGS = -O2 -Wall -Werror `/usr/i586-mingw32msvc/bin/paragui-config --cflags` $(INCLUDES) -s -mwindows
+LFLAGS	 =  `/usr/i586-mingw32msvc/bin/paragui-config --libs` /usr/i586-mingw32msvc/lib/libsigc-1.2.a -lz -lSDL_image
+TARGET	 = lordsawar.exe
+OBJECTS	 = main.o \
+	armyset_army.o armyset.o player.o army.o mapdef.o	\
+	citylist.o Location.o ObjectList.o Object.o stacklist.o playerlist.o \
+	GameScenario.o file.o fight.o armysetlist.o temple.o ruin.o stack.o \
+	city.o path.o action.o Configuration.o MapGenerator.o real_player.o \
+	ai_dummy.o ai_fast.o xmlhelper.o counter.o NextPlayerPopup.o \
+	splash.o maptile.o GamePreferencesDialog.o RuinSearchDialog.o w_edit.o \
+   	player_preferences.o MainWindow.o smallmap.o bigmap.o d_buy_production.o\
+	hero_offer.o ArmyInfo.o stackinfo.o cityinfo.o CityOccupationDialog.o   \
+	FightDialog.o MapCreationDialog.o MapConfDialog.o goldreport.o 			\
+	PG_FileDialog.o ServerDialog.o MultiPlayerModeDialog.o				\
+    MapRenderer.o Tile.o TileSet.o server/Server.o server/Client.o
+
+# Main Target
+
+$(TARGET): $(OBJECTS) 
+	$(CXX) $(OBJECTS) $(LFLAGS) -o $(TARGET)
+	$(STRIP) $(TARGET)
+
+clean:
+	-rm -f $(OBJECTS) $(TARGET) random.map new_name
+
+distclean : clean
+	rm -f Makefile

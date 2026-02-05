@@ -1,0 +1,424 @@
+# Example for use of GNU gettext.
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# This file is in the public domain.
+#
+# List of files which contain translatable strings.
+
+[type: gettext/glade]dat/glade/about-dialog.ui
+[type: gettext/glade]dat/glade/army-bonus-dialog.ui
+[type: gettext/glade]dat/glade/characters-dialog.ui
+[type: gettext/glade]dat/glade/army-gains-level-dialog.ui
+[type: gettext/glade]dat/glade/army-info-window.ui
+[type: gettext/glade]dat/glade/city-info-window.ui
+[type: gettext/glade]dat/glade/buy-production-dialog.ui
+[type: gettext/glade]dat/glade/city-defeated-dialog.ui
+[type: gettext/glade]dat/glade/city-looted-dialog.ui
+[type: gettext/glade]dat/glade/city-pillaged-dialog.ui
+[type: gettext/glade]dat/glade/city-razed-dialog.ui
+[type: gettext/glade]dat/glade/city-raze-dialog.ui
+[type: gettext/glade]dat/glade/city-rename-dialog.ui
+[type: gettext/glade]dat/glade/city-sacked-dialog.ui
+[type: gettext/glade]dat/glade/city-window.ui
+[type: gettext/glade]dat/glade/destination-dialog.ui
+[type: gettext/glade]dat/glade/diplomacy-dialog.ui
+[type: gettext/glade]dat/glade/diplomacy-report-dialog.ui
+[type: gettext/glade]dat/glade/disband-stack-dialog.ui
+[type: gettext/glade]dat/glade/fight-order-dialog.ui
+[type: gettext/glade]dat/glade/fight-window.ui
+[type: gettext/glade]dat/glade/game-loaded-dialog.ui
+[type: gettext/glade]dat/glade/game-lobby-dialog.ui
+[type: gettext/glade]dat/glade/game-options-dialog.ui
+[type: gettext/glade]dat/glade/game-over-dialog.ui
+[type: gettext/glade]dat/glade/game-preferences-dialog.ui
+[type: gettext/glade]dat/glade/game-quit-dialog.ui
+[type: gettext/glade]dat/glade/game-window.ui
+[type: gettext/glade]dat/glade/hero-brings-allies-dialog.ui
+[type: gettext/glade]dat/glade/hero-dialog.ui
+[type: gettext/glade]dat/glade/hero-levels-dialog.ui
+[type: gettext/glade]dat/glade/hero-offer-dialog.ui
+[type: gettext/glade]dat/glade/history-report-dialog.ui
+[type: gettext/glade]dat/glade/item-bonus-dialog.ui
+[type: gettext/glade]dat/glade/load-scenario-dialog.ui
+[type: gettext/glade]dat/glade/main-preferences-dialog.ui
+[type: gettext/glade]dat/glade/medal-awarded-dialog.ui
+[type: gettext/glade]dat/glade/military-advisor-dialog.ui
+[type: gettext/glade]dat/glade/new-network-game-dialog.ui
+[type: gettext/glade]dat/glade/new-network-game-download-window.ui
+[type: gettext/glade]dat/glade/new-profile-dialog.ui
+[type: gettext/glade]dat/glade/next-player-turn-dialog.ui
+[type: gettext/glade]dat/glade/pick-network-game-to-join-dialog.ui
+[type: gettext/glade]dat/glade/player-died-dialog.ui
+[type: gettext/glade]dat/glade/player-resign-completed-dialog.ui
+[type: gettext/glade]dat/glade/player-resign-dialog.ui
+[type: gettext/glade]dat/glade/preferences-dialog.ui
+[type: gettext/glade]dat/glade/quest-assigned-dialog.ui
+[type: gettext/glade]dat/glade/quest-report-dialog.ui
+[type: gettext/glade]dat/glade/quest-expired-dialog.ui
+[type: gettext/glade]dat/glade/report-dialog.ui
+[type: gettext/glade]dat/glade/ruinfight-finished-dialog.ui
+[type: gettext/glade]dat/glade/ruinfight-started-dialog.ui
+[type: gettext/glade]dat/glade/ruin-report-dialog.ui
+[type: gettext/glade]dat/glade/item-report-dialog.ui
+[type: gettext/glade]dat/glade/ruin-rewarded-dialog.ui
+[type: gettext/glade]dat/glade/ruin-searched-dialog.ui
+[type: gettext/glade]dat/glade/sage-dialog.ui
+[type: gettext/glade]dat/glade/signpost-change-dialog.ui
+[type: gettext/glade]dat/glade/splash-window.ui
+[type: gettext/glade]dat/glade/stack-info-dialog.ui
+[type: gettext/glade]dat/glade/stack-info-window.ui
+[type: gettext/glade]dat/glade/status-box-large-screen.ui
+[type: gettext/glade]dat/glade/stack-tile-box-large-screen.ui
+[type: gettext/glade]dat/glade/surrender-dialog.ui
+[type: gettext/glade]dat/glade/surrender-refused-dialog.ui
+[type: gettext/glade]dat/glade/temple-visit-dialog.ui
+[type: gettext/glade]dat/glade/treachery-dialog.ui
+[type: gettext/glade]dat/glade/triumphs-dialog.ui
+[type: gettext/glade]dat/glade/use-item-dialog.ui
+[type: gettext/glade]dat/glade/use-item-on-player-dialog.ui
+[type: gettext/glade]dat/glade/use-item-on-city-dialog.ui
+[type: gettext/glade]dat/glade/new-random-map-dialog.ui
+[type: gettext/glade]dat/glade/load-progress-window.ui
+[type: gettext/glade]dat/glade/quick-help-window.ui
+[type: gettext/glade]dat/glade/editor/armyset-info-dialog.ui
+[type: gettext/glade]dat/glade/editor/armyset-window.ui
+[type: gettext/glade]dat/glade/editor/city-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/itemlist-dialog.ui
+[type: gettext/glade]dat/glade/editor/main-window.ui
+[type: gettext/glade]dat/glade/editor/map-info-dialog.ui
+[type: gettext/glade]dat/glade/editor/new-map-dialog.ui
+[type: gettext/glade]dat/glade/editor/switch-sets-dialog.ui
+[type: gettext/glade]dat/glade/editor/players-dialog.ui
+[type: gettext/glade]dat/glade/editor/reward-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/reward-list-dialog.ui
+[type: gettext/glade]dat/glade/editor/ruin-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/select-army-dialog.ui
+[type: gettext/glade]dat/glade/editor/select-hidden-ruin-dialog.ui
+[type: gettext/glade]dat/glade/editor/select-character-dialog.ui
+[type: gettext/glade]dat/glade/editor/select-item-dialog.ui
+[type: gettext/glade]dat/glade/editor/signpost-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/stack-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/temple-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/tile-preview-dialog.ui
+[type: gettext/glade]dat/glade/editor/tileset-info-dialog.ui
+[type: gettext/glade]dat/glade/editor/tileset-selector-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/armyset-selector-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/tileset-flag-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/tileset-explosion-picture-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/tar-file-masked-image-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/image-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/tileset-window.ui
+[type: gettext/glade]dat/glade/editor/tilestyle-organizer-dialog.ui
+[type: gettext/glade]dat/glade/editor/hero-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/backpack-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/editor-quit-dialog.ui
+[type: gettext/glade]dat/glade/editor/tileset-smallmap-building-colors-dialog.ui
+[type: gettext/glade]dat/glade/editor/cityset-window.ui
+[type: gettext/glade]dat/glade/editor/shieldset-window.ui
+[type: gettext/glade]dat/glade/editor/cityset-info-dialog.ui
+[type: gettext/glade]dat/glade/editor/shieldset-info-dialog.ui
+[type: gettext/glade]dat/glade/editor/smallmap-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/editor-splash-window.ui
+[type: gettext/glade]dat/glade/editor/fight-order-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/road-editor-tip.ui
+[type: gettext/glade]dat/glade/editor/battle-calculator-dialog.ui
+[type: gettext/glade]dat/glade/editor/media-dialog.ui
+[type: gettext/glade]dat/glade/editor/validation-dialog.ui
+[type: gettext/glade]dat/glade/editor/stone-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/heroes-dialog.ui
+[type: gettext/glade]dat/glade/editor/strategy-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/keeper-dialog.ui
+[type: gettext/glade]dat/glade/editor/mask-validation-dialog.ui
+[type: gettext/glade]dat/glade/editor/editor-save-changes-dialog.ui
+[type: gettext/glade]dat/glade/editor/planted-standard-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/item-editor-dialog.ui
+[type: gettext/glade]dat/glade/editor/tileset-move-bonus-image-dialog.ui
+[type: gettext/glade]dat/glade/game-button-box-large-screen.ui
+[type: gettext/glade]dat/glade/fighter.ui
+[type: gettext/xml]dat/shield/default/default.lws.in
+[type: gettext/xml]dat/shield/dol/dol.lws.in
+[type: gettext/xml]dat/shield/plain/plain.lws.in
+[type: gettext/xml]dat/citysets/default/default.lwc.in
+[type: gettext/xml]dat/citysets/bigdefault/bigdefault.lwc.in
+[type: gettext/xml]dat/citysets/dol/dol.lwc.in
+[type: gettext/xml]dat/citysets/bigdol/bigdol.lwc.in
+[type: gettext/xml]dat/army/bigdefault/bigdefault.lwa.in
+[type: gettext/xml]dat/army/default/default.lwa.in
+[type: gettext/xml]dat/tilesets/default/default.lwt.in
+[type: gettext/xml]dat/tilesets/bigdefault/bigdefault.lwt.in
+[type: gettext/xml]dat/tilesets/stark/stark.lwt.in
+[type: gettext/xml]dat/tilesets/bigstark/bigstark.lwt.in
+[type: gettext/xml]dat/tilesets/wesnoth/wesnoth.lwt.in
+[type: gettext/xml]dat/tilesets/bigwesnoth/bigwesnoth.lwt.in
+[type: gettext/xml]dat/map/dol/dol.map.in
+src/FogMap.cpp
+src/templelist.cpp
+src/network-connection.cpp
+src/road.cpp
+src/tilestyle.cpp
+src/setlist.h
+src/armysetlist.cpp
+src/setlist.h
+src/bridgelist.cpp
+src/network-server.cpp
+src/AICityInfo.cpp
+src/ruinlist.cpp
+src/GameScenario.cpp
+src/ai_dummy.cpp
+src/AI_Analysis.cpp
+src/network_player.cpp
+src/history.cpp
+src/NextTurn.cpp
+src/Immovable.cpp
+src/game-client.cpp
+src/ai_fast.cpp
+src/armymap.cpp
+src/QKillHero.cpp
+src/QEnemyArmytype.cpp
+src/heromap.cpp
+src/vectormap.cpp
+src/rewardlist.cpp
+src/vectoredunit.cpp
+src/bridge.cpp
+src/playerlist.cpp
+src/questmap.cpp
+src/QuestsManager.cpp
+src/GameMap.cpp
+src/portlist.cpp
+src/path.cpp
+src/citysetlist.cpp
+src/city.cpp
+src/Named.cpp
+src/stack.cpp
+src/QPillageGold.cpp
+src/citylist.cpp
+src/QCityOccupy.cpp
+src/game.cpp
+src/ImageCache.cpp
+src/signpost.cpp
+src/counter.cpp
+src/AI_Allocation.cpp
+src/timing.cpp
+src/tilesetlist.cpp
+src/Configuration.cpp
+src/shieldsetlist.cpp
+src/game-server.cpp
+src/Location.cpp
+src/signpostlist.cpp
+src/Threatlist.cpp
+src/roadlist.cpp
+src/MapGenerator.cpp
+src/Movable.cpp
+src/fight.cpp
+src/QEnemyArmies.cpp
+src/stacklist.cpp
+src/hero.cpp
+src/player.cpp
+src/maptile.cpp
+src/shield.cpp
+src/shieldstyle.cpp
+src/port.cpp
+src/ruin.cpp
+src/citymap.cpp
+src/tilestyleset.cpp
+src/reward.cpp
+src/QCityRaze.cpp
+src/temple.cpp
+src/Positioned.cpp
+src/smallmap.cpp
+src/real_player.cpp
+src/Threat.cpp
+src/tileset.cpp
+src/tartan.cpp
+src/ScenarioMedia.cpp
+src/scenario-list.cpp
+src/scenario-details.cpp
+src/TarFileMaskedImage.cpp
+src/TarFileImage.cpp
+src/gui/image-helpers.cpp
+src/gui/city-window.cpp
+src/gui/preferences-dialog.cpp
+src/gui/main-preferences-dialog.cpp
+src/gui/quest-completed-dialog.cpp
+src/gui/fight-order-dialog.cpp
+src/gui/triumphs-dialog.cpp
+src/gui/army-info-tip.cpp
+src/gui/game-preferences-dialog.cpp
+src/gui/buy-production-dialog.cpp
+src/gui/destination-dialog.cpp
+src/gui/stack-info-tip.cpp
+src/gui/bar-chart.cpp
+src/gui/army-bonus-dialog.cpp
+src/gui/characters-dialog.cpp
+src/gui/quest-assigned-dialog.cpp
+src/gui/history-report-dialog.cpp
+src/gui/sage-dialog.cpp
+src/gui/hero-dialog.cpp
+src/gui/game-window.cpp
+src/gui/game-options-dialog.cpp
+src/gui/load-scenario-dialog.cpp
+src/gui/line-chart.cpp
+src/gui/diplomacy-dialog.cpp
+src/gui/driver.cpp
+src/gui/hero-levels-dialog.cpp
+src/gui/ruin-rewarded-dialog.cpp
+src/gui/diplomacy-report-dialog.cpp
+src/gui/surrender-refused-dialog.cpp
+src/gui/surrender-dialog.cpp
+src/gui/stack-info-dialog.cpp
+src/gui/ruin-report-dialog.cpp
+src/gui/splash-window.cpp
+src/gui/quest-report-dialog.cpp
+src/gui/report-dialog.cpp
+src/gui/army-gains-level-dialog.cpp
+src/gui/hero-offer-dialog.cpp
+src/gui/main.cpp
+src/gui/item-bonus-dialog.cpp
+src/gui/fight-window.cpp
+src/gui/new-random-map-dialog.cpp
+src/gui/use-item-on-city-dialog.cpp
+src/gui/tartan-progress-bar.cpp
+src/gui/quick-help-window.cpp
+src/gui/load-progress-window.cpp
+src/CreateScenarioRandomize.cpp
+src/vectoredunitlist.cpp
+src/editor/Scenario.cpp
+src/editor/itemlist-dialog.cpp
+src/editor/signpost-editor-dialog.cpp
+src/editor/select-hidden-ruin-dialog.cpp
+src/editor/select-character-dialog.cpp
+src/editor/armyset-info-dialog.cpp
+src/editor/cityset-info-dialog.cpp
+src/editor/armyset-window.cpp
+src/editor/armyset-editor-actions.cpp
+src/editor/armyset-editor-actions.h
+src/editor/cityset-window.cpp
+src/editor/cityset-editor-actions.cpp
+src/editor/cityset-editor-actions.h
+src/editor/rewardlist-dialog.cpp
+src/editor/select-item-dialog.cpp
+src/editor/players-dialog.cpp
+src/editor/editorbigmap.cpp
+src/editor/editablesmallmap.cpp
+src/editor/smallmap-editor-dialog.cpp
+src/editor/city-editor-dialog.cpp
+src/editor/main-window.cpp
+src/editor/editor-actions.cpp
+src/editor/editor-actions.h
+src/editor/undo-action.cpp
+src/editor/undo-mgr.cpp
+src/editor/temple-editor-dialog.cpp
+src/editor/tileset-info-dialog.cpp
+src/editor/tile-preview-dialog.cpp
+src/editor/tile-preview-scene.cpp
+src/editor/RenamableLocation.cpp
+src/editor/ruin-editor-dialog.cpp
+src/editor/new-map-dialog.cpp
+src/editor/switch-sets-dialog.cpp
+src/editor/select-army-dialog.cpp
+src/editor/map-info-dialog.cpp
+src/editor/reward-editor-dialog.cpp
+src/editor/tileset-window.cpp
+src/editor/tileset-editor-actions.cpp
+src/editor/tileset-editor-actions.h
+src/editor/tilestyle-organizer-dialog.cpp
+src/editor/stack-editor-dialog.cpp
+src/editor/hero-editor-dialog.cpp
+src/editor/backpack-editor-dialog.cpp
+src/editor/shieldset-info-dialog.cpp
+src/editor/shieldset-window.cpp
+src/editor/shieldset-editor-actions.cpp
+src/editor/tileset-flag-editor-dialog.cpp
+src/editor/tileset-selector-editor-dialog.cpp
+src/editor/armyset-selector-editor-dialog.cpp
+src/editor/editor-quit-dialog.cpp
+src/editor/editor-splash-window.cpp
+src/editor/image-editor-dialog.cpp
+src/editor/tar-file-masked-image-editor-dialog.cpp
+src/editor/fight-order-editor-dialog.cpp
+src/editor/battle-calculator-dialog.cpp
+src/editor/mask-validation-dialog.cpp
+src/editor/media-dialog.cpp
+src/editor/validation-dialog.cpp
+src/editor/stone-editor-dialog.cpp
+src/editor/image-file-filter.cpp
+src/editor/heroes-dialog.cpp
+src/editor/hero-strategy-dialog.cpp
+src/editor/keeper-editor-dialog.cpp
+src/editor/army-chooser-button.cpp
+src/editor/editor-save-changes-dialog.cpp
+src/editor/tileset-explosion-picture-editor-dialog.cpp
+src/editor/planted-standard-editor-dialog.cpp
+src/editor/item-editor-dialog.cpp
+src/editor/tileset-move-bonus-image-dialog.cpp
+src/utils/import.cpp
+src/gui/city-info-tip.cpp
+src/gui/game-lobby-dialog.cpp
+src/gui/network-game-selector-dialog.cpp
+src/gui/new-network-game-download-window.cpp
+src/gui/new-network-game-dialog.cpp
+src/gui/item-report-dialog.cpp
+src/gui/stack-tile-box.cpp
+src/NamedLocation.cpp
+src/herotemplates.cpp
+src/hero-strategy.cpp
+src/hero-strategy.h
+src/xmlhelper.cpp
+src/tarhelper.cpp
+src/tarfile.cpp
+src/action.cpp
+src/historymap.cpp
+src/snd.cpp
+src/bigmap.cpp
+src/gamebigmap.cpp
+src/army.cpp
+src/armybase.cpp
+src/armyprotobase.cpp
+src/Item.cpp
+src/ItemProto.cpp
+src/overviewmap.cpp
+src/MoveResult.cpp
+src/ruinmap.cpp
+src/Quest.cpp
+src/AI_Diplomacy.cpp
+src/cityset.cpp
+src/CreateScenario.cpp
+src/UniquelyIdentified.cpp
+src/shieldset.cpp
+src/Itemlist.cpp
+src/File.cpp
+src/armyset.cpp
+src/main.cpp
+src/ai_smart.cpp
+src/MapRenderer.cpp
+src/QCitySack.cpp
+src/Tile.cpp
+src/city.h
+src/ruin.h
+src/temple.h
+src/Commentator.cpp
+src/Commentator.h
+src/Sage.cpp
+src/Sage.h
+src/PixMask.cpp
+src/gls/main.cpp
+src/gls/gls-client-main.cpp
+src/gls/gls-client-tool.cpp
+src/gls/gamelist-server.cpp
+src/ghs/main.cpp
+src/ghs/ghs-client-main.cpp
+src/ghs/ghs-client-tool.cpp
+src/ghs/gamehost-server.cpp
+src/utils/upgrade-file.cpp
+src/file-compat.cpp
+src/file-compat.h
+src/game-client-decoder.cpp
+src/namelist.cpp
+src/stone.cpp
+src/keeper.cpp
+dat/various/items/items.xml.in
+dat/citynames.xml.in
+dat/templenames.xml.in
+dat/signposts.xml.in
+dat/ruinnames.xml.in
+dat/heronames.xml.in
+[type: gettext/ini]dat/lordsawar.desktop.in.in

@@ -1,0 +1,2118 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+  <!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY app "<application>LordsAWar!</application>">
+<!ENTITY appversion "0.3.3">
+<!ENTITY date "May 2020">
+<!ENTITY manrevision "0.3.3">
+]>
+
+<article id="index" lang="en"> 
+
+<articleinfo> 
+	<title>LordsAWar! User's Manual &manrevision;</title> 
+	<copyright> 
+		<year>2008, 2009, 2010, 2011, 2014, 2016, 2017, 2020, 2021</year>
+		<holder>Ben Asselstine</holder> 
+ 	</copyright>
+	<publisher> 
+		<publishername>Ben Asselstine</publishername> 
+	</publisher> 
+	<authorgroup> 
+		<author> 
+			<firstname>Ben</firstname> 
+			<surname>Asselstine</surname>
+			<affiliation>
+				<orgname>LordsAWar! Development Team</orgname> 
+				<address>
+					<email>lordsawar-discuss@nongnu.org</email>
+				</address>
+			</affiliation>
+		</author> 
+	</authorgroup> 
+	<releaseinfo> This manual describes version &appversion; of &app; and is licensed under the terms of the GNU Free Documentation License version 1.2.
+	</releaseinfo> 
+
+	<legalnotice id="feedback"> 
+		<title>Feedback Information</title> 
+		<para>
+                        To report a bug or make a suggestion regarding the game, the editors, or this documentation, see the <ulink type="help" url="http://sv.gnu.org/p/lordsawar">LordsAWar! Project Page</ulink> or send it in a mail to <ulink type="help" url="mailto:lordsawar-discuss@nongnu.org">lordsawar-discuss@nongnu.org</ulink>.  Go ahead and tell us how we're doing.  We like that.
+		</para>
+	</legalnotice>
+	<legalnotice id="alternatives"> 
+		<title>Alternative to Reading</title> 
+		<para>
+                        Watch the <ulink type="help" url="https://vimeo.com/409439854">introductory video.</ulink>  The video is not as detailed as this manual, but serves as a simple introduction to the game.
+		</para>
+	</legalnotice>
+</articleinfo>
+
+<indexterm zone="index"> 
+	<primary>LordsAWar!</primary> 
+</indexterm> 
+<indexterm zone="index"> 
+	<primary>LordsAWar</primary> 
+</indexterm> 
+<indexterm zone="index"> 
+	<primary>Lordsawar</primary> 
+</indexterm> 
+<indexterm zone="index"> 
+	<primary>lordsawar</primary> 
+</indexterm>
+
+
+<!-- ============= Prologue ============================== -->
+<!-- Use the Prologue section to excite the user into wanting to play
+     the gmae. -->
+<sect1 id="lordsawar-prologue"> 
+	<title>Prologue</title> 
+	<para>
+The entire realm is holding its breath -- war is coming, and the citizens know what that means; cities will be sacked, towns will be looted, and new flags will be raised.  There will be a shortage of food and supplies, high taxes, and fire burning on the horizon, if not even closer.  The best thing to do is to join the army before getting drafted.  
+</para>
+
+	<para>
+Several factions will vie for total control of the realm.  Talented generals will be needed to lead forces against the enemy.  Plans will be made, and lands will be conquered.  Heroes will emerge to fight on behalf of their general.  Large siege engines will be constructed and rolled to distant cities.  Great ships of war will take to the seas.   Infantry units will be sent to the front line to face the enemy in battle.
+	</para>
+
+	<para>
+The future is uncertain.  The lords of the realm are warring.  The lords are a-war.
+	</para>
+</sect1>
+
+<!-- ============= Introduction ============================== -->
+<!-- Use the Introduction section to give a brief overview of what
+     the game is and what it does. -->
+<sect1 id="lordsawar-introduction"> 
+	<title>Introduction</title> 
+	<para>
+&app; is a turn-based strategy game where up to eight players strive to conquer all of the cities on the map.  The player has three distinct roles in the game:
+
+	  <orderedlist>
+		<listitem>
+The player acts as a General who controls all of military strategy elements of the game; moving armies around the map, conquering cities and managing the production of new army units.
+</listitem>
+<listitem>
+The player acts as a diplomatic envoy, managing diplomatic relations with every other player.
+</listitem>
+<listitem>
+The player acts as a tax collector, automatically collecting gold pieces from each city that has been conquered.  This pays for the maintenance of army units already created.  The income can also be used to buy new and different kinds of army units.
+</listitem>
+	  </orderedlist>
+</para>
+<para>
+Army units are arranged into stacks of up to eight and are moved around the map through varying terrain; forest, hills, swamp, or water.  Each of the varying kinds of terrain cost the stack some of its movement points.  Some stacks may even have the ability to fly over troublesome mountains.  
+</para>
+
+<para>
+Some army units are special hero units.  Heroes sometimes emerge spontaneously in cities at the start of the player's turn.  Heroes can search ruins to obtain gold pieces or magical items, or go on special quests.  Powerful allies often accompany a hero.
+</para>
+
+<para>
+The objective of the game is to conquer all of the cities on the map.  This is accomplished by producing army units in cities and making ever more powerful stacks to conquer neighbouring cities.  Strategy is employed to know which city, or player to target next, on the way to total victory.
+</para>
+<sect2 id="lordsawar-main-screen">
+	<title>The Main Screen at a Glance</title> 
+<figure id="mainscreen-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+<itemizedlist>
+<listitem>
+Unselected Army
+<para>
+Armies are units that move around the map.  This army unit belongs to the red player:
+</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_unselected_stack.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+<para>
+This army unit is a "hero" army unit, which can carry items and go on quests.
+</para>
+
+</listitem>
+<listitem>
+Temple
+<para>
+A temple is where army units can go to get blessed, and heroes can start quests.
+</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_temple.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+</listitem>
+<listitem>
+Port
+<para>
+A port is where army units can go on a ship, or off a ship.  (This can also happen from cities or bridges.)
+</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_port.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+</listitem>
+<listitem>
+Selected Stack
+<para>
+Army units must be first selected (with left-click) to command them.  This stack has one army unit.
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_selected_stack_one.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+<para>
+The length of flag shows how many army units are in the stack.  The first row has 4 stacks ranging from 1 army unit to 4 army units.  The second row has stacks with 5 to 8 army units.  8 is the maximum number of army units in a stack.
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_selected_stack_flags.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+<para>
+Stacks appear as a ship when they are in the water.  When  a stack is in defend mode it appears to be in a tower.  The stack size flag is not shown when the stack is in defend mode.  This means your opponent does not know the number of army units in the stack.  It takes a turn for the stack to "dig in" into defend mode.
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_stack_water_defend.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+</listitem>
+<listitem>
+City
+<para>
+A city is a place that creates army units, and provides valuable income.
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_city.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+<para>
+When cities are destroyed (e.g. "razed"), and they do not provide income or create army units.
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_city_razed.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+</listitem>
+<listitem>
+Ruin
+<para>
+A ruin is a place a hero can go to risk life and limb for valuable rewards.
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_ruin.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+</listitem>
+<listitem>
+Hills
+<para>
+Some army units can move swiftly through hills, although most cannot.
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_hills.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+</listitem>
+<listitem>
+Mountains
+<para>
+No army unit can move through mountains, they must be traversed around, or flown over.
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_mountains.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+</listitem>
+<listitem>
+Forest
+<para>
+Some army units can move swiftly through forests, although most cannot.
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_forest.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+</listitem>
+<listitem>
+Swamp
+<para>
+No army units can travel swiftly through swamp, although it can be flown over by stacks that have the gift of flight.
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_swamp.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+</listitem>
+<listitem>
+Water
+<para>
+Only army units on ships can go in the water, although some army units can fly over the water.  Army units can enter the water via a bridge, port, or city.
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_water.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+</listitem>
+<listitem>
+Roads
+<para>
+Roads are the best way to get around.  They only cost your stack one movement point per tile.
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_road.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+</listitem>
+<listitem>
+Bridge
+<para>
+Bridges serve the purpose of spanning a river.  Bridges can also be used as a jumping off point for army units that wish to go onto a ship.
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_bridge.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+</listitem>
+<listitem>
+Signpost
+<para>
+Signposts contain information that the player can view by right-clicking on it. 
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_signpost.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+<para>
+Signposts are used more often when the game has a hidden map (e.g. the map is all-black except for where your forces have explored).
+The contents of signposts can also be modified to give false information, or simply to slander your opponent.
+</para>
+</listitem>
+<listitem>
+Bag
+<para>
+A bag holds items that are useful for heroes to carry.
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_bag.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+<para>
+Upon the death of a hero, all of the hero's items are left in a bag on the ground.  Items usually confer a battle bonus for the hero or the stack.
+</para>
+</listitem>
+<listitem>
+Stack Tray
+<para>
+The stack tray shows the army units on a particular tile of the map.
+Here we see a tile that has 5 light infantry units in a single stack:
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_stack_tray_5_units.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+<para>
+The three grey empty buttons with circles means that the stack can have 3 more armies join it.
+</para>
+<para>
+The first five buttons all appear to be toggled on; which means that the army unit is in the stack.  To remove an army unit from the stack, click on the army to toggle it out of the stack:
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_stack_tray_4_units.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+<para>
+There are now two stacks on this tile:  One with four army units in the selected stack, and the other with one army unit.  The army unit can be brought back into the stack by toggling it again.
+</para>
+<para>
+Switching the currently selected stack to the new stack containing one army unit is accomplished by clicking on the button with the red dot.
+</para>
+<para>
+To group all of the army units together in a single stack, click the "Grp" button, or simply hit the space bar.
+</para>
+</listitem>
+<listitem>
+Stack Movement Capabilities
+<para>
+The stack movement capabilities are shown to the right of the selected stack:
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_move_bonus_flying.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+<para>
+The number above the button is the movement points that the stack has left.  The stack is limited in movement points by the army units it contains.  If an army unit only has two movement points left and all other army units have more that, then the stack can still only move one square.
+</para>
+<para>
+Above the number of moves is a picture denoting what kind of tiles the stack can move efficiently on.  It can show that:
+</para>
+<para>
+...the stack moves well through forest:
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_move_bonus_forest.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+<para>
+...the stack moves well through hills:
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_move_bonus_hills.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+<para>
+...the stack moves well through hills and forest:
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_move_bonus_hills_forest.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+<para>
+...the stack is on the water:
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_move_bonus_water.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+<para>
+...the stack is in the air:
+</para>
+<screenshot> 
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_group_stack_button.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot> 
+<para>
+The "Grp" button shows that the army units on this map tile are not grouped together into a single stack.  Toggle this button to group them all.  Instead of clicking you can also just press the space bar.
+</para>
+<para>
+Whereas the stack moves as slow as it's slowest unit, the movement bonuses of a single army unit confer to all army units in the stack (except for the flying movement bonus).  This means it is often handy to have a scout unit in your stack even though it only has a strength of 1.
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</sect2>
+<sect2 id="lordsawar-main-screen-buttons">
+	<title>A Closer Look at the Buttons</title> 
+<para>
+Below the mini-map, there are a set of buttons that allow the player to control stacks:
+<figure id="mainscreen-buttons-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_buttons.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para>
+
+<para>
+&app; games can contain a large number of stacks, and it's easy to forget about the location of a particular stack.  These buttons help the player manage large numbers of stacks.
+Here is what each of the buttons do:
+<itemizedlist>
+<listitem>
+<figure id="mainscreen-move-stack-button-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_move_stack_button.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+Clicking this button causes the stack to travel along it's path.
+</para>
+</listitem>
+<listitem>
+<figure id="mainscreen-select-next-stack-button-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_select_next_stack_button.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+Clicking this button causes the next stack to be selected.
+</para>
+</listitem>
+<listitem>
+<figure id="mainscreen-park-stack-button-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_park_stack_button.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+Clicking this button causes the stack stop here.  Clicking this button means that the stack will not be visited again as the player clicks the next-stack button for the duration of this turn.
+</para>
+</listitem>
+<listitem>
+<figure id="mainscreen-deselect-stack-button-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_deselect_stack_button.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+Clicking this button causes the stack to be deselected.  This stack will be visited again as the player clicks the "next stack" button.
+</para>
+</listitem>
+<listitem>
+<figure id="mainscreen-center-on-stack-button-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_center_on_stack_button.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+Clicking this button causes the map to be centered on the selected stack.
+</para>
+</listitem>
+<listitem>
+<figure id="mainscreen-diplomacy-button-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_diplomacy_button.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+Clicking this button causes the diplomacy screen to pop up.  When other players make diplomatic proposals to you, the diplomacy button looks like this:
+<figure id="mainscreen-diplomacy-proposed-button-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_diplomacy_proposed_button.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+This makes it easy for the player to tell if there are new diplomatic actions to consider.
+</para>
+</listitem>
+<listitem>
+<figure id="mainscreen-defend-stack-button-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_defend_stack_button.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+Clicking this button causes the stack to go into defend mode.  This will put the stack into a tent or tower for the next turn.  The stack will not have a flag on it to show your enemies how many army units are inside.
+</para>
+</listitem>
+<listitem>
+<figure id="mainscreen-stack-search-button-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_stack_search_button.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+<para>
+Clicking this button causes the stack to explore a ruin or temple.  
+</para>
+<para>
+When exploring a temple, the stack needs to be on a tile that has a temple; and clicking this button will cause the stack to be blessed (all army units will receive a bonus of 1 strength point).
+</para>
+<para>
+When exploring a ruin, the stack must contain a hero.  Exploring a ruin means the hero will fight a monster in the ruin, and if successful will be given a reward.  A hero's strength and the size of the accompanying stack that the hero attacks with are factors that determine success.
+</para>
+</para>
+</listitem>
+<listitem>
+<figure id="mainscreen-move-all-stacks-button-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_move_all_stacks_button.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+Clicking this button causes all stacks that have a path set, to travel along their paths.
+</para>
+</listitem>
+<listitem>
+<figure id="mainscreen-end-turn-button-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_end_turn_button.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+Clicking this button causes the player to end her turn.  This means that the player is finished moving stacks for this turn.
+</para>
+</listitem>
+</itemizedlist>
+</para>
+<para>
+Some statistics appear at the bottom of the screen when a stack is not selected.  The statistics look like this:
+<figure id="mainscreen-stat-icons-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_stat_icons.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<itemizedlist>
+<listitem>
+<para>
+<figure id="mainscreen-stat-icon-cities-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_stat_icon_cities.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+The number beside this city icon is the total number of cities you own.
+</para>
+</listitem>
+<listitem>
+<para>
+<figure id="mainscreen-stat-icon-treasury-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_stat_icon_treasury.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+The number beside this bag of gold icon is the number of gold pieces in your treasury.  You can use the gold pieces in your treasury to purchase a new army unit production capability in a city.
+</para>
+</listitem>
+<listitem>
+<para>
+<figure id="mainscreen-stat-icon-income-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_stat_icon_income.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+The number beside this coins icon is the number of gold pieces that your player makes every turn through city taxes (and perhaps a magical item that has a gold bonus).
+</para>
+</listitem>
+<listitem>
+<para>
+<figure id="mainscreen-stat-icon-upkeep-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/main_screen_stat_icon_upkeep.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+The number beside this gold pouch icon is the number of gold pieces that your player spends per turn on army unit maintenance (also called upkeep) costs.
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</sect2>
+</sect1>
+
+<!-- ============ Interacting with the Map ============= -->
+<sect1 id="lordsawar-map-interaction"> 
+	<title>Interacting with the Map Display</title> 
+<para>
+Knowing how to interact with the map is essential in playing this game.  These interactions are all mouse driven, and involve:
+<itemizedlist>
+<listitem>
+<para>Left-clicking:</para>
+<para>
+Pressing and releasing the leftmost button on the mouse or touchpad.
+</para>
+</listitem>
+<listitem>
+<para>Right-clicking:</para>
+<para>
+Pressing and releasing the rightmost button on the mouse or touchpad.
+</para>
+</listitem>
+<listitem>
+<para>Dragging:</para>
+<para>
+Pressing and holding down the leftmost button on the mouse or touchpad, while moving it.
+</para>
+</listitem>
+</itemizedlist>
+</para>
+<sect2 id="lordsawar-moving-the-map">
+	<title>Changing the Map View</title> 
+<para>
+It is useful to browse the map and take note of the features on the map.  There are two ways to pan your view of the map:
+<itemizedlist>
+<listitem>
+<para>
+Through the Miniature Map:
+</para>
+<para>
+Using the miniature map to browse the map is frequently used to quickly change the map to show one of your cities, or one of your enemy's cities.
+</para>
+<para>
+Move the mouse onto the miniature map.  The mouse pointer will become a magnifying glass that looks like:
+<figure id="mousecursormagnifyingglass-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/mousecursor_magnifying_glass.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+When you left-click on the miniature map, the zoomed-in portion of the map will change to the new view.  You can also drag the view on the miniature map.
+</para>
+</listitem>
+<listitem>
+<para>
+Through the Main Map:
+</para>
+<para>
+Panning the map in this way is useful when you're interested in things that are nearby.
+</para>
+<para>
+When the pointer looks like a hand:
+<figure id="mousecursorhand-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/mousecursor_hand.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+you can drag the map.  When you have a stack selected, you can hold down the Shift key on the keyboard to turn the mouse pointer back into a hand.
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</sect2>
+<sect2 id="lordsawar-inspecting-objects-on-the-map">
+	<title>Inspecting objects on the map</title> 
+<para>
+Right-clicking and holding down the mouse button while hovering over a stack, city, ruin, temple, or signpost will show extra information about that object.  The game option "View Enemies" prevents the inspection of enemy stacks.
+</para>
+<para>
+Querying these objects for information is useful in many contexts:
+<itemizedlist>
+<listitem>
+<para>
+When playing with a hidden map, inspecting signposts can be a big help in finding new cities.
+</para>
+</listitem>
+<listitem>
+<para>
+It is also handy to quickly query a nearby ruin to see if it is unexplored.
+</para>
+</listitem>
+<listitem>
+<para>
+When playing with the "View Enemies" game option turned on, it is essential to inspect your enemy's stacks so that you can better gauge the threat they pose.
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</sect2>
+<sect2 id="lordsawar-commanding-objects-on-the-map">
+	<title>Commanding objects on the map</title> 
+<para>
+In order to work with either a stack or a city it must first be left-clicked.  
+</para>
+<sect3 id="lordsawar-commanding-stacks-on-the-map">
+	<title>Commanding stacks on the map</title> 
+<para>
+When hovering over a stack the mouse pointer will turn into a target symbol that looks like this:
+<figure id="mousecursortarget-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/mousecursor_target.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+Left-clicking on the stack will make it become visibly selected, and the mouse pointer will change to a walk symbol when you are hovering over a place on the map that can be reached by the stack.  The walk symbol looks like this:
+<figure id="mousecursorwalk-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/mousecursor_walk.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+When you are hovering over a reachable area of water the mouse pointer will change to a boat symbol that looks like this:
+<figure id="mousecursorboat-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/mousecursor_boat.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+Left-clicking on the map with a mouse pointer that looks either like a boat or walking-feet will cause the selected stack to travel to that location (or use up all of it's movement points trying to get there.)
+</para>
+<para>
+When you press and hold down the Ctrl key on the keyboard while you have a boat symbol or a walking-feet symbol as a mouse pointer, a different mouse pointer symbol will appear that looks like a diagonal arrow:
+<figure id="mousecursorgoto-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/mousecursor_goto.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+When you left-click on the map with this diagonal arrow, the path that the selected stack would use to get to that location will be shown.  The stack will not immediately move along the path.  Smart players use this feature a lot because it shows them if a particular stack can reach a given location in a single turn.
+</para>
+</sect3>
+<sect3 id="lordsawar-commanding-cities-on-the-map">
+	<title>Issuing orders to cities on the map</title> 
+<para>
+When hovering over a city the mouse pointer turns into a castle icon that looks like this:
+<figure id="mousecursorrook-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/mousecursor_rook.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+Left-clicking on the city with this castle mouse pointer will bring up the city screen.  More information on the city screen appears in the next section of this manual.
+</para>
+<para>
+When the "View Production" game option is turned on, this castle icon will also appear when you hover over enemy cities.  Left-clicking on the enemy city will allow you to inspect the production capabilities of that city.
+</para>
+<para>
+Sometimes cities can get full and the mouse pointer doesn't turn into a castle icon because your stacks are in the way.  You can switch the target mouse pointer to a castle mouse pointer by pressing and holding the shift key on the keyboard.
+</para>
+</sect3>
+</sect2>
+</sect1>
+<!-- ============= Cities ============================== -->
+<sect1 id="lordsawar-cities"> 
+	<title>Cities</title> 
+<para>
+Cities are important because conquering cities is the key to winning the game.  Each player typically starts with one city, with the remainder of the cities being unowned.  Each city can produce army units that the player can use to attack other cities.  Each player has a capital city that other players can target and take over for bragging rights.
+</para>
+<sect2 id="lordsawar-cities-what-are-they">
+	<title>What are they?</title> 
+<para>
+Cities appear as castles on the map display; they occupy four tiles on the screen; a two-by-two square.  Cities appear as little shields on the miniature map.
+</para>
+
+<para>
+Cities have a name, a defense level, and they provide a number of gold pieces to the player's treasury every turn.
+</para>
+<para>
+The income is in the form of gold pieces, which happens to be exactly what army units require as their upkeep.  Conquering more cities gives the player more money and enables the upkeep of more army units.
+</para>
+<para>
+The defense level for the city is related to the number of army units that the city can produce.  It has a maximum value of 3 and a minimum value of 0 (razed). Higher defense levels improve a city's chances in battle.
+</para>
+<para>
+Each city can produce one of up to four different army unit types.  After enough turns have passed the army unit shows up in the city and can be moved around the map as the player sees fit.  Changing a city's production of army units is one of the main ways that a player affects the outcome of the game.  The player can also choose to add a new army unit type to the suite of army unit types that the city can produce; which can cost a lot of gold pieces.
+</para>
+<para>
+Army unit production can be viewed and modified in cities that the player owns.  The production in enemy cities can also be viewed if the game is started with the "view production" option turned on.
+</para>
+<para>
+Movement in a city that the player owns is the same as moving on a road; it is the easiest mode of transportation.  Cities that are adjacent to the water act as a port; a jumping-off point for naval operations.
+</para>
+<para>
+Army units located in the city fight as a single force when the city is attacked by the enemy.  Some army units will have a special fighting bonus if they are defending a city, or attacking a city.  To attack a city, move your army units to an adjacent tile and then attempt to move into the city.
+</para>
+
+<para>
+Army units may not move through a foreign city without conquering it first.
+</para>
+
+</sect2>
+<sect2 id="lordsawar-explain-the-city-screen">
+	<title>Explanation of the City screen </title> 
+<para>When the player left-clicks on a city the following screen is displayed:</para>
+<figure id="citywindow-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/city_window.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+
+<para>
+        The most noticeable thing in the screen is the miniature map that only shows all of the player's cities.  At a glance it shows; which cities are producing an army unit (shown by a white shield with an anvil), which ones are not (shown by a white shield without an anvil), and which city the player is currently visiting (shown by a black shield, with or without an anvil).  The player can see the details of another city by left-clicking it on the miniature map.
+</para>
+<para>
+The screen contains information about the selected city.  The title of the screen is the name of the city.  To the right of the map the defense level is shown, along with the amount of money in gold pieces that this city provides per round.  Next is the army unit that is currently being produced, and how many more turns until it becomes available for use.  The set of buttons in the middle of the screen represent the army unit types that this city can produce.
+Below that are statistics about the army unit currently being produced.
+</para>
+<para>
+The army units can be right-clicked on to get extra information about them, in particular the movement bonus.
+</para>
+
+<para>
+A number of buttons appear at the bottom of the screen.  Here is what they do:
+<itemizedlist>
+<listitem>
+<para> Stop.</para>
+<para>
+Stops the production army units in this city.  Stopping production is a good idea if the player's total upkeep is higher than the total income.
+</para>
+</listitem>
+<listitem>
+<para>Buy.</para>
+<para>
+Make a new army unit available for production in this city.  Warning: clicking this button will replace the currently selected production unit.
+<para>
+Buying new army units is a good idea when the player needs an army unit with a particular capability and that capability does not exist in any of the other army units that the city already produces.
+</para>
+</para>
+</listitem>
+<listitem>
+<para>Vector.</para>
+<para>
+Produce the unit in this city, but have it show up elsewhere on the map.
+Vectoring is useful when the player's "front line" is far away from this city.  It can be used to quickly get new army units into far-away battles.
+</para>
+</listitem>
+<listitem>
+<para>Raze.</para>
+<para>
+Burn this city to the ground, and make it uninhabitable for the rest of the game.  This operation is only available if the razing policy in the game options is set to "always".
+<para>
+Razing an own city is useful to prevent it from falling into enemy hands.  It is a last-ditch effort because no player can own the city after it is razed.
+</para>
+</para>
+</listitem>
+<listitem>
+<para>Rename.</para>
+<para>
+Change the name of this city.
+<para>
+Renaming a city can be a way of taunting another player.  e.g. The Impregnable Fortress of Wog.
+</para>
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</sect2>
+<sect2 id="lordsawar-cities-how-they-make-critters">
+	<title>Producing new Army units</title> 
+<para>
+Army units come to life in cities after they have been "produced".  Every army unit takes a number of turns to be produced; typically one to four turns.  The city can produce one army unit at a time, for up to four different army unit types; these are shown as pictures in the boxes on the right side of the city screen.
+The button that appears to be pushed-in is the army unit type that is being produced in this city.  When there is one button pushed-in, that army unit type's picture appears, with the number of turns left until the army unit appears in the city.  If none of the army unit type buttons are pushed-in, then the city isn't producing an army unit at all.
+</para>
+<para>
+To select a new army unit for production, left-click on it's button.  The button will become pushed-in, and any other army unit type button will become pushed-out.  This will cause production to stop on any prior army units in this city.  This means if the player has one turn left before some dragons are produced, and then the player selects Pikemen, the dragons will not show up next turn.  The player can right-click on each army unit type button to get more information about that army unit type's capabilities.
+</para>
+</sect2>
+<sect2 id="lordsawar-taking-cities">
+	<title>Taking Cities</title> 
+<para>
+Conquering cities is important because it leads to the player winning the game.  After fighting the forces in an enemy city and winning, the player is presented with some options about how to take the city:
+<figure id="conquercity-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/conquer_city.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+Here is what the various buttons at the bottom of the screen mean:
+<itemizedlist>
+<listitem>
+<para> Occupy.</para>
+<para>
+Take the city and leave the production in the new city unchanged.
+</para>
+</listitem>
+<listitem>
+<para> Pillage.</para>
+<para>
+Take the city and cash in the weakest army unit type that the city can produce for gold pieces.  This will prevent that army unit from being produced in that city.
+</para>
+</listitem>
+<listitem>
+<para> Sack.</para>
+<para>
+Take the city and cash in all except weakest army unit type that the city can produce for gold pieces.  The army units that are cashed-in will not be available for production any longer.
+<para>
+If this button is not available, it is because the city has fewer than two army unit types available for production.
+</para>
+</para>
+</listitem>
+<listitem>
+<para> Raze.</para>
+<para>
+Don't take the city; destroy it instead.  This will make the city uninhabitable by any other player.  Other players may not appreciate this course of action.
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</para>
+<para>
+The easiest cities to conquer are the ones that aren't defended at all.  The player can win the city with the weakest army unit.
+</para>
+<para>
+Neutral cities are typically the next easiest to conquer; they are the unowned cities on the map.  Neutral army units never stray from their castle; they never come to the aid of another neutral city nearby.  Although neutral cities can be active in that they produce army units after an attempt to attack the city fails (this is a game option that can be turned on).
+</para>
+</sect2>
+<sect2 id="lordsawar-cities-buying-production">
+	<title>Buying new production capabilities</title> 
+<para>
+When none of the army unit types that the city can produce are desirable, the player can purchase a new army unit type for production within the city.
+</para>
+<para>
+When the player clicks on the buy button in the city screen the following screen is shown:
+<figure id="buyproduction-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/buy_production.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+A list of all army units that are available for the player to purchase are shown.  Some of these army units are too costly for the player to afford, so they are inactive and appear greyed-out.  Some of these army units will already be present within the city's production suite; and these army units are also inactive and greyed-out.  Left-clicking on the army unit type button will select it, and show the price at the bottom of the screen.  Right-clicking a button will display the capabilities of that army unit type.
+</para>
+<para>
+After making a selection, click on the buy button to purchase the unit.  Take special care when purchasing a new army unit because it will replace the currently selected army unit type in the city screen!
+</para>
+<para>
+Some army units are not shown in this screen because they can't be bought at any price.  Special units like dragons or ghosts can however be awarded to a hero, or already present as production in a city.
+</para>
+</sect2>
+</sect1>
+
+<sect1 id="lordsawar-units"> 
+	<title>Army Units</title> 
+<para>
+Army units are used to attack cities and other army units.  It is an important distinction of the game that all army units are not made alike.  One city might make Giants that have a strength of 5, while another city might produce Giants with a strength of 6.  Inspecting the statistics of an army unit will state the abilities of that particular army unit.
+</para>
+<sect2 id="lordsawar-how-to-read-a-units-stats">
+	<title>How to read an Army Unit's stats</title> 
+<para>
+When the player right-clicks on an army unit in a stack, the following information is popped up:
+<figure id="armyunitinfo-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/army_unit_info.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+
+<para>
+Here we can see a unit of Light Infantry.  It fights with a strength of 2 (more strength is better), and has 12 movement points remaining of a maximum of 14.  The Light Infantry unit costs the player 3 gold pieces every turn.
+</para>
+</para>
+</sect2>
+<sect2 id="lordsawar-units-what-kind-of-bonuses">
+	<title>Augmenting an Army Unit's stats</title> 
+<para>
+Army units can get medals for fighting with distinction in battle.  Each medal confers one point of strength to the wearer.
+</para>
+<para>
+Army units also have a fighting bonus that only take effect during battle.  For example, a unit of Giants fight more effectively in hills.  There are many varieties of fighting bonuses and they are all covered in more detail elsewhere in this manual.
+</para>
+<para>
+Army units can have a fortification bonus that is conferred after they are put into "defend" mode.  When the enemy sees a stack with the fortified bonus, it appears to be in a small tent or tower.  The fortification bonus is one point of strength per army unit during battle.  Fortification has the added feature of masking the true size of the stack in the field to the enemy (the stack's flag is not shown).
+</para>
+<para>
+Army units can visit temples and get blessed.  The blessing confers a single point of strength upon the army unit.  An army unit can only be blessed once by a temple, but may visit many different temples for many blessings.
+</para>
+</sect2>
+<sect2 id="lordsawar-cities-vectoring">
+	<title>Vectoring</title> 
+<para>
+Vectoring is a mechanism that invisibly transports new army units from one city to another city.  This is a great convenience for quickly moving newly created army units across large distances.  The cost for this convenience is time; the new army unit remains off the map for two or more turns depending on the vectoring game option.  At the end of these in-transit turns, the new unit pops up at the destination.
+</para>
+<para>
+Vectoring is limited to new units, and to cities that the player already owns.  This means that you can't vector army units that have already been created, which can sometimes be a great inconvenience.   Another limitation is that a maximum of 4 cities can be vectored to a single destination city.
+</para>
+<para>
+It is also possible to vector new units to a hero's planted standard.  The flag in the ground acts like a mobile city.
+</para>
+<para>
+To initiate vectoring of new army units, go to the city screen for the city you want to vector from, and click on the "Vector..." button.  In the vectoring screen, click on the "Vector" button and then click on the destination city on the miniature map.
+</para>
+</sect2>
+</sect1>
+<!-- ============= Combat ============================== -->
+<sect1 id="lordsawar-combat"> 
+	<title>Combat</title> 
+<para>
+Battles usually happen when attempting to capture a city, although it can also happen outside of a city "in the field" with one stack attacking another.
+</para>
+<sect2 id="lordsawar-entering-combat">
+	<title>Entering combat</title> 
+<para>
+The player initiates combat by moving a stack to a tile immediately adjacent to a foreign city or a stack, and then attempting to move the stack onto the foreign city or stack.  The cursor will change from a pair of walking feet, into a sword or into a heart if the diplomacy game option is turned on, and the foreign stack or city is a friend).  More information about diplomacy can be found elsewhere in this manual.
+</para>
+<para>
+When attacking a city, the player needs to attack one of the four corners of the city; it doesn't make a difference if that corner contains an enemy stack or not.  All of the army units in the city will fight as a single force against the attacking stack.  When an army unit attacks another stack from a city, it only attacks with the other army units in it's stack, and not that of the entire city.
+</para>
+<para>
+There is a military advisor that can help the player decide if a given combat should be entered into or not.  After the stack has moved adjacent to it's target, and the cursor icon is a sword (or a heart), press the shift key; the cursor will change to a question mark.  When the player left-clicks when the question mark is being shown, the military advisor will prognosticate on the outcome.  Beware that the military advisor doesn't see the future, and is offering advice that the player can choose to accept or ignore.
+The military advisor is a game option that has to be turned on when the game is created to be available in the game.
+</para>
+</sect2>
+<sect2 id="lordsawar-combat-order-of-battle">
+	<title>Fighting Order</title> 
+<para>
+When combat is entered, all of the combatant army units line up for battle.  The two frontmost army units duel each other until one of them dies; the army unit that remains standing fights the next enemy army unit.  This continues until a player has no army units left to fight with.
+</para>
+<para>
+The player has some control over how the army units line up for battle: it is called the fight order.  The fight order is controlled by the army unit type of the combatants; this is why scouts often fight prior to heroes.  The fight order can be seen by opening up the fight order dialog:
+<figure id="fightorderdialog-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/fight_order.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+To change the order of a given army unit type, drag and drop it to another place in the list.  Imagine your opponent's surprise when you protect your fodder units by having your elephants fight first!
+</para>
+</sect2>
+<sect2 id="lordsawar-combat-bonuses">
+	<title>Bonuses</title> 
+<para>
+Army units have other capabilities that are not shown when the player right-clicks on them.  One of these extra capabilities is the fighting bonus which can be seen in the Army Bonus dialog:
+<figure id="armybonusdialog-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/army_bonus.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+Whereas the Pikemen that are produced in a city might have a strength of 5, the standard Pikemen army unit has a strength of 4.  More importantly it has a strength bonus when fighting in the open (on grass, not in hills, forest, etc.).  All Pikemen have this fighting bonus, and the bonus is not shown anywhere except in this army bonus dialog.
+
+An army unit can have any of the following fighting bonuses:
+<itemizedlist>
+<listitem>
+<para>+1 str in open, +2 str in open</para>
+<para>
+The army unit is stronger when fighting while standing on grass.
+When the army unit is fighting on grass, it fights as an army unit that has one or two points more strength than it was produced with.
+</para>
+</listitem>
+<listitem>
+<para>+1 str in woods.</para>
+<para>
+The army unit is stronger when fighting while standing in a forest.
+When the army unit is fighting in the forest, it fights as an army unit that has one more point of strength than it was produced with.
+</para>
+</listitem>
+<listitem>
+<para>+1 str in hills.</para>
+The army unit is stronger when fighting while standing in hills.
+When the army unit is fighting in the hils, it fights as an army unit that has one more point of strength than it was produced with.
+<para>
+</para>
+</listitem>
+<listitem>
+<para>+1 str in city, +2 str in city.</para>
+The army unit is stronger when defending a city.
+When the army unit is fighting in a city, it fights as an army unit that has one or two more points of strength than it was produced with.
+<para>
+</para>
+</listitem>
+<listitem>
+<para>+1 stack in hills.</para>
+<para>
+All army units in the stack are stronger when fighting in the hills.
+When the army unit is fighting in the hills, all of the army units it is fighting with have one more point of strength than they were produced with.
+</para>
+</listitem>
+<listitem>
+<para>Cancel city bonus.</para>
+<para>
+The city bonus is related to the natural defensive abilities of the city.  When a city produces more kinds of units (e.g. up to 4 different kinds), the city bonus is higher for that city.  The city bonus can be entirely nullified by bringing into battle a single army unit that has this particular fighting ability.
+</para>
+</listitem>
+<listitem>
+<para>-1 enemy stack.</para>
+<para>
+This army unit nullifies one point of strength from each of the army units it is attacking.
+</para>
+</listitem>
+<listitem>
+<para>+1 stack, +2 stack.</para>
+<para>
+All army units in the stack are stronger when fighting.
+When the army unit is fighting, all of the army units it is fighting with have one more point of strength than they were produced with.
+</para>
+</listitem>
+<listitem>
+<para>cancel hero.</para>
+<para>
+This army unit nullifies any fighting bonuses an enemy hero brings to the battle.
+</para>
+</listitem>
+<listitem>
+<para>cancel non-hero.</para>
+<para>
+This army unit nullifies any fighting bonuses an enemy army unit (except for a hero) brings to the battle.
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</sect2>
+<sect2 id="lordsawar-combat-stacks">
+	<title>Stacks</title> 
+<para>
+Stack composition is a key factor in winning the game.  There is no such thing as the perfect stack in &app;; only an ideal stack for a given task.  The wise player will make careful choices about which army units will be included in any given stack.
+</para>
+<para>
+Generally it is best to maximize the total number of strength points in the stack.  However if a stack of strong army units cannot move very far, the player might be more wise to construct a weaker stack that will reach the target in a more timely manner.
+</para>
+<para>
+It generally makes sense to have army units that have city fighting bonuses to reside in cities.  The trade-off here is that these armies are unsuited to traveling overland to attack remote cities; the player also needs to create units that are offensively suited.  The player can only afford so many army units at any given time.
+</para>
+<para>
+When a battle happens, each army unit is given exactly two hitpoints.  The fight is depicted as a series of skirmishes between army units.  These skirmishes between individual army units continue until one side has no army units left.
+</para>
+<para>
+Each skirmish has an attacker and a defender.  The attacker and defender make simultaneous swings at each other, by rolling a 24 sided die.  Each army unit is trying to roll a value this is larger than their opponent's augmented strength.  An army units augmented strength is a value that is the army unit's strength combined with any other army bonuses that affect the army unit.  If they both succeed, then nothing happens, and they both take another swing at each other.
+If one army unit succeeds and the other does not, then the other army unit has been hit, and loses a single hitpoint.  The "Intense Combat" game option determines whether the 20 or 24 sided die is used.
+</para>
+</sect2>
+<sect2 id="lordsawar-combat-example-in-field">
+	<title>Example of combat in the field</title> 
+<para>
+Here the yellow player wishes to attack the red player.  The yellow player has selected a stack that has one Orcish Mob unit.  The yellow player wishes to attack the enemy Light Infantry unit to the southeast.  Either the yellow player will succeed in destroying the red unit, or the yellow unit will die trying.
+<figure id="fight-one-on-one-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/fight_one_vs_one.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+The yellow player commits to the battle by left-clicking on the red army unit wit the sword cursor.  The battle ensues:
+<figure id="fighting-one-on-one-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/fighting_one_vs_one.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+Here is the fight screen.  The attacker is always depicted on the bottom of the fight window, while the defender is always shown on the top.  The shields of both players are shown, along with the army units that are in this battle.  Every army unit has precisely two hitpoints, and strength is used as the main determinator if the unit is hit or not.  In this battle the Orcish Mob dispatches the single unit of Light Infantry.
+</para>
+<para>
+To make the battle go faster, press the spacebar.  To make all future battles go faster, press the exclamation key.
+</para>
+<para>
+The battle finishes, and the yellow unit of Orcish Mob succeeds in killing the unit of red's Light infantry.  The red player loses the unit of Light Infantry:
+<figure id="fought-one-on-one-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/fought_one_vs_one.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para>
+</para>
+</sect2>
+<sect2 id="lordsawar-combat-example-in-city">
+	<title>Example of combat in a city</title> 
+<para>
+Here the yellow player wishes to attack the red player.  The yellow player has selected a stack that has one Orcish Mob unit.  The yellow player wishes to attack the enemy city to the northwest.  Either the yellow player will succeed in capturing the red city, or the yellow unit will die trying.
+<figure id="fight-one-on-two-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/fight_city_one_vs_two.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<para>
+The yellow player commits to the battle by left-clicking on the red city with the sword cursor.  The battle ensues:
+<figure id="fighting-one-on-two-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/fighting_city_one_vs_two.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+Here is the fight screen.  The Orcish mob has just dispatched two enemy army units, and is continuing on.  The battle is now down to a single unit of Light Infantry, and a single unit of Orcish Mob.
+</para>
+<para>
+The battle finishes, and the yellow unit of Orcish Mob does not succeed in killing the remaining enemy units, an as a result the unit Orcish Mob dies.  The red player has repelled the attack and retains the city:
+<figure id="fought-one-on-two-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/fought_city_one_vs_two.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para>
+</para>
+</sect2>
+</sect1>
+<!-- ============= Heroes ============================== -->
+<sect1 id="lordsawar-heroes"> 
+	<title>Heroes</title> 
+<para>
+Heroes are special army units that can do fun and interesting things in &app;.  Every player starts out with a single hero that will carry that player's battle standard.  Subsequent heroes may emerge during the course of the game; their showing up will cost the player gold pieces, and they may have some allies who accompany them.  Typically new heroes will not offer their services to players who do not have many gold pieces in their treasury.
+</para>
+<sect2 id="lordsawar-heroes-why-they-rock">
+	<title>Using Heroes to your advantage</title> 
+<para>
+Heroes have a natural command bonus that gives a strength bonus to all other army units fighting in the hero's stack.  The command bonus increases for more experienced heroes.  It is a good strategy to have other army units to travel with heroes.  The command bonus means that all army units in the stack fight with greater strength; the larger command the hero has, the more powerful the other army units in the stack will act in battle.
+</para>
+<para>
+Heroes can increase levels as experience is gained in battle.  When a new level is attained a hero can increase it's strength, it's movement points, or it's sight (when playing a scenario with fog of war).  Powerful heroes are hard to kill, and are often targeted by other players.
+</para>
+<para>
+Heroes can find and carry useful items.  Items can give the hero more strength in battle, or a larger command bonus; they can also give the player a gold bonus (per city), or double the movement of all army units in the hero's stack, or give the stack the gift of flight.  Heroes can drop items to give to other heroes.  A wise player will distribute powerful objects among heroes.
+</para>
+<para>
+Heroes can make special use of the player's battle standard; it can be planted in the ground and army units can be vectored to it from far-off cities.  This can only be done with the player's own standard, and not with a standard belonging to an opponent.  It is good strategy to retain ownership of the player's battle standard, so that it can be employed at a crucial stage of the game.
+</para>
+<para>Unlike other army units, heroes do not cost the player anything to keep per turn.</para>
+</sect2>
+<sect2 id="lordsawar-heroes-exploring ruins">
+	<title>Exploring ruins</title> 
+<para>
+Ruins appear as white dots on the miniature map, and as a grey stone building occupying one tile on the large map screen.  Heroes can visit ruins and explore them; this is accomplished by moving the hero's stack onto the ruin, and clicking the search button (the magnifying glass).
+</para>
+<para>
+It is a dangerous thing for a hero to search a ruin!  The hero will likely encounter a monster, and the hero may or may not survive the battle.  Successfully exploring a ruin will yield a treasure to the hero.  The hero will sometimes be rewarded  with gold pieces, sometimes with a magical item, and sometimes with powerful ally army units.
+Once a ruin is explored, it cannot be explored again.
+</para>
+</sect2>
+<sect2 id="lordsawar-heroes-quests">
+	<title>Going on Quests</title> 
+<para>
+Heroes can visit temples and obtain quests.  Temples appear as white dots on the miniature map, and as a brown shrine occupying one tile on the large map screen.  A temple is visited by moving the hero's stack onto the temple and then clicking the search button (the magnifying glass).
+</para>
+<para>
+A quest is a mission to complete a particular task in the game.  The hero is well rewarded for completing a quest.  Quests come in many varieties:
+<itemizedlist>
+<listitem>
+<para>Hero Assassination Quest</para>
+<para>
+The hero is tasked with dispatching another hero in the game.
+</para>
+</listitem>
+<listitem>
+<para>Kill Enemy Stacks Quest</para>
+<para>
+The hero is tasked with killing a specific number of a specific player's army units.
+</para>
+</listitem>
+<listitem>
+<para>City Occupation Quest</para>
+<para>
+The hero is tasked with capturing a particular city, and occupying it.
+</para>
+</listitem>
+<listitem>
+<para>City Sacking Quest</para>
+<para>
+The hero is tasked with capturing a particular city, and sacking it.
+</para>
+</listitem>
+<listitem>
+<para>City Razing Quest</para>
+<para>
+The hero is tasked with capturing a particular city, and razing it.
+</para>
+</listitem>
+<listitem>
+<para>Kill Army Unit Type Quest</para>
+<para>
+The hero is tasked with killing a particular kind of army unit -- e.g. a unit of Ghosts.  The army unit can belong to any player.
+</para>
+</listitem>
+<listitem>
+<para>Plunder Quest</para>
+<para>
+The hero is tasked with plundering a specific amount of gold pieces by pillaging and sacking cities.
+</para>
+</listitem>
+</itemizedlist>
+</para>
+<para>
+Upon completing a quest, the hero is rewarded with a large number of gold pieces, or a magical item, or some powerful allies.
+</para>
+<para>
+Some quests can expire, freeing the hero to obtain another quest.
+</para>
+<para>
+There is a game option that controls how often a hero can obtain a quest from a temple.  If the "one quest per player" policy is chosen, it means that the player can only have one hero on a quest at any given time.  Every player could potentially have a questing hero, except for the neutral player who doesn't have heroes.  The alternative questing policy is to allow one quest per hero.  This means that each player can have many heroes on quests simultaneously.
+</para>
+</sect2>
+</sect1>
+<sect1 id="lordsawar-movement"> 
+	<title>Movement</title> 
+<para>
+Every army unit has a number of movement points that get replenished every turn.  These army units are arranged into stacks, and they move over various kinds of terrain on the map.  The army unit in the stack that has the lowest number of movement points governs how far the stack can move.  Army units can have terrain bonuses that help the stack move more effectively over a specific kind of terrain.
+</para>
+<sect2 id="lordsawar-movement-over-land">
+	<title>Traveling over land</title> 
+<para>
+Stacks are usually moved over land, and movement can be more effective or less effective depending on the kind of terrain the stack is moving on.  The different kinds of terrain are:
+<itemizedlist>
+<listitem>roads,</listitem>
+<listitem>hills,</listitem>
+<listitem>swamp,</listitem>
+<listitem>forest,</listitem>
+<listitem>grass,</listitem>
+<listitem>water,</listitem>
+<listitem>and mountains.</listitem>
+</itemizedlist>
+</para>
+<para>
+Stacks that move on roads, or cities move with the greatest ease.  Grass is the next easiest terrain feature to move through.  Some stacks may have army units that provide a movement bonus that makes the whole stack move faster through forest, or hills.  Mountains are usually impassable, unless the stack can fly.  Swamps are always difficult to move through.
+</para>
+</sect2>
+<sect2 id="lordsawar-movement-over-water">
+	<title>Traveling over water</title> 
+<para>
+Naval operations can be a crucial avenue to victory in the game.  To begin naval operations, simply move a stack into the water.  The stack's remaining movement points will be completely sapped with the effort of putting into the water.  During the next turn, the stack will have 18 movement points; this is how far a boat can move in &app;.  When the stack eventually moors back onto land, all of the remaining movement points will again be sapped with the effort.
+</para>
+<para>
+Stacks can get into and out of the water at different places on the map:
+<itemizedlist>
+<listitem>
+at a city that is adjacent to water,
+</listitem>
+<listitem>
+at a port (a black anchor on the map),
+</listitem>
+<listitem>
+and at a bridge.
+</listitem>
+</itemizedlist>
+</para>
+<para>
+Battle on the open seas is an encumbering experience for land-loving army units!  Those army units fight with similar effectiveness when on a boat.  Flying units will fight with their regular veracity, not being encumbered by the walls of a ship.
+</para>
+<para>
+When a hero dies on the water, the items belonging to that hero are lost to the sea forever.
+</para>
+</sect2>
+<sect2 id="lordsawar-resting-bonus">
+	<title>Resting</title> 
+<para>
+There is a resting bonus that gives a stack more movement points if it didn't use all of it's movement points in the previous turn.  If a stack has 2 or more movement points at the end of the player's turn it receives 2 extra movement points next turn.  If a stack has 1 movement point at the end of the player's turn, it retains that point into the next turn.
+</para>
+</sect2>
+</sect1>
+<sect1 id="lordsawar-diplomacy"> 
+	<title>Diplomacy</title> 
+<sect2 id="lordsawar-diplomacy-advantages">
+	<title>Using Diplomacy to your advantage</title> 
+</sect2>
+<sect2 id="lordsawar-diplomacy-explaining-the-report">
+	<title>Explanation of the Diplomatic Report</title> 
+</sect2>
+</sect1>
+<sect1 id="lordsawar-options"> 
+	<title>Options</title> 
+<sect2 id="lordsawar-scenario-options">
+	<title>Scenario options</title> 
+<para>
+Here are the options that are settable at the start of a game:
+<figure id="gameoptions1-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/game-options-1.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<figure id="gameoptions2-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/game-options-2.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+<itemizedlist>
+<listitem>
+<para>View Enemies</para>
+<para>
+When this option is turned on, the player can right-click on enemy stacks in the large map screen and see their contents.
+</para>
+</listitem>
+<listitem>
+<para>View Production</para>
+<para>
+When this option is turned on, the player can right-click on enemy cities in the large map screen and see their production.
+</para>
+</listitem>
+<listitem>
+<para>Quests</para>
+<para>
+This option controls how often heroes can visit temples to obtain quests.  This option can have one of the following values:
+<itemizedlist>
+<listitem>
+<para>No Questing</para>
+<para>
+No heroes can obtain quests at temples.
+</para>
+</listitem>
+<listitem>
+<para>One Quest Per Player</para>
+<para>
+Only one hero can obtain a quest from a temple.  If one hero has a quest, another hero belonging to the same player cannot obtain a quest.
+</para>
+</listitem>
+<listitem>
+<para>One Quest Per Hero</para>
+<para>
+Each hero that the player owns can obtain a quest from a temple.  A single hero cannot have two or more quests.
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+<listitem>
+<para>Hidden Map</para>
+<para>
+When this option is turned on, the map is turned black and the player's stacks must explore the map to uncover it.  This option is also known as fog of war.
+</para>
+</listitem>
+<listitem>
+<para>Diplomacy</para>
+<para>
+When this option is turned on, the player is not automatically at war with all other players; instead some of them are allies and cannot be attacked without diplomatic consequences.
+</para>
+</listitem>
+<listitem>
+<para>Neutral Cities</para>
+<para>
+This option controls the behaviour of neutral cities.  This option can be one of four values:
+<itemizedlist>
+<listitem>
+<para>Average</para>
+<para>
+Neutral cities are manned by the weakest army unit they can produce.
+</para>
+</listitem>
+<listitem>
+<para>Strong</para>
+<para>
+Neutral cities are manned by the strongest army unit they can produce.
+</para>
+</listitem>
+<listitem>
+<para>Active</para>
+<para>
+Neutral cities start to produce army units after they resist an attacked by a player.
+</para>
+</listitem>
+<listitem>
+<para>Defensive</para>
+<para>
+Neutral cities slowly produce random army units periodically.
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+<listitem>
+<para>Cusp Of War</para>
+<para>
+For this option to be available, the diplomacy option must first be turned on.
+When this option is turned on, all computer players will declare war on human players at an early stage within the game.
+</para>
+</listitem>
+<listitem>
+<para>Razing Cities</para>
+<para>
+This option governs when the player may raze cities.  It can have one of three values:
+<itemizedlist>
+<listitem>
+<para>Always Allowed</para>
+<para>
+The player can always raze cities.
+</para>
+</listitem>
+<listitem>
+<para>On Capture</para>
+<para>
+The player may only raze cities when it is conquered in battle.
+</para>
+</listitem>
+<listitem>
+<para>Never</para>
+<para>
+The player may never raze cities (not even in the city screen).
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+<listitem>
+<para>Intense Combat</para>
+<para>
+Use a slightly different calculation for battles that makes gaps in strength less evident.  A 20-sided die is used for fights instead of a 24-sided die.
+</para>
+</listitem>
+<listitem>
+<para>Quick Start</para>
+<para>
+This option gives players some cities to start off with so that the early stages of the game can be skipped.  Quick Start has two modes:
+<itemizedlist>
+<listitem>
+<para>Evenly Divided</para>
+<para>
+Each player gets the same number of cities.  No neutral cities remain.
+</para>
+</listitem>
+<listitem>
+<para>Enemy Head Start</para>
+<para>
+Each computer player gets a few extra cities.  The number of extra cities depends on the total number of cities.  Human players keep a single city.
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+<listitem>
+<para>Military Advisor</para>
+<para>
+Make the military advisor available.  This means the player can get advice on a battle by pressing the Shift key and left-clicking on an adjacent target.
+</para>
+</listitem>
+<listitem>
+<para>Random Turns</para>
+<para>
+Change the order that the players get to take their turn.  This option changes the order every round of the game.
+</para>
+</listitem>
+<listitem>
+<para>Sacking &amp; Pillaging</para>
+<para>
+Sacking &amp; pillaging is something that can happen when a city is conquered.  This option can be one of:
+<itemizedlist>
+<listitem>
+<para>Always</para>
+<para>
+The player can always sack and pillage.
+</para>
+</listitem>
+<listitem>
+<para>On Capture</para>
+<para>
+The player can only sack and pillage when a city is conquered.
+</para>
+</listitem>
+<listitem>
+<para>On Quest</para>
+<para>
+Only a hero with a quest to sack or pillage a city can do so.
+</para>
+</listitem>
+<listitem>
+<para>Never</para>
+<para>
+Sacking and pillaging is disallowed.
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+<listitem>
+<para>Build Production</para>
+<para>
+Building production refers to the addition of new army unit types.  (e.g. clicking the buy button in the city screen.)  It can be one of:
+<itemizedlist>
+<listitem>
+<para>Always</para>
+<para>
+The player can always build new production types.
+</para>
+</listitem>
+<listitem>
+<para>Usually</para>
+<para>
+Most of the cities can build new production but some cannot.
+</para>
+</listitem>
+<listitem>
+<para>Seldom</para>
+<para>
+Most of the cities cannot build new production but some can.
+</para>
+</listitem>
+<listitem>
+<para>Never</para>
+<para>
+No cities can build new production.
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+<listitem>
+<para>Vectoring</para>
+<para>
+Vectoring refers to the practice of shipping newly produced units off to another city.  They completely disappear from the map while they are in transit, and eventually they pop up at their destination.  Vectoring has two modes:
+<itemizedlist>
+<listitem>
+<para>Always Two Turns</para>
+<para>
+It takes a vectored army unit exactly two turns to arrive at a destination.
+</para>
+</listitem>
+<listitem>
+<para>Variable Turns</para>
+<para>
+The number of turns varies based on the distance between the city being vectored from, and the city being vectored to.
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+</itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="lordsawar-keyboard-commands"> 
+	<title>Keyboard Commands</title> 
+<para>
+Here is a list of all of the keyboard shortcuts in &app;.  Please note that L means lowercase L, while Shift+L means uppercase L.  These keyboard commands only work on the main screen.
+</para>
+<itemizedlist>
+<listitem>
+<para>Alt+L</para>
+<para>
+Load a game.
+</para>
+</listitem>
+<listitem>
+<para>Alt+S</para>
+<para>
+Save game.
+</para>
+</listitem>
+<listitem>
+<para>Ctrl+L</para>
+<para>
+Show the game lobby (networked play).
+</para>
+</listitem>
+<listitem>
+<para>I (the letter I, as in igloo)</para>
+<para>
+Open the fight-order dialog.
+</para>
+</listitem>
+<listitem>
+<para>M</para>
+<para>
+Move all stacks that have a path set.
+</para>
+</listitem>
+<listitem>
+<para>X</para>
+<para>
+Change the contents of the sign the stack is standing on.
+</para>
+</listitem>
+<listitem>
+<para>Q</para>
+<para>
+Disband the selected stack.
+</para>
+</listitem>
+<listitem>
+<para>Escape</para>
+<para>
+Deselect the selected stack and don't come back to it.
+</para>
+</listitem>
+<listitem>
+<para>Enter</para>
+<para>
+Select the next stack in the list.
+</para>
+</listitem>
+<listitem>
+<para>R</para>
+<para>
+Resign from the game.
+</para>
+</listitem>
+<listitem>
+<para>A</para>
+<para>
+Show the Army Report.
+</para>
+</listitem>
+<listitem>
+<para>K</para>
+<para>
+Show the City Report.
+</para>
+</listitem>
+<listitem>
+<para>G</para>
+<para>
+Show the Gold Report.
+</para>
+</listitem>
+<listitem>
+<para>N</para>
+<para>
+Show the Production Report.
+</para>
+</listitem>
+<listitem>
+<para>W</para>
+<para>
+Show the Winning Report.
+</para>
+</listitem>
+<listitem>
+<para>D</para>
+<para>
+Show the Diplomacy Report.
+</para>
+</listitem>
+<listitem>
+<para>=</para>
+<para>
+Show the active quest.
+</para>
+</listitem>
+<listitem>
+<para>, (comma)</para>
+<para>
+Have the selected hero pick-up or drop items at this location.
+</para>
+</listitem>
+<listitem>
+<para>F</para>
+<para>
+Have the selected hero plant the player's standard at this location.
+</para>
+</listitem>
+<listitem>
+<para>U</para>
+<para>
+Show the hero levels dialog.
+</para>
+</listitem>
+<listitem>
+<para>Z</para>
+<para>
+Have the hero search this location.
+</para>
+</listitem>
+<listitem>
+<para>F11</para>
+<para>
+Toggle fullscreen mode.
+</para>
+</listitem>
+<listitem>
+<para>Ctrl+P</para>
+<para>
+Show the game preferences dialog.
+</para>
+</listitem>
+<listitem>
+<para>. (period)</para>
+<para>
+Show the ruin status dialog.
+</para>
+</listitem>
+<listitem>
+<para>O (the letter oh)</para>
+<para>
+Show the list of army unit types and their bonuses.
+</para>
+</listitem>
+<listitem>
+<para>T</para>
+<para>
+Show the list of items and their bonuses.
+</para>
+</listitem>
+<listitem>
+<para>S</para>
+<para>
+Show the bonuses of army units in the selected stack.
+</para>
+</listitem>
+<listitem>
+<para>H</para>
+<para>
+Show the historical report for cities.
+</para>
+</listitem>
+<listitem>
+<para>E</para>
+<para>
+Show the historical events report.
+</para>
+</listitem>
+<listitem>
+<para>J</para>
+<para>
+Show the historical gold report.
+</para>
+</listitem>
+<listitem>
+<para>Y</para>
+<para>
+Show the historical winning report.
+</para>
+</listitem>
+<listitem>
+<para>T</para>
+<para>
+Show some statistics regarding the player's battle record.
+</para>
+</listitem>
+<listitem>
+<para>Alt+E</para>
+<para>
+End the turn.
+</para>
+</listitem>
+<listitem>
+<para>Shift+G</para>
+<para>
+Toggle a grid on the map.
+</para>
+</listitem>
+<listitem>
+<para>C</para>
+<para>
+Show the city production window.
+</para>
+</listitem>
+<listitem>
+<para>B</para>
+<para>
+Show the city production window.
+</para>
+</listitem>
+<listitem>
+<para>P</para>
+<para>
+Show the city production window.
+</para>
+</listitem>
+<listitem>
+<para>V</para>
+<para>
+Show the city vectoring window.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+To make battles go faster, press the spacebar during a fight.  To make all future battles go faster, press the exclamation key.
+</para>
+</sect1>
+<sect1 id="lordsawar-multiplayer"> 
+	<title>Multi-player play</title> 
+<sect2 id="lordsawar-hot-seat">
+	<title>Hot-seat Play</title> 
+<para>
+Playing a game in hotseat mode is the traditional way to play &app;.  The idea here is that there are two or more people physically in the same room, and when it's their turn they are said to be in the "hot-seat"; they get to move their stacks.  The other players are usually not allowed to watch the player in the hot-seat make their moves, although it certainly can be fun to do so.  When the player is finished the turn, the "end-turn" button is pressed and the next player is notified that it is now their turn.
+</para>
+<para>
+A hotseat game begins with all players agreeing on the scenario options, and then conducting their turns in order until there's a winner.
+</para>
+<para>
+Playing a hotseat game is advantageous when all players are near the same computer.  
+</para>
+</sect2>
+<sect2 id="lordsawar-network-play">
+	<title>Network Play</title> 
+<para>
+Network play allows players to enjoy a game of &app; over the internet.  Players who play in a network game can watch their opponents move their stacks around the map, and can even chat with their opponents as they do so. 
+</para>
+<para>
+Network play works by having one player start a new game that other players will connect to.  The player who starts the game is said to be on the server.  Before the game starts, the map, number of players and game options are chosen by the player who serving the game.  If the server stops running &app;, or her connection to the internet is temporarily severed, the game will cease to function.  The other players can connect to the server by specifying it's IP address.  These other players are said to be clients of the server.
+<para>
+Common networking problems can arise when clients try to connect to servers.  Often a particular port on a firewall needs to be opened so that communication can be established.  For &app; the port that needs to be opened is 14998.
+</para>
+</para>
+<para>
+Players of a network game can join and leave at any time, but beware that the game stops for everyone if a player is absent and it is their turn to move.
+</para>
+<para>
+After the game server is running, the lobby screen is shown.  Clients also see this screen when they connect to the game server.  Here is what the lobby looks like:
+<figure id="gamelobby-fig">
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="figures/game_lobby.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</figure>
+</para>
+<para>
+The lobby screen has three main portions: the chat window, the seats, and the map.  The figure shows two people (ben, and admin) playing an eight-sided game with a map that has 50 cities.  Ben is responsible for playing Storm Giants, and the admin hasn't taken a side yet.  Others can join or leave the game at any time.
+<para>
+As other people connect to the server, they appear in the People list of the chat window.  To send a message to all other players, type in a message into the box next to "Send:" and press the Enter key.
+</para>
+<para>
+To play the game, players need to "sit down" at a seat.  This is accomplished by clicking the "Sit Down" checkbox beside the shield of the player the person wants to play as.  After this happens the player may choose to change their name.  This is accomplished by clicking on "The Sirians" (for example), and typing in a new name and pressing the Enter key.
+</para>
+<para>
+The person who is hosting the game can change the "Type" of the players to one of: Easy, Hard, Human, or Off.  This is accomplished left-clicking on the word "Human", or whatever the type happens to be.  If another person is controlling the player, the type cannot be changed.
+</para>
+<para>
+The map portion of the game lobby is there to familiarize the players with the map that this scenario is using.  Players can use this information to choose which seat they will sit down in.  There is strategic value in starting in a city that is farther away from human opponents.  The map is not shown when the scenario is using a hidden map.
+</para>
+<para>
+Players can choose to leave this lobby window can stay open for the duration of the game for chatting purposes, or to monitor the availability of opponents.  Other clients who are only observing the game will keep this window open to watch the progress of the game as it unfolds.  Observers can watch the map change, and see the turn indicator cycle through the players, and they can chat with the players about what they see happening in the game.
+</para>
+</para>
+</sect2>
+</sect1>
+<sect1 id="copying-this-manual"> 
+        <title>Copying This Manual</title> 
+        &legal;
+</sect1>
+</article>

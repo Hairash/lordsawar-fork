@@ -1,0 +1,14 @@
+Armysets are in here. Each armyset consists of a set of army descriptions, a
+name, a size and a unique(!!) id.
+
+Mask and image files need to have the same name as the armyset description file
+and have to be .png files.
+
+The currently used indexes are:
+
+1 - default 
+2 - big default 
+3 - duel
+
+All indexes above 3 are free as of now.
+

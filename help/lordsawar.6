@@ -1,0 +1,76 @@
+.TH LORDSAWAR "6" "May 2020" "lordsawar 0.3.2" "Games"
+.SH NAME
+lordsawar \- A Warlords II clone
+.SH SYNOPSIS
+.B lordsawar
+[\fIOPTION\fR...] [\fIFILE\fR]
+.SH DESCRIPTION
+LordsAWar! is a  2d turn-based strategy game where up to 8 players strive for control of as many cities as possible.  Produce new armies in cities to conquer  nearby  cities.  Using the income from those cities, make more armies to take more cities.  Send a hero to a temple to get a quest, or maybe search a nearby ruin instead.  Play against the computer or against a friend.
+
+Specify \fIFILE\fR to load a saved-game (.sav) or start a new game from a .map file.  The latter is a scenario file saved from the scenario builder.
+.TP
+\fB\-c\fR, \fB\-\-cache\-size\fR \fISIZE\fR
+Don't use more than \fISIZE\fR bytes to cache rendered graphics.
+.TP
+\fB\-C\fR, \fB\-\-config\-file\fR \fIFILE\fR
+Use \fIFILE\fR instead of ~/.config/lordsawar/lordsawarrc.
+.TP
+\fB\-C\fR, \fB\-\-save\-path\fR \fIDIR\fR
+Use \fIDIR\fR instead of ~/.locale/share/lordsawar.
+.TP
+\fB\-t\fR, \fB\-\-test\fR
+Start with a test-scenario.
+.TP
+\fB\-S\fR, \fB\-\-seed\fR \fINUMBER\fR
+Seed the random number generator with \fINUMBER\fR.
+.TP
+\fB\-s\fR, \fB\-\-stress\-test\fR
+Begin a non-interactive stress test.
+.TP
+\fB\-r\fR, \fB\-\-robots\fR
+Begin a non-interactive stress test over the network.
+.TP
+\fB\-H\fR, \fB\-\-host\fR
+Start a lordsawar server.
+.TP
+\fB\-p\fR, \fB\-\-port\fR \fINUMBER\fR
+Start the lordsawar server on the given port.
+.TP
+\fB\-\-editor\fR
+Start the scenario builder.
+.TP
+\fB\-\fBh, \fB\-\-help\fR
+Give this help list.
+.PP
+\fIFILE\fRs can be a saved game file (.sav), or a map (.map) file.
+.SH "FILES"
+.TP 28n
+.I ~/.config/lordsawar/lordsawarrc
+The configuration file.
+.TP
+.I ~/.locale/share/lordsawar/
+Saved game directory.
+.TP
+.I ~/.locale/share/lordsawar/map/
+Saved scenario maps directory.
+.TP
+.I ~/.locale/share/lordsawar/army/
+Saved armyset directory.
+.TP
+.I ~/.locale/share/lordsawar/tilesets/
+Saved tileset directory.
+.TP
+.I ~/.locale/share/lordsawar/shield/
+Saved shieldset directory.
+.TP
+.I ~/.locale/share/lordsawar/citysets/
+Saved cityset directory.
+.TP
+.I ~/.cache/lordsawar/
+Cache directory.
+.SH "REPORTING BUGS"
+Report bugs to <https://savannah.nongnu.org/bugs/?group=lordsawar>.
+.SH "SEE ALSO"
+The full documentation for
+.B lordsawar
+is available on the web at: http://www.nongnu.org/lordsawar/manual/

@@ -1,0 +1,334 @@
+LordsAWar Tileset Tutorial
+
+Copyright (C) 2009 Ben Asselstine
+
+This work is licensed under the terms of the GNU General Public License version 3 or later at your option.
+
+
+Preface:
+
+
+So you're interested in figuring out how the tiles fit together in LordsAWar!  This document aims to explain everything you need to know about tile graphics in the game.
+
+This document must be viewed with a fixed-width font, and with word wrapping turned on.
+
+
+Introduction:
+
+There are 8 kinds of tiles: Grass, Water, Forest, Hills, Mountains, Swamp, and Void.
+
+These kinds don't need much describing except for void -- it's the kind of tile that cannot be traveled on.
+
+This document does not cover fog that obscures the terrain, or roads, or anything else that sits on top of the terrain tiles.
+
+First the "tile transition scheme" will be described.
+Then the numerous "tile styles".
+How tile style variations are handled.
+And finally, the tileset configuration file.
+
+
+Tile transtion scheme
+
+A key concept to understanding terrain tiles is the concept of a tile transition scheme.  A transition scheme is a plan that states how tiles of different kinds interact with each other.  In LordsAWar, all tile kinds transition to grass, except for mountains, which transition to hills.  It goes without saying that tiles of the same kind transition to each other; this will be described further in the section on "tile styles".
+
+For example this means that water tiles can be placed beside grass tiles, but not forest tiles.  The consequence of this is that if we wish to depict a forest beside a stream, there must be some grass depicted in between.  It is important to note that this does not mean that there must be a grass tile in between the forest and water tiles.  It simply appears that there is a strip of grass inbetween on the border of the forest tile and the adjacent water tile.
+
+Hill, Swamp, and Void tiles also transition to grass tiles.
+
+Mountain tiles transition to hill tiles.  This means that all mountain tiles are completely surrounded by hill tiles (or other mountain tiles).  For example we cannot place a mountain tile beside a water tile if we're trying to depict a mountain beside a stream.  Instead we must have a hill tile that separates them.
+
+As we pass our eyeball from the mountain to the stream we will see:
+  a mountain tile and then transitioning to a hill tile,
+  a hill tile and then transitioning to grass,
+  grass transitioning to a water tile.
+
+There are 3 tiles.  We see mountain, hill, a little bit of grass, and then water.  
+
+The game engine makes maps that follows the transition scheme.  If you're trying to make a set of tiles for LordsAWar, you simply have to trust that the tiles are placed together in the right way.
+
+
+Tile Styles
+
+Grass tiles can fit with any other grass tiles.  This style of tile is called a "Lone" tile because it can be placed beside any other grass tile.
+
+Forest, Water, Hills, Mountains, and Void all fit together in a more complicated way that involve 16 distinct tile styles.
+
+All of the tile styles can be described by using the following diagram:
+
++-----+
+|#####|
+|#+-+#|
+|#|o|#|
+|#+-+#|
+|#####|
++-----+
+
+Picture in your mind's eye a terrain feature transitioning to grass on the outside of the # box and on the inside of the box also. In the very Centre of the template is a single feature that transitions to grass on all sides (the already mentioned "lone tile").
+
+In this section the document will refer to "transitioning to grass", but in the case of mountains it means "transitioning to hills".
+
+First let's look at the lone tile style:
+
+Lone
+ooooooo
+ooooooo
+ooooooo
+oooxooo
+ooooooo
+ooooooo
+ooooooo
+
+
+Picture in your mind's eye the position of that `x' in the # box diagram.  It shows that the lone tile goes beside other tiles that to transition to grass on all sides of it.  It means that this tile must look good beside all grass tiles on all sides of it. If we're dealing with a water tile, this is a puddle.  If we're dealing with a forest, this would be a small clump of trees.  There is no such thing as a lone mountain tile, because mountains transition to hills and not grass.
+
+
+
+Next let's look at the "Outer Top-Left" tile style.
+
+Outer Top-Left
+xoooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+
+Again, visualize where this `x' is in the # box diagram.  It shows that the "Outer Top Left" tile style needs adjcacent tiles that transitions to grass above it, and to the left.  But more importantly it shows that it needs two other particular tile styles below it, and to the right.  It is said to transition to these other tile styles. It also needs to transition to the far right and bottom left corners.
+
+To the right of that tile is the "Outer Top-Centre" tile style:
+
+Outer Top-Centre
+oxxxxxo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+
+The multiple `x's on the diagram mean that all of these tiles are the same stylistic kind in our # box diagram.  This tile style transitions to grass above it, but more importantly it transitions to the "Outer Top-Left" and "Outer Top-Right" tile styles. Unlike the previous tile style, this tile style must look good when placed horizontally beside another tile of the same tile style.   It also transitions down to the "Inner Middle-Centre" tile style.
+
+The other outer corners mirror the top left corner.  Use the the same thought-process to understand which sides of the following tile styles transition to grass, and which tile styles they transition to.
+
+Outer Top-Right
+oooooox
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+
+Outer Bottom-Left
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+xoooooo
+
+Outer Bottom-Right
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+oooooox
+
+You can imagine that these corner tile styles could be placed beside each other to form a small enclosed shape that transitions to grass on all sides.  If we were dealing with water, this would be a puddle, but a different looking one from the one depicted in the lone tile.
+
+Here is the Inner Middle-Centre tile style.  In a way it's the opposite of the lone tile.  Unlike the other tile styles, grass is nowhere to be found on this tile style.  If the kind of tile we're dealing with is forest, then this tile style is solid forest.  If it's water, then it's water on all sides.  
+
+Inner Middle-Centre
+ooooooo
+oxxxxxo
+oxoooxo
+oxoooxo
+oxoooxo
+oxxxxxo
+ooooooo
+
+This tile style transitions to a lot of other tile styles... all of them that start with the word "inner", or "outer".
+
+
+Mirroring the Outer Top-Centre tile style are the following tile styles:
+
+
+Outer Bottom-Centre
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+oxxxxxo
+
+Whereas the Outer Top-Centre tile style transitioned to grass in the up direction, the Outer Bottom-Centre tile style transitions to grass in the down direction.
+
+
+Outer Middle-Left
+ooooooo
+xoooooo
+xoooooo
+xoooooo
+xoooooo
+xoooooo
+ooooooo
+
+
+Outer Middle-Right
+ooooooo
+oooooox
+oooooox
+oooooox
+oooooox
+oooooox
+ooooooo
+
+
+The outside perimeter of the # box diagram has been described.  Now let's look at the inside of the box.
+
+
+Inner Top-Left
+ooooooo
+ooooooo
+ooxoooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+
+Here we have the Inner Top-Left tile style.  You can imagine that it must transition to grass in it's bottom right corner.  Conversely you can imagine that it must transition to mostly hills/water/forest above it and to it's right.  You can also imagine that it must transition to particular tile styles to it's immediate right and below it.  It also transitions with two of its mirror corners -- Inner Top-Tight, and the Inner Bottom-Left.
+
+
+The mirror corners of the Inner Top-Left tile style:
+
+Inner Top-Right
+ooooooo
+ooooooo
+ooooxoo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+
+
+Inner Bottom-Left
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooxoooo
+ooooooo
+ooooooo
+
+Inner Bottom-Right
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooooxoo
+ooooooo
+ooooooo
+
+"But wait!" You say.  "I can't see which tile style the Inner Top-Left tile style transitions to on it's immediate right."  "You've explained that it has to transition with it's two mirror corners, and I can see those, but where is the tile style that it transitions to on it's right?"
+
+
+We need a tile style that transitions to grass in the down direction.  The missing tile style is the Outer Bottom-Centre tile style.  Yes we're in the "inner" side of the box, and we're depending on a tile style from the "outer" side of the box to complete the picture.  This means that certain inner tile styles need to look good beside certain outer tile styles.  By using the # box diagram you can figure out which tile styles those are.
+
+
+Finally we have the diagonal tile styles.  Visually they merge the tilestyles depicted in the given 1 and 2 positions:
+
+Top-Left To Bottom-Right Diagonal
+1oooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+oooooo2
+
+This tile transitions to grass in the upper right and the bottom left.
+
+Bottom-Left To Top-Right Diagonal
+oooooo1
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+ooooooo
+2oooooo
+
+This tile transitions to grass int he upper left and the bottom right.
+
+Imagine two of our # box diagrams that connect at the corner.  We need a diagonal tile to connect them properly.
+
+Lastly there's an "Other" tile style that can be placed by hand in the scenario editor.
+
+The game engine makes maps that put the correct tile styles next to each other.  The artist must trust that the game does this properly.
+
+
+Tile Style Variations
+
+A Tile style variation is a depiction of a particular tile style that is drawn in a slightly different manner.  For example there can be many depictions of the Inner Middle-Centre tile style.  For a water tile, this represents open sea and it's important to have lots of variation so that the water looks good.
+
+When the game engine needs a picture of a tile that has a tile style of Inner Middle-Centre, it goes and gets one from the tileset by pulling out a random picture that reports itself as being of that tile style.  Any one will do.
+
+In general it's good to have at least two of each tile style, with 10 of Inner Middle-Centre, and at least 10 of the grassy lone tiles.
+
+
+The tileset configuration file.
+
+Once we have all of the images completed, we have to put it all together into a single data file.
+
+The XML entity that relates most directly with this tutorial is the "<tilestyleset>" entity.  Here's what the default grass tilestyle set looks like:
+
+
+        <tilestyleset>
+                <d_name>grass</d_name>
+                <tilestyle> <d_id>0x00</d_id> <d_type>0</d_type> </tilestyle>
+                <tilestyle> <d_id>0x01</d_id> <d_type>16</d_type> </tilestyle>
+                <tilestyle> <d_id>0x02</d_id> <d_type>0</d_type> </tilestyle>
+                <tilestyle> <d_id>0x03</d_id> <d_type>0</d_type> </tilestyle>
+                <tilestyle> <d_id>0x04</d_id> <d_type>0</d_type> </tilestyle>
+                <tilestyle> <d_id>0x05</d_id> <d_type>0</d_type> </tilestyle>
+                <tilestyle> <d_id>0x06</d_id> <d_type>0</d_type> </tilestyle>
+                <tilestyle> <d_id>0x07</d_id> <d_type>0</d_type> </tilestyle>
+                <tilestyle> <d_id>0x08</d_id> <d_type>0</d_type> </tilestyle>
+                <tilestyle> <d_id>0x09</d_id> <d_type>0</d_type> </tilestyle>
+        </tilestyleset>
+
+
+Don't let the hexadecimal numbers fool you.  This is is simple.  "<d_name>" refers to an image file called "grass.png" that is in the same folder as this tileset configuration file.  The grass.png file has 10 frames, left to right.  Each frame happens to be called a "tilestyle" and is uniquely identified with that hexadecimal number.  This id is unique among all frames in the tileset configuration file.
+The "<d_type>" entity is a numeric code that refers to which kind of tile style this frame depicts.  The first frame in the tilestyleset says it is of type 0, which is really a lone tile style.
+
+Here is the key of number-codes to tile styles:
+
+0   Lone
+1   Outer Top-Left
+2   Outer Top-Centre
+3   Outer Top-Right
+4   Outer Bottom-Left
+5   Outer Bottom-Centre
+6   Outer Bottom-Right
+7   Outer Middle-Left
+8   Inner Middle-Centre
+9   Outer Middle-Right
+10  Inner Top-Left
+11  Inner Top-Right
+12  Inner Bottom-Left
+13  Inner Bottom-Right
+14  Top-Left to Bottom-Right Diagonal
+15  Bottom-Left to Top-Right Diagonal
+16  Other
+
+Near the top of the tileset configuration file you will see a line that looks like "<d_tilesize>80</d_tilesize>".  This means that the grass.png file will be 800 pixels wide and 80 pixels tall.
+
+
+Final Words
+
+Now you have an idea of what is involved in making tilesets for LordsAWar.  If you need more help, please check out the tutorial videos at www.lordsawar.com for a audio-visual reiteration of some of this information.
+

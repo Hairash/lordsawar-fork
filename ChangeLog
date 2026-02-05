@@ -1,0 +1,2317 @@
+2011-03-16  Ben Asselstine <benasselstine@hushmail.com>
+
+	* released version 0.2.0.
+
+2011-03-15  Ben Asselstine <benasselstine@hushmail.com>
+
+	* This ChangeLog is now deprecated in favour of svn commit messages.
+	Only releases will be shown here.
+
+2010-07-23  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* m4/gettext.m4: Upgrade to gettext-0.18.1.
+	* m4/iconv.m4: Upgrade to gettext-0.18.1.
+	* m4/lib-ld.m4: Upgrade to gettext-0.18.1.
+	* m4/lib-link.m4: Upgrade to gettext-0.18.1.
+	* m4/lib-prefix.m4: Upgrade to gettext-0.18.1.
+	* m4/nls.m4: Upgrade to gettext-0.18.1.
+	* m4/po.m4: Upgrade to gettext-0.18.1.
+	* m4/progtest.m4: Upgrade to gettext-0.18.1.
+	* configure.ac (AM_GNU_GETTEXT_VERSION): Bump to 0.18.1.
+
+2010-07-06  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* released version 0.1.9
+
+2010-06-29  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* updated user's manual to reflect changes in terrain artwork.
+	* fixed bug in scenario editor where the player shields weren't
+	getting updated when we loaded a map or imported a saved game.
+	* fixed a bug in the scenario editor relating to moving stacks that
+	are on roads.  now moving the stack first if there's a road
+	underneath.
+
+2010-06-28  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* fixed translations of game files.
+
+2010-06-27  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* improved AI a little bit more.
+	* fixed bug wrt right-clicking and then simultaneously left-clicking
+	a ruin/city/temple/signpost.
+	* added version info to the shieldset/armyset/cityset/tileset files.
+
+2010-06-22  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* added Ruin::SAGE to the to/from enumeration strings.
+	* modified AI_Allocate to stop moving to enemy cities if they're
+	already taken over.
+	* fixed hit-assertion that involved shuffling stacks in a razed city.
+	* added moves_left to the out variables of PathCalculator::calculate.
+	* fixed hit-assertion that involved defending a razed city in a fight.
+	* fixed Kill Hero quest to deactivate when the hero id can't be
+	found in a saved-game file when loading it.
+	* added can_search to GameMap object.
+	* computer players now have the opportunity to pick up bags, visit 
+	temples, or ruins if it happens to be on a tile that has one.
+	* modified the MoveResult object to set flags if a computer picked up
+	a bag, searched a ruin, or visited a temple while moving to another
+	destination.
+	* added a set of decision callback functions for player:
+	computerChooseVisitRuin, computerChoosePickupBag,
+	computerChooseVisitTempleForBlessing,
+	computerChooseVisitTempleForQuest, computerChooseContinueQuest.
+	* the ssearchingRuin signal of player now returns false if the stack 
+	dies as a result.
+	* the svisitingTemple signal of player now returns true if a hero
+	obtained a quest.
+	* fixed a ruin searching dialog that popped up while a computer player
+	was moving.
+	* modified GameMap to have static methods for getting the tileset,
+	cityset and shieldset.
+
+
+2010-06-14  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* added a tiny splash screen to the scenario editor.
+
+2010-06-13  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* now naming colours for lines and boxes in a standard place.
+
+2010-06-12  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* added smallmap editor dialog to the scenario editor.
+
+2010-06-09  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* refactoring Maptile, and GameMap.
+	* added ruin_smallmap and temple_smallmap xml entities in the tileset
+	configuration file.  This changes the tileset configuration file.
+	* created a editablesmallmap object for future use in the scenario
+	editor.
+	* added a smallmap building color dialog to the tileset editor.
+
+2010-06-06  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* now cleaning up temporary directories in the army/tile/shield/city
+	set editors, and in the main game.
+
+2010-06-04  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* fixed tile/army/city/shield set info dialogs to show the right
+	filename when editing details.
+
+2010-06-02  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* added a tile style organizer to the tileset editor.
+	* fixed a crashing bug in the tile preview dialog.
+
+2010-06-01  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* fixed adding/removing/replacing tilestylesets in the tileset editor.
+
+2010-05-31  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* added default tile style pictures to the graphics cache.
+	* refactored tile style id stringification.
+	* added a hover indicator of tile style id in the tile preview dialog.
+
+2010-05-28  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* the tileset configuration file is now a tar file.
+
+2010-05-26  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* the armyset configuration file is now a tar file.
+	* fixed new shieldset/cityset/armyset to work in the editors.
+	* added a successful validation message to shield/city/armyset editors.
+	* added automagic tile size detection for the armyset editor.
+	* now renaming the city/shield/army set file inside the tar file when
+	copying files.
+
+2010-05-23  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* the cityset configuration file is now a tar file.
+	* added automagic tile size detection and editing in cityset editor.
+
+2010-05-21  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* the shieldset configuration file is now a tar file.
+	* improved shieldset editor.
+
+2010-05-15  Ben Asselstine  <benasselstine@hushmail.com>
+	
+	* fixed shieldset editor to draw shields in the colour of the 
+	current shieldset instead of the default colours.
+
+2010-05-14  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* added the filename to the window title of the scenario editor.
+
+2010-05-13  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* added the filename to the window title of the city/shield/army/tile
+	set editors.
+	* added a "Save A Copy" menu item to the city/shield/army/tile set
+	editors.
+	* improved shieldset/cityset/tileset/armyset info dialogs to have
+	error checking on name.
+	* fixed bug that prevented shield/city/tile/armysets from being copied
+	properly.
+
+2010-05-12  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* added edit shieldset/cityset/tileset/armyset in scenario editor.
+	* now handling changing tile widths in citysets in the scenario editor.
+	* changed shieldset/cityset/tileset/armyset info dialogs to show the
+	directory that the objects are in.
+
+2010-05-03  Ben Asselstine  <benasselstine@hushmail.com>
+
+	* fixed typos in the manual.  reported by Mikko V. Viinamäki.
+
+2010-04-25  Ben Asselstine  <benasselstine@gmail.com>
+
+	* now checking for tarfileness before opening a saved game file.
+	fixes bug #29662.
+
+2010-04-10  Ben Asselstine  <benasselstine@gmail.com>
+
+	* changed the "new game" menuitem in the game window to bring up the
+	new game dialog in the splash window.
+
+2010-04-09  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed bug in stack editor of scenario editor that made armies with
+	identical ids.
+	* changed fight window to show if an army unit is fighting on water or
+	not.
+
+2010-04-08  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added support for usable items.  task #10303.
+	* fixed bug wrt dropping items in the water and network play.
+
+2010-04-02  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed bug #29425.  can now put stacks on cities when the stack owner
+	is not the same as the city owner.
+
+2010-03-26  Ben Asselstine  <benasselstine@gmail.com>
+
+	* CTRL+double-click on a stack now sends it to the destination of the
+	previously moved stack, and brings the view back to where it started.
+
+2010-03-25  Ben Asselstine  <benasselstine@gmail.com>
+
+	* bumped version to 0.1.9.
+	* fixed dialog title of switch sets dialog in scenario editor.
+	* added better bridge artwork in the default tileset.
+	* added better 80x80 fog in the default tileset.
+	* updated scenario editor button images.
+
+2010-03-24  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added new bridge artwork.
+	* fixed ruin editor in scenario editor wrt sages.
+	* released version 0.1.8.
+
+2010-03-23  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added more cityset and tileset imagery to the default tilesets.
+
+2010-03-22  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added a sage image.
+
+2010-03-21  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added more tile previews in the tileset editor.
+
+2010-03-19  Ben Asselstine  <benasselstine@gmail.com>
+
+	* updated danish translations.  Thanks Joe.
+
+2010-03-16  Ben Asselstine  <benasselstine@gmail.com>
+
+	* improved the fog art for 40x40 and 80x80 default tileset.
+	* fixed bug in 80x80 default tileset selector.
+	* fix bug wrt slow-updating fog on hidden maps.
+
+2010-03-15  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed move city bug in scenario editor that wasn't retaining owner.
+	* silencing some compiler warnings.
+
+2010-03-14  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed bags of stuff to be loaded properly.
+	* added new Item Report to show where the bags of stuff are.
+	* bumped version of config file and map files to 0.1.8.
+
+2010-03-13  Ben Asselstine  <benasselstine@gmail.com>
+
+	* darkened the hill tiles for 40x40 and 80x80 in the default tileset.
+
+2010-03-08  Ben Asselstine  <benasselstine@gmail.com>
+
+	* bumped version to 0.1.8.
+
+2010-03-05  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed default tileset id.  Reported by Blaine Simpson.
+
+2010-03-04  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added error for not finding a c++ compiler.  Reported by Blaine
+	Simpson.
+	* fixed crashing bug in the tileset editor wrt opening the tileset
+	info dialog.
+
+2010-03-02  Ben Asselstine  <benasselstine@gmail.com>
+
+	* explicitly linking to zlib.
+	* using property_can_* instead of set_can_* in gtkmm widget methods.
+	* updated Danish translation.
+
+2010-02-27  Ben Asselstine  <benasselstine@gmail.com>
+
+	* updated default terrain artwork for 40x40 and 80x80 tile sizes.
+
+2010-02-18  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed stackreflist in threat object to update the stacks it points
+	to when players are switched from human to computer or vice-versa.
+	* fixed crash where we were checking the stacklist for consistency 
+	when the player is aborting the turn.
+
+2010-02-17  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed ai movement case where ai_smart left two ungrouped stacks on a
+	tile when going towards a temple.
+	* added a method check on stacklist object, to check for stacks
+	sharing a tile.
+	* ai_smart now calls this check method when finishing it's turn.
+	* trying to explicitly name all the libraries we're linking to.
+	* refactored the "how wide is a tile on the smallmap" into the
+	gamemap object with a new method called 
+	calculateTilesPerOverviewMapTile
+	* modified overviewmap and mapgenerator object to use it.
+	* mapgenerator object now checks the pixel size of the overviewmap
+	to know how close two cities can be to each other.
+	* added DISTCLEANFILES directives for all of our generated data files.
+	* added new isRoadTerrain method on maptile object.
+	* modified the overviewmap object to use the new isRoadTerrain method.
+
+2010-01-04  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed up build machinery for make distcheck.
+
+2010-01-01  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added new sound for blessings.
+
+2009-12-31  Ben Asselstine  <benasselstine@gmail.com>
+
+	* improved the events history report.
+
+2009-12-30  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added new history of ruins report.  This changes the saved-game 
+	schema.
+	* fixed bug wrt not showing some active stacks when they're moving.
+	* changed army report to show stacks as tiny shields.
+
+2009-12-29  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added sensible defaults to the new map dialog in the scenario editor.
+	* fixed crash when different shieldset is picked on a random map.
+	* added ability to make non-standard map sizes in the scenario editor.
+	* added more city names.
+	* raised the maximum number of cities possible on a random map.
+
+2009-12-27  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added new Sage object.
+	* changed sage-dialog to use the new sage object.
+	* added generateSage method to the ruin object.
+	* ai_smart and ai_fast players now searching ruins.
+	* ai_smart and ai_fast players now obtaining quests at temples.
+	* ai_smart player now tries to fulfill quests.
+	* ai_smart player now tries to pick up items.
+	* renamed player decision callback method treachery to chooseTreachery.
+	* created player decision callback method called chooseReward.
+	* created player decision callback method called chooseHero.
+	* created player decision callback method called chooseStat.
+	* changed primary key of cityinfo in ai_analysis to be city id.
+	* added countAllies method to player, stacklist, and stack.
+	* setting smallmap and bigmap speed delays to 0 when doing stress test.
+	* added new method hasQuest to the stack object.
+	* added hasQuest method to the hero object.
+	* added new method hasArmyType method to the stack object.
+	* added getHeroQuest method to the QuestsManager object.
+	* added getNearestUnsearchedRuin method to ruinlist object.
+	* added getNearestFriendlyCities method to the citylist object.
+	* changed default bigmap speed delay to be 300000 microseconds.
+	* added movement speed slider in the preferences dialog.
+	* added new game option to play one quest per hero.
+	* added method getFirstHeroWithoutQuest to stack object.
+	* added method getFirstHeroWithQuest to stack object.
+	* fixed bug where quests not loading properly from a saved game.
+	* fixed bug where completed city quests weren't being rewarded.
+	* fixed smallmap centering on smaller than normal maps.
+	* added in-game commentator.
+	* added progress bar to new random map dialog.
+	* fixed crash in scenario editor when creating random maps.
+
+2009-12-18  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed the get nearest stacks methods on the game map object.
+	* added get nearest points method to game map object.
+	* still improving ai_smart to do the right thing.
+	* added defaultedness for close button on the report dialog.
+	* added new stackmove method on player that returns moveresult.
+
+2009-12-17  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added changeOwnership methods to AI_Analysis and Threatlist and
+	employed it in playerlist so that we don't crash when changing from
+	ai_smart to human via View->Preferences.
+
+2009-12-16  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added getDefenders method to city object.
+	* added clearPath method to the stack object.
+	* added createBat method to ArmyProto object.
+	* added loading maps by command-line in the scenario editor.
+	* added checkCityAccessibility to the GameMap object.
+	* scenario editor now validates terrains wrt city accessibility.
+	* added getNearbyStacks methods to the GameMap object.
+	* removed calculateCenterOfTerritory method from Citymap.
+	* re-enabling the selector graphic on active ai stacks.
+	* ai_smart and ai_fast now explicitly join stacks.
+	* ai_fast now sets the production in newly conquered cities.
+	* updated the random city names to have more creative names.
+	* putTerrain method in GameMap object updates the blocked avenues.
+	* putBuilding method in GameMap object updates the blocked avenues.
+	* fixed bug that made too many stacks land on the same tile.
+	* fixed bug that made enemy stacks persist in cities after fights.
+	* ai_fast no longer disbands stacks when the destination is far away.
+	* MoveResult object now knows if we ran out of moves.
+	* MoveResult object now knows if we reached the end of our path.
+	* MoveResult object now knows if the ai considered treacherous action.
+	* added isFull method to Stack object.
+	* fixed bug that made the stress test double up on the round count.
+	* updated the bag button picture in the scenario editor.
+	* updated the ai smart player to work a little better.
+
+
+2009-11-30  Ben Asselstine  <benasselstine@gmail.com>
+
+	*  player objects now have a method that returns if they're computer 
+	players or not.
+	* improving ability for path calculator to pick paths through/around
+	enemy stacks and cities.
+	* computer players now automatically pick paths through enemy cities
+	and stacks when necessary.
+
+2009-11-29  Ben Asselstine  <benasselstine@gmail.com>
+
+	* improved the bag-of-items graphic.
+	* adding ability for path calculator object to pick paths through
+	enemy stacks and cities.
+
+2009-11-27  Ben Asselstine  <benasselstine@gmail.com>
+
+	* re-allowing changing the active human player to an AI player.
+
+2009-11-22  Ben Asselstine  <benasselstine@gmail.com>
+
+	* lowering the default amount of gold that players get.
+	* adding new "enemy head start" quick-start game option.  Suggested by
+	spammeaccount@rogers.com.
+	* a city's defense level now reflect's it's fight bonus onscreen.
+	* added a city info tip object.
+
+2009-11-21  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed bug related to ai-smart stacks going away (after fight/join),
+	and crashing the game.
+	* fixed getfogpic method of graphic cache to work again.
+	* now refogging active stack in gamebigmap object.
+	* now complaining loudly when loading a game that has too many army
+	units in a stack.
+	* now blanking the maps when ai players move on a hidden map.
+	* added a copy button to the stack editor in the scenario editor.
+	* fixed --stress-test to work again.
+
+2009-11-19  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added new hero level images for both male and female heroes.
+
+2009-11-02  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added OwnerId object.  This changes the saved-game schema (quests).
+
+2009-10-31  Ben Asselstine  <benasselstine@gmail.com>
+
+	* can now set an active player in the scenario editor.
+	* added "move object" functionality in the scenario editor.
+
+2009-10-29  Ben Asselstine  <benasselstine@gmail.com>
+
+	* implementing switch-image-sets in scenario editor.
+
+2009-10-28  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added a shieldset editor.
+
+2009-10-26  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added a cityset editor.
+	* added a comment xml entity to the shieldset configuration file.  This
+	changes the schema for the shieldset configuration file.
+	* now preventing broken city/tile/army/shieldsets from being presented
+	in the new random map dialog.
+
+2009-10-25  Ben Asselstine  <benasselstine@gmail.com>
+
+	* adding copyright/license info to citysets, tilesets, armysets, 
+	shieldsets, and scenario file.  This changes their respective schemas.
+	* adding bag-of-items picture to armyset.  this changes the armyset
+	schema.
+	* added caching of bag, explosion, and port images.
+	* fixed colouring of masks to match the colours in a shieldset.
+	* fixed color representations in shieldsets, tilesets and scenario
+	files.  This changes the schema of the tileset file.
+
+2009-10-24  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed radiobuttons to look better in default ubuntu theme.
+	* fixed stack management to allow stacks to share a tile.
+	* fixed stack info dialog in the same way.
+	* removed the grouped member of army.  This changes the saved-game
+	schema.
+	* fixing scenario editor to not crash we try to put down stacks.
+	* fixing quick start to not crash on the 2ndpunic scenario.
+	* fixing quick start to change the allegience of stacks in cities.
+	* fixed the hero-brings-allies dialog to have a default ok button.
+	* fixed city editor in scenario editor to update the city owner when 
+	we click ok, instead of instantly when we change the player combobox.
+	* fixed spinbuttons in armyset editor to update immediately when the
+	spinbutton text changes.
+
+2009-10-21  Ben Asselstine  <benasselstine@gmail.com>
+
+	* changing savefile format to be a tarball.
+	* moving graphicsloader routines back into their requisite objects.
+	* added "new cost" to armyprototypes.  This changes the saved-game
+	schema as well as the armyset schema.
+	* added "tile width" to cityset.  This changes the cityset schema.
+	* fixed scenario editor bug regarding creating new tiny maps.
+	* added ability to import saved games into the scenario editor.
+
+2009-10-21  Ben Asselstine  <benasselstine@gmail.com>
+
+	* released version 0.1.6
+
+2009-10-17  Ben Asselstine  <benasselstine@gmail.com>
+
+	* changed file extensions for tilesets, shieldsets, citysets and
+	armysets.
+	* added ghosting of army images.  Suggested by Frans de Jonge.
+	* removing razed neutral city image.  fixes bug #27733.
+	* fixed load from command-line on the game binary, tileset editor,
+	and armyset editor.  fixes bug #27736.
+	* can now move the map with the keypad.  fixes bug #27735.
+
+2009-10-16  Ben Asselstine  <benasselstine@gmail.com>
+
+	* removing ".png" from the tileset description files.
+	* added ids to tilesets and shieldsets, and citysets.
+	* updated the cityset file format to refer to it's member files.
+	* allowing for female hero images.
+
+2009-10-15  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixing up the tileset editor.
+	* fixed alpha artifact on selector images.
+
+2009-10-14  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixing armyset editor to be able to edit user-generated armysets.
+	* random map can now use user-generated armysets.
+	* fixed the comboboxes in the tileset editor.
+	* fixed up the players dialog in the scenario editor
+
+2009-10-13  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed armyset info dialog so it can appear.  Reported by Frans de
+	Jonge.
+	* fixed up stack editor to handle adding armies properly.
+
+2009-10-12  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed #27674.  crash on hidden map.  Reported by Frans de Jonge.
+	* fixed bug #27664.  end of game should show game history, and allow
+	the user to look around the map.  Suggested by Frans de Jonge.
+	* fixed bug #27671.  now allowing for player-based variation in army 
+	unit images.  Suggested by Frans de Jonge.
+
+2009-10-11  Ben Asselstine  <benasselstine@gmail.com>
+
+	* now drawing random mountains in the same manner for each map.  So 
+	when we flip through maps in the reports dialog, they don't shift.
+	* beautifying the new random map dialog.
+	* fixed bug #27663. reported by Frans de Jonge.  split stacks that can't
+	go anywhere no longer crash the game.
+	* fixed bug #27665.  adding some shields back to the events report.  
+	Reported by Frans de Jonge.
+	* fixed bug #27659.  stray underscore in continue button has been 
+	removed.  Reported by Frans de Jonge.
+	* fixed bug #27662.  visually unclear how many army units can go into
+	a stack.  now showing remaining army slots in the stack display.
+	Reported by Frans de Jonge.
+	* fixed bug #27657.  can't load autosave.sav file from within a loaded 
+	game.  Reported by Frans de Jonge.
+
+2009-10-10  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added army images to city editor in scenario editor.
+	* changed input boxes to spinbuttons in the city editor.
+	* defaulted a few buttons related to starting a new random game.
+	* fixed graphics on buttons in diplomacy report.
+	* now only showing the rescue button on the splash screen when it was
+	a hotseat game.
+	* changed production report to show a white box around the city that
+	produced/vectored a particular army unit.
+	* beautified the load scenario dialog.
+	* added battle music.
+
+2009-10-09  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed flag colours.
+	* fixed the wrong mouse pointer after stack deselect.
+	* spruced up the medal awarded dialog.
+	* added support for stacks in fortified-mode in the scenario editor.
+	* spruced up the hero gains level dialog.
+	* added a "new game" menu option in the game window.
+	* stats are now editable in the stack editor in the scenario editor.
+	* added army images to the stack editor.
+
+2009-10-08  Ben Asselstine  <benasselstine@gmail.com>
+
+	* cleaned up fogmap object.
+	* made fog, army, and tile lookups faster in graphicscache object.
+	* added add-backpack-to-map functionality into the scenario editor.
+	* added hero editor dialog to the stack editor of the scenario editor.
+	* bags of stuff can now be deleted from the map in the scenario editor.
+
+2009-10-07  Ben Asselstine  <benasselstine@gmail.com>
+
+	* now caching drawn tiles.
+	* fixed bad-looking bigmap after loading a game within a game.
+	* updated FogMap object to include tile shading from bigmap object.
+	* fixed mouse pointer to not update while dragging map.
+	* fixed army listing in ruin keeper dialog of the scenario editor
+	* disabled zooming on gamebigmap.
+
+2009-10-05  Ben Asselstine  <benasselstine@gmail.com>
+
+	* made stack position lookup faster by adding a map.
+	* made location position lookup faster by adding a map.
+	* made stack id lookup faster by adding a map.
+	* added some stacklist accessors through player.
+	* added some path accessors through stack.
+	* added citylist, roadlist, portlist, etc accessors through gamemap.
+	* now deep copying the stack's path.
+	* changed stacklist to have a deep copy.
+	* changed path to hold a map position, and not a pointer to a position.
+	* removed all uses of auto_ptr.
+	* added a max map width parameter to static vector<int> template.
+	* fixed magnifying glass icon to have a better hotspot.
+	* fixed mouse pointer to update right away after right-click deselect.
+	* fixed grey border problem on bigmap.
+	* heroes now drop bags of stuff when their owning player is vanquished.
+
+2009-09-28  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed up fog, ports, roads, and bridge graphics.
+	* added information to the user's manual about mouse pointers.
+	* using Ctrl + left-click now enables the walk button.
+
+2009-09-27  Ben Asselstine  <benasselstine@gmail.com>
+
+	* large changes to gain speed improvements to graphic redraws.
+
+2009-09-25  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed bug #27508.  random cities now have unique names.  Reported by
+	Mikko V. Viinamäki.
+	* fixed bigmap and smallmap to go blank prior to other players turns
+	when playing with a hidden map.
+	* fixed bug that prevented the game window from being closed when 
+	playing with random turns, and a human getting the first turn.
+	* added path-setting when pressing CTRL + left-click.
+
+2009-09-24  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed bug #27509.  semi-fogged cities now appear on the mini map.
+	Reported by Mikko V. Viinamäki.
+
+2009-09-23  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added information to the manual about city bonus, and the statistics 
+	on the main game screen.  Suggested by Mikko V. Viinamäki.
+	* gplv2 -> gplv3.
+	* fixed bug where the diplomacy dialog could be opened by a keypress 
+	even though diplomacy was turned off in the scenario.  Reported by 
+	Mikko V. Viinamäki.
+	* history report dialog is now resizable.  Suggested by Mikko V.
+	Viinamäki.
+	* added reverse order button to fight order dialog.  Suggested by
+	Mikko V.  Viinamäki.
+
+2009-09-16  Ben Asselstine  <benasselstine@gmail.com>
+
+	* modified code to not render big and small maps in the expose event.
+	* fixed the green player's colour.
+	* fixed the new random map dialog to center on the lordsawar window.
+
+2009-09-15  Ben Asselstine  <benasselstine@gmail.com>
+
+	* migrated all drawing and image code to use gtk+ instead of SDL.
+	* hitting space at the next turn dialog will now close the window.
+	* added tabs to the armyset editor.
+
+2009-09-05  Ben Asselstine  <benasselstine@gmail.com>
+
+	* expunging asprintf, snprintf.
+
+2009-07-21  Ben Asselstine  <benasselstine@gmail.com>
+
+	* adding an improved end of round detection for hotseat play.
+	* decorated timed windows.
+
+2009-07-08  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added more difficult "defensive" mode for neutral cities.
+
+2009-07-06  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added explosion editing to the tileset editor.
+	* added CTRL+Q shortcut for Game->Quit.  Suggested by Frans de Jonge.
+
+2009-07-04  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added decorations to right-click tooltips.
+
+2009-07-02  Ben Asselstine  <benasselstine@gmail.com>
+
+	* modified changing destination to trigger the generation of vector 
+	actions.
+	* fixed right-click on enemy army production unit (via see enemy 
+	production) to show armies in the enemy's colour rather than the
+	current player's colour.
+
+2009-07-01  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added a listbox of heroes to the hero dialog, to solve the problem
+	with getting stats for co-located heroes.
+	* updated the manual with newer looking dialogs.
+
+2009-06-30  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed bug that moved the selected unit after bringing up a city
+	production dialog with shift+click.  Reported by Frans de Jonge.
+
+2009-06-29  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added more decorations around the maps, and buttons in the game
+	window.
+
+2009-06-28  Ben Asselstine  <benasselstine@gmail.com>
+
+	* improved disband stack dialog to show how many heroes we're 
+	disbanding if any.
+	* adding an are-you-sure dialog when razing a city after defeating it.
+	* automatically selecting the first scenario in the new scenario dialog.
+	* added a map to the hero inspect dialog.
+
+2009-06-27  Ben Asselstine  <benasselstine@gmail.com>
+
+	* mixing player shields with production shields on production map.
+	* adding white box around the active city on the production map.
+	* fixing vectoring so that only 4 cities at a time can vector to a 
+	single city.
+	* fixing reward generation so that map rewards can be created.
+	* fixing #26784.  pressing shift while hovering over a city turns the
+	mouse cursor into a rook icon.  Suggested by Frans De Jonge.
+	* fixing #26896.  adding double clicking of stacks to group them.
+	Suggested by Frans de Jonge.
+
+2009-06-21  Ben Asselstine  <benasselstine@gmail.com>
+
+	* adding shift+hover over unit in city.  Suggested by Frans de Jonge.
+	* made ruin encounters a little easier.
+
+2009-06-20  Ben Asselstine  <benasselstine@gmail.com>
+	* fixing bug #26815.  Can now end game after other players surrender. 
+	Reported by Jon Escher.
+	* added code to handle language codes in xml data files.
+
+2009-06-14  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed item description generation to sum the battle, command, and 
+	gold per city bonuses.  Reported by Jon Eicher.
+	* added information to statistic icon tooltips (gold/upkeep/etc).
+	Suggested by Frans de Jonge.
+	* Shift + hover over a ruin or temple shows a ruin cursor.  Suggested
+	by Frans de Jonge.
+
+2009-06-13  Ben Asselstine  <benasselstine@gmail.com>
+
+	* now bringing up the city dialog by hitting ctrl and clicking on a 
+	stack in the city.  Suggested by Frans de Jonge.
+	* can now drag the map when we have a stack selected by holding down
+	the shift key.  Suggested by Frans de Jonge.
+
+2009-06-12  Ben Asselstine  <benasselstine@gmail.com>
+
+	* greying out expensive units in the buy-production dialog.  Suggested 
+	by Frans de Jonge.
+	* When choosing to occupy/pillage a city, the occupy button is now 
+	on the left.  Suggested by Frans de Jonge.
+
+2009-05-25  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed precision for shown experience points to be 3 instead of 2.
+
+2009-03-22  Ben Asselstine  <benasselstine@gmail.com>
+
+	* removed unfinished support for campaigns.
+
+2009-03-21  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added icons for various game windows.
+	* fixed bug wrt diplomacy report showing when not playing with
+	diplomacy.
+	* revamped the main menu and scenario loading.
+	* separated the random map stuff from the player dialog.
+	* added a new random map dialog.
+	* users can now add a new scenario to the library.
+	* removed cyclebuttons.
+
+2009-03-15  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added more translation strings from data files.
+
+2009-03-01  Ben Asselstine  <benasselstine@gmail.com>
+
+	* bumped to version 0.1.6.
+
+2009-03-01  Ben Asselstine  <benasselstine@gmail.com>
+
+	* fixed theme rendering bug.
+	* fixed xcb locking crash bug by removing the new game progress
+	window.
+
+2009-02-28  Ben Asselstine  <benasselstine@gmail.com>
+
+	* merged patch from the freebsd folks.
+	* added another danish translation.  Submitted by Joe Hansen.
+	* added new dutch translation from the translation project.
+	* fixed typos in english translations.  Reported by Joe Hansen.
+
+2008-12-28  Ben Asselstine  <benasselstine@gmail.com>
+
+	* added danish translation.  Submitted by Joe Hansen.
+
+2008-12-27  Ben Asselstine  <benasselstine@gmail.com>
+
+	* src/questmap.cpp (after_draw): fixed quest dialog to not crash when 
+	there isn't a quest.  Reported by Martin Thoma.
+
+2008-12-07  Ben Asselstine  <benasselstine@gmail.com>
+
+	* bumped version to 0.1.5.
+
+2008-12-07  Ben Asselstine  <benasselstine@gmail.com>
+
+	* src/GameMap.cpp (surroundMountains): check for tiles that are off
+	the map.
+
+2008-12-05  Ben Asselstine  <benasselstine@gmail.com>
+
+	* src/SmallTile.cpp: added new type SUNKEN_STRIPED.
+	* src/tileset.cpp: added configurable smallmap road colour.  This
+	changes the tileset configuration schema.
+
+2008-12-04  Ben Asselstine  <benasselstine@gmail.com>
+
+	* src/gui/new-game-progress-window.cpp: making the progress bar
+	busier.
+
+2008-12-03  Ben Asselstine  <benasselstine@gmail.com>
+
+	* src/gui/buy-production-dialog.h: fixed crashing bug #25006.
+
+2008-11-28  Ben Asselstine  <benasselstine@gmail.com>
+
+	* src/path.cpp: fixed bug #24618 - account for boat loading/unloading
+	movement penalty when calculating shortest paths.
+
+2008-11-27  Ben Asselstine  <benasselstine@gmail.com>
+
+	* src/action.cpp: added new city loot action.  This changes the saved-
+	game schema.
+
+2008-11-26  Ben Asselstine  <benasselstine@gmail.com>
+
+	* src/overviewmap.cpp: now optionally drawing overviewmap objects for
+	a different player.
+	* fixed bug #24926.
+	* fixed bug #24933.  this changes the saved-game schema.
+	* src/gui/hero-dialog.cpp: now displaying hero events.
+
+2008-11-25  Ben Asselstine  <benasselstine@gmail.com>
+
+	* src/gamebigmap.cpp: no longer showing ruin cursor when hovering over
+	a hidden ruin.
+
+2008-11-25  Ben Asselstine  <benasselstine@gmail.com>
+
+	* src/MapGenerator.cpp: now connecting bridges with roads to nearby
+	places.
+
+2008-11-25  Ben Asselstine  <benasselstine@gmail.com>
+
+	* configure.ac: added check for boost headers.
+
+2008-11-24  Ben Asselstine  <benasselstine@gmail.com>
+
+	* src/gui/buy-production-dialog.h: fixed bug #24915.
+
+2008-11-24  Ben Asselstine
+
+	* fixed bug wrt changing players from human to computer, and vectored
+	units not showing up.
+
+2008-11-22  Ben Asselstine
+
+	* added road-ending graphics to bridges that are automatically placed.
+
+2008-11-21  Ben Asselstine
+
+	* added better signposts, roads, and bridges; Thanks to J. W. Bjerk.
+	* added new road-ending graphics.  This changes the saved-game schema.
+	* updated scenario files to use new road-ending graphics.
+
+2008-11-17  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* Makefile.am (ACLOCAL_AMFLAGS): New variable.
+
+2008-10-26  Ben Asselstine
+
+	* added more view menu items.
+
+2008-10-25  Ben Asselstine
+
+	* added bigger explosions for city battles.
+	* improved the dragged stack graphics.
+	* more translation framework improvements.
+
+2008-10-24  Ben Asselstine
+
+	* bumped version to 0.1.4.
+
+2008-10-22  Ben Asselstine
+
+	* ordered players by id in the diplomacy, triumphs and other reports
+	  (they were in random order with random turns.)
+	* changed the preferences dialog to add a new ability to not see the 
+	  actions of a given player.
+	* added a turn progress bar to the main game window.
+
+2008-10-20  Ben Asselstine
+
+	* fixed bug #24615.  initial razed cities now correctly appear in the 
+	  city history report.
+	* fixed bug #24607.  capital cities are now farther apart.
+	* fixed bug #24611.  preventing crash by properly expiring the 
+	  kill-hero quest.
+
+2008-10-19  Ben Asselstine
+
+	* applying translations patch from Tobias.
+	* fixed bug #24595.  city history report works again.
+	* fixed bug #24590.  not ungrouping armies upon joining stacks.
+
+2008-10-18  Ben Asselstine
+
+	* ruins and temples now have descriptions.  This changes the
+	  saved-game schema.
+	* fixed bug #24591.  balancing ruin difficulty with a hint in the
+	  report.
+	* now showing the heroes progressing to the next scenario in a 
+	  campaign.
+
+2008-10-17  Ben Asselstine
+
+	* now loading and saving stack groupedness.  This changes the 
+	  saved-game schema.
+	* fixing bug #24592.  disallowing hero leveling up strength stat 
+	  beyond 9.
+
+2008-10-16  Ben Asselstine
+
+	* added new --record command-line option to continually save actions
+	  to another file.
+	* addressing bug #24580.  stacks now move over too-large friendly
+	  stacks.
+	* fixed bug #24582.  landborn stacks can now leave a port without
+	  losing moves.
+	* fixed bug 24583.  now putting stacks in boats automatically in the
+	  scenario editor.
+
+2008-10-09  Ben Asselstine
+
+	* added validation of map files.
+
+2008-10-08  Ben Asselstine
+
+	* fixed bug #24484.  don't show the ruin report when there are no
+	  ruins or temples.
+	* fixed bug #24473.  now stacks can cross a bridge without going into
+	  a boat.
+
+
+2008-10-07  Ben Asselstine
+
+	* bumped version to 0.1.3.
+
+2008-10-07  Ben Asselstine
+
+	* fixed bug #24473.  army units can now go into a boat at a bridge.
+	* fixed bug #24476.  stack now appears to be out of moves when it is
+	  out of moves in a special case wrt moving one tile at a time.
+
+2008-10-06  Ben Asselstine
+
+	* fixed bug #24464.  initial stacks are now defogged on hidden map.
+	* now mouse cursor on hidden maps doesn't reveal obscured features.
+	* fixed bug #24466.  loading games from the game-window works again.
+	* fixed bug #24471.  keypad movement works with flyers over water.
+	* added new city production menuitem in the game window.
+
+2008-10-05  Ben Asselstine
+
+	* fixing bug #24427.  can now close game window while ai is moving.
+	* made cities, ruins and temples resizable via "tile width" constants.
+
+2008-10-04  Janek Kozicki
+
+	* Improve random map generation - remove small islands.
+
+2008-10-04  Ben Asselstine
+
+	* fixing gcc 4.3 build warnings and errors.
+	* added new production slot list object owned by cities.
+
+2008-10-03  Ben Asselstine
+
+	* fixed bug #24444.  ai picking up, or droppping all items now works.
+	* added better bridge placement.  Patch by Janek Kozicki.
+	* changed LocationList objects to contain pointers to objects rather
+	  than instances of objects.
+	* added new Production Slot object owned by cities.
+
+2008-10-02  Ben Asselstine
+
+	* added separate MapBackpack object.
+
+2008-10-01  Ben Asselstine
+
+	* fixed bug #24425.  now warning the user to restart the game if the
+	  window decorations are turned on or off in the main preferences.
+	* added separate Backpack object.
+
+2008-09-30  Ben Asselstine
+
+	* fixed bug #24416.  new army units are now in the stack rotation.
+	* decorated windows now retain the proper default widget.
+	* decordated windows now have the same old window decorations as other
+	  applications.
+	* scenario editor now automatically selecting most useful size of 
+	  pointer according to the selected terrain.
+
+2008-09-29  Ben Asselstine
+
+	* Fixed bug in tileset validation.
+	* added ability to surround mountains with hills in the editor.
+	* modified Bridge::Type, which breaks the save game format.
+	* now placing bridges on random maps.
+	* speeding up bigmap dragging.
+
+2008-09-29  Janek Kozicki
+
+	* Rivers now run to lakes on generated maps.
+	* Added 3 different river styles (chosen at random)
+	* Added a method for finding possible places for putting bridges
+	* Made new default tileset based on Wesnoth tileset.
+
+2008-09-28  Janek Kozicki
+
+	* MapGenerator is now generating hills around mountains. And mountains
+	  are never adjacent to grass.
+
+2008-09-28  Ben Asselstine
+
+	* increased number of possible tile styles from 256 to 65535.
+	* added new void tile type that can't be flown over.
+	* fixed bug #24394. fixed counting of triumphs.
+	* added the ability to show a grid on the map.  Suggested by Rob
+	  Kinyon.
+
+2008-09-27  Ben Asselstine
+
+	* added a tile size selector to the new map dialog in the scenario
+	  editor.
+	* tilesets are now validated before using them.
+	* added new triumphs object to the player object.
+	* fixed some compiler errors on gcc 4.3.
+
+2008-09-25  Ben Asselstine
+
+	* fixed bug added tile-size selector in the game preferences dialog.
+
+2008-09-23  Ben Asselstine
+
+	* now defogging first city even if the player doesn't have a capital
+	  city.
+	* added new sightmap object owned by reward_map object.
+
+2008-09-22  Ben Asselstine
+
+	* fixed bug 24344.  defending stacks now wake up when selected; also
+	  newly produced army units now "wake up" a defended stack.
+
+2008-09-21  Ben Asselstine
+
+	* fixed bug 24331.  now the splash screen closes properly when [x] is
+	   pressed.
+	* fixed bug 24330.  now active neutral cities who have produced enough
+	  armies will not cause a crash when the production for that city is
+	  turned off.
+	* disabling mouse-wheel zoom when it's not our turn.
+	* fixed bug 24332.  now the difficulty setting in the game preferences
+	  dialog is properly synchronized with the game options dialog.
+	* fixed bug 24335.  now showing the splash screen after we encounter a
+	  corrupted save file while loading a game.
+	* fixed bug 24333.  now ai stacks that are completely ungrouped aren't
+	  presumed to be flying.
+
+
+2008-09-19  Ben Asselstine
+
+	* adding more machinery for single-player campaigns.
+	* fixed bug related to saving of rewards in an action.  Reported by
+	  Michael Schwendt.
+
+2008-09-12  Ben Asselstine
+
+	* adding some machinery for single-player campaigns.
+
+2008-09-10  Ben Asselstine
+
+	* added support for zooming in and out on the game map.
+	* added stacklist method to enumerate the 3 best heroes.
+
+2008-09-07  Ben Asselstine
+
+	* added support for exporting maps as bitmaps in the scenario editor.
+
+2008-09-07  Ben Asselstine
+
+	* bumped version to 0.1.2.
+
+2008-09-07  Ben Asselstine
+
+	* limiting the recently played game list to the last 10.
+	* updating the turn indicator in the game window during network games.
+
+2008-09-04  Ben Asselstine
+
+	* improved the player type selector in the game preferences dialog.
+
+2008-08-30  Ben Asselstine
+
+	* hero objects now have a hero prototype object.
+	* stack and army objects can now be created without unique ids.
+
+2008-08-24  Ben Asselstine
+
+	* item objects now have item prototype objects that they are created
+	  from.  this changes the saved-game schema as well as the itemset
+	  schema.
+
+2008-08-17  Ben Asselstine
+
+	* fixed a bug that caused vectored units to never leave the vectored
+	  unit list, even after they arrive.
+	* fixed a bug that caused stack IDs to get out of sync in network
+	  play.
+	* added a --robots command-line option that will connect to a
+	  networked game onbeing served on localhost, and play each seat as 
+	  an ai player.
+
+2008-08-16  Ben Asselstine
+
+	* added the ability to clear the recently joined game list.
+
+2008-08-15  Ben Asselstine
+
+	* added a recently joined game list that the client can use to quickly
+	  reconnect to disconnected games.
+
+2008-08-14  Ben Asselstine
+
+	* now not giving an initial hero if the player happens to already have
+	  a hero at the start of the game.
+	* fixed bug wrt loading saved hotseat games.
+	* Barry deFreese fixed the big include mess so that there aren't 
+	  relative paths to headers in the source code.  Thanks Barry!
+	* added a uuid to each scenario.  This changes the saved-game schema.
+	* adding name to the game preferences dialog when we're doing a
+	  networked game.
+	* removed limitation on the number of frames in a stack selector
+	  animation.
+
+2008-08-13  Ben Asselstine
+
+	* fixed turn indicator in the game lobby dialog to cycle properly for
+	  local players.  fixes bug #24057.
+	* now popping up the game lobby dialog when a player is unavailable to
+	  take her turn.
+	* added better handling of sitting down as the active player.
+	* fixing the appearance of moves of players who we sat down as, after 
+	  starting the network game.  fixes bug #24061.
+
+2008-08-12  Ben Asselstine
+
+	* added window decorations, and a configuration option to turn them
+	* added preferences dialog off of the main menu.
+
+2008-08-11  Ben Asselstine
+
+	* added stack selector graphic information to the tileset 
+	  configuration file. (tileset configuration file schema changed)
+	* changed the tileset editor to be able to modify and view the stack
+	  selector graphic.  fixes bug #23982.
+
+2008-08-10  Ben Asselstine
+
+	* added "Online Help" menu item in the game window.
+	* improved the user's manual.
+	* fixed bug causing the triumphs report to crash with less than 8
+	  players.
+	* added ability in the scenario editor to toggle tile graphics in the
+	  map display.
+
+2008-08-08  Ben Asselstine
+
+	* game lobby now cycles the turn icon as players move in networked
+	  multiplayer mode.
+	* basic multiplayer play now works.
+
+2008-08-07  Ben Asselstine
+
+	* more multiplayer machinery.
+	* changing GraphicsCache to refer to player ids instead of pointers to
+	  players.
+	* reporting sit/stand events to the chat window.
+
+2008-08-06  Ben Asselstine
+
+	* adding more multiplayer machinery (still not working).
+
+2008-08-04  Ben Asselstine
+
+	* added more multiplayer machinery (still not working).
+
+2008-07-28  Ben Asselstine
+
+	* fixed crashing bug when an initial hero shows up and the player
+	  doesn't have a capital city.
+
+2008-07-27  Ben Asselstine
+
+	* added new command-line option --stress-test.
+	* fixed crashing bug wrt ai fast player joining stacks on the way to
+	  getting blessed, or picking up an item.
+
+2008-07-26  Ben Asselstine
+
+	* improved the user's manual.
+
+2008-07-23  Ben Asselstine
+
+	* changed reward xml entity.  changes saved-game file format.
+
+2008-07-20  Ben Asselstine
+
+	* fixed the -t command-line option so that it works.
+	* now users can specify a file to load on the command line.
+	* added a play by mail utility
+	* now instantiating only the pixmaps that are needed instead of all
+	  of them.
+
+2008-07-19  Ben Asselstine
+
+	* added progress indicator for generating new games.
+	* fixed bug that allowed armies to get blessed more than once at
+	  the same temple.
+	* fixed armyset editor to save armysets properly.
+
+2008-07-16  Ben Asselstine
+
+	* bumped version to 0.1.1.
+
+2008-07-16  Ben Asselstine
+
+	* no longer collecting taxes from razed cities.
+	* now only checking our own cities for being too poor.
+	* pruning duplicate city production actions.
+	* fixed various bugs in the enconomic model.
+
+2008-07-15  Ben Asselstine
+
+	* improving the sage dialog.
+	* fixed bug where we weren't defogging ruin rewards.  Reported by Rob
+	  Kinyon.
+	* fixed map rewards generated on the fly to have a bounds that are on
+	  the map.
+
+2008-07-14  Ben Asselstine
+
+	* added a notification after a player has resigned.  Suggested by
+	  Rob Kinyon.
+	* now showing which cities are automatically turned off when the
+	  player is too poor to produce army units.  Suggested by Rob Kinyon.
+
+2008-07-13  Ben Asselstine
+
+	* fixed stack movement doubling when having more than one item that
+	  doubles movement.  Reported by Rob Kinyon.
+
+2008-07-12  Ben Asselstine
+
+	* fixed pillage-crashing bug reported by Rob Kinyon.
+	* empty production slots in cities are now retained across saves.
+	  This changed the scenario schema.
+	* changed 2ndpunic and dol maps to the new schema.
+
+2008-07-09  Ben Asselstine
+
+	* added machinery for multiplayer.
+	* added ability for game-options gui to be instantiated read-only.
+
+2008-07-07  Ben Asselstine
+
+	* added improved hills.  Thanks to Robert Pilstål.
+
+2008-07-06  Ben Asselstine
+
+	* improving the smart ai player
+	* disabling various hotkeys when the computer is moving.
+
+2008-07-04  Ben Asselstine
+
+	* now showing shields in the new game screen.
+
+2008-07-02  Ben Asselstine
+
+	* fixed bug preventing subsequent new games from being initialized 
+	  properly.
+	* now taking the player's colour from the shield set.
+
+2008-07-01  Ben Asselstine
+
+	* loading autosaved games now restarts the computer players correctly.
+	* now properly setting up diplomacy in loaded scenarios.
+	* fixed infnite loop bug in easy ai player.
+	* fixing temple visitation crash in easy ai.  Reported by Rob Kinyon.
+	* added fight window delays to the configuration file.
+	* added ability to rescue crashed games.  Suggested by Rob Kinyon.
+	* added more difference between the dark blue and light blue colours.  
+	  Suggested by Rob Kinyon.
+	* smart ai player now does vectoring.
+	* fixed bug with the move-all button and two stacks going to
+	  the same tile that causes infinite loop.
+	* fixed bug where vectoring to a city would cause a crash.  Reported
+	  by Rob Kinyon.
+
+2008-06-30  Ben Asselstine
+
+	* fixing bug where stack fails to move into conquered city
+	  immediately after winning the fight.  Reported by Rob Kinyon.
+	* easy ai player now performs vectoring.
+
+2008-06-29  Ben Asselstine
+
+	* added ability for easy ai player to go to temples to get blessed.
+	* fixed turn indicator in line charts.
+	* fixed "player perished" notices for players who aren't playing in 
+	  the scenario.
+	* the easy ai player now uses heroes to pick up bags of stuff.
+	* fixed crashes in easy ai player stack movement.
+
+2008-06-28  Ben Asselstine
+
+	* fixed easy and hard ai players to make an infantry unit initially 
+	  if it doesn't have one already.
+	* path generation for ai players now avoid stacks that are too big to 
+	  merge with.
+	* path generation for human players does not avoid stacks that are 
+	  too big to merge with.
+	* now not showing path waypoints for ai players.
+	* added a timed message box for player perished messages
+	* easy ai player now makes a special effort to take empty cities
+	  when it can.
+	* save file format has changed -- introduction of player "income" tag.
+	* addressed more stack splitting/joining bugs.
+
+2008-06-27  Ben Asselstine
+
+	* fixed stack movement bug where a stack couldn't join with another
+	  stack that was one tile away.  Reported by Rob Kinyon.
+	* fixed crashing bug wrt ai_smart buying production.
+	* fixed crashing in player dialog of the scenario editor.
+	* added ability to change player names and types in the new game
+	  dialog when loading from a scenario.
+
+2008-06-26  Ben Asselstine
+
+	* fixed movement bug where an army could not move over a prefered
+	  terrain tile type, even though it had enough movement points.
+	  Reported by Rob Kinyon.
+	* made the bag of stuff a little bit bigger.  Suggested by Rob Kinyon.
+
+2008-06-25  Ben Asselstine
+
+	* added movement bonus to rested army units.  Suggested by Rob Kinyon.
+	* fixed stack-deselection bug.  Reported by Rob Kinyon.
+	* fixed bug that prevented player names originating from a scenario
+	  file from showing up in the new game dialog.
+	* the quick start option now works with non-random maps.
+
+2008-06-24  Ben Asselstine
+
+	* preventing heroes and special units from being purchased by the
+	  smart ai player.  Reported by Rob Kinyon.
+
+2008-06-23  Ben Asselstine
+
+	* fixed crash bug when some players are off.  Reported by Rob Kinyon.
+	* now showing the boots cursor when flying over water instead of the
+	  ship cursor.  Reported by Rob Kinyon.
+	* fixed quest completion crash bug.  Reported by Rob Kinyon.
+	* fixed hero leveling bug that prevented the movement reward from
+	  being given to the hero.  Reported by Rob Kinyon.
+	* Now 8% easier for heroes to win fights in ruins.
+	* Heroes now cost a little more.
+	* First hero now goes in the player's capital city when quick start
+	  is on.
+	* Now cities can only have one special army when
+	  cities-produces-allies is turned on.  Reported by Rob Kinyon.
+	* Signpost dialog now closes when the user hits enter on the text
+	  entry.  Reported by Rob Kinyon.
+
+2008-06-22  Ben Asselstine
+
+	* added ability to scroll while dragging stacks for movement.
+	* added initial game manual.
+	* loading scenarios now lets you set game options.
+
+2008-06-21  Ben Asselstine
+
+	* added ability to drag and drop stacks for movement planning and
+	  execution.
+
+2008-06-02  Ben Asselstine
+
+	* bumped version to 0.1.0.
+
+2008-06-02  Ben Asselstine
+
+	* added new artwork for win game, and parley refused.
+
+2008-06-01  Ben Asselstine
+
+	* update translation files.
+
+2008-05-31  Ben Asselstine
+
+	* changed scenario editor to take bridges into account when placing
+	  roads.
+
+2008-05-19  Ben Asselstine
+
+	* diplomacy button is now disabled when it's not our turn
+
+2008-05-07  Ben Asselstine
+
+	* added tileset editor
+
+2008-05-03  Ben Asselstine
+
+	* added routines for saving tilesets
+
+2008-04-01  Ben Asselstine
+
+	* fixed up wary includes
+	* added new artwork
+
+2008-03-31  Ole Laursen
+
+	* added beginnings of network code (depends on GNet -
+	  www.gnetlibrary.org)
+	* prevent fights from being battled twice and collect the initial
+	  army HPs (fixes weird double explosions, and crashes in
+	  NetworkPlayer)
+	* added support for streams in XML_Helper
+	* include the player id in actions
+
+2008-03-23  Ben Asselstine
+
+	* added about dialog boxes
+
+2008-03-21  Ole Laursen
+
+	* don't save the actionlist in savegames
+	* moved hero templates to a separate file, prevent them from
+	  creating armies that use up ids
+	* moved hero recruitment to the player classes
+	* added recruit hero action and decoding in network player
+
+2008-03-20  Ole Laursen
+
+	* first steps of a network player, moved around most of the player
+	  code and fixed some bugs that show up when replaying actions.
+
+2008-03-20  Ben Asselstine
+	* added minor ticks to the bar graphs.
+	* added axes to the line graph.
+
+2008-03-19  Ben Asselstine
+	* improved depiction of quest targets on the quest map.
+	* load scenario dialog now shows scenario name instead of filename.
+	* added number of players and cities to the load scenario dialog.
+	* added an "are you sure" prompt when quitting the game.
+	* fixed reporting and handling of broken saved-game files.
+	* added ticks and labels to the bar graph.
+
+2008-03-16  Ben Asselstine
+	* fixed getNewRandomReward to handle hidden ruins.
+	* added constants for the various map sizes and used them.
+	* added constants for production shield graphics.
+	* added constants for movement bonus graphics.
+	* added constants for selector graphics.
+
+2008-03-15  Ben Asselstine
+	* starting to add the beginnings of networked play.
+
+2008-02-17  Ben Asselstine
+	* fixed graphic issue wrt fog maps.
+	* preferences dialog now shows player shields.
+	* changed hidden map semantics so that the human players don't see
+	  the computer player's territories.
+
+2008-02-16  Ben Asselstine
+	* when allies show up, they now have 0 upkeep.
+	* added a stack info dialog.
+	* added autosave policy to the configuration file
+
+2008-02-15  Ben Asselstine
+	* the ruin editor can now randomize the reward.
+	* fixed four bugs reported by Patrice Dumas.
+	* change item selector in editor to be a treeview.
+	* added reward list selector, and hidden ruin selector to editor.
+	* can now randomize the hidden ruin in the reward editor.
+	* new random menu item in editor
+	* fixed memory corruption bug in editor
+
+2008-02-14  Ben Asselstine
+	* item editor now works minimally.
+	* can now clear and randomize the ruin keeper in the editor.
+	* can now make new rewards in the ruin editor.
+
+2008-02-13  Ben Asselstine
+	* worked around crashing bug in editor, when dropping temples
+	* fixed crashing bug wrt stack joining thanks to Adam Kowalewski.
+	* added ability to individually randomize the ruin names, temple
+	  names, city names, city income, and signposts in the editor.
+	* ruin dialog in editor now only shows armies that can defend ruins
+	  when selecting a keeper.
+	* adding the beginnings of an item editor
+	* adding the beginnings of a reward selector in the ruin editor
+
+2008-02-12  Ben Asselstine
+	* load map dialog now opens to the .lordsawar dir initially
+	* the editor now saves the correct active player
+	* fixed bug in player editor that caused crash if you clicked ok
+	  without changing anything, and you had some players turned on.
+	* adding itemlist to the scenario, instead of having one global list.
+
+2008-02-11  Ben Asselstine
+	* removed temple slider from game preferences dialog.  now always 4.
+	* removed ruin slider from game preferences dialog.  now it's
+	  35/20/15 for normal/small/tiny maps.
+	* moved city/army/shield/terrain theme into random map section of
+	  game prefs dialog.
+	* added sheildset and cityset selector to new-map dialog in editor
+	* fixed shieldsets and shields not to have numeric IDs
+
+2008-02-10  Ben Asselstine
+	* Applied patch to work with gcc 4.3.  Patch from Patrice Dumas
+	  <pertusus@free.fr>.
+	* added shieldsets
+	* added citysets
+
+three missing months of changes without changelogs
+
+2007-10-28  Ben Asselstine
+
+	* updated 2ndpunic scenario to work
+
+2007-10-26  Ben Asselstine
+
+	* renaming arrows to waypoints in gamebigmap object
+	* added map-smoothing functionality to the editor
+	* now calculating when a path is exhausted and showing it
+	  with waypoint graphics
+
+2007-10-24  Ben Asselstine
+
+	* the editor can now drop particular tiles onto the map
+	* final waypoint now gets a picture
+
+2007-10-23  Ben Asselstine
+
+	* removed obsolete border graphics
+	* path waypoint graphics now show if the stack can go to that tile
+	* moved fog graphic into terrain tileset
+	* roadlist now being properly destroyed in the gamescenario object
+	* improved road and bridge support in the editor
+	* added stronghold ruin image
+
+2007-10-22  Ben Asselstine
+
+	* changed the tile rendering scheme to look more diverse 
+	  and interesting
+
+2007-10-14  Ben Asselstine
+
+	* the editor can now change the scenario's tile theme
+	* tile object now contains a smallmap appearance component 
+	* moved army set xml files into the army set dir
+	* removed stats label from game window
+	* added deselect button to game window
+
+2007-10-13  Ben Asselstine
+
+	* resized army tiles
+	* removed "level mask" from army instance picture
+	* added "bigdefault" tile set and army set
+	* stack ship picture, and planted standard picture are now 
+	  included in the armyset object
+	* added new pictures for income/treasury/upkeep and city count
+	* stack selector images are now included in the tileset object
+	* now autosizing the height of the stat box and stack info box
+
+2007-10-11  Ben Asselstine
+
+	* removed "stones"
+
+2007-10-08  Ben Asselstine
+
+	* added differing income in random cities
+	* randomly created cities now produce more kinds of armies, instead of
+	  only two
+	* neutral cities that are "average" now get populated with a scout,
+	  even if it can't produce scouts
+	* added new cities-can-produce-allies button on game preferences
+	  dialog
+	* added new random grass button, random water button, etc in the 
+	  game preferences dialog
+	* added new "randomize" button to city production dialog in the 
+	  scenario editor
+
+2007-10-07  Ben Asselstine
+
+	* updated lordsawar.desktop file (Thanks Barry deFreese)
+	* cities now create new units from city-specific army templates
+	* editor now creates city-specific army templates with differing
+	  strength and duration
+	* random map now has randomly degraded/improved units in cities
+	  that can be produced
+
+2007-10-06  Ben Asselstine
+
+	* fixed bug related to a stack having enough movement to move
+	  somewhere, but not enough to move along it's path
+	  (Thanks to Daivid Pekovich)
+	* now calculating and showing upkeep per turn
+	* now preventing armies from being produced if the player is all
+	  out of money
+	* fixed crashing bug wrt vectoredunitlist not being destroyed
+	* fixed bug that showed wrong army picture in vectoring window
+	* renamed "destination" button to "vector" button in city window
+
+2007-10-05  Ben Asselstine
+
+	* finished minimally functional armyset editor
+
+2007-10-04  Ben Asselstine
+
+	* fixed bug wrt saving capital cities in the editor
+	* dropping a city on a stack in the editor now changes the stack 
+	  owner and all armies in the stack
+	* dropping a stack on a city in the editor now changes the owner of 
+	  the stack to be the owner of the city
+	* neutral cities now appear to be neutral cities when making a
+	  random map in the editor
+	* added non-functional armyset editor
+	* created separate armyset object to be used in armysetlist object
+
+2007-10-01  Ben Asselstine
+
+	* fixed editor to update the smallmap when something is put on the
+	  map
+	* the army selector now shows armies in the colour of the player
+	* rejiggered the player ids so that the players alwyas have ids
+	  0 through 7, while the neutral gets 8.  other objects start at 9.
+	* the stack dialog now sets the owner on all armies in the stack,
+	  when the owner of the stack is changed
+
+2007-09-30  Ben Asselstine
+
+	* changed quests manager to not use signals
+	* changed quest expiry to show up on the start of that player's
+	  next turn
+
+2007-09-29  Ben Asselstine
+
+	* added military advisor
+	* enabled beginner/intermediate/advanced buttons in game options
+	  dialog
+	* added extra message when last human player dies and there are
+	  only computer players left
+	* now catching end of game properly
+	* fixed bug regarding changing computer players to human
+
+2007-09-27  Ben Asselstine
+
+	* added separate game options dialog off of game preferences dialog
+	* changed preferences dialog to change computer players to human 
+	  ones on the fly
+
+2007-09-26  Ben Asselstine
+
+	* added triumphs dialog
+
+2007-09-24  Ben Asselstine
+
+	* sages now give out rewards
+	* added maps as rewards when playing with hidden map
+	* added triumph stat-keeping to player object
+
+2007-09-23  Ben Asselstine
+
+	* added selector box animation on the small map
+
+2007-09-21  Ben Asselstine
+	
+	* magnifying small and tiny maps for city/vectoring/overview purposes
+
+2007-09-18  Ben Asselstine
+
+	* fixed crashing bug wrt vectoring to lower right corner of a city
+	* fixed faulty "unit advance" action that was causing some saved
+	  games that couldn't be loaded
+	* fixed lines having the wrong colour in some history reports
+
+2007-09-16  Ben Asselstine
+
+	* removed next and previous buttons
+	* promoted "next movable" to be the new next button
+	* added "quit and next" button
+	* added parked attribute to stack
+	* added new (beta) dark tileset (Thanks to Tyler Fric)
+	* added better items
+	* added new "park" button, with menu item
+	* added new "get next stack" menu item
+	* added "fortify" bonus to defended stacks
+	* now sorting the stack info by reverse fight order
+	* now retaining active stack when joining stacks
+
+2007-09-15  Ben Asselstine
+
+	* fixed bug wrt moving all stacks (Thanks to Gunnar Lindholm)
+	* fixed mouse cursor over own city and enemy cities
+	* now not saving a quest if it's scheduled for deletion
+	* moving all stacks now leaves the last stack selected if it has
+	  moves left
+	* an occupy-city quest now expires if that city is razed (Thanks to
+	  Gunnar Lindholm)
+	* a sack-city quest now expires if that city is razed (Thanks to
+	  Gunnar Lindholm)
+	* now restricting the randomly putting of ruins under cities (Thanks 
+	  to Gunnar Lindholm)
+
+2007-09-14  Ben Asselstine
+
+	* fixed crash when visiting a sage (Thanks to Gunnar Lindholm)
+	* fixed loading and saving of action reward
+	* now ordering stacks by strength -- but with heroes first
+	* history now shows beyond death of first player
+	* fixed scores so they don't spontaneously go to 0
+
+2007-09-13  Ben Asselstine
+
+	* fixed bug that prevented cities from being attacked
+	* worked around auto-deselect bug
+	* fixed bug wrt attacking empty cities
+	* now disallowing the building of new army units when the city
+	  already produces armies of that type
+	* speeding up fights with spacebar now persists for the whole turn of
+	  computer turns.
+	* now ordering stacks to be in reverse fight order
+
+2007-09-12  Ben Asselstine
+
+	* made bar and line graphs a static size
+	* now army info tips are different when viewed on the stack info, 
+	  or in a city
+	* fixed bug wrt attacking empty city (Thanks to Gunnar Lindholm)
+	* now showing ruins and temples on left click
+	* map now depends on playerlist because some items are usable only
+	  by certain players -- so load and save playerlist before map.
+	  (Thanks to Gunnar Lindholm)
+	* updated the 2nd punic war map to 0.0.3 (Thanks to Daivid Pekovich)
+	* right-clicking on hero in stack info now shows army-tip instead of
+	  hero dialog
+	* now buying an army in a city doesn't replace an active production
+	  slot if it doesn't have to 
+	* fixed bug wrt heroes riding on flyers
+
+2007-09-11  Ben Asselstine
+
+	* added auto-deselect when stack is out of moves
+	* hitting space now groups the stack
+	* fixed up menuitem shortcuts for ruin, inspect, and quest
+	* fixed gold report to show city map
+
+2007-09-10  Ben Asselstine
+	
+	* now restricting moving into enemy cities from far away
+	* now restricting the showing of the smallmap of computer players
+	  when on a hidden map (Thanks to Gunnar Lindholm)
+	* removed hit point progress bar in army unit in the stack info
+	* fixed the black blinking on the bigmap upon select/deselect
+
+2007-09-09  Ben Asselstine
+
+	* now neutral cities/armies/flags appear to be the correct colour
+	* added magnifying glass cursor for smallmap
+	* now bigmap shows different mouse cursors
+	* dragging map now happens with the left mouse button
+	* now sacking/pillaging "special" army units is always worth 1500 gp
+	* pressing a key in the fight window now speeds it up
+	* increased number of cities in default random game
+	* decreased number of temples in default random game
+
+2007-09-08  Ben Asselstine
+
+	* now the selectors appear to be the correct colour for all sides
+
+2007-09-07  Ben Asselstine
+
+	* now disconnecting signals in the game window before re-loading a game
+
+2007-09-03  Ben Asselstine
+
+	* added bar and line charts to history report
+	* players now start with a slightly random amount of gold
+	* changed city-attack semantics to have the attacking stack step 
+	  into the city upon fight (makes history reporting easier)
+	* fixed crash when hero is slain at a ruin
+	* now remembering filename from loaded game, so save-game works
+	  without prompting for a name
+	* games can now be loaded from within games
+	* now updating the shield turn display every turn
+
+2007-09-02  Ben Asselstine
+
+	* added new score event to the history
+	* now calculating winners
+
+2007-09-01  Ben Asselstine
+
+	* added item bonus dialog
+	* removed old cities, armies, and gold reports
+	* added a general report dialog for army, gold, production, and
+	  winning.
+	* added a citymap object
+	* fixed armymap object
+	* added events to history report
+
+2007-08-31  Ben Asselstine
+
+	* added citywon history entries for quickstart
+	* added first crack at city history report
+
+2007-08-30  Ben Asselstine
+
+	* added hero killed, and quest start/finish to the history
+	* now dropping all items when a hero dies, and dropping items
+	  into the city if the hero was attacking one
+	* fixed giving reward at ruins without an occupant
+	* fixed ai hero emergence to show up in history
+	* now start-turn history event shows up before initial hero emergence
+	* added produce unit, and produce vectored unit action
+	* made occupy/sack/raze the default button if a quest can be completed
+
+2007-08-29  Ben Asselstine
+
+	* started to implement a player's history object
+	* added ruin strongholds
+	* added found sage, hero emerges, gold total and city conquerings to 
+	  the player's history 
+	* fixed questmap to show quests properly
+	* deselecting active stack at the start of a turn
+
+2007-08-28  Ben Asselstine
+
+	* fixed crash when city is full, and produces one more unit
+	* fixed turn shield display error when players die
+	* now not showing the stack info for computer players
+	* setting player's gold to 0 upon resignation
+
+2007-08-27  Ben Asselstine
+
+	* added army bonus menuitem and dialog
+	* removed stack drawing functionality from OverviewMap
+	* added ArmyMap to draw an OverviewMap with stacks
+	* added plant standard action
+	* now using equip action for picking up and dropping items
+
+2007-08-26  Ben Asselstine
+
+	* changed fight order dialog to show armies in player's own colour
+	* added hero-levels dialog and menu item
+	* added ability to vector to player's planted standard
+	* added ruin report
+
+2007-08-25  Ben Asselstine
+
+	* added move-all menu item
+	* added disband-stack menu item, and action for it
+	* added change-signpost menu item, and action for it
+	* added action for renaming a city
+	* added action for vectoring
+	* added a fight-order dialog, and menu item, and action for it
+	* fixed army image in army info tip to have the player's colour
+	* fixed army image in buy production dialog to have the player's colour
+	* added resign menuitem, and action for it
+	* added hero menu with search, and inspect menu items
+	* removed the "resign game" menu item from the game menu
+
+2007-08-24  Ben Asselstine
+
+	* added end turn menu item
+	* implemented new quick-start algorithm (Thanks to Aman Dhillon)
+
+2007-08-23  Ben Asselstine
+
+	* defogging quick start cities
+
+2007-08-19  Ben Asselstine
+
+	* finished a first crack at hidden map
+	* added the strong/active/average neutral cities game option
+	* now neutrals produce armies even if they're out of money
+	* fixed produceStrongestArmy to use correct slot index
+	* added intense combat option
+	* added quick start option
+
+2007-08-18  Ben Asselstine
+
+	* now sweeping the hidden map for lone fogged tiles, and removing
+	  them at the start of a turn
+	* not showing computer player movement/fights when hidden map is
+	  enabled
+	* now correctly fogging up the smallmap
+	* now correctly detecting foggedness in Location
+	* now correctly altering fog on smallmap as players move
+	* now defogging cities when conquered
+
+2007-08-17  Ben Asselstine
+
+	* added new fog pictures
+	* removed fog graphics from BigMap
+	* added fog to GraphicsCache
+
+2007-08-13  Ben Asselstine
+
+	* added ability to see production of opponent's cities
+	* added ability to turn off quest play
+	* changed game preferences to account for these new options
+	* adding fog related methods to location class
+	* checking for fog in vectormap, ruinmap, overviewmap
+
+2007-08-12  Ben Asselstine
+
+	* added ability to right-click and see stack on bigmap
+
+2007-08-03  Ole Laursen
+
+	* fixed random map generation and load/save map problems 
+	* fixed redrawing bug in smallmap in editor
+	* fixed radio buttons in game preferencesw dialog
+
+2007-07-29  Ben Asselstine
+
+        * fixed pillaging to choose most costly army
+	* fixed pillaging to display the pillaged army type
+	* fixed sacking to display the sacked army types
+
+2007-07-15  Ben Asselstine
+
+        * fixed bonus calculation to include command items from all heroes,
+	  not just the strongest one
+	* now sorting on player-specific fight order for battles
+	* ships now sport a player's colour
+	* now razed cities are owned by the player who razed it
+	* fixed bug with bad temple ids
+
+2007-07-14  Ben Asselstine
+
+        * now the maxhp attribute of army is always 2
+	* removed findVictim method in fight -- the top two armies always fight
+	* changed doRound method in fight to have the top two armies fight
+	* changed fightArmies so that each army has to roll a 20 sided dice
+	  under it's terrain_strength -- if both armies do, then the round is
+	  a draw -- otherwise it's a hit
+	* now nullifying MAX_ROUNDS in fight
+	* removed rounds label from fight dialog
+	* removed att_bonus and def_bonus from Fighter in favour of
+	  terrain_strength
+	* filling out command and battle stats in the hero dialog
+	* changed hero's standard to provide +1 command instead of +1 battle
+	* changed armyset to have all armies in one single armyset
+	* changed army templates to have a hero attribute
+	* removed ability for nearby defenders to automatically be included
+	  in a battle (defenders in city was retained)
+	* now sorting the armies before battle, but not with a per-player
+	  fight order.
+
+2007-07-13  Ben Asselstine
+
+        * removed equipment object from hero
+	* removed type member from item
+	* handling item bonuses: flight, double movement, and battle
+	* removed regenerating capability for armies
+	* added auto regeneration after fights
+	* removed instakill capability from armies
+	* removed leader capability from armies
+	* removed cavalry/anti-cavalry capability from armies
+	* now handling army bonuses during fight
+
+2007-07-11  Ben Asselstine
+
+	* now hidden ruins are randomly instantiated at game start
+        * now ruins are a reward for quests
+	* moved reward list instantiation into GameScenario object
+	* fixed bug wrt giving out allies at a ruin
+	* added better support for ruins in the editor
+	* added visual pointer to ruin upon quest completion
+
+2007-07-06  Ben Asselstine
+
+        * made the selector box on the small map stop pulsating
+	* added support for bridges and ports
+	* starting to add support for bridges and ports in the editor
+
+2007-07-02  Ben Asselstine
+
+        * added a reward list object to be used by quests, ruins and sages
+	* an item or allies are now given after searching a ruin
+	* an item can now be given as a reward for a quest completion
+
+2007-07-01  Ben Asselstine
+
+        * added non-functional sage dialog
+	* removed item pictures
+	* added "plantable" properties to items for battle standards
+	* adding a battle standard for each initial hero
+	* items dropped in water are lost
+
+2007-06-30  Ben Asselstine
+
+        * created a ruin map object
+
+2007-06-29  Ole Laursen
+
+	* finished porting the code to gtkmm
+
+2007-06-17  Ben Asselstine
+
+        * now showing stack info after a game is loaded
+	* fixed bug wrt player ids and some players being "off"
+	* made a first crack at shield set to show whose turn it is
+
+2007-06-16  Ben Asselstine
+
+        * fight window now shows attacker on top and defender on bottom
+	* increased maximum cities on random map to 80
+	* don't place cities on top of cities (Reported by Alfred M.  Szmidt)
+	* added player shields to fight dialog
+	* added large shields to graphics cache
+
+2007-06-15  Ben Asselstine
+
+        * now showing stacks in boats on the big map and stack info
+        * now setting armies to be in and out of ships before next turn
+
+2007-06-10  Ben Asselstine
+
+        * made a first crack at adding boat ports to path calculation
+	* stack loses all movement points when coming into a city from a boat,
+	  or going out of a city into a boat
+
+2007-06-04  Ben Asselstine
+
+        * prefer diagonals when calculating movement paths
+
+2007-06-03  Ben Asselstine
+
+        * added support for Movement bonus pictures in GraphicsCache
+	* added movement bonus picture to army info tip
+	* added army info tip to buy production dialog
+	* added group moves and group terrain picture to stack info
+	* added ability for heroes to be carried on flyers
+	* only hills and forest movement bonus propogates to the rest of stack
+	* added a crappy linear terrain feature generator for rivers and
+	  mountain ranges
+
+2007-06-02  Ben Asselstine
+
+        * revamped quest report
+	* quest completion dialog now shows a map
+	* added shadow for land on the small map
+	* drawing the swamp, mountains, forest,  better on the small map
+	* preventing random cities from being put down in mountains
+	* fixed buy-production to allow buying over top of an existing slot
+
+2007-05-28  Ben Asselstine
+
+        * ruins can now be unoccupied so the hero wins without a fight.
+
+2007-05-27  Ben Asselstine
+
+        * added support for showing the original owner of a capital city
+        * added reward of allies upon quest completion
+	* added new addArmy method in GameMap to facilitate dropping down
+	  armies.
+
+2007-05-23  Ben Asselstine
+
+	* now drawing quests onto a questmap
+	* added questmap object to quest assigned dialog
+
+2007-05-22  Ben Asselstine
+
+	* modified kill-enemy-armies quest to include a target player
+	* added new sack-and-pillage-gold quest
+
+2007-05-21  Ben Asselstine
+
+        * reimplemented vectoring
+	* any army unit can search a temple
+	* started implementing a quest map object
+	* added new occupy-city quest
+	* added new kill one enemy unit of a certain army type quest
+
+2007-05-20  Ben Asselstine
+
+        * made a first crack at implementing vectoring.
+
+2007-05-19  Ben Asselstine
+
+        * added vector map to city window dialog.
+        * clicking on a vector map changes the city.
+	* beautifying the city window dialog.
+	* added rename and raze city in the city window dialog.
+	* added a razed city dialog.
+
+2007-05-17  Ben Asselstine
+
+	* removed army vitality, defense, shots, ranged, and portrait.
+	* removed tile defense.
+	* stop vectoring when stop button is pressed
+	* added smallmap to hero offer dialog
+	* added production shields to vectormap
+
+2007-05-16  Ben Asselstine
+
+        * removed "Purchasable" and using ProductionCost > 0 instead for
+	  army types.
+        * starting to add better army bonuses.
+	* don't let army strength exceed 9
+
+2007-05-12  Ben Asselstine
+
+	* only certain armies may be bought in `build production'.
+	* when the hero is slain in a ruin, the rest of her stack lives on.
+	* show cities as shields on the small map.
+	* show temples and ruins as white dots on the small map.
+	* roads are now brown.
+	* refreshing bigmap after hero shows up.
+	* right-click on owned cities and razed cities gives info.
+	* capital cities start with strongest unit already created.
+	* non-capital cities start with weakest unit already created.
+
+2007-05-11  Ben Asselstine
+
+        * added ability to bless heroes more than once in temples,
+	  while normal armies only get blessed once.
+
+2007-05-10  Ben Asselstine
+
+        * changed heroes to have male/female and side in the heronames
+	  data file.
+	* now using random hero names per side.
+	* added ability to change hero name.
+	* added ability to change sex of hero.
+	* now hero shows up on first turn.
+	* added ability for heroes to show up in any non-razed city
+	  owned by the player.
+	* better hero chance.  1/6 when enough money.  if no heroes then
+	  the cost is 1/3 less.
+	* different calculation of determining a winner in a ruin fight.
+	* only certain armies may defend a ruin.
+	* added sack and raze hero quests.
+	* highlighting sack or raze in the occupation dialog if a hero
+	  can complete a quest by sacking or razing.
+	* on first turn, show the city production dialog.
+	* default map shape is a rectangle. 1/3 higher than wide.
+	* removed ability to upgrade and dowgrade city defense, there are
+	  always 4 production slots per city.
+	* remove ability to select army tileset per side in the game
+	  preferences, instead have one army tileset per game.
+	* changed default player names to better names.
+	* changed default player colours to better colours.
+	* added looting after defeating a city.
+	* left-click now brings up a city production dialog.
+	* improved selector animation.
+	* added small selector.
+	* improved flag graphics to be two tiered.
+
+2007-04-28  Ben Asselstine
+
+	* changed city pictures to have one per player, plus neutral
+	* changed players to have correct names and colours
+	* changed game preferences to have 8 players by default
+	* announcing monster name upon hero searching ruin
+	* searching a ruin should yeild at most one monster
+
+2007-04-27  Ben Asselstine
+
+        * removed "multifight"
+	* remove "advanced production"
+        * conditionally added hero name to city occupation dialog 
+        * added ability to Sack citites.
+	* corrected Pillage behaviour.
+
+2007-02-04  ulf82
+
+	* fixed a bug with the ai having units stand around; added music to
+	  a hero offer; added a couple of new tracks
+
+2007-01-27  ulf82
+
+	* forgot to check in some files
+
+2007-01-23  ulf82
+
+	* hack: random victory/defeat tune is played. Added victory/defeat
+	  tunes, applied Ben Asselstine's road patch (though roads are not
+	  generated yet).
+
+2006-12-30  ulf82
+
+	* implemented background music and music when winning/loosing. Now
+	  we only have to decide on the music itself.
+
+2006-12-29  patton73
+
+	* Fixed a bug in the editor that prevented to display the citylist.
+	  Improved smart AI : now can buy and produce also advanced armies
+	  and more can upgrade cities levels
+
+2006-12-25  patton73
+
+	* Applied a lot of patches fron Ben's (stones, signposts ,
+	  mapgeneration)
+
+2006-12-22  patton73
+
+	* applied a lot of patches from Ben Asselstine
+
+2006-12-17  ulf82
+
+	* finished implementing the item dialog (it is drag and drop,
+	  though you don't see the drag because paragui's software cursor
+	  is buggy); finished implementing the equipment action as well
+
+2006-12-16  ulf82
+
+	* added scrolling through items to ItemDialog
+
+2006-12-15  ulf82
+
+	* bumped the savegame version of the scenarios; item dialog now
+	  displays statistics of the items on right-click
+
+2006-12-15  patton73
+
+	* Bumped savegame version to "0.3.8c" and fixed a bug (scenario did
+	  not save the stonelist)
+
+2006-12-15  patton73
+
+	* applied patch from Ben about stones in the map (must update the
+	  savegame documentation for new savegame version 0.3.8c)
+
+2006-12-13  patton73
+
+	* Applied Ben's patch about mixer check
+
+2006-12-12  ulf82
+
+	* applied two patches by Ben Asselstine (mountain images and show
+	  gold after pillaging), updated maps to new savegame version,
+	  ItemDialog now has capability to show item abilities on
+	  right-click (in theory, paragui makes things a bit difficult
+	  here).
+
+2006-12-11  ulf82
+
+	* applied two patches by Ben Asselstine (weird crash and stack is
+	  selected after joining) and fixed his other patch. (the wrong
+	  armies were grouped) :)
+

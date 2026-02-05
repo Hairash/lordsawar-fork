@@ -1,0 +1,88 @@
+# Build artifacts and generated files
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Autotools generated files
+# Note: config.h.in, config.guess, config.sub, and configure.ac should be tracked
+Makefile
+Makefile.in
+config.h
+config.log
+config.status
+config.cache
+configure
+aclocal.m4
+autom4te.cache/
+compile
+depcomp
+install-sh
+libtool
+ltmain.sh
+missing
+stamp-h1
+po/.intltool-merge-cache
+
+# Build directories
+local_install/
+.deps/
+.libs/
+*.la
+*.lo
+
+# Generated data files (built from .in files)
+*.lwa
+*.lwc
+*.lws
+*.lwt
+*.map
+dat/citynames.xml
+dat/heronames.xml
+dat/ruinnames.xml
+dat/signposts.xml
+dat/templenames.xml
+
+# Executables
+src/lordsawar
+src/editor
+src/ghs/lordsawar-game-host-client
+src/ghs/lordsawar-game-host-server
+src/gls/lordsawar-game-list-client
+src/gls/lordsawar-game-list-server
+src/utils/lordsawar-import
+src/utils/lordsawar-upgrade-file
+
+# IDE and editor files
+.vscode/
+.claude/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Compiled translation files
+*.gmo
+po/stamp-it
+
+# Backup files
+*.bak
+*.orig
+*~
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux specific
+*~
+

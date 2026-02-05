@@ -1,0 +1,336 @@
+Artificial Intelligence Notes for LordsAWar
+
+Copyright (C) 2009 Ben Asselstine
+
+This document is licensed under the terms of the GNU General Public License version 3 or later.
+
+The purpose of this document is to describe how the artificial intelligence routines operate.  The intended audience of this document is a C++ programmer.
+
+
+Introduction
+
+AI in lordsawar comes in the form of computer players who manage stacks[1] and cities[2] that they own.  There are three computer players:
+
+1. The Neutral Player
+  Implemented by the ai_dummy.cpp AI_Dummy class.  It simply stays still, waiting for the other players to take it over.  The neutral player does not venture stacks outside of it's walls, and does not collaborate with the other cities who might happen to be neutral.  
+
+
+2. The Easy Player
+  Implemented by the ai_fast.cpp AI_Fast class.  It tries to make stacks of eight army units to attack a nearby enemy city.  It does this by using the top-left tile of a city as a restocking point, knowing that this is where new armies show up as they are produced.  This player has very predictable stack behaviours.  It also does some somewhat sophisticated vectoring[3] of army units, and does things like visit temples if they are nearby.  Heroes will pick up items on the ground if they are nearby.
+
+
+3. The Hard Player
+  Implemented by the ai_hard.cpp AI_Hard class.  It tries to gauge the strength of enemy cities, and take a sufficient stack to conquer enemy cities.  It enumerates the threats and handles the worst threats first.  Like the easy player this player does vectoring, and temple visiting, and picks up bags of items.  For whatever reason the hard ai player isn't very difficult to beat.  This player uses the full knowledge of where stacks and cities are on the map, and the true strengths of army units to do it's job.  This is in contrast to other AI strategies that try to limit the inputs to the AI routines to be what the player should actually know.
+
+
+How these classes fit together:
+
+These classes are all inherited from the real_player.cpp RealPlayer class, that implements the human player, and is in turn inherited from the player.cpp Player class which implements the actions that can be taken by a player in the game.
+
+Perhaps the most important of these actions are:
+Player:stackMove and RealPlayer::cityChangeProduction.
+
+(This hints at a method naming scheme for the player class:  Player::<object><action>.)
+
+The former class will move a stack on the map, while the latter will signify to the given city to create a new kind of army unit.  These two actions are the most frequent actions that the AI players will make.
+
+All Players (including AI players) are saved and loaded in the saved-game file format.
+
+Players create *actions* that go over the wire to enable network play.
+
+Player objects are insulated from the gui by signals and callbacks.  This is what allows lordsawar to run in --stress-test mode where computer players play computer players until the game is won, and it does so without a gui.  This is a useful way to automatically test modified AI players.
+
+Look at the virtual functions in player.h to see which functions an AI player must implement.
+
+
+Understanding the Neutral Player
+
+The Neutral cities have game options that affect how the neutral player behaves.  There are actions that trigger certain behaviours in neutral cities -- like the production of army units, (this is related to the neutral city policy in the game options).  Sometimes these behaviours are in implemented in the AI_Dummy class, and sometimes they arent.  The "defensive" mode is implemented inside the class, while the "active" mode is implemented outside the class (inside Game::on_city_fight_finished).
+These different modes of playing AI might be better represented as new AI players, so that the code belonging to a particular behaviour is properly separated.
+
+
+Having many neutral players in a game breaks a lot other code.  The playerlist thinks there's only one neutral player, and the MAX_PLAYERS constant only takes one neutral player into account.  It would be nice to change this limitation.
+
+Understanding the AI Fast Player
+
+Lots of different things can happen when the AI_Fast player calls stackMove.  A stack can follow a calculated path and land on another stack.  This makes these two stacks join and become one; it triggers a STACK_JOIN action.  This behaviour does not kick-in for human players (RealPlayer), but only for the AI players..  Perhaps this should not be the way the program acts!  An unfortunate consequence of this behaviour is that the moving stack can go away (be deleted), and resulting unwieldy code trying to deal with references to that stack that have become invalid. 
+
+Another thing that can happen when a stack is moved is a battle; the STACK_FIGHT action.  This can result in the moving stack going away entirely, and the same unwieldy checks after a call to stack move.  A battle automatically happens because there is an enemy city or stack on the stack's path.  Human players cannot set in a path that lands on an enemy city or stack, unless it is exactly one tile away.  AI players don't have this limitation.
+
+The AI_Fast player doesn't retain any state across turns.  Yes the stacks have paths, and the cities have vectoring setup, but there's no AI-related data saved anywhere to help in the next turn.
+
+Constraints
+
+Speed matters.
+
+
+1. http://www.nongnu.org/lordsawar/manual/0.1.7/lordsawar.html#lordsawar-movement
+
+2. http://www.nongnu.org/lordsawar/manual/0.1.7/lordsawar.html#lordsawar-cities
+
+3. http://www.nongnu.org/lordsawar/manual/0.1.7/lordsawar.html#lordsawar-cities-vectoring
+
+---
+More notes by Quentin "Cygal" Pradet
+                                                                     
+Copyright (C) 2009, 2010 Quentin Pradet
+                                             
+Lordsawar strategies
+====================
+
+
+Key concepts
+------------
+
+Here's a start:
+* The key to the game is cities. They are the only resource producers. So, taking cities early is key.
+* Once combat is joined, there are no strategies. However, there are many ways to affect the combat ahead of time.
+* Heroes, although not -critical-, play a very large role.
+
+
+Once you've taken cities, you have to have them crank out dudes.
+Spiders and minotaurs are the most important units of the game. At
+least half my units will be those and I will build production to make
+that happen. Scouts are also very important because they negate
+terrain movement penalties. Beyond that, it almost doesn't matter -
+whatever can be built the quickest with the highest strength.
+
+Starting a game
+---------------
+
+My first few turns go something like this:
+- Start exploring my nearby areas. Because information is more important than stack survival, everyone goes out alone, including the initial hero.
+- When a neutral city is found, I take it if I can, skip it if I can't.
+- When an exploring stack of another power is found, I kill it when possible, particularly if it's my hero.
+- Other heroes get killed at all costs.
+
+Heroes and ruins
+----------------
+
+Now, there are a few schools of thought about heroes and ruins:
+1) Go through every ruin possible
+2) Hit ruins if they're within a turn of my movement path
+3) Never hit a ruin, ever
+
+If you're playing #1, your heroes won't be part of the game for at least 10-20 turns. If you're playing #3, your heroes will be involved in lots of city combat. #2 is kinda the middle ground and, like most middle grounds, it doesn't tend to do very well. If I'm playing a computer, I always do #1. If I'm playing humans, it depends. #3 is a very aggressive game, attempting to build up a huge pile of cities before anyone else. #1 cedes cities early, but you're betting that you'll get lots of powerful items and allies to take them later.
+
+Everyone always buys every hero that's offered. I can't think of a situation where you wouldn't.
+
+Choosing enemies
+----------------
+
+That gets to the heart of the matter. It has to do with the victory
+conditions - WL2 only allowed for a single player to win. If multiple
+players can join together and win together, that changes things. But,
+for now, let's assume single-player victories only.
+
+You attack either the weakest (to quickly kill them) or the strongest
+(to prevent them from getting too strong). You have to create a
+backfield (in order to have lightly-defended cities otherwise you run
+out of money), so you will do that. Corners are best (for obvious
+reasons). 
+
+I think you're going to have to go for minimax attack plans. That's what I
+do. "If I can get these units to that city, I win, but only if . . . .
+" and so on. Rarely do you have such an overwhelming advantage that it
+doesn't matter what you do first (and those games are uninteresting,
+anyways).
+
+
+Tricks
+------
+
+=== Starting strategy
+
+The reason why I can use hero strategy #1 against the computer is
+because the AI has always been very poor in both Warlords II and
+Lordsawar. It never adapted to changing patterns nor did it ever
+blitzkrieg. For example:
+* It would use vectoring, but never creating focal points.
+* It would never reorder the battle order.
+* If it ever bought units, I couldn't tell.
+* It never took intelligent risks.
+
+The last one needs some explanation. The AI would either attack with a
+50/50 chance or a 99/01 chance. Never with a 70/30 chance. So, it
+would attack a city of 4 minotaurs with either a hero and a few scouts
+(50/50) or a hero, 2 dragons, 2 wizards, and 3 spiders. The right
+stack to attack 4 minotaurs in a city is a hero and 3 spiders. The
+hero here is assumed to have a +2 command bonus overall (either by
+levelling up or with an item). (I'm pretty sure that comes close to
+70/30.) Why waste the moves of the allies? They should be off either
+sniping stacks in transit, making sure information is up-to-date
+(assuming fog-of-war is enabled), or striking the backfield of the
+enemy.
+
+If the AI were able to decide between if hitting ruins is a good plan
+or using the heroes as generals in the first few turns of the game,
+that would alone would make the AI more dangerous to play against.
+
+This is the main goal of our AI : make it seem dangerous.
+
+After most of the neutrals are gone, you'll know where most of the
+temples are. If there are any near a city or road, you'll drive your
+units through it. That +1 on a stack of 8 light cav is well worth 2-3
+turns. If you can get a second +1 or a hero with high movement, then
+that's a marauding stack to go hit behind enemy lines. Even +1 on a
+bunch of 7 scouts or light infantry (with a hero that has a command
+bonus item) is enough to beat 4 minotaurs. Then, you have that
+minotaur city behind enemy lines. You wait 4 turns to build 2
+minotaurs and, with the rest of your stack, go hunting garrisoned
+cities.
+
+=== Battles
+
+Battles in lordsawar are done one unit at a time. In essence, each
+side sends out a champion and they fight. The winning unit stays out
+until it is defeated. Once all units on a side are defeated, then the
+other side wins. The battle order is the order in which units are sent
+out. The default battle order sends out the weakest units first.
+Knowing this, a player might tweak their battle order so that their
+midline units go first, then their weak ones, then their strongest.
+
+Also, don't forget to factor in the number of hits a given unit can
+take. That number is reset at the beginning of every battle. So, you
+might put low-strength / hit hitpoint units in front to soak up all
+the scouts.
+
+
+=== Vectoring
+
+Using the vectoring feature is important, particularly once you've
+established a rear. These cities are those that are very unlikely to
+ever be attacked, so are just garrisoned with minimal troops, often 4
+minotaurs or 2 spiders. (That's just enough to guard against a
+lightning attack of light cavalry or wolves, but not enough to drain
+your treasury.) You will have focal cities - places where you have
+triple the guard and where you're building your stacks for attack.
+These are generally right at or just behind the front lines.
+
+
+Vectoring is interesting in that the unit is
+produced (so the city starts on another), but it won't appear for
+another two turns (the vectoring cost). So, there can be up to 3 units
+"in the pipeline" for a single city. I forget what happens if the
+producing city is taken while a unit is being vectored (I don't think
+that's ever happened to me before). I know that if the destination
+city is taken, all vectored units to that city are lost.
+
+Also, if a 33rd unit appears in a city (either by vectoring or
+straight production), it gets put in a square outside the city limits.
+
+
+
+Influence maps
+--------------
+
+We want influence maps for a few reasons:
+- they help to represent game space like humans do ;
+- they help to know how units should engage the enemy ;
+- they are embeddable in higher-level strategies such as minimax.
+
+The memory cost is quite high though: we keep n! maps, n being the number of players.
+
+Influence maps are going to be
+"interesting" to build for Lordsawar because of the long movement
+times. It can take 20 turns (or more!) for some units to go from the
+bottom of the map to the top. Terrain plays a huge part in the game.
+But, I think they're going to be key, especially when figuring out if
+a city needs to build different units, when it needs to vector (and to
+where), and if it needs to build higher walls.
+
+Calculating the influence for a given unit needs to take into account
+(at least) the following factors:
+* How far can they reach (counting both movement points (MP) and
+  terrain modifiers)?
+* What units can they be stacked with? Remember - terrain modifiers
+  affect the whole stack. So, a giant in a stack gives the whole stack
+  Hills=2MP (vs. 4MP normally).
+* What can they do when they get there (counting city modifiers, etc)?
+
+Also, the number of turns a given AI level looks out to construct its
+influence map might be key to the power level of the AI. Maybe the
+weakest level only looks 1 turn out, the next weakest looks 3 turns
+out, and so forth. Maybe other factors could be:
+* how carefully the AI re-constructs the influence map (adapts to
+  changing circumstances)?
+* does the AI construct an influence map for other players?
+* does the AI take into account scorched earth policies?
+
+
+
+Facts
+-----
+
+Balanced endgames are rare. Usually, someone has either has a large
+lead in cities or a superhero (lots of command items - combat items
+are nice, but not critical).
+
+=== Movements
+
+Scouts can travel anywhere from 8 to 32 tiles in two turns. They have
+a base move of 16 and a vision of 1 (2?). Given that roads only take 1
+MP, a scout can go a really long way. The only unit that can go longer
+than them on plains is light cavalry (base move of 20), but that's
+only in the plains. Scouts go further in swamp, hills, and forest.
+
+Most units can't move anywhere near that far. This is why the 3
+"double movement" artifacts are so powerful and why Wizards are one of
+the strongest units in the game (base 50 move, base 7 attack). And
+this forms the basis for the "marauder" strategy. :)
+
+
+
+Other Considerations
+--------------------
+
+
+=== Cheating
+
+Then, we have to consider cheating. Things like:
+* Can the AI peek into stacks? Human players cannot find out what's in
+  a stack other than the top unit. (Though, it'd be nice if Ben added
+  that feature.)
+* Can the AI see production?
+* Can the AI see vectored units?
+* Is the AI bound by the fog of war?
+* Does the AI know where ruins and temples are and which ruins have
+already been explored?
+
+I'd like to avoid the various forms of cheating, if possible. But, we
+might want to have advanced options where the human can set these to
+on to make the AI better. I'm thinking having all the AI variables
+tunable is important, even if only in a dev or betatester build.
+
+Expert tricks
+-------------
+
+=== Scorched earth policy
+
+On certain levels, neutral cities will
+build units if they are attacked. So, one tactic is to throw a scout
+at a neutral city with spiders (or something large), knowing the scout
+will die, but the neutral city is activated. This makes it harder for
+another player to get it.
+
+
+
+Algorithm?
+----------
+
+The basic algorithm would be a minimax, but:
+* lordsawar games have at least 8 players
+  - should we select targets and use a minimax for each players?
+* should the game start be different (exploration) ?
+
+
+To be able to build the minimax tree, I need to understand what moves
+are relevant at every turn. I hope to be able to reduce this to a few
+moves that will enable me to cut as many useless branches as possible
+in the tree. If I understood correctly, the different moving
+possibilities are:
+ * capture a city
+ * explore a ruin
+ * attack another stack
+ * head toward a front line without really knowing what you'll do there
+ * merging two stacks

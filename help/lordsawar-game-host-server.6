@@ -1,0 +1,39 @@
+.TH LORDSAWAR-GAME-HOST-SERVER "6" "May 2020" "lordsawar 0.3.2" "Games"
+.SH NAME
+lordsawar-game-host-server \- Serve up networked lordsawar games.
+.SH SYNOPSIS
+.B lordsawar-game-host-server
+[\fIOPTION\fR...]
+.SH DESCRIPTION
+Allow remote and local users to start their networked lordsawar games on your computer.  The command-line tool
+.B lordsawar-game-host-client
+is used to send commands to this server.
+.TP
+\fB\-f\fB, \fB\-\-foreground\fR
+Do not detach from the controlling terminal.
+.TP
+\fB\-h\fR, \fB\-\-host\fR \fIHOST\fR
+Specify the hostname that others can reach this machine on.
+.TP
+\fB\-p\fR, \fB\-\-port\fR \fINUMBER\fR
+Start the server on the given port.
+.TP
+\fB\-m\fR, \fB\-\-members\fR \fIFILE\fR
+Allow the profile ids in this file to host games.  The format of \fIFILE\fR is one id per line, with any lines starting with \fB#\fR being ignored.
+.TP
+\fB\-?\fB, \fB\-\-help\fR
+Give this help list.
+.PP
+When a --port is not specified, the server starts on port 22998.
+The server will search for the
+.B lordsawar
+binary in your path and execute it to begin hosting new games.
+.SH "FILES"
+.TP 18n
+.I ~/.lordsawarrc
+The configuration file.
+.TP
+.I ~/.lordsawar/recently-hosted.xml
+The data file representing the list of games that the server is hosting.
+.SH "REPORTING BUGS"
+Report bugs to <https://savannah.nongnu.org/bugs/?group=lordsawar>.

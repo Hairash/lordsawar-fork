@@ -1,0 +1,54 @@
+.TH LORDSAWAR-GAME-LIST-CLIENT "6" "May 2020" "lordsawar 0.3.2" "Games"
+.SH NAME
+lordsawar-game-list-client \- administer or query a game list server
+.SH SYNOPSIS
+.B lordsawar-game-list-client
+[\fIOPTION\fR...] \fI[HOST]\fR
+.SH DESCRIPTION
+A command-line tool to manage a LordsAWar! game list server located at \fIHOST\fR.  
+.TP
+\fB\-p\fR, \fB\-\-profile\fR \fIID\fR
+Use this identity to make requests to the remote server.  The ID looks like a guid.
+.TP
+\fB\-a\fR, \fB\-\-advertise
+Ask the server to advertise a game.
+.TP
+\fB\-u\fR, \fB\-\-unadvertise\fR \fIID\fR
+Ask the server to stop advertising a game.  The ID looks like a guid.
+.TP
+\fB\-r\fR, \fB\-\-remove-all\fR \fIID\fR
+Ask the server to stop advertising games owned by the given profile ID.  The ID looks like a guid.
+.TP
+\fB\-p\fR, \fB\-\-port\fR \fINUMBER\fR
+Connect to the remote server on the given port.
+.TP
+\fB\-t\fR, \fB\-\-terminate
+Ask the server to stop running.
+.TP
+\fB\-r\fR, \fB\-\-reload
+Ask the server to reload it's list of advertised games from disk.
+.TP
+\fB\-l\fR, \fB\-\-list
+Ask the server to show a list of games it is advertising.
+.TP
+\fB\-?\fB, \fB\-\-help\fR
+Give this help list.
+.PP
+When --profile is not specified, the first profile in \fIprofiles.xml\fR is used by default.
+
+Specifying an \fIID\fR of -1 to the --remove-all option will remove all games 
+from the game list.
+
+When a --port is not specified, port 18998 is assumed.
+
+When \fIHOST\fR is not specified on the command-line, this tool will try to connect to 127.0.0.1.
+
+.SH "FILES"
+.TP 18n
+.I ~/.lordsawarrc
+The configuration file.
+.TP
+.I ~/.lordsawar/profiles.xml
+The data file representing the list of profiles.
+.SH "REPORTING BUGS"
+Report bugs to <https://savannah.nongnu.org/bugs/?group=lordsawar>.
