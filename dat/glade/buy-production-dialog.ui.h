@@ -1,0 +1,9 @@
+char *s = N_("Buy Production");
+char *s = N_("Cancel");
+char *s = N_("Buy");
+char *s = N_("Unit");
+char *s = N_("Cost");
+char *s = N_("Time");
+char *s = N_("Moves");
+char *s = N_("Strength");
+char *s = N_("Upkeep");

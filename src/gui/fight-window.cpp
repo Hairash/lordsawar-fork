@@ -72,7 +72,7 @@ FightWindow::FightWindow(Gtk::Window &parent, Fight &fight)
   // add the armies
   std::vector<Gtk::Box *> close_hboxes;
   int close;
-  std::map<guint32, guint32> initial_hps = fight.getInitialHPs();
+  std::map<guint32, double> initial_hps = fight.getInitialHPs();
 
   // ... attackers
   close = 0;
@@ -154,8 +154,8 @@ void FightWindow::run(bool *quick)
     d_quick = true;
 }
 
-void FightWindow::add_army(Army *army, int initial_hp,
-                           std::vector<Gtk::Box *> &hboxes, Gtk::Box *vbox, 
+void FightWindow::add_army(Army *army, double initial_hp,
+                           std::vector<Gtk::Box *> &hboxes, Gtk::Box *vbox,
                            int current_no)
 {
   Gtk::Box *army_box;

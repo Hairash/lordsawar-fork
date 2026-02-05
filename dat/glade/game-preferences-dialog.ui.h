@@ -1,0 +1,15 @@
+char *s = N_("Beginner");
+char *s = N_("Intermediate");
+char *s = N_("Advanced");
+char *s = N_("I am the Lord Of War!");
+char *s = N_("Custom");
+char *s = N_("New Game");
+char *s = N_("Cancel");
+char *s = N_("Start Game");
+char *s = N_("Game Name:");
+char *s = N_("Number of Players");
+char *s = N_("0");
+char *s = N_("Difficulty Rating");
+char *s = N_("Difficulty");
+char *s = N_("Edit Options");
+char *s = N_("Characters");

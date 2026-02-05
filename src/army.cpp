@@ -296,7 +296,7 @@ bool Army::bless(Temple *temple)
 }
 
 
-void Army::heal(guint32 hp)
+void Army::heal(double hp)
 {
   if (hp == 0)
     {
@@ -304,7 +304,7 @@ void Army::heal(guint32 hp)
       // the turn takes place. In this case the algorithm is: Heal 10%
       // plus 1HP for each point of vitality above 5 (or one less for each
       // point below 5), heal a minimum of 1 HP per turn
-      hp = getStat(HP)/10;
+      hp = d_max_hp/10;
       if (hp <= 5)
 	hp = 1;
       else
@@ -312,17 +312,19 @@ void Army::heal(guint32 hp)
     }
 
   d_hp += hp;
-  if (d_hp > getStat(HP))
-    d_hp = getStat(HP);
+  if (d_hp > d_max_hp)
+    d_hp = d_max_hp;
 }
 
-bool Army::damage(guint32 damageDone)
+bool Army::damage(double damageDone)
 {
-  if (damageDone >= d_hp)
-    d_hp = 0;
-  else
-    d_hp -= damageDone;
-  return (d_hp == 0);
+  d_hp -= damageDone;
+  if (d_hp <= 0.0)
+    {
+      d_hp = 0;
+      return true;
+    }
+  return false;
 }
 
 void Army::decrementMoves(guint32 moves)

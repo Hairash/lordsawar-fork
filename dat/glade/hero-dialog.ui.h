@@ -1,0 +1,17 @@
+char *s = N_("Close");
+char *s = N_("Previous Hero");
+char *s = N_("Next Hero");
+char *s = N_("Drop");
+char *s = N_("Stop producing armies");
+char *s = N_("Pick up");
+char *s = N_("Buy a production capability");
+char *s = N_("Items");
+char *s = N_("Battle");
+char *s = N_("Moves");
+char *s = N_("Strength");
+char *s = N_("Command");
+char *s = N_("Level");
+char *s = N_("Upkeep");
+char *s = N_("Experience");
+char *s = N_("History");
+char *s = N_("Hero Details");

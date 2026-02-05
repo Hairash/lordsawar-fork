@@ -93,8 +93,9 @@ const unsigned int NUM_ARROW_IMAGES = 8;
 const int MAX_GOLD_TO_CARRY_OVER_TO_NEXT_SCENARIO = 5000;
 const unsigned int MAX_ARMY_STRENGTH = 9;
 const unsigned int MAX_BOAT_STRENGTH = 4;
-const unsigned int BATTLE_DICE_SIDES_INTENSE = 24;
-const unsigned int BATTLE_DICE_SIDES_NORMAL = 20;
+// Combat constants moved to combat-damage.h for shared use with tests
+// See combat-damage.h for: BATTLE_DICE_SIDES_INTENSE, BATTLE_DICE_SIDES_NORMAL,
+//                          DETERMINISTIC_DAMAGE_MULTIPLIER, MINIMUM_DAMAGE_PER_HIT
 
 const unsigned short LORDSAWAR_PORT = 14998;
 const unsigned short LORDSAWAR_GAMELIST_PORT = 18998;

@@ -1,0 +1,11 @@
+char *s = N_("Close");
+char *s = N_("Number of armies each side owns");
+char *s = N_("Army");
+char *s = N_("Number of cities each side owns");
+char *s = N_("City");
+char *s = N_("Amount of gold each side possesses");
+char *s = N_("Gold");
+char *s = N_("Armies you produced this turn");
+char *s = N_("Production");
+char *s = N_("Who is the most powerful nation");
+char *s = N_("Winning");

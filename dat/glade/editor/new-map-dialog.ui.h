@@ -1,0 +1,36 @@
+char *s = N_("Normal");
+char *s = N_("Small");
+char *s = N_("Tiny");
+char *s = N_("Custom");
+char *s = N_("New Map");
+char *s = N_("Create Random Map");
+char *s = N_("Signposts");
+char *s = N_("Temples");
+char *s = N_("Ruins");
+char *s = N_("Grass");
+char *s = N_("Water");
+char *s = N_("Swamp");
+char *s = N_("Forest");
+char *s = N_("Hills");
+char *s = N_("Mountains");
+char *s = N_("Cities");
+char *s = N_("Standing Stones");
+char *s = N_("Terrain");
+char *s = N_("Size");
+char *s = N_("Width");
+char *s = N_("50");
+char *s = N_("Height");
+char *s = N_("75");
+char *s = N_("Tile Set");
+char *s = N_("Army Set");
+char *s = N_("City Set");
+char *s = N_("Shield Set");
+char *s = N_("Tile Size");
+char *s = N_("Fill Style");
+char *s = N_("Random Roads");
+char *s = N_("Random Names");
+char *s = N_("Number of Players");
+char *s = N_("1/x Chance of\n"
+             "Standing Stone\n"
+             "on Road");
+char *s = N_("Advanced");

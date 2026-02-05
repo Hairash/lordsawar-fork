@@ -1,0 +1,9 @@
+char *s = N_("Network Game");
+char *s = N_("Cancel");
+char *s = N_("Play");
+char *s = N_("Scenario Name");
+char *s = N_("Send:");
+char *s = N_("Turn");
+char *s = N_("Cities");
+char *s = N_("Game Options");
+char *s = N_("View");

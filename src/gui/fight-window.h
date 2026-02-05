@@ -74,7 +74,7 @@ class FightWindow: public sigc::trackable
     actions_type::iterator action_iterator;
     
     // add an army to the window
-    void add_army(Army *army, int initial_hp,
+    void add_army(Army *army, double initial_hp,
                   std::vector<Gtk::Box *> &hboxes,
 		  Gtk::Box *vbox, int current_no);
 

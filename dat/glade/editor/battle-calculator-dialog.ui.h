@@ -1,0 +1,16 @@
+char *s = N_("20 (Normal)");
+char *s = N_("24 (Intense)");
+char *s = N_("Battle Calculator");
+char *s = N_("Attackers");
+char *s = N_("Owner");
+char *s = N_("Add");
+char *s = N_("Remove");
+char *s = N_("Copy");
+char *s = N_("Hero Details");
+char *s = N_("Defenders");
+char *s = N_("Fortify");
+char *s = N_("Fighting In City");
+char *s = N_("Fighting on Terrain");
+char *s = N_("Fight");
+char *s = N_("Number of Sides on Die");
+char *s = N_("Fight x100");

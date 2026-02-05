@@ -1,0 +1,14 @@
+char *s = N_("Army Set Properties");
+char *s = N_("Name:");
+char *s = N_("Location:");
+char *s = N_("Description");
+char *s = N_("Copyright");
+char *s = N_("License");
+char *s = N_("Tile Size");
+char *s = N_("Armies:");
+char *s = N_("Selectors:");
+char *s = N_("Bag:");
+char *s = N_("Ship:");
+char *s = N_("Hero's Flag:");
+char *s = N_("Images:");
+char *s = N_("Statistics");

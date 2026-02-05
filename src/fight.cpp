@@ -21,6 +21,8 @@
 //  02110-1301, USA.
 
 #include "fight.h"
+#include "defs.h"
+#include "combat-damage.h"
 #include <assert.h>
 #include <math.h>       // for has_hit()
 #include "army.h"
@@ -67,7 +69,7 @@ void Fight::orderArmies(const std::list<Stack*> &stacks, std::vector<Army*> &arm
 }
 
 Fight::Fight(Stack* attacker, Stack* defender, FightType type)
-    : d_turn(0), d_result(DRAW), d_type(type), d_intense_combat (false)
+    : d_turn(0), d_result(DRAW), d_type(type), d_intense_combat (false), d_attacker_turn(true)
 {
   std::list<Stack *> attackers;
   std::list<Stack *> defenders;
@@ -129,7 +131,7 @@ Fight::Fight(const std::list<Stack*> &attackers,
              const std::list<Stack*> &defenders,
              const std::list<FightItem> &history)
  : d_attackers (attackers), d_defenders (defenders), d_actions (history),
-    d_turn (0), d_result (DRAW), d_type (FOR_KEEPS), d_intense_combat (false)
+    d_turn (0), d_result (DRAW), d_type (FOR_KEEPS), d_intense_combat (false), d_attacker_turn(true)
 {
 
   fillInInitialHPs();
@@ -162,7 +164,7 @@ void Fight::setupFight(const std::list<Stack*> &attackers, const std::list<Stack
 
 Fight::Fight(const std::list<Stack*> &attackers, const std::list<Stack*> &defenders, bool city, Tile::Type terrain, FightType type)
   : d_attackers (attackers), d_defenders (defenders), d_turn (0),
-    d_result (DRAW), d_type (FOR_KEEPS), d_intense_combat (false)
+    d_result (DRAW), d_type (FOR_KEEPS), d_intense_combat (false), d_attacker_turn(true)
 {
   setupFight (attackers, defenders, city, terrain, type);
 }
@@ -297,19 +299,40 @@ bool Fight::doRound()
 
   debug ("Fight round #" <<d_turn);
 
-  //fight the first one in attackers with the first one in defenders
-  std::list<Fighter*>::iterator ffit = d_att_close.begin();
-  std::list<Fighter*>::iterator efit = d_def_close.begin();
+  // Get the front armies from each side
+  std::list<Fighter*>::iterator attacker_it = d_att_close.begin();
+  std::list<Fighter*>::iterator defender_it = d_def_close.begin();
 
-  //have the attacker and defender try to hit each other
-  fightArmies(*ffit, *efit);
+  if (attacker_it == d_att_close.end() || defender_it == d_def_close.end())
+    return false;
 
-  if (*efit && (*efit)->army->getHP() <= 0)
-    remove((*efit));
+  Fighter* attacker = *attacker_it;
+  Fighter* defender = *defender_it;
 
-  if (*ffit && (*ffit)->army->getHP() <= 0)
-    remove((*ffit));
+  // Alternating hit structure: one side attacks per round
+  if (d_attacker_turn)
+    {
+      // Attacker hits defender
+      fightArmies(attacker, defender);
 
+      // Check if defender died
+      if (defender->army->getHP() <= 0.0)
+        remove(defender);
+    }
+  else
+    {
+      // Defender hits attacker
+      fightArmies(defender, attacker);
+
+      // Check if attacker died
+      if (attacker->army->getHP() <= 0.0)
+        remove(attacker);
+    }
+
+  // Swap turn for next round
+  d_attacker_turn = !d_attacker_turn;
+
+  // Continue if both sides still have armies
   if (d_def_close.empty() || d_att_close.empty())
     return false;
 
@@ -606,10 +629,14 @@ void Fight::calculateBonus(Maptile *mtile)
 
 }
 
+double Fight::calculateDeterministicDamage(Fighter* attacker, Fighter* defender)
+{
+  // Use the shared damage calculation function from combat-damage.h
+  return calculateCombatDamage(attacker->terrain_strength, defender->terrain_strength, d_intense_combat);
+}
+
 void Fight::fightArmies(Fighter* attacker, Fighter* defender)
 {
-  guint32 sides = 0;
-
   if (!attacker || !defender)
     return;
 
@@ -618,60 +645,26 @@ void Fight::fightArmies(Fighter* attacker, Fighter* defender)
 
   debug("Army " << a->getId() << " attacks " << d->getId());
 
-  if (d_intense_combat == true)
-    sides = BATTLE_DICE_SIDES_INTENSE;
-  else
-    sides = BATTLE_DICE_SIDES_NORMAL;
+  // Calculate deterministic damage for this single hit
+  double damage = calculateDeterministicDamage(attacker, defender);
 
-  // factor used for some calculation regarding gaining medals
+  // Factor used for medal calculations
   double xp_factor = a->getXpReward() / d->getXpReward();
 
-  // the clash has to be documented for later use in the fight dialog
+  // Update medal tracking statistics
+  if (d_type == FOR_KEEPS)
+    {
+      a->setNumberHasHit(a->getNumberHasHit() + (damage / xp_factor));
+      d->setNumberHasBeenHit(d->getNumberHasBeenHit() + (damage / xp_factor));
+    }
 
-  // make a swing at the opponent
-  // take one hit point off, per hit.
+  // Apply damage to defender
+  d->damage(damage);
 
+  // Document the engagement for fight replay
   FightItem item;
   item.turn = d_turn;
-  int damage = 0;
   item.id = d->getId();
-
-  while (damage == 0)
-    {
-      int attacker_roll = Rnd::rand() % sides;
-      int defender_roll = Rnd::rand() % sides;
-
-      if (attacker_roll < attacker->terrain_strength &&
-	  defender_roll >= defender->terrain_strength)
-	{
-	  //hit defender
-	  if (d_type == FOR_KEEPS)
-	    {
-	      a->setNumberHasHit(a->getNumberHasHit() + (1/xp_factor));
-	      d->setNumberHasBeenHit(d->getNumberHasBeenHit() + (1/xp_factor));
-	    }
-	  d->damage(1);
-	  damage = 1;
-	  item.id = d->getId();
-	}
-      else if (defender_roll < defender->terrain_strength &&
-	       attacker_roll >= attacker->terrain_strength)
-	{
-	  //hit attacker
-	  if (d_type == FOR_KEEPS)
-	    {
-	      d->setNumberHasHit(d->getNumberHasHit() + (1/xp_factor));
-	      a->setNumberHasBeenHit(a->getNumberHasBeenHit() + (1/xp_factor));
-	    }
-	  a->damage(1);
-	  damage = 1;
-	  item.id = a->getId();
-	}
-      else
-        continue;
-    }
-  // continue documenting the engagement
-
   item.damage = damage;
   d_actions.push_back(item);
 }

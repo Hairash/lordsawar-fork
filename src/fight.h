@@ -50,7 +50,7 @@ struct FightItem
   //! The id of the army who was attacked in this event.
   guint32 id;
   //! The amount of damage that the army sustained.
-  int damage;
+  double damage;
 };
 
 
@@ -164,7 +164,7 @@ class Fight
         static void orderArmies(const std::list<Stack*> &stacks,
 				std::vector<Army*> &armies);
 
-        std::map<guint32, guint32> getInitialHPs() { return initial_hps; }
+        std::map<guint32, double> getInitialHPs() { return initial_hps; }
 
 	static LocationBox calculateFightBox(Fight &fight);
 
@@ -197,15 +197,25 @@ class Fight
         void calculateFinalStrengths (std::list<Fighter*> friendly,
 				      std::list<Fighter*> enemy);
 
-        /** 
+        /**
 	 * This function just has two armies fight against each other. It
-         * applies the bonuses and several special bonuses to attacker and 
+         * applies the bonuses and several special bonuses to attacker and
 	 * defender and calculates the result.
          *
          * @param attacker     The attacking army.
          * @param defender     The defending army.
          */
         void fightArmies(Fighter* attacker, Fighter* defender);
+
+        /**
+         * Calculate deterministic damage for one hit.
+         * Formula: (attacker_strength / dice_sides) * ((dice_sides - defender_strength) / dice_sides) * multiplier
+         *
+         * @param attacker     The attacking army.
+         * @param defender     The defending army.
+         * @return The damage to deal to the defender.
+         */
+        double calculateDeterministicDamage(Fighter* attacker, Fighter* defender);
 
         //! Removes an army from the fight.
         void remove(Fighter* f);
@@ -234,7 +244,7 @@ class Fight
 	//! The defenders in the fight, beforehand.
         std::list<Fighter*> d_initial_def_close;
 
-        std::map<guint32, guint32> initial_hps;
+        std::map<guint32, double> initial_hps;
 
 	//! The list of fight events that gets calculated.
         std::list<FightItem> d_actions;
@@ -250,6 +260,9 @@ class Fight
 
 	//! Whether or not we're rolling 24-sided dice or 20 sided dice.
 	bool d_intense_combat;
+
+	//! Tracks whose turn it is in alternating combat (true = attacker's turn).
+	bool d_attacker_turn;
 };
 
 // Helper class; the single units participating in the fight are saved with

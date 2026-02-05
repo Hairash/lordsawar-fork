@@ -1,0 +1,10 @@
+char *s = N_("Move this stack along its path.");
+char *s = N_("Select the next stack that can move.");
+char *s = N_("Finish moving this stack.");
+char *s = N_("Deselect this stack.");
+char *s = N_("Center the map on this stack.");
+char *s = N_("Diplomacy");
+char *s = N_("Put this stack in a defensive posture.");
+char *s = N_("Search a temple or ruin.");
+char *s = N_("Move all stacks along their routes.");
+char *s = N_("End your turn.");

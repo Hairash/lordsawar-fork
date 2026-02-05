@@ -147,7 +147,7 @@ class Army :public ArmyBase, public UniquelyIdentified, public OwnerId, public s
         void setStat(Stat stat, guint32 value);
 
         //! Set the current number of hitpoints of this army.
-        void setHP(guint32 hp) {d_hp = hp;}
+        void setHP(double hp) {d_hp = hp;}
 
         //! Set the current number of hitpoints of this army to zero.
         void kill() {setHP(0);}
@@ -197,7 +197,7 @@ class Army :public ArmyBase, public UniquelyIdentified, public OwnerId, public s
         virtual guint32 getStat(Stat stat, bool modified=true) const;
 
         //! Get the current number of hitpoints that the Army has.
-        guint32 getHP() const {return d_hp;}
+        double getHP() const {return d_hp;}
 
         //! Get the current number of movement points that the Army has.
         guint32 getMoves() const {return d_moves;}
@@ -255,7 +255,7 @@ class Army :public ArmyBase, public UniquelyIdentified, public OwnerId, public s
 	 *                 fully healed after battle.
          */
 	//! Heal the Army unit.
-        void heal(guint32 hp = 0);
+        void heal(double hp = 0);
 
         /** 
 	 * Decrease the number of hitpoints that this Army has.
@@ -265,7 +265,7 @@ class Army :public ArmyBase, public UniquelyIdentified, public OwnerId, public s
          * @return True if the Army unit has died, otherwise false.
          */
 	//! Damage the Army.
-        bool damage(guint32 damageDone);
+        bool damage(double damageDone);
 
         /** 
 	 * Reduce the number of moves that the Army unit has.
@@ -349,7 +349,7 @@ class Army :public ArmyBase, public UniquelyIdentified, public OwnerId, public s
 	 * This value does not change during gameplay.
 	 */
 	//! The maximum number of hitpoints this Army unit has.
-        guint32 d_max_hp;
+        double d_max_hp;
 
 	//! Movement point multiplier of the Army unit.
 	/**
@@ -391,7 +391,7 @@ class Army :public ArmyBase, public UniquelyIdentified, public OwnerId, public s
 	//! The current number of hitpoints that the Army unit has.
 	/**
 	 * When this value is 0 it means the Army unit is dead.
-	 * 
+	 *
 	 * During a Fight this value gets decremented as the Army unit
 	 * suffers attacks by enemy Army units.
 	 *
@@ -399,7 +399,7 @@ class Army :public ArmyBase, public UniquelyIdentified, public OwnerId, public s
 	 *
 	 * d_hp does not exceed d_max_hp.
 	 */
-        guint32 d_hp;
+        double d_hp;
 
 	//! The current number of movement points that the Army unit has.
 	/**
