@@ -1,5 +1,6 @@
 # Build artifacts and generated files
 *.o
+*.o.tmp
 *.a
 *.so
 *.dylib
@@ -57,7 +58,6 @@ src/utils/lordsawar-upgrade-file
 
 # IDE and editor files
 .vscode/
-.claude/
 .idea/
 *.swp
 *.swo
@@ -85,4 +85,7 @@ Desktop.ini
 
 # Linux specific
 *~
+
+# Build tool temporary files
+.lineno
 

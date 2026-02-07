@@ -25,6 +25,7 @@
 #include "combat-damage.h"
 #include <assert.h>
 #include <math.h>       // for has_hit()
+#include <iomanip>      // for std::fixed, std::setprecision
 #include "army.h"
 #include "hero.h"
 #include "stacklist.h"
@@ -39,8 +40,8 @@
 #include "stacktile.h"
 #include "rnd.h"
 
-//#define debug(x) {std::cerr<<__FILE__<<": "<<__LINE__<<": "<<x<<std::endl<<std::flush;}
-#define debug(x)
+#define debug(x) {std::cerr<<__FILE__<<": "<<__LINE__<<": "<<x<<std::endl<<std::flush;}
+//#define debug(x)
 
 Fighter::Fighter(const Fighter &f)
  : army(f.army), pos(f.pos), terrain_strength(f.terrain_strength)
@@ -200,11 +201,36 @@ Fight::~Fight()
     }
 }
 
+// =============================================================================
+// Fight::battle() - Main Battle Calculation
+// =============================================================================
+// This is the core battle calculation method. IMPORTANT: All combat events are
+// calculated here BEFORE any animation starts. The FightWindow class later
+// replays these events for visual display.
+//
+// Key concepts:
+// 1. PRE-CALCULATION: Every hit, damage amount, and death is computed upfront
+// 2. TURN-BASED: Combat alternates between attacker and defender (d_attacker_turn)
+// 3. EVENT RECORDING: Each hit creates a FightItem stored in d_actions list
+//
+// The d_actions list (accessible via getCourseOfEvents()) contains:
+//   - FightItem.turn: Which round the hit occurred
+//   - FightItem.id: Army ID that was damaged
+//   - FightItem.damage: Damage amount dealt
+//
+// After battle():
+//   - d_result is set to ATTACKER_WON, DEFENDER_WON, or DRAW
+//   - d_actions contains complete fight history for animation replay
+//   - Army HP values are updated (damage applied to actual Army objects)
+//
+// For FOR_KICKS fights (military advisor simulation), HP is restored after.
+// =============================================================================
 void Fight::battle(bool intense)
 {
   d_intense_combat = intense;
 
-  // first, fight until the fight is over
+  // Execute rounds until one side is eliminated
+  // Each doRound() call processes one hit (attacker or defender attacks)
   for (d_turn = 0; doRound(); d_turn++);
 
   // Now we have to set the fight result.
@@ -292,17 +318,40 @@ Fight::Result Fight::battleFromHistory()
   return Fight::DEFENDER_WON;
 }
 
+// =============================================================================
+// Fight::doRound() - Execute One Combat Round
+// =============================================================================
+// Executes a single round of combat. In alternating combat mode:
+// - If d_attacker_turn is true: attacker's front army hits defender's front army
+// - If d_attacker_turn is false: defender's front army hits attacker's front army
+//
+// Each round:
+// 1. Get front armies from both sides (first in their respective lists)
+// 2. The active side calls fightArmies() to deal damage
+// 3. Check if the target army died (HP <= 0), remove if so
+// 4. Swap d_attacker_turn for next round
+//
+// The fight continues until one side has no armies left.
+//
+// Returns:
+//   true: Continue fighting (both sides have armies)
+//   false: Fight ended (one side eliminated or max rounds reached)
+// =============================================================================
 bool Fight::doRound()
 {
+  // Check max rounds limit (0 means unlimited)
   if (MAX_ROUNDS && d_turn >= MAX_ROUNDS)
     return false;
 
   debug ("Fight round #" <<d_turn);
+  debug("[COMBAT] === Turn " << d_turn << " ("
+        << (d_attacker_turn ? "Attacker's" : "Defender's") << " turn) ===");
 
-  // Get the front armies from each side
+  // Get the front armies from each side (first in fight order)
   std::list<Fighter*>::iterator attacker_it = d_att_close.begin();
   std::list<Fighter*>::iterator defender_it = d_def_close.begin();
 
+  // If either side is empty, fight is over
   if (attacker_it == d_att_close.end() || defender_it == d_def_close.end())
     return false;
 
@@ -312,21 +361,27 @@ bool Fight::doRound()
   // Alternating hit structure: one side attacks per round
   if (d_attacker_turn)
     {
-      // Attacker hits defender
+      // Attacker's turn: attacker hits defender
       fightArmies(attacker, defender);
 
-      // Check if defender died
+      // Check if defender died from this hit
       if (defender->army->getHP() <= 0.0)
-        remove(defender);
+        {
+          debug("[COMBAT] " << defender->army->getName() << " (" << defender->army->getId() << ") DIED!");
+          remove(defender);  // Remove from d_def_close list
+        }
     }
   else
     {
-      // Defender hits attacker
+      // Defender's turn: defender hits attacker
       fightArmies(defender, attacker);
 
       // Check if attacker died
       if (attacker->army->getHP() <= 0.0)
-        remove(attacker);
+        {
+          debug("[COMBAT] " << attacker->army->getName() << " (" << attacker->army->getId() << ") DIED!");
+          remove(attacker);
+        }
     }
 
   // Swap turn for next round
@@ -629,12 +684,53 @@ void Fight::calculateBonus(Maptile *mtile)
 
 }
 
+// =============================================================================
+// Fight::calculateDeterministicDamage() - Calculate Damage for One Hit
+// =============================================================================
+// Calculates the damage dealt when attacker hits defender. This is a
+// deterministic formula (no randomness) defined in combat-damage.h:
+//
+// Formula: (attacker_str / dice_sides) * ((dice_sides - defender_str) / dice_sides) * multiplier
+//
+// Where:
+//   - attacker_str: Attacker's terrain_strength (base + terrain + bonuses)
+//   - defender_str: Defender's terrain_strength
+//   - dice_sides: 20 for normal combat, 24 for intense combat
+//   - multiplier: Scaling factor (defined in combat-damage.h)
+//
+// The formula models:
+//   - Higher attacker strength = more damage
+//   - Higher defender strength = less damage
+//   - Intense combat (24 sides) = generally lower damage per hit
+//
+// Typical damage values range from ~0.1 to ~0.5 HP per hit, depending on
+// relative strengths. Since armies start with 2 HP, it takes several hits
+// to kill even a weak unit.
+// =============================================================================
 double Fight::calculateDeterministicDamage(Fighter* attacker, Fighter* defender)
 {
   // Use the shared damage calculation function from combat-damage.h
   return calculateCombatDamage(attacker->terrain_strength, defender->terrain_strength, d_intense_combat);
 }
 
+// =============================================================================
+// Fight::fightArmies() - Execute Single Hit Between Two Armies
+// =============================================================================
+// This method executes one hit from attacker to defender:
+//
+// 1. Calculate damage using deterministic formula (no randomness)
+// 2. Update medal/XP tracking statistics (for FOR_KEEPS fights)
+// 3. Apply damage to the defender Army object (modifies Army::d_hp)
+// 4. Create a FightItem record and add to d_actions for animation replay
+//
+// The FightItem created here is what FightWindow uses to animate the hit:
+//   - item.turn: Current round number (for pacing animation)
+//   - item.id: Defender's army ID (to find the right ArmyItem to animate)
+//   - item.damage: Damage dealt (for HP label and damage display)
+//
+// Note: This method does NOT check for death - the caller (doRound) handles
+// that by checking defender HP after this call returns.
+// =============================================================================
 void Fight::fightArmies(Fighter* attacker, Fighter* defender)
 {
   if (!attacker || !defender)
@@ -648,24 +744,32 @@ void Fight::fightArmies(Fighter* attacker, Fighter* defender)
   // Calculate deterministic damage for this single hit
   double damage = calculateDeterministicDamage(attacker, defender);
 
-  // Factor used for medal calculations
+  // Factor used for medal calculations (XP scaling)
   double xp_factor = a->getXpReward() / d->getXpReward();
 
-  // Update medal tracking statistics
+  // Update medal tracking statistics (only for real fights, not simulations)
   if (d_type == FOR_KEEPS)
     {
       a->setNumberHasHit(a->getNumberHasHit() + (damage / xp_factor));
       d->setNumberHasBeenHit(d->getNumberHasBeenHit() + (damage / xp_factor));
     }
 
-  // Apply damage to defender
+  // Apply damage to defender's HP (modifies the actual Army object)
   d->damage(damage);
 
-  // Document the engagement for fight replay
+  // Log combat details for debugging
+  debug("[COMBAT] Round " << d_turn << ": "
+        << a->getName() << " (" << a->getId() << ") hits "
+        << d->getName() << " (" << d->getId() << ") for "
+        << std::fixed << std::setprecision(2) << damage << " damage. "
+        << "Defender HP: " << d->getHP() << "/" << d->getStat(Army::HP));
+
+  // Record this hit for animation replay by FightWindow
+  // The FightItem struct captures: when (turn), who (id), how much (damage)
   FightItem item;
-  item.turn = d_turn;
-  item.id = d->getId();
-  item.damage = damage;
+  item.turn = d_turn;      // Round number - used to pace animation
+  item.id = d->getId();    // Defender's ID - used to find ArmyItem to animate
+  item.damage = damage;    // Damage dealt - used for HP label update
   d_actions.push_back(item);
 }
 

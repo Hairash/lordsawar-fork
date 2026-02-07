@@ -54,10 +54,15 @@ class FightWindow: public sigc::trackable
     struct ArmyItem
     {
 	Army *army;
-	int hp;
+	double hp;  // Using double to preserve fractional HP from damage calculations
         Gtk::Image *water_image;
 	Gtk::Image *image;
+	Gtk::Label *hp_label;
+	Gtk::Label *damage_label;  // Shows damage dealt per hit
         bool exploding;
+        int damage_show_frames;  // Counter for temporary damage display (decrements each frame)
+        int blink_frames;  // Counter for hit blink effect duration
+        Glib::RefPtr<Gdk::Pixbuf> original_pixbuf;  // Original army image for restoration after blink
     };
     
     typedef std::vector<ArmyItem> army_items_type;
@@ -87,6 +92,10 @@ class FightWindow: public sigc::trackable
     Glib::ustring d_decision;
     guint32 armypic_height;
     guint32 armypic_width;
+
+    // Hit animation state tracking
+    int post_hit_pause_frames;    // Counter for pause between hits
+    guint32 last_hit_army_id;     // ID of army that was just hit (0 if none)
 };
 
 #endif

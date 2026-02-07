@@ -13,13 +13,40 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with this program; if not, write to the Free Software
-//  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 
+//  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 //  02110-1301, USA.
+
+// =============================================================================
+// FightWindow - Battle Animation Display
+// =============================================================================
+//
+// This file handles the graphical display and animation of battles. The key
+// architectural concept is the separation between fight CALCULATION (in
+// fight.cpp) and fight ANIMATION (in this file):
+//
+// 1. Fight::battle() pre-calculates ALL combat events before animation starts
+// 2. The events are stored in a list of FightItem structs (turn, army_id, damage)
+// 3. FightWindow receives this list and replays the events with visual effects
+//
+// Data Flow:
+//   Fight::battle() -> d_actions list -> FightWindow::actions -> do_round()
+//
+// Key Components:
+//   - ArmyItem: Visual state for each army (local hp tracking, image refs)
+//   - actions: List of FightItem events to replay
+//   - do_round(): Timer callback that processes events frame-by-frame
+//
+// The animation uses a timer-based approach where do_round() is called
+// repeatedly. It returns Timing::CONTINUE to reschedule or Timing::STOP to end.
+// =============================================================================
 
 #include <config.h>
 
 #include <numeric>
 #include <vector>
+#include <cmath>
+#include <sstream>
+#include <iomanip>
 #include <gtkmm.h>
 
 #include "fight-window.h"
@@ -43,6 +70,34 @@
 
 bool FightWindow::s_quick_all = false;
 
+// =============================================================================
+// Battle Animation Timing Constants
+// =============================================================================
+// These control the pacing of the battle animation. All values are in frames.
+// One frame duration = normal_round_speed (typically 300-500ms).
+// Adjust these to tune battle feel.
+static const int BLINK_EFFECT_FRAMES = 1;     // Frames to show darkened hit effect
+static const int DAMAGE_DISPLAY_FRAMES = 1;   // Frames to show damage number
+static const int POST_HIT_PAUSE_FRAMES = 1;   // Frames to pause after effects clear
+
+// -----------------------------------------------------------------------------
+// FightWindow Constructor
+// -----------------------------------------------------------------------------
+// Initializes the fight animation window by:
+// 1. Loading the UI from fight-window.ui
+// 2. Extracting attacker and defender armies from the Fight object
+// 3. Creating ArmyItem visual representations for each army
+// 4. Getting the pre-calculated fight events (actions) from Fight::getCourseOfEvents()
+// 5. Determining the result message to display at the end
+//
+// The Fight object has already calculated all combat events before this
+// constructor is called. We just store them in 'actions' for playback.
+//
+// Key members initialized:
+//   - army_items: Visual state for each army (local hp copy, image widgets)
+//   - actions: List of FightItem events to replay during animation
+//   - d_decision: Result message shown at end of battle
+// -----------------------------------------------------------------------------
 FightWindow::FightWindow(Gtk::Window &parent, Fight &fight)
 {
   Glib::RefPtr<Gtk::Builder> xml = BuilderCache::get("fight-window.ui");
@@ -137,6 +192,8 @@ void FightWindow::run(bool *quick)
 {
   round = 0;
   action_iterator = actions.begin();
+  post_hit_pause_frames = 0;
+  last_hit_army_id = 0;
 
   if (s_quick_all)
     Timing::instance().register_timer (method(do_round), fast_round_speed / 3);
@@ -161,12 +218,21 @@ void FightWindow::add_army(Army *army, double initial_hp,
   Gtk::Box *army_box;
   Gtk::Image *army_image;
   Gtk::Image *water_image;
+  Gtk::Label *hp_label;
+  Gtk::Label *damage_label;
 
   Glib::RefPtr<Gtk::Builder> xml = BuilderCache::get("fighter.ui");
 
   xml->get_widget("army_box", army_box);
   xml->get_widget("army_image", army_image);
   xml->get_widget("water_image", water_image);
+  xml->get_widget("hp_label", hp_label);
+  xml->get_widget("damage_label", damage_label);
+
+  // Set initial HP text showing current/max HP (one decimal place for consistency)
+  std::ostringstream init_hp_oss;
+  init_hp_oss << std::fixed << std::setprecision(1) << initial_hp;
+  hp_label->set_text(String::ucompose("%1/%2", init_hp_oss.str(), army->getStat(Army::HP)));
 
   // image
   guint32 fs = FontSize::getInstance()->get_height ();
@@ -224,49 +290,198 @@ void FightWindow::add_army(Army *army, double initial_hp,
   item.hp = initial_hp;
   item.water_image = water_image;
   item.image = army_image;
+  item.hp_label = hp_label;
+  item.damage_label = damage_label;
   item.exploding = false;
+  item.damage_show_frames = 0;  // No damage shown initially
+  item.blink_frames = 0;  // No blink effect initially
+  item.original_pixbuf = army_image->property_pixbuf().get_value();  // Store original for blink restoration
   army_items.push_back(item);
 }
 
+// -----------------------------------------------------------------------------
+// do_round() - Animation Timer Callback
+// -----------------------------------------------------------------------------
+// This is the core animation loop, called repeatedly by a timer. It processes
+// the pre-calculated fight events (FightItem) and updates the visual display.
+//
+// The animation has three phases:
+//
+// PHASE 1: Clear Explosions (lines below)
+//   - If any army has exploding=true from previous frame, clear the explosion
+//   - Return CONTINUE to show the cleared state for one frame
+//
+// PHASE 2: Process Actions (main loop)
+//   - Iterate through FightItem events from the actions list
+//   - For each event: find the target army, apply damage to LOCAL hp,
+//     update HP label, show damage dealt, trigger explosion if hp reaches 0
+//   - The 'round' variable tracks which battle turn we're displaying
+//   - When we reach an event from the next turn (f.turn > round), we pause
+//     by returning CONTINUE so the player can see the current round's results
+//
+// PHASE 3: Show Result (after all actions processed)
+//   - Display the decision label (win/lose message)
+//   - Pause briefly, then hide window and quit main loop
+//   - Return STOP to end the timer
+//
+// Key variables:
+//   - action_iterator: Current position in the events list
+//   - round: Current battle turn being displayed (0-indexed)
+//   - FightItem.turn: Turn number when this event occurred
+//   - ArmyItem.hp: LOCAL hp tracking for animation (separate from Army::d_hp)
+//
+// Returns:
+//   - Timing::CONTINUE: Reschedule timer for next frame
+//   - Timing::STOP: End animation, close window
+// -----------------------------------------------------------------------------
 bool FightWindow::do_round()
 {
+  // Prepare explosion graphic (scaled to army image size)
   ImageCache *gc = ImageCache::getInstance();
   PixMask *p = gc->getExplosionPic ()->copy ();
   PixMask::scale (p, armypic_width, armypic_height);
   Glib::RefPtr<Gdk::Pixbuf> expl = p->to_pixbuf();
   delete p;
 
-  // first we clear out any explosions
-  for (army_items_type::iterator i = army_items.begin(), end = army_items.end(); 
+  // =========================================================================
+  // PHASE 1: Clear explosions from previous frame
+  // =========================================================================
+  // If any army died in the previous frame, their explosion graphic is still
+  // showing. We clear it here and return CONTINUE to show the empty space
+  // for one frame before processing more events.
+  for (army_items_type::iterator i = army_items.begin(), end = army_items.end();
        i != end; ++i)
     {
       if (!i->exploding)
         continue;
 
+      // Replace explosion with transparent empty image
       Glib::RefPtr<Gdk::Pixbuf> empty_pic
         = Gdk::Pixbuf::create(Gdk::COLORSPACE_RGB, true, 8, armypic_width, armypic_height);
       empty_pic->fill(0x00000000);
       i->image->property_pixbuf() = empty_pic;
       i->exploding = false;
-      return Timing::CONTINUE;
+      // Note: damage label cleared by frame counter below, not here
+      return Timing::CONTINUE;  // Show cleared state for one frame
     }
 
-  while (action_iterator != actions.end())
+  // =========================================================================
+  // PHASE 1.5: Process timed effects (damage display and hit blink)
+  // =========================================================================
+  // Decrement frame counters and clear/restore visuals when they expire
+  for (army_items_type::iterator i = army_items.begin(), end = army_items.end();
+       i != end; ++i)
+    {
+      // Handle temporary damage display
+      if (i->damage_show_frames > 0)
+        {
+          i->damage_show_frames--;
+          if (i->damage_show_frames == 0)
+            i->damage_label->set_text("");  // Clear damage text
+        }
+
+      // Handle hit blink effect - restore original image when blink expires
+      if (i->blink_frames > 0)
+        {
+          i->blink_frames--;
+          if (i->blink_frames == 0 && i->hp > 0)
+            i->image->property_pixbuf() = i->original_pixbuf;  // Restore original
+        }
+    }
+
+  // =========================================================================
+  // PHASE 1.6: Check if last hit's effects are done, then start pause
+  // =========================================================================
+  // We wait for the hit army's blink and damage display to clear before pausing
+  if (last_hit_army_id != 0)
+    {
+      for (army_items_type::iterator i = army_items.begin(), end = army_items.end();
+           i != end; ++i)
+        {
+          if (i->army->getId() == last_hit_army_id)
+            {
+              // Check if effects are still active
+              if (i->exploding || i->blink_frames > 0 || i->damage_show_frames > 0)
+                return Timing::CONTINUE;  // Wait for effects to clear
+
+              // Effects done - start the post-hit pause
+              post_hit_pause_frames = POST_HIT_PAUSE_FRAMES;
+              last_hit_army_id = 0;
+              break;
+            }
+        }
+    }
+
+  // =========================================================================
+  // PHASE 1.7: Handle post-hit pause
+  // =========================================================================
+  if (post_hit_pause_frames > 0)
+    {
+      post_hit_pause_frames--;
+      return Timing::CONTINUE;  // Still pausing between hits
+    }
+
+  // =========================================================================
+  // PHASE 2: Process ONE fight event (FightItem) from the pre-calculated list
+  // =========================================================================
+  // Each FightItem represents one hit: which army was damaged and by how much.
+  // We process ONE event per frame, then wait for effects and pause.
+  if (action_iterator != actions.end())
     {
       FightItem &f = *action_iterator;
 
+      // Debug: log each FightItem as it's processed during animation
+      std::cerr << "[ANIMATION] Processing FightItem: army_id=" << f.id
+                << " damage=" << f.damage << " turn=" << f.turn << std::endl;
+
+      // Track turn boundaries
+      if (f.turn > round)
+        ++round;
+
       ++action_iterator;
 
-      for (army_items_type::iterator i = army_items.begin(), 
+      for (army_items_type::iterator i = army_items.begin(),
            end = army_items.end(); i != end; ++i)
         if (i->army->getId() == f.id)
           {
+            // Debug: log army state when found
+            std::cerr << "[ANIMATION] Found army " << i->army->getName()
+                      << " (id=" << i->army->getId() << ")"
+                      << " current_hp=" << i->hp << std::endl;
+
+            // Skip if this army is already dead (hp <= 0) - prevents
+            // explosions appearing on empty spaces for stale FightItems
+            if (i->hp <= 0.0)
+              {
+                std::cerr << "[ANIMATION] Skipping - army already dead" << std::endl;
+                break;
+              }
+
             i->hp -= f.damage;
             if (i->hp < 0)
               i->hp = 0;
+
+            std::cerr << "[ANIMATION] After damage: hp=" << i->hp << std::endl;
+
+            // Update HP label to show current HP after taking damage
+            // Always show one decimal place for consistent display (e.g., "1.3/2")
+            std::ostringstream hp_oss;
+            hp_oss << std::fixed << std::setprecision(1) << i->hp;
+            Glib::ustring hp_text = String::ucompose("%1/%2", hp_oss.str(), i->army->getStat(Army::HP));
+            i->hp_label->set_text(hp_text);
+
+            // Show damage dealt for this hit (with 2 decimal precision)
+            // Damage display is temporary - will be cleared after damage_show_frames decrements to 0
+            std::ostringstream damage_oss;
+            damage_oss << std::fixed << std::setprecision(2) << f.damage;
+            Glib::ustring damage_text = String::ucompose("-%1", damage_oss.str());
+            i->damage_label->set_text(damage_text);
+            i->damage_show_frames = DAMAGE_DISPLAY_FRAMES;
+
             double fraction = double(i->hp) / i->army->getStat(Army::HP);
             if (fraction == 0.0)
               {
+                std::cerr << "[ANIMATION] Army died - showing explosion" << std::endl;
                 Glib::RefPtr<Gdk::Pixbuf> w = i->water_image->property_pixbuf ();
                 w->fill(0x00000000);
                 i->water_image->property_pixbuf () = w;
@@ -275,41 +490,73 @@ bool FightWindow::do_round()
                 expl->copy_area (0, 0, armypic_width, armypic_height, a, 0 , 0);
                 i->image->property_pixbuf () = a;
                 i->exploding = true;
+                // Clear HP label for dead army
+                i->hp_label->set_text("");
+              }
+            else
+              {
+                // Army took damage but didn't die - show hit blink effect
+                i->blink_frames = BLINK_EFFECT_FRAMES;
+                // Darken the army image to show it was hit
+                Glib::RefPtr<Gdk::Pixbuf> darkened = i->original_pixbuf->copy();
+                // Multiply each pixel's RGB by 0.5 to darken
+                int width = darkened->get_width();
+                int height = darkened->get_height();
+                int rowstride = darkened->get_rowstride();
+                int n_channels = darkened->get_n_channels();
+                guchar *pixels = darkened->get_pixels();
+                for (int y = 0; y < height; y++)
+                  {
+                    guchar *row = pixels + y * rowstride;
+                    for (int x = 0; x < width; x++)
+                      {
+                        guchar *pixel = row + x * n_channels;
+                        pixel[0] = pixel[0] / 2;  // Red
+                        pixel[1] = pixel[1] / 2;  // Green
+                        pixel[2] = pixel[2] / 2;  // Blue
+                        // Alpha (pixel[3]) unchanged
+                      }
+                  }
+                i->image->property_pixbuf() = darkened;
               }
 
+            // Track this army so we wait for its effects before next hit
+            last_hit_army_id = i->army->getId();
             break;
           }
 
-      if (f.turn > round)
-        {
-          ++round;
-
-          return Timing::CONTINUE;
-        }
+      return Timing::CONTINUE;  // Wait for effects then process next hit
     }
 
-  guint32 first_pause = 100000;
-  guint32 second_pause = 2000000;
+  // =========================================================================
+  // PHASE 3: All events processed - show battle result
+  // =========================================================================
+  // Brief pause before showing result, then longer pause to read it
+  guint32 first_pause = 100000;   // 100ms before result
+  guint32 second_pause = 2000000; // 2 seconds to read result
 
-  while (g_main_context_iteration(NULL, FALSE)); //doEvents
+  // Process pending GTK events to ensure display is updated
+  while (g_main_context_iteration(NULL, FALSE));
   if (d_quick || s_quick_all)
-    Glib::usleep (first_pause / 100);
+    Glib::usleep (first_pause / 100);  // Faster in quick mode
   else
     Glib::usleep (first_pause);
 
+  // Show win/lose message
   decision_label->set_text (d_decision);
 
-  while (g_main_context_iteration(NULL, FALSE)); //doEvents
+  // Process pending GTK events and pause for player to read
+  while (g_main_context_iteration(NULL, FALSE));
   if (d_quick || s_quick_all)
-    Glib::usleep (second_pause / 100);
+    Glib::usleep (second_pause / 100);  // Faster in quick mode
   else
     Glib::usleep (second_pause);
 
-
+  // Close the fight window and return control to caller
   window->hide();
   main_loop->quit();
-    
-  return Timing::STOP;
+
+  return Timing::STOP;  // End animation timer
 }
 
 void FightWindow::on_key_release_event(GdkEventKey *e)
